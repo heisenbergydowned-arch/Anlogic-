@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机柜风冷边缘智能测控系统 · 只读面板</title>
+<style>
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --bd:#e2e8f0; --bd2:#cbd5e1;
+  --tx:#0f172a; --mut:#64748b; --dim:#94a3b8;
+  --ok:#059669; --okbg:#ecfdf5; --warn:#d97706; --warnbg:#fffbeb;
+  --bad:#dc2626; --badbg:#fef2f2; --acc:#0284c7; --accbg:#e0f2fe;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--tx); font:13px/1.6 -apple-system,BlinkMacSystemFont,
+  "Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  padding:0 0 50px;
+}
+.wrap{max-width:1260px;margin:0 auto;padding:0 20px}
+header{
+  background:rgba(255,255,255,0.96); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bd); position:sticky; top:0; z-index:20;
+  box-shadow:0 1px 3px rgba(15,23,42,0.03);
+}
+header::before{
+  content:""; display:block; height:3px;
+  background:linear-gradient(90deg, #0284c7 0%, #38bdf8 30%, #818cf8 70%, #10b981 100%);
+}
+.hrow{display:flex;align-items:center;gap:12px;padding:12px 0}
+.htitle{font-size:15px;font-weight:700;color:var(--tx);letter-spacing:-.2px;display:inline-flex;align-items:center;gap:8px}
+.hsub{color:var(--mut);font-size:11.5px;font-weight:500;border:1px solid var(--bd2);border-radius:99px;padding:2px 10px;background:#f8fafc}
+.spacer{flex:1}
+.clock{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; font-weight:600;
+  color:var(--mut); background:#f1f5f9; padding:4px 9px; border-radius:6px; border:1px solid var(--bd);
+}
+h2{font-size:14px;font-weight:700;color:var(--tx);margin:0 0 12px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
+h2 .tag{font-weight:400;color:var(--dim);font-size:12px}
+section{
+  background:var(--card); border:1px solid var(--bd); border-radius:12px;
+  padding:18px 20px; margin-top:16px; box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}
+.health{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  border-left:5px solid var(--bd2); border-radius:12px; padding:12px 18px;
+  background:#fff; box-shadow:0 1px 3px rgba(15,23,42,0.04); transition:all .3s ease;
+}
+.health.on{
+  border-left-color:var(--ok);
+  background:linear-gradient(90deg, #ecfdf5 0%, #ffffff 320px);
+}
+.health.off{
+  border-left-color:var(--bad);
+  background:linear-gradient(90deg, #fef2f2 0%, #ffffff 320px);
+}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--dim);flex:none}
+.health.on .dot{
+  background:#10b981;
+  box-shadow:0 0 0 0 rgba(16,185,129,0.7);
+  animation:pulse-green 2s infinite;
+}
+.health.off .dot{
+  background:#ef4444;
+  box-shadow:0 0 0 0 rgba(239,68,68,0.7);
+  animation:pulse-red 2s infinite;
+}
+@keyframes pulse-green{
+  0%{box-shadow:0 0 0 0 rgba(16,185,129,0.6)}
+  70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}
+  100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}
+}
+@keyframes pulse-red{
+  0%{box-shadow:0 0 0 0 rgba(239,68,68,0.6)}
+  70%{box-shadow:0 0 0 8px rgba(239,68,68,0)}
+  100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}
+}
+.hlabel{font-size:15px;font-weight:700;color:var(--tx)}
+.hmeta{color:var(--mut);font-size:12px}
+.badge{display:inline-flex;align-items:center;border-radius:6px;padding:2px 8px;font-size:11.5px;font-weight:600;border:1px solid;white-space:nowrap}
+.b-ok{color:#047857;background:#ecfdf5;border-color:#a7f3d0}
+.b-warn{color:#b45309;background:#fffbeb;border-color:#fde68a}
+.b-bad{color:#b91c1c;background:#fef2f2;border-color:#fecaca}
+.b-acc{color:#0369a1;background:#f0f9ff;border-color:#bae6fd}
+.b-mut{color:#475569;background:#f1f5f9;border-color:var(--bd)}
+.b-purple{color:#6d28d9;background:#f5f3ff;border-color:#ddd6fe}
+.banner{padding:10px 16px;border-radius:10px;font-weight:600;font-size:13.5px;letter-spacing:.2px;display:flex;align-items:center;gap:8px}
+.banner.n{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+.banner.w{background:#fffbeb;color:#b45309;border:1px solid #fde68a}
+.banner.e{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+.banner.i{background:#f8fafc;color:var(--mut);border:1px solid var(--bd)}
+/* 固定 6 列：6 张指标卡正好排成一行，不会出现「5 张一行 + 1 张孤零零」。
+   窄屏依次退到 3 列 / 2 列。 */
+.cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+@media (max-width:1300px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{
+  border:1px solid var(--bd); border-radius:12px; padding:12px 14px; background:#fff; position:relative;
+  box-shadow:0 1px 3px rgba(15,23,42,0.04);
+  transition:transform .2s cubic-bezier(0.4,0,0.2,1), box-shadow .2s cubic-bezier(0.4,0,0.2,1), border-color .2s ease;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 20px -5px rgba(15,23,42,0.08);border-color:var(--bd2)}
+/* 每张卡一个色条：前 4 个是核心测量，后 2 个是进风环境。缺了 5/6 会让最后两张看着像"次等卡"。 */
+.card:nth-child(1){border-top:3px solid #0284c7}
+.card:nth-child(2){border-top:3px solid #ea580c}
+.card:nth-child(3){border-top:3px solid #7c3aed}
+.card:nth-child(4){border-top:3px solid #059669}
+.card:nth-child(5){border-top:3px solid #0891b2}
+.card:nth-child(6){border-top:3px solid #db2777}
+.card.invalid{opacity:.75;background:#fafbfc;border-top-color:var(--bd2)!important}
+.card .k{font-size:12.5px;font-weight:600;color:var(--mut);display:flex;justify-content:space-between;align-items:center}
+.card .v{
+  font-size:32px; font-weight:700; color:var(--tx);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:-.5px; margin:6px 0 2px;
+}
+.card .u{font-size:13px;color:var(--dim);font-weight:500;margin-left:4px}
+.card .s{font-size:11.5px;color:var(--dim)}
+.card.invalid .v{color:var(--dim)}
+.pill{
+  font-size:11px; font-weight:600; border-radius:99px; padding:2px 8px;
+  border:1px solid #bbf7d0; color:#15803d; background:#f0fdf4;
+  display:inline-flex; align-items:center; gap:4px;
+}
+.pill::before{
+  content:""; display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:#16a34a; box-shadow:0 0 5px #16a34a;
+}
+.pill-bad{color:#b45309;border-color:#fde68a;background:#fffbeb}
+.pill-bad::before{background:#d97706;box-shadow:0 0 5px #d97706}
+/* 固定 4 列：运行元信息与诊断各有 8 个字段，正好排成 2 行，不会出现
+   "第一行挤 6 个、最后一行只剩 1 个" 的参差感。窄屏退到 2 列。 */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 20px}
+@media (max-width:900px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.meta .m{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;border-bottom:1px dashed var(--bd);padding:4px 0}
+.meta .m.wide{grid-column:1/-1}
+/* 值太长（如「活动故障」的 CONFIG_UNQUALIFIED, STOP_UNCONFIRMED）时允许换行，
+   多行右对齐；min-width:0 让 flex 子项能真正缩小而不是撑破格子。 */
+.meta .m b{font-weight:600;font-variant-numeric:tabular-nums;color:var(--tx);font-family:ui-monospace,Menlo,Consolas,monospace;text-align:right;word-break:break-word;overflow-wrap:anywhere;min-width:0}
+.meta .mk{color:var(--mut);font-size:12.5px;flex-shrink:0}
+.tabs{display:flex;gap:4px;margin-left:auto;background:#f1f5f9;padding:3px;border-radius:8px;border:1px solid var(--bd)}
+.tab{
+  border:none; background:transparent; color:var(--mut); border-radius:6px;
+  padding:3px 12px; font-size:12px; font-weight:500; cursor:pointer; font-family:inherit; transition:all .15s ease;
+}
+.tab:hover{color:var(--tx)}
+.tab.active{background:#fff;color:var(--acc);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+.chartbox{position:relative;margin-top:10px;background:#fff;border-radius:8px}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;gap:18px;font-size:12px;color:var(--mut);margin-top:10px;flex-wrap:wrap;padding:0 4px}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.empty{color:var(--dim);text-align:center;padding:40px 0;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--bd);vertical-align:middle}
+/* 时间列不换行：一换行会把 "2026/10/18" / "23:15:49" 拆成好几行，很难看 */
+td.t-cell{white-space:nowrap}
+.t-sub{color:var(--dim);font-size:11px;line-height:1.5}
+th{color:#475569;font-weight:600;font-size:12px;background:#f8fafc;position:sticky;top:0;z-index:2;border-bottom:2px solid var(--bd)}
+tbody tr:hover{background:#f8fafc}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+.scroll{max-height:340px;overflow:auto;border:1px solid var(--bd);border-radius:10px;box-shadow:inset 0 1px 2px rgba(0,0,0,0.02)}
+details summary{cursor:pointer;font-weight:700;font-size:13.5px;color:var(--tx);list-style:none;padding:2px 0}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸ ";color:var(--dim);font-weight:bold}
+details[open] summary::before{content:"▾ "}
+button{font-family:inherit}
+.btn{
+  border:1px solid var(--bd2); background:#fff; color:#1e293b; border-radius:7px;
+  padding:6px 14px; font-size:12.5px; font-weight:500; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04); transition:all .15s ease;
+}
+.btn:hover:not(:disabled){background:#f8fafc;border-color:var(--dim);transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,0.06)}
+.btn:active:not(:disabled){transform:translateY(0)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.p{
+  background:linear-gradient(135deg, #0284c7, #0369a1); border-color:#0284c7; color:#fff; font-weight:600;
+  box-shadow:0 2px 4px rgba(2,132,199,0.25);
+}
+.btn.p:hover:not(:disabled){background:linear-gradient(135deg, #0369a1, #075985);box-shadow:0 4px 10px rgba(2,132,199,0.35)}
+.btn.d{
+  background:linear-gradient(135deg, #ef4444, #dc2626); border-color:#dc2626; color:#fff; font-weight:600;
+  box-shadow:0 2px 4px rgba(239,68,68,0.25);
+}
+.btn.d:hover:not(:disabled){background:linear-gradient(135deg, #dc2626, #b91c1c);box-shadow:0 4px 10px rgba(239,68,68,0.35)}
+.btn.s{padding:3px 10px;font-size:12px}
+select,input[type=text]{
+  font-family:inherit; font-size:12.5px; padding:6px 10px; border:1px solid var(--bd2);
+  border-radius:7px; background:#fff; color:#1e293b;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+select:focus,input[type=text]:focus{
+  outline:none; border-color:var(--acc); box-shadow:0 0 0 3px rgba(2,132,199,0.15);
+}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row+.row{margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}
+.stat{
+  border:1px solid var(--bd); border-radius:9px; padding:10px 12px; background:#f8fafc;
+  transition:all .15s ease;
+}
+.stat:hover{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+.stat .sk{font-size:11.5px;color:var(--mut);font-weight:500}
+.stat .sv{font-size:18px;font-weight:700;color:var(--tx);font-variant-numeric:tabular-nums;margin-top:2px}
+.stat .sv small{font-size:11.5px;font-weight:400;color:var(--dim)}
+footer{
+  max-width:1260px; margin:24px auto 0; padding:16px 20px; color:var(--mut); font-size:12px;
+  border-top:1px solid var(--bd); line-height:1.75;
+}
+footer b{color:var(--tx)}
+.toast{position:fixed;right:20px;bottom:20px;z-index:999;display:flex;flex-direction:column;gap:8px}
+.tmsg{
+  background:#0f172a; color:#fff; border-radius:8px; padding:10px 16px; font-size:13px;
+  font-weight:500; max-width:440px; box-shadow:0 8px 24px rgba(15,23,42,0.15);
+  display:flex; align-items:center; gap:8px; animation:toast-in .25s cubic-bezier(0.16,1,0.3,1);
+  border-left:4px solid #38bdf8;
+}
+.tmsg.ok{background:#065f46;border-left-color:#34d399}
+.tmsg.err{background:#991b1b;border-left-color:#f87171}
+@keyframes toast-in{
+  from{opacity:0;transform:translateY(12px) scale(0.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.mock{border-left:4px solid #8250df;background:#faf8ff}
+.mock h2{color:#8250df}
+</style>
+<script src="/vendor/uPlot.iife.min.js"></script>
+<link rel="stylesheet" href="/vendor/uPlot.min.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap hrow">
+    <span class="htitle">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#e0f2fe;color:#0284c7;border-radius:6px;font-size:13px;box-shadow:0 1px 2px rgba(2,132,199,0.15)">❄️</span>
+      机柜风冷边缘智能测控系统
+    </span>
+    <div class="spacer"></div>
+    <a href="#" class="btn s" id="btnEdgeUi" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:5px 14px;font-size:12.5px;border-radius:8px;margin-right:8px">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M1 13h2V6H1v7zm4 0h2V3H5v10zm4 0h2V8H9v5zm4 0h2V2h-2v11z"/>
+      </svg>
+      训练与标定 ➔
+    </a>
+    <a href="/db.html" class="btn s p" id="btnGoDbAdmin" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:600;padding:5px 14px;font-size:12.5px;border-radius:8px">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm0 1h12a1 1 0 0 1 1 1v2H1V4a1 1 0 0 1 1-1zm13 4v2H1V7h14zm0 3v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2h14zM2.5 4a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm0 3a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm0 3a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1z"/>
+      </svg>
+      数据库全功能管理后台 ➔
+    </a>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="health" id="health">
+    <span class="dot"></span>
+    <span class="hlabel" id="hlabel">连接中…</span>
+    <span class="hmeta" id="hmeta">正在获取状态</span>
+    <span class="spacer"></span>
+    <span id="hbadges"></span>
+  </section>
+
+  <section id="bannerSec" style="padding:0;border:none;background:none;margin-top:10px">
+    <div class="banner i" id="banner">等待数据…</div>
+  </section>
+
+  <section>
+    <h2>实时指标 <span class="tag" id="cardsTag"></span></h2>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section>
+    <h2>运行元信息</h2>
+    <div class="meta" id="meta"></div>
+  </section>
+
+  <section>
+    <h2>历史趋势
+      <span class="tag" id="trendTag"></span>
+      <span class="tabs" id="trendTabs">
+        <button class="tab" data-min="1">1 分钟</button>
+        <button class="tab active" data-min="5">5 分钟</button>
+        <button class="tab" data-min="60">1 小时</button>
+        <button class="tab" data-min="1440">24 小时</button>
+        <span style="font-size:12px;color:var(--mut);display:flex;align-items:center;margin-left:10px">分辨率</span>
+        <select id="trendBucket" title="聚合桶宽（时间分辨率）">
+          <option value="auto">自动</option>
+          <option value="1">1 秒</option>
+          <option value="5">5 秒</option>
+          <option value="10">10 秒</option>
+          <option value="60">1 分钟</option>
+          <option value="300">5 分钟</option>
+          <option value="3600">1 小时</option>
+        </select>
+      </span>
+    </h2>
+    <div class="chartbox" id="chartbox"><div class="empty">正在加载…</div></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <section>
+    <h2>诊断</h2>
+    <div class="meta" id="diag"></div>
+  </section>
+
+  <section>
+    <h2>事件
+      <span class="tag" id="evTag"></span>
+      <span class="tabs">
+        <label style="font-size:12px;color:var(--mut);display:flex;align-items:center;gap:5px">
+          <input type="checkbox" id="unackOnly"> 只看未确认
+        </label>
+        <button class="btn s" id="evRefresh">刷新</button>
+      </span>
+    </h2>
+    <div class="scroll"><table>
+      <thead><tr><th style="width:96px">时间</th><th style="width:150px">代码</th>
+      <th style="width:52px">级别</th><th style="width:70px">状态</th>
+      <th>上下文</th><th style="width:110px">确认</th></tr></thead>
+      <tbody id="evBody"></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <details>
+      <summary>审计日志 <span class="tag" id="auTag"></span></summary>
+      <div class="scroll" style="margin-top:10px"><table>
+        <thead><tr><th style="width:150px">时间</th><th style="width:130px">来源</th>
+        <th style="width:120px">动作</th><th>对象 / 详情</th></tr></thead>
+        <tbody id="auBody"></tbody>
+      </table></div>
+    </details>
+  </section>
+
+  <section>
+    <h2>
+      <span>数据库工具</span>
+      <a href="/db.html" class="btn s p" style="text-decoration:none;margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-weight:600">
+        打开数据库全功能管理后台 ➔
+      </a>
+    </h2>
+    <div class="stats" id="dbStats"></div>
+    <div class="row" style="margin-top:12px">
+      <span style="color:var(--mut)">导出：</span>
+      <select id="exWhat"><option value="snapshots">快照</option>
+        <option value="events">事件</option><option value="audit">审计</option></select>
+      <select id="exDays"><option value="1">近 1 天</option><option value="7" selected>近 7 天</option>
+        <option value="30">近 30 天</option></select>
+      <button class="btn" id="exCsv">下载 CSV</button>
+      <button class="btn" id="exJson">下载 JSON</button>
+    </div>
+    <div class="row">
+      <span style="color:var(--mut)">清理：</span>
+      <select id="pgWhat">
+        <option value="all">全部（快照 + 审计 + 全部事件）</option>
+        <option value="snapshots" selected>快照</option>
+        <option value="snapshots,audit">快照 + 审计</option>
+        <option value="events_all">全部故障告警事件（含活动）</option>
+        <option value="events">仅已恢复事件</option>
+      </select>
+      <span style="color:var(--mut)">早于</span>
+      <select id="pgDays"><option value="0">现在（全部历史）</option>
+        <option value="1">1 天</option><option value="7">7 天</option>
+        <option value="30" selected>30 天</option><option value="90">90 天</option>
+        <option value="365">365 天</option></select>
+      <input type="text" id="pgConfirm" placeholder="输入 PURGE 确认" style="width:150px">
+      <button class="btn d" id="pgGo" disabled>执行清理</button>
+    </div>
+    <div style="color:var(--dim);font-size:12px;margin-top:8px">
+      清理只删本机数据库里的历史，不动任何硬件状态。执行后会顺带做一次 WAL 截断。
+    </div>
+    <div class="row" style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line, rgba(0,0,0,.12))">
+      <span style="color:var(--mut)">磁盘压缩：</span>
+      <span id="cpInfo" style="color:var(--dim);font-size:12px">查询中…</span>
+      <button class="btn" id="cpGo" disabled>压缩数据库</button>
+    </div>
+    <div style="color:var(--dim);font-size:12px;margin-top:6px">
+      VACUUM 只重排数据库文件、回收已删除记录留下的空闲页，<b>不删任何数据</b>。
+      压缩期间会短暂锁库（1–3 秒），采集进程可能丢几拍。
+    </div>
+  </section>
+
+  <section class="mock" id="mockPanel" hidden>
+    <h2>模拟器控制 <span class="tag">仅本地原型 · 真机自动隐藏</span></h2>
+    <div class="row">
+      <span style="color:var(--mut)">数据模式</span>
+      <select id="mkSimMode">
+        <option value="random">随机过程（像真实遥测）</option>
+        <option value="scripted">7 幕脚本（固定剧情）</option>
+      </select>
+      <button class="btn" id="mkSetSimMode">切换</button>
+      <span class="pill" id="mkSimBadge">—</span>
+    </div>
+    <div class="row">
+      <span style="color:var(--mut)">场景</span>
+      <select id="mkPhase"></select>
+      <button class="btn" id="mkJump">跳到该幕</button>
+      <button class="btn" id="mkReset">重置场景</button>
+    </div>
+    <div class="row">
+      <span style="color:var(--mut)">故障</span>
+      <select id="mkFault">
+        <option>TEMP_WARN</option><option>TEMP_HARD</option><option>OC_HARD</option>
+        <option>FG_LOSS</option><option>DIAG_LOSS</option><option>VIB_HARD</option>
+        <option>AUX_LOSS</option><option>OVERSPEED</option>
+      </select>
+      <button class="btn" id="mkInject">注入</button>
+      <button class="btn" id="mkClear">清除全部故障</button>
+    </div>
+    <div class="row">
+      <span style="color:var(--mut)">传感器</span>
+      <button class="btn" id="mkOn">上线</button>
+      <button class="btn" id="mkOff">离线</button>
+      <span style="color:var(--mut);margin-left:10px">模式</span>
+      <select id="mkMode">
+        <option>RUNNING</option><option>READY_OFF</option><option>STARTING</option>
+        <option>FAULT</option><option>STOPPED</option>
+      </select>
+      <button class="btn" id="mkSetMode">设置</button>
+      <span style="color:var(--mut);margin-left:10px">目标转速</span>
+      <input type="text" id="mkRpm" value="2400" style="width:80px">
+      <button class="btn" id="mkSetRpm">设置</button>
+    </div>
+    <div style="color:var(--dim);font-size:12px;margin-top:8px" id="mkInfo">—</div>
+  </section>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ------------------------------------------------------------------ 工具 */
+var $ = function(id){ return document.getElementById(id); };
+var esc = function(s){
+  return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+  });
+};
+function toast(msg, kind){
+  var d = document.createElement("div");
+  d.className = "tmsg" + (kind ? " " + kind : "");
+  d.textContent = msg;
+  $("toast").appendChild(d);
+  setTimeout(function(){ d.remove(); }, 4200);
+}
+/* ★ 无效值一律显示 --，绝不用 0 代替 */
+function num(v, digits, unit){
+  if (v === null || v === undefined || v === "") return "--";
+  var n = Number(v);
+  if (!isFinite(n)) return "--";
+  var s = digits ? n.toFixed(digits) : String(Math.round(n));
+  return s + (unit ? '<span class="u">' + unit + "</span>" : "");
+}
+function has(v){ return v !== null && v !== undefined && v !== "" && isFinite(Number(v)); }
+function hhmmss(d){
+  var p = function(n){ return (n<10?"0":"")+n; };
+  return p(d.getHours())+":"+p(d.getMinutes())+":"+p(d.getSeconds());
+}
+function iso2local(s){
+  if (!s) return "--";
+  var d = new Date(s);
+  if (isNaN(d.getTime())) return s;
+  return d.toLocaleString("zh-CN", {hour12:false});
+}
+/* 事件时间：同一天只在第一行显示一次日期，恢复时间只给时刻。
+   原来两行都带完整日期，列宽不够就被拆成 4 行。 */
+function fmtEventTime(first, rec){
+  var A = iso2local(first);
+  if (!rec) return esc(A);
+  var B = iso2local(rec);
+  var sameDay = (A.length >= 10 && B.length >= 10 && A.slice(0, 10) === B.slice(0, 10));
+  return esc(A) + '<div class="t-sub">→ ' + esc(sameDay ? B.slice(11) : B) + "</div>";
+}
+function ago(sec){
+  if (sec < 60) return sec.toFixed(0) + " 秒前";
+  if (sec < 3600) return (sec/60).toFixed(1) + " 分钟前";
+  if (sec < 86400) return (sec/3600).toFixed(1) + " 小时前";
+  return (sec/86400).toFixed(1) + " 天前";
+}
+function bytes(n){
+  if (n == null) return "--";
+  var u = ["B","KB","MB","GB"], i = 0;
+  while (n >= 1024 && i < u.length-1){ n /= 1024; i++; }
+  return n.toFixed(i ? 1 : 0) + " " + u[i];
+}
+
+/* --------------------------------------------------------------- API 层 */
+var ONLINE = false;
+var LAST_STATUS_AT = 0, LAST_SOURCE_AGE = 0;
+function api(path, opts){
+  opts = opts || {};
+  var ctl = new AbortController();
+  var timer = setTimeout(function(){ ctl.abort(); }, opts.timeout || 2500);
+  var init = { cache:"no-store", signal: ctl.signal, headers:{} };
+  if (opts.method) init.method = opts.method;
+  if (opts.body !== undefined){
+    init.method = opts.method || "POST";
+    init.headers["Content-Type"] = "application/json";
+    init.body = JSON.stringify(opts.body);
+  }
+  return fetch(path, init).then(function(r){
+    return r.json().then(function(j){
+      clearTimeout(timer);
+      if (!r.ok || j.ok === false){
+        var e = new Error((j && (j.detail || j.error)) || ("HTTP " + r.status));
+        e.payload = j; throw e;
+      }
+      return j;
+    });
+  }).catch(function(err){
+    clearTimeout(timer);
+    throw err;
+  });
+}
+function setOnline(ok, why){
+  if (!ok) clearRealtime();
+  var changed = ONLINE !== ok;
+  ONLINE = ok;
+  if (!ok){
+    if (changed) toast("服务失联：" + (why || "请求失败"), "err");
+    /* ★ 必须走 setClass，不能用 classList.add ——
+       否则 __c 缓存和实际 class 不一致，恢复后 setClass 会误判「没变化」而跳过，
+       卡片就永远灰着不回来了 */
+    if (CARDS) CARDS.forEach(function(c){ setClass(c.card, "card invalid"); });
+    document.querySelectorAll("button.btn").forEach(function(b){ b.disabled = true; });
+    setText($("hlabel"), "服务失联");
+    setText($("hmeta"), "最后有效状态：" + (LAST_STATUS_AT
+      ? new Date(LAST_STATUS_AT).toLocaleTimeString("zh-CN", {hour12: false}) : "尚未收到"));
+    setClass($("health"), "health off");
+    setClass($("banner"), "banner e");
+    setText($("banner"), "无法连接后端，实时值已清空");
+  } else {
+    if (!changed) return;
+    toast("已恢复连接", "ok");
+    document.querySelectorAll("button.btn").forEach(function(b){ b.disabled = false; });
+    syncPurgeBtn();
+  }
+}
+
+function clearRealtime(){
+  LAST = null;
+  if (CARDS) CARDS.forEach(function(c){
+    setText(c.num, "--"); setText(c.unit, "");
+    setText(c.pill, "INVALID"); setClass(c.pill, "pill pill-bad");
+    setClass(c.card, "card invalid");
+    setText(c.card.lastChild, "数据失效，等待新鲜采样");
+  });
+  if (BADGES) BADGES.forEach(function(b){ setDisplay(b, false); });
+  if (META_EL) META_KEYS.forEach(function(k){ setKV(META_EL, k, "--"); });
+  if (DIAG_EL) DIAG_KEYS.forEach(function(k){ setKV(DIAG_EL, k, "--"); });
+  if (UPLOT){ UPLOT.destroy(); UPLOT = null; }
+  window.__uplot = null; LAST_H = null;
+  // Chart renderers write DOM directly, so bypass and reset the text/HTML caches.
+  var box = $("chartbox"), legend = $("legend");
+  box.textContent = "实时源不可用，趋势暂停；数据库历史记录保留";
+  box.__t = null; box.__h = null;
+  legend.textContent = ""; legend.__t = null; legend.__h = null;
+  setText($("cardsTag"), "数据失效，不显示旧值");
+  setText($("trendTag"), "等待新鲜状态");
+}
+
+/* ------------------------------------------------------------ 状态渲染 */
+var LAST = null;
+
+/* ===== 防闪核心：只在「值真的变了」时才动 DOM =====
+   每秒重建 innerHTML 会让浏览器销毁并重新创建节点 → 视觉上就是闪一下。
+   所以固定结构只建一次骨架，之后只改 textContent / className。 */
+function setText(el, v){
+  if (!el || el.__t === v) return;
+  el.__t = v;
+  var c = el.firstChild;
+  /* 只有一个文本子节点时直接改 nodeValue —— 连文本节点都不替换，纯值变更 */
+  if (c && c.nodeType === 3 && !c.nextSibling){
+    c.nodeValue = v;
+  } else {
+    el.textContent = v;
+  }
+}
+function setClass(el, c){
+  if (el && el.__c !== c){ el.className = c; el.__c = c; }
+}
+function setHTML(el, h){
+  if (el && el.__h !== h){ el.innerHTML = h; el.__h = h; }
+}
+function setDisplay(el, show){
+  var v = show ? "" : "none";
+  if (el && el.style.display !== v) el.style.display = v;
+}
+
+/* ---- 指标卡片：建一次骨架 ---- */
+var CARD_DEFS = [
+  {k: "转速", u: "rpm"},
+  {k: "温度", u: "°C"},
+  {k: "风机电流", u: ""},
+  {k: "风道压差", u: ""},
+  {k: "进风温度", u: "°C"},
+  {k: "进风湿度", u: "%RH"}
+];
+var CARDS = null;
+function buildCards(){
+  var box = $("cards");
+  box.innerHTML = "";
+  CARDS = CARD_DEFS.map(function(def){
+    var card = document.createElement("div"); card.className = "card";
+    var k = document.createElement("div"); k.className = "k";
+    var kt = document.createElement("span"); kt.textContent = def.k;
+    var pill = document.createElement("span"); pill.className = "pill"; pill.textContent = "VALID";
+    k.appendChild(kt); k.appendChild(pill);
+    var v = document.createElement("div"); v.className = "v";
+    var numEl = document.createElement("span"); numEl.textContent = "--";
+    var unitEl = document.createElement("span"); unitEl.className = "u"; unitEl.textContent = def.u;
+    v.appendChild(numEl); v.appendChild(unitEl);
+    var sub = document.createElement("div"); sub.className = "s";
+    card.appendChild(k); card.appendChild(v); card.appendChild(sub);
+    box.appendChild(card);
+    return {card: card, pill: pill, num: numEl, unit: unitEl};
+  });
+}
+/* 与 HDMI printf 一致，精确舍入中点取偶数，并保留负零符号。 */
+function formatScreenFixed(value, digits){
+  var magnitude = Math.abs(value);
+  var binaryUnits = magnitude * Math.pow(2, digits + 1);
+  var scale = Math.pow(10, digits);
+  var lower = Math.floor(magnitude * scale);
+  if (Number.isInteger(binaryUnits) && binaryUnits % 2 === 1 && lower % 2 === 0){
+    magnitude = lower / scale;
+  }
+  return (value < 0 || Object.is(value, -0) ? "-" : "") + magnitude.toFixed(digits);
+}
+
+/* 与板上 HDMI 的 format_pressure() 使用相同精度和近零处理。 */
+function formatPressurePa(value){
+  var magnitude = Math.abs(value);
+  var digits = magnitude >= 99.995 ? 1 : magnitude >= 9.9995 ? 2 : 3;
+  if (magnitude < 0.0005) value = 0;
+  return (value < 0 ? "" : "+") + formatScreenFixed(value, digits);
+}
+
+function screenNumber(value){
+  if (typeof value !== "number" && (typeof value !== "string" || value.trim() === "")){
+    return null;
+  }
+  var number = Number(value);
+  return Number.isFinite(number) && Math.abs(number) <= 1000000000 ? number : null;
+}
+
+function updateCard(c, sp){
+  var valid = !!sp.ok && has(sp.val);
+  var text = "--";
+  if (valid){
+    var value = Number(sp.val);
+    text = sp.format ? sp.format(value)
+         : sp.digits ? value.toFixed(sp.digits) : String(Math.round(value));
+  }
+  setText(c.num, text);
+  setText(c.unit, valid ? sp.unit : "");
+  setClass(c.card, "card" + (valid ? "" : " invalid"));
+  setText(c.pill, valid ? (sp.raw ? "RAW" : "VALID") : "INVALID");
+  setClass(c.pill, valid ? "pill" : "pill pill-bad");
+  setText(c.card.lastChild, sp.sub);
+}
+
+var SCREEN_MAX_AGE_MS = 2000;
+var SCREEN_SEQUENCE = null, SCREEN_SEQUENCE_AT = 0;
+function updateScreenCards(disp, sourceAge){
+  var now = performance.now();
+  var sourceValid = typeof sourceAge === "number" && sourceAge >= 0 &&
+                    sourceAge <= SCREEN_MAX_AGE_MS && disp.panel_schema === "industrial-v2" &&
+                    disp.link === "FCB1 + EDG1 ABI OK" && screenNumber(disp.sequence) !== null;
+  if (sourceValid && String(disp.sequence) !== SCREEN_SEQUENCE){
+    SCREEN_SEQUENCE = String(disp.sequence);
+    SCREEN_SEQUENCE_AT = now;
+  }
+  var fresh = sourceValid && now - SCREEN_SEQUENCE_AT <= SCREEN_MAX_AGE_MS;
+  var current = screenNumber(disp.daily_current_value);
+  var currentValid = fresh && disp.daily_current_valid === "1" &&
+                     disp.daily_current_unit === "A" && current !== null;
+  var pressure = screenNumber(disp.daily_pressure_value);
+  var pressureUnit = disp.daily_pressure_unit;
+  var pressureRaw = pressureUnit === "原始码";
+  var pressureValid = fresh && disp.daily_pressure_valid === "1" &&
+                      (pressureUnit === "Pa" || pressureUnit === "kPa" || pressureRaw) &&
+                      pressure !== null;
+  var pressureNote = pressureRaw ? "压差单位待标定"
+                   : disp.panel_sample_mode === "2" ? "SDP810 · 风道压差"
+                   : disp.panel_sample_mode === "1" ? "AD7606 · 风道压差" : "来源未确认";
+  if (pressureValid && pressureUnit === "kPa") pressure *= 1000;
+
+  updateCard(CARDS[2], {
+    ok: currentValid, val: current, unit: "A",
+    format: function(value){ return formatScreenFixed(value, 3); },
+    sub: currentValid ? (disp.daily_current_kind === "nominal" ? "ACS712 · 参考值" : "AD7606 · 电流")
+                      : "等待新鲜有效电流"
+  });
+  updateCard(CARDS[3], {
+    ok: pressureValid, val: pressure, unit: pressureRaw ? "原始码" : "Pa",
+    raw: pressureRaw,
+    format: pressureRaw ? function(value){ return formatScreenFixed(value, 0); } : formatPressurePa,
+    sub: pressureValid ? pressureNote : "等待新鲜有效压差"
+  });
+}
+
+function updateCards(d, disp, sourceAge){
+  if (!CARDS) buildCards();
+  var v = d.validity || {};
+  var specs = [
+    {ok: !!v.rpm && has(d.rpm), val: d.rpm, digits: 0, unit: "rpm",
+     sub: has(d.rpm) ? "有效" : "传感器无数据"},
+    {ok: !!v.temperature && has(d.temp_c), val: d.temp_c, digits: 2, unit: "°C",
+     sub: has(d.temp_c) ? "有效" : "传感器无数据"},
+    null, null, // 电流和压差单独使用 HDMI 状态字段。
+    {ok: !!d.aht_valid, val: d.inlet_temperature_c, digits: 1, unit: "°C",
+     sub: "AHT20 温湿度采集"},
+    {ok: !!d.aht_valid, val: d.relative_humidity_pct, digits: 1, unit: "%RH",
+     sub: "AHT20 温湿度采集"}
+  ];
+  specs.forEach(function(sp, i){
+    if (sp) updateCard(CARDS[i], sp);
+  });
+  updateScreenCards(disp, sourceAge);
+}
+
+/* ---- 键值列表（运行元信息 / 诊断）：建一次 ---- */
+var META_KEYS = ["PL 运行时间", "Mode", "Alarm", "Action", "Inhibit",
+                 "Configured", "有效性位", "采样序号"];
+var DIAG_KEYS = ["帧状态", "帧 ID", "帧年龄", "质量", "质量原因",
+                 "队列 / 丢弃", "活动故障", "锁存故障"];
+var META_EL = null, DIAG_EL = null;
+function buildKV(boxId, keys, wideKeys){
+  var box = $(boxId);
+  box.innerHTML = "";
+  var map = {};
+  var wide = {};
+  (wideKeys || []).forEach(function(k){ wide[k] = true; });
+  keys.forEach(function(k){
+    var row = document.createElement("div");
+    /* 长值（如有效性位 "RPM:1 ADC:1 TEMP:1 PRESS:1"）占满整行，
+       否则它会换行导致行高变化，把下方内容顶一下 */
+    row.className = "m" + (wide[k] ? " wide" : "");
+    var kk = document.createElement("span"); kk.className = "mk"; kk.textContent = k;
+    var vv = document.createElement("b"); vv.textContent = "--";
+    row.appendChild(kk); row.appendChild(vv);
+    box.appendChild(row);
+    map[k] = vv;
+  });
+  return map;
+}
+function setKV(map, key, val){
+  var el = map[key];
+  if (el) setText(el, String(val));
+}
+
+/* ---- 健康徽标：3 个固定槽位，建一次 ---- */
+var BADGES = null;
+function buildBadges(){
+  var box = $("hbadges");
+  box.innerHTML = "";
+  BADGES = [0, 1, 2].map(function(){
+    var s = document.createElement("span");
+    s.className = "badge";
+    s.style.display = "none";
+    box.appendChild(s);
+    return s;
+  });
+}
+function setBadge(el, show, cls, text){
+  if (!el) return;
+  setDisplay(el, show);
+  if (!show) return;
+  setClass(el, "badge " + cls);
+  setText(el, text);
+}
+
+function renderStatus(s){
+  var d = s.derived || {}, disp = s.display || {};
+  var online = (d.link_ok === true || d.link_ok === 1) && !s.state_error &&
+    typeof s.state_age_ms === "number" && s.state_age_ms >= 0 && s.state_age_ms < 5000;
+  if (!online){
+    setOnline(false, s.state_error || "数据源失联或已过期");
+    return;
+  }
+  setOnline(true);
+  LAST = s;
+  LAST_STATUS_AT = Date.now();
+  LAST_SOURCE_AGE = s.state_age_ms;
+  var alarm = has(d.alarm_level) ? Number(d.alarm_level) : null;
+
+  setClass($("health"), "health " + (online ? "on" : "off"));
+  setText($("hlabel"), online ? "在线" : "失联");
+  setText($("hmeta"), "模式 " + (d.mode || "--") +
+      (s.state_error ? " · " + s.state_error : ""));
+
+  if (!BADGES) buildBadges();
+  var alarmCls = alarm === null ? "b-mut"
+    : (alarm >= 3 ? "b-bad" : (alarm === 2 ? "b-warn" : (alarm === 1 ? "b-acc" : "b-ok")));
+  setBadge(BADGES[0], alarm !== null, alarmCls, "报警 L" + alarm);
+  setBadge(BADGES[1], true, d.configured ? "b-ok" : "b-mut", d.configured ? "已配置" : "未配置");
+  var nf = (d.faults_active || []).length;
+  setBadge(BADGES[2], true, nf ? "b-warn" : "b-ok", nf ? ("故障 " + nf) : "无故障");
+
+  var msg = d.message || "—";
+  var bc = "i";
+  if (!online) bc = "e";
+  else if (alarm !== null && alarm >= 3) bc = "e";
+  else if (alarm !== null && alarm >= 1) bc = "w";
+  else if (d.faults_active && d.faults_active.length) bc = "w";
+  else bc = "n";
+  setClass($("banner"), "banner " + bc);
+  setText($("banner"), msg);
+
+  updateCards(d, disp, s.state_age_ms);
+  setText($("cardsTag"), "无效值显示 -- ，不补 0");
+
+  if (!META_EL){
+    META_EL = buildKV("meta", META_KEYS, []);
+    DIAG_EL = buildKV("diag", DIAG_KEYS, []);
+  }
+  setKV(META_EL, "PL 运行时间", d.uptime_ms != null ? (d.uptime_ms / 1000).toFixed(0) + " s" : "--");
+  setKV(META_EL, "Mode", d.mode || "--");
+  setKV(META_EL, "Alarm", alarm !== null ? alarm : "--");
+  setKV(META_EL, "Action", d.action || "--");
+  setKV(META_EL, "Inhibit", d.inhibit ? "YES" : "NO");
+  setKV(META_EL, "Configured", d.configured ? "YES" : "NO");
+  setKV(META_EL, "有效性位", d.validity_raw || "--");
+  setKV(META_EL, "采样序号", d.sequence != null ? d.sequence : "--");
+
+  setKV(DIAG_EL, "帧状态", d.frame_state || "--");
+  setKV(DIAG_EL, "帧 ID", d.frame_id != null ? d.frame_id : "--");
+  setKV(DIAG_EL, "帧年龄", d.frame_age_ms != null ? d.frame_age_ms + " ms" : "--");
+  setKV(DIAG_EL, "质量", d.quality || "--");
+  setKV(DIAG_EL, "质量原因", d.quality_reasons || "--");
+  setKV(DIAG_EL, "队列 / 丢弃",
+        (d.queue != null ? d.queue : "--") + " / " + (d.drops != null ? d.drops : "--"));
+  setKV(DIAG_EL, "活动故障", (d.faults_active || []).join(", ") || "无");
+  setKV(DIAG_EL, "锁存故障", (d.faults_latched || []).join(", ") || "无");
+
+  if (s.mock){
+    if ($("mockPanel").hidden) $("mockPanel").hidden = false;
+    var mm = s.mock.sim_mode || "scripted";
+    MK_SIM_MODE = mm;
+    if ($("mkSimMode").value !== mm) $("mkSimMode").value = mm;
+    syncMockControls();
+    if (mm === "random"){
+      var af = (s.mock.active_faults || []);
+      setText($("mkInfo"), "随机模式：目标转速 " +
+        (s.mock.target_rpm != null ? s.mock.target_rpm : "—") + " rpm · 环境偏移 " +
+        (s.mock.ambient_c != null ? Number(s.mock.ambient_c).toFixed(2) : "—") + " °C · " +
+        (s.mock.dropping ? "传感器掉线中" : "传感器在线") + " · 活动故障 " +
+        (af.length ? af.join(", ") : "无"));
+    } else {
+      setText($("mkInfo"), "脚本模式：" + (s.mock.phase || "?") +
+        "（第 " + ((s.mock.phase_index||0)+1) + "/" + ((s.mock.phases||[]).length || 7) +
+        " 幕，本幕已 " + (s.mock.elapsed_s != null ? s.mock.elapsed_s.toFixed(0) : "?") +
+        " s / " + (s.mock.phase_dur_s || "?") + " s，整轮 " +
+        (s.mock.total_cycle_s || "?") + " s）");
+    }
+  }
+}
+
+/* ------------------------------------------------------------- 趋势图
+   主用 uPlot（本地 /vendor/uPlot.iife.min.js，无 CDN）；加载失败自动回退手写 SVG。
+   两条路径都遵守同一条铁律：null 处断线，绝不补 0。 */
+var TREND_MIN = 5;
+var TREND_BUCKET = "auto";   // auto = 按窗口自动算；否则为秒数
+/* uPlot 的 cursor.drag.setScale 默认开启 —— 拖拽即缩放 x 轴。
+   而 setData(data) 的 resetScales 默认是 true，会把缩放重置掉。
+   所以这里记住「用户是否缩放过」，缩放过就保留视图。 */
+var TREND_ZOOMED = false;
+var SVGNS = "http://www.w3.org/2000/svg";
+var UPLOT = null, LAST_H = null;
+
+function el(tag, attrs, text){
+  var e = document.createElementNS(SVGNS, tag);
+  for (var k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  return e;
+}
+function trendStats(h){
+  var s = h.series || {};
+  var cnt = function(k){ return ((s[k]) || []).filter(function(x){ return x > 0; }).length; };
+  return {
+    /* 左轴已从 rpm 换成 PWM%（与 HDMI 界面一致） */
+    nRpm: cnt("pwm_n"), heldRpm: cnt("pwm_held"),
+    nTmp: cnt("temp_c_n"), heldTmp: cnt("temp_c_held")
+  };
+}
+/* y 轴贴合数据范围（±12% 留白），与回退 SVG 的算法保持一致。
+   否则 uPlot 会把 58~2850 取整成 0~3000，把 2400~2900 的真实波动压扁。 */
+function padExtent(u, min, max){
+  if (min == null || max == null) return [0, 1];
+  var span = max - min;
+  if (!(span > 0)){ min -= 1; max += 1; span = 2; }
+  var pad = span * 0.12;
+  return [min - pad, max + pad];
+}
+function renderTrend(h){
+  if (!ONLINE) return;
+  LAST_H = h;
+  var box = $("chartbox");
+  var ts = (h.series && h.series.ts) || [];
+  var st = trendStats(h);
+  setText($("trendTag"), ts.length
+    ? (h.count + " 个桶 · 桶宽 " + (h.bucket_s != null ? h.bucket_s.toFixed(1) : "?") + "s" +
+       (h.bucket_mode === "explicit" ? "（指定）" : "（自动）") +
+       " · 实测 " + st.nRpm + " / 沿用 " + st.heldRpm +
+       " · 每 " + fmtInterval(trendInterval()) + " 刷新" +
+       (TREND_ZOOMED ? " · 已缩放（双击图表复位）" : "") +
+       (typeof uPlot === "undefined" ? " · SVG 回退" : ""))
+    : "");
+  /* uPlot 自带图例（含悬停实时值），回退 SVG 时用下面这行自绘图例 */
+  var useUplot = (typeof uPlot !== "undefined");
+  setHTML($("legend"),
+    useUplot ? "" :
+      '<span><i style="background:#0969da"></i>PWM %（左轴）</span>' +
+      '<span><i style="background:#059669"></i>转速 rpm（左2轴）</span>' +
+      '<span><i style="background:#bc4c00"></i>温度 °C（右轴）</span>');
+
+  if (useUplot){
+    try { renderTrendUPlot(h, box); return; }
+    catch (e) { if (window.console) console.warn("uPlot 渲染失败，回退 SVG：", e); }
+  }
+  renderTrendSVG(h, box);
+}
+
+/* uPlot：时间轴、双 y 轴、游标、拖拽缩放全部内置 */
+function renderTrendUPlot(h, box){
+  var s = h.series || {};
+  var ts = s.ts || [], pwm = s.pwm || [], tmp = s.temp_c || [], rpm = s.rpm || [];
+  if (!ts.length){
+    if (UPLOT){ UPLOT.destroy(); UPLOT = null; }
+    box.innerHTML = '<div class="empty">暂无历史数据</div>';
+    return;
+  }
+  var st = trendStats(h);
+  if (st.nRpm === 0 && st.nTmp === 0){
+    if (UPLOT){ UPLOT.destroy(); UPLOT = null; }
+    box.innerHTML = '<div class="empty">暂无有效数据（传感器未接入）—— 不会用 0 顶替</div>';
+    return;
+  }
+
+  var data = [ts, pwm, tmp, rpm];
+  var W = Math.max(320, box.clientWidth || 900);
+
+  /* ★ 关键：只有首次才创建实例；之后只 setData()。
+     每秒 destroy()+new 会整块重建 canvas 和所有 DOM —— 那就是你看到的"闪一下"。 */
+  if (UPLOT && box.contains(UPLOT.root)){
+    /* 缩放过就保留缩放（resetScales=false）；没缩放过就自动适配新数据。
+       注意：切分辨率时会主动清 TREND_ZOOMED，所以换聚合粒度时视图会回到全窗口
+       —— 避免「缩放到 60 s 却选了 1 分钟桶」导致可见范围里只剩 1 个点。 */
+    UPLOT.setData(data, !TREND_ZOOMED);
+    if (Math.abs(UPLOT.width - W) > 2) UPLOT.setSize({width: W, height: 280});
+    return;
+  }
+
+  if (UPLOT){ UPLOT.destroy(); UPLOT = null; }
+  box.innerHTML = "";
+  var host = document.createElement("div");
+  box.appendChild(host);
+  UPLOT = new uPlot({
+    width: W,
+    height: 280,
+    padding: [10, 10, 0, 0],
+    /* ★ Y 轴固定范围，与 HDMI 界面一致：PWM 0~100%，温度 20~80°C。
+       固定范围让两边的曲线幅度可直接对照，也不会因为自动缩放把 0.2°C
+       的波动拉满整个屏幕高度。 */
+    /* 三轴：左侧 PWM%（0-100）与转速 rpm（0-6000），右侧温度 °C（20-80）。
+       全部固定范围 —— 曲线幅度可直接对比，不会被自动缩放拉满屏。
+       只有 PWM 轴画网格，避免三套网格叠在一起太乱。 */
+    scales: { x: {time: true}, pwm: {range: [0, 100]}, temp: {range: [20, 80]},
+              rpm: {range: [0, 6000]} },
+    axes: [
+      {stroke: "#8b949e", grid: {stroke: "#e2e5e9"}, ticks: {stroke: "#cfd4da"}},
+      {scale: "pwm",  side: 3, stroke: "#0969da", grid: {stroke: "#e2e5e9"},
+       label: "PWM %", labelSize: 34, labelFont: "11px sans-serif"},
+      /* 转速放右侧和温度并排 —— 两个轴挤在同一边，刻度数值容易看混 */
+      {scale: "temp", side: 1, stroke: "#bc4c00", grid: {show: false},
+       label: "°C", labelSize: 28, labelFont: "11px sans-serif"},
+      {scale: "rpm",  side: 1, stroke: "#059669", grid: {show: false},
+       label: "rpm", labelSize: 34, labelFont: "11px sans-serif"}
+    ],
+    series: [
+      {},
+      /* spanGaps:false → null 处断线（uPlot 默认值，这里显式写出以防被改） */
+      {label: "PWM %", scale: "pwm",  stroke: "#0969da", width: 2,
+       spanGaps: false, points: {show: false}},
+      {label: "温度 °C",  scale: "temp", stroke: "#bc4c00", width: 2,
+       spanGaps: false, points: {show: false}},
+      {label: "转速 rpm", scale: "rpm",  stroke: "#059669", width: 1.5,
+       spanGaps: false, points: {show: false}}
+    ],
+    legend: {show: true, live: true},
+    cursor: {show: true},
+    hooks: {
+      /* 判断是否处于「缩放」状态：直接看 x 轴实际范围 vs 数据总跨度。
+         用 setScale 而不是 setSelect —— 拖拽、滚轮、程序化缩放都能覆盖。 */
+      setScale: [function(u, key){
+        if (key !== "x") return;
+        var d = u.data && u.data[0];
+        if (!d || d.length < 2) return;
+        var full = d[d.length - 1] - d[0];
+        var span = u.scales.x.max - u.scales.x.min;
+        if (full > 0) TREND_ZOOMED = (span < full * 0.98);
+      }]
+    }
+  }, data, host);
+
+  /* 双击复位：uPlot 自己会把缩放清掉，这里同步清标记并重新自动适配 */
+  host.addEventListener("dblclick", function(){
+    TREND_ZOOMED = false;
+    if (UPLOT) UPLOT.setData(UPLOT.data, true);
+  });
+
+  /* 供自检页 / 控制台调试用（只读引用，不影响渲染） */
+  window.__uplot = UPLOT;
+}
+
+/* 回退实现：手写 SVG（uPlot 未加载时用） */
+function renderTrendSVG(h, box){
+  var ts = (h.series && h.series.ts) || [];
+  var pwm = (h.series && h.series.pwm) || [];
+  var rpm = (h.series && h.series.rpm) || [];
+  var tmp = (h.series && h.series.temp_c) || [];
+  var pwmN = (h.series && h.series.pwm_n) || [];
+  var tmpN = (h.series && h.series.temp_c_n) || [];
+
+  var nRpm = pwmN.filter(function(x){ return x > 0; }).length;
+  var nTmp = tmpN.filter(function(x){ return x > 0; }).length;
+
+  if (!ts.length){
+    box.innerHTML = '<div class="empty">暂无历史数据</div>';
+    return;
+  }
+  if (nRpm === 0 && nTmp === 0){
+    box.innerHTML = '<div class="empty">暂无有效数据（传感器未接入）—— 图中不会用 0 顶替</div>';
+    return;
+  }
+
+  var W = 1000, H = 260, L = 58, R = 58, T = 14, B = 30;
+  var pw = W - L - R, ph = H - T - B;
+  var t0 = ts[0], t1 = ts[ts.length - 1];
+  var xf = function(t){ return L + (t1 > t0 ? (t - t0) / (t1 - t0) * pw : pw / 2); };
+
+  function scale(vals){
+    var vs = vals.filter(has).map(Number);
+    if (!vs.length) return null;
+    var lo = Math.min.apply(null, vs), hi = Math.max.apply(null, vs);
+    if (hi - lo < 1e-9){ lo -= 1; hi += 1; }
+    var pad = (hi - lo) * 0.12; lo -= pad; hi += pad;
+    return {lo: lo, hi: hi};
+  }
+  /* Y 轴固定范围，与 uPlot 路径和 HDMI 界面保持一致 */
+  var sR = {lo: 0, hi: 100}, sT = {lo: 20, hi: 80}, sRpm = {lo: 0, hi: 6000};
+
+  function yf(s){
+    return function(v){ return T + ph * (1 - (Number(v) - s.lo) / (s.hi - s.lo)); };
+  }
+  function segs(vals, y){
+    var out = [], cur = [];
+    for (var i = 0; i < ts.length; i++){
+      if (!has(vals[i])){ if (cur.length){ out.push(cur); cur = []; } continue; }
+      cur.push([xf(ts[i]), y(vals[i])]);
+    }
+    if (cur.length) out.push(cur);
+    return out;
+  }
+
+  var svg = el("svg", {class:"chart", viewBox:"0 0 " + W + " " + H,
+                       preserveAspectRatio:"none", role:"img"});
+  svg.appendChild(el("title", {}, "PWM 与温度趋势图"));
+  svg.appendChild(el("desc", {}, "无有效数据的区间断开，不补 0"));
+
+  /* 网格 + 左轴（转速） */
+  for (var g = 0; g <= 4; g++){
+    var y = T + ph * g / 4;
+    svg.appendChild(el("line", {x1:L, y1:y, x2:W-R, y2:y,
+      stroke:"#e2e5e9", "stroke-width":1}));
+    if (sR){
+      var vR = sR.hi - (sR.hi - sR.lo) * g / 4;
+      svg.appendChild(el("text", {x:L-8, y:y+4, "text-anchor":"end",
+        "font-size":11, fill:"#0969da"}, vR.toFixed(0)));
+    }
+    if (sT){
+      var vT = sT.hi - (sT.hi - sT.lo) * g / 4;
+      svg.appendChild(el("text", {x:W-R+8, y:y+4, "text-anchor":"start",
+        "font-size":11, fill:"#bc4c00"}, vT.toFixed(1)));
+    }
+  }
+  svg.appendChild(el("line", {x1:L, y1:T+ph, x2:W-R, y2:T+ph, stroke:"#cfd4da","stroke-width":1}));
+  svg.appendChild(el("line", {x1:L, y1:T, x2:L, y2:T+ph, stroke:"#cfd4da","stroke-width":1}));
+  svg.appendChild(el("line", {x1:W-R, y1:T, x2:W-R, y2:T+ph, stroke:"#cfd4da","stroke-width":1}));
+
+  /* 时间轴 */
+  for (var k = 0; k <= 4; k++){
+    var t = t0 + (t1 - t0) * k / 4, x = xf(t);
+    var d = new Date(t * 1000);
+    var lab = (t1 - t0 > 7200)
+      ? (d.getMonth()+1) + "/" + d.getDate() + " " + d.getHours() + ":00"
+      : (d.getHours()<10?"0":"") + d.getHours() + ":" +
+        (d.getMinutes()<10?"0":"") + d.getMinutes();
+    svg.appendChild(el("text", {x:x, y:H-8, "text-anchor":"middle",
+      "font-size":11, fill:"#8b949e"}, lab));
+  }
+
+  /* 数据线（null 处断开） */
+  if (sR) segs(pwm, yf(sR)).forEach(function(seg){
+    if (seg.length === 1){
+      svg.appendChild(el("circle", {cx:seg[0][0], cy:seg[0][1], r:2, fill:"#0969da"}));
+    } else {
+      svg.appendChild(el("polyline", {fill:"none", stroke:"#0969da", "stroke-width":2,
+        "stroke-linejoin":"round", "stroke-linecap":"round",
+        points: seg.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" ")}));
+    }
+  });
+  if (sT) segs(tmp, yf(sT)).forEach(function(seg){
+    if (seg.length === 1){
+      svg.appendChild(el("circle", {cx:seg[0][0], cy:seg[0][1], r:2, fill:"#bc4c00"}));
+    } else {
+      svg.appendChild(el("polyline", {fill:"none", stroke:"#bc4c00", "stroke-width":2,
+        "stroke-linejoin":"round", "stroke-linecap":"round",
+        points: seg.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" ")}));
+    }
+  });
+  /* 转速线放最后画，细一点，不盖住前两条 */
+  if (sRpm) segs(rpm, yf(sRpm)).forEach(function(seg){
+    if (seg.length === 1){
+      svg.appendChild(el("circle", {cx:seg[0][0], cy:seg[0][1], r:2, fill:"#059669"}));
+    } else {
+      svg.appendChild(el("polyline", {fill:"none", stroke:"#059669", "stroke-width":1.5,
+        "stroke-linejoin":"round", "stroke-linecap":"round",
+        points: seg.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" ")}));
+    }
+  });
+
+  box.innerHTML = "";
+  box.appendChild(svg);
+}
+
+/* --------------------------------------------------------------- 事件 */
+function renderEvents(j){
+  setText($("evTag"), "共 " + j.total + " 条 · 活动 " + j.active + " · 未确认 " + j.unacknowledged);
+  var tb = $("evBody");
+  var html;
+  if (!j.items.length){
+    html = '<tr><td colspan="6" class="empty">暂无事件</td></tr>';
+  } else {
+    html = j.items.map(function(e){
+      var cls = e.severity >= 3 ? "b-bad" : (e.severity === 2 ? "b-warn" : (e.severity === 1 ? "b-acc" : "b-mut"));
+      var st = e.state === "ACTIVE" ? '<span class="badge b-bad">活动</span>'
+                                    : '<span class="badge b-ok">已恢复</span>';
+      var ctx = e.context || {};
+      var bits = [];
+      if (ctx.mode) bits.push("mode=" + ctx.mode);
+      if (ctx.alarm != null) bits.push("alarm=" + ctx.alarm);
+      if (ctx.rpm != null) bits.push("rpm=" + ctx.rpm);
+      if (ctx.temp_c != null) bits.push("temp=" + Number(ctx.temp_c).toFixed(2));
+      if (ctx.validity) bits.push(ctx.validity);
+      var ack = e.acknowledged
+        ? '<span style="color:var(--ok)">已确认</span><div style="color:var(--dim);font-size:11px">' +
+          esc(e.acknowledged_by || "") + "</div>"
+        : '<button class="btn s ackbtn" data-k="' + esc(e.event_key) + '">确认</button>';
+      return '<tr><td class="t-cell">' + fmtEventTime(e.first_seen_iso, e.recovered_at_iso) +
+        "</td><td class=\"mono\">" + esc(e.code) + "</td>" +
+        '<td><span class="badge ' + cls + '">L' + e.severity + "</span></td>" +
+        "<td>" + st + "</td>" +
+        '<td style="color:var(--mut);font-size:11.5px">' + esc(bits.join(" · ")) + "</td>" +
+        "<td>" + ack + "</td></tr>";
+    }).join("");
+  }
+  /* ★ 内容没变就不碰 DOM：否则每 5 秒重建表格会闪，
+     而且会对保留下来的按钮重复 addEventListener（点一次发多次 ACK） */
+  if (tb.__h === html) return;
+  tb.innerHTML = html;
+  tb.__h = html;
+
+  tb.querySelectorAll(".ackbtn").forEach(function(b){
+    b.addEventListener("click", function(){
+      b.disabled = true;
+      api("/api/ack", {body:{event_key:b.dataset.k, note:"面板确认"}})
+        .then(function(r){ toast("已确认 " + r.code + "（仅记审计，不动硬件）", "ok"); loadEvents(); loadAudit(); loadStats(); })
+        .catch(function(e){ b.disabled = false; toast("确认失败：" + e.message, "err"); });
+    });
+  });
+}
+
+function renderAudit(j){
+  setText($("auTag"), "共 " + j.total + " 条");
+  var tb = $("auBody");
+  var html;
+  if (!j.items.length){
+    html = '<tr><td colspan="4" class="empty">暂无记录</td></tr>';
+  } else {
+    html = j.items.map(function(a){
+      return '<tr><td class="t-cell">' + esc(iso2local(a.ts_iso)) + "</td>" +
+        '<td class="mono">' + esc(a.actor) + "</td>" +
+        '<td class="mono">' + esc(a.action) + "</td>" +
+        "<td>" + esc(a.target || "") + " " +
+        '<span style="color:var(--dim)">' + esc(a.detail || "") + "</span></td></tr>";
+    }).join("");
+  }
+  setHTML(tb, html);
+}
+
+/* --------------------------------------------------------------- 统计 */
+function renderStats(s){
+  var b = s.bounds || {};
+  var cards = [
+    ["快照行数", s.snapshots, ""],
+    ["事件 / 活动", s.events + " / " + s.events_active, ""],
+    ["未确认事件", s.events_unack, ""],
+    ["审计条目", s.audit, ""],
+    ["库文件", bytes(s.db_bytes), ""],
+    ["WAL 文件", bytes(s.wal_bytes), ""],
+    ["数据跨度", b.first_iso ? esc(iso2local(b.first_iso)) : "—", ""],
+    ["最新数据", b.last_iso ? esc(iso2local(b.last_iso)) : "—", ""],
+    ["入库模式", s.config ? s.config.store_mode : "--",
+      s.estimate_mb_per_day ? "约 " + s.estimate_mb_per_day + " MB/天" : ""],
+    ["保留天数", s.config ? s.config.retain_days : "--", ""]
+  ];
+  setHTML($("dbStats"), cards.map(function(c){
+    return '<div class="stat"><div class="sk">' + c[0] + '</div><div class="sv">' +
+      c[1] + (c[2] ? ' <small>' + c[2] + "</small>" : "") + "</div></div>";
+  }).join(""));
+}
+
+/* --------------------------------------------------------------- 轮询 */
+function loadStatus(){
+  return api("/api/status").then(renderStatus)
+    .catch(function(e){ setOnline(false, e.message); });
+}
+function loadHealth(){
+  return api("/api/health").then(function(h){
+    if (h.mock_enabled) $("mockPanel").hidden = false;
+  }).catch(function(){});
+}
+function loadTrend(){
+  var to = Math.floor(Date.now()/1000);
+  var from = to - TREND_MIN * 60;
+  var url = "/api/history?from=" + from + "&to=" + to + "&max_points=600";
+  if (TREND_BUCKET !== "auto") url += "&bucket=" + TREND_BUCKET;
+  /* 24h 响应约 29KB，WiFi 抖动时 2.5s 默认超时会误杀 → 按窗口放宽 */
+  var tmo = TREND_MIN >= 1440 ? 12000 : (TREND_MIN >= 60 ? 6000 : 2500);
+  return api(url, {timeout: tmo}).then(renderTrend).catch(function(){});
+}
+function loadEvents(){
+  var un = $("unackOnly").checked ? "&unack_only=1" : "";
+  return api("/api/events?limit=50" + un).then(renderEvents).catch(function(){});
+}
+function loadAudit(){ return api("/api/audit?limit=50").then(renderAudit).catch(function(){}); }
+function loadStats(){ return api("/api/stats").then(renderStats).catch(function(){}).then(loadCompact); }
+
+function tick(){
+  /* 更新时钟，并在状态轮询停滞时让已有数据显示失效。 */
+  setText($("clock"), hhmmss(new Date()));
+  var sourceAge = Date.now() - LAST_STATUS_AT + LAST_SOURCE_AGE;
+  if (ONLINE && sourceAge >= 5000){
+    setOnline(false, "状态更新超时");
+  } else if (ONLINE && LAST){
+    updateScreenCards(LAST.display || {}, sourceAge);
+  }
+}
+
+/* --------------------------------------------------------------- 交互 */
+document.querySelectorAll("#trendTabs .tab").forEach(function(b){
+  b.addEventListener("click", function(){
+    document.querySelectorAll("#trendTabs .tab").forEach(function(x){ x.classList.remove("active"); });
+    b.classList.add("active");
+    TREND_MIN = Number(b.dataset.min);
+    /* 换窗口要重置缩放：时间范围整体变了，旧缩放区间可能已经落在新数据之外。
+       （分辨率切换则相反 —— 时间范围没变，缩放保留） */
+    TREND_ZOOMED = false;
+    loadTrend();
+    scheduleTrend();   // 换窗口后刷新间隔也要跟着变
+  });
+});
+$("unackOnly").addEventListener("change", loadEvents);
+$("trendBucket").addEventListener("change", function(){
+  TREND_BUCKET = this.value;
+  /* 切分辨率就复位缩放：聚合粒度变了，旧的缩放区间往往装不下新桶
+     （缩放到 60 s 却选 1 分钟桶 → 可见范围里只剩 1 个点），
+     直接回到全窗口，让用户先看到新粒度的整体效果。 */
+  TREND_ZOOMED = false;
+  loadTrend();
+});
+/* uPlot 是定宽画布，窗口变化时需要按新宽度重建 */
+var _rszTimer = null;
+window.addEventListener("resize", function(){
+  clearTimeout(_rszTimer);
+  _rszTimer = setTimeout(function(){ if (LAST_H) renderTrend(LAST_H); }, 250);
+});
+$("evRefresh").addEventListener("click", function(){ loadEvents(); loadAudit(); loadStats(); });
+
+function download(url){
+  var a = document.createElement("a");
+  a.href = url; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
+}
+$("exCsv").addEventListener("click", function(){
+  var to = Math.floor(Date.now()/1000);
+  var from = to - Number($("exDays").value) * 86400;
+  download("/api/export?format=csv&what=" + $("exWhat").value + "&from=" + from + "&to=" + to);
+  toast("已开始下载 CSV（UTF-8 带 BOM）", "ok");
+  setTimeout(loadAudit, 1200);
+});
+$("exJson").addEventListener("click", function(){
+  var to = Math.floor(Date.now()/1000);
+  var from = to - Number($("exDays").value) * 86400;
+  download("/api/export?format=json&what=" + $("exWhat").value + "&from=" + from + "&to=" + to);
+  toast("已开始下载 JSON", "ok");
+  setTimeout(loadAudit, 1200);
+});
+function syncPurgeBtn(){ $("pgGo").disabled = ($("pgConfirm").value.trim() !== "PURGE"); }
+$("pgConfirm").addEventListener("input", syncPurgeBtn);
+$("pgGo").addEventListener("click", function(){
+  var what = $("pgWhat").value.split(",");
+  var days = parseFloat($("pgDays").value);
+  if (isNaN(days)) days = 30;
+  var selObj = $("pgDays");
+  var selText = selObj.selectedOptions[0] ? selObj.selectedOptions[0].text : (days + " 天前");
+  var whatText = $("pgWhat").selectedOptions[0] ? $("pgWhat").selectedOptions[0].text : what.join(",");
+
+  var confirmMsg = (days === 0)
+    ? "确认清空「" + whatText + "」截至当前的所有数据？此操作不可撤销（仅影响本机数据库）。"
+    : "确认删除「" + whatText + "」中早于 " + selText + " 的数据？此操作不可撤销（仅影响本机数据库）。";
+
+  if (!confirm(confirmMsg)) return;
+  $("pgGo").disabled = true;
+  api("/api/purge", {body:{what: what, before_days: days, confirm:"PURGE", note:"面板手动清理"}})
+    .then(function(r){
+      toast("已删除 " + JSON.stringify(r.deleted), "ok");
+      $("pgConfirm").value = ""; syncPurgeBtn(); loadStats(); loadAudit();
+    })
+    .catch(function(e){ toast("清理失败：" + e.message, "err"); syncPurgeBtn(); });
+});
+
+/* 磁盘压缩（VACUUM）—— 只回收空闲页，不删任何数据 */
+function loadCompact(){
+  return api("/api/compact").then(function(r){
+    var db = (r.db_bytes / 1048576).toFixed(2);
+    var free = (r.reclaimable / 1048576).toFixed(2);
+    var pct = (r.free_ratio * 100).toFixed(0);
+    $("cpInfo").textContent = "文件 " + db + " MB · 空闲页 " + free + " MB（" + pct + "%）"
+      + (r.worth ? "" : " · 暂无需压缩");
+    $("cpGo").disabled = !r.worth;
+  }).catch(function(){
+    $("cpInfo").textContent = "查询失败";
+    $("cpGo").disabled = true;
+  });
+}
+$("cpGo").addEventListener("click", function(){
+  if (!confirm("执行 VACUUM 压缩数据库？\n\n不会删除任何数据，只回收已删除记录留下的空闲页。\n压缩期间数据库短暂加锁（1–3 秒）。")) return;
+  var btn = $("cpGo");
+  btn.disabled = true; btn.textContent = "压缩中…";
+  api("/api/compact", {body:{confirm:"VACUUM", note:"面板手动压缩"}, timeout:60000})
+    .then(function(r){
+      var saved = (r.saved_bytes / 1048576).toFixed(2);
+      toast("已回收 " + saved + " MB（现 " + (r.db_bytes / 1048576).toFixed(2) + " MB）", "ok");
+      loadStats(); loadAudit();
+    })
+    .catch(function(e){ toast("压缩失败：" + e.message, "err"); })
+    .then(function(){ btn.textContent = "压缩数据库"; loadCompact(); });
+});
+
+/* 模拟器控制 */
+var PHASES = ["冷启动 · 未配置","配置合格 · 等待采样","传感器上线 · 启动",
+              "正常运行","温度预警","温度硬故障","故障恢复"];
+var MK_SIM_MODE = "random";
+$("mkPhase").innerHTML = PHASES.map(function(p,i){
+  return '<option value="' + i + '">' + (i+1) + ". " + p + "</option>"; }).join("");
+/* 「跳到该幕」只对脚本模式有意义，随机模式下置灰 */
+var _mkSynced = null;
+function syncMockControls(){
+  if (_mkSynced === MK_SIM_MODE) return;   // 状态没变就不碰 DOM
+  _mkSynced = MK_SIM_MODE;
+  var scripted = (MK_SIM_MODE === "scripted");
+  $("mkPhase").disabled = !scripted;
+  $("mkJump").disabled = !scripted;
+  $("mkSimBadge").textContent = scripted ? "脚本模式" : "随机模式";
+  $("mkSimBadge").style.color = scripted ? "#8250df" : "#0F6E56";
+  $("mkSimBadge").style.borderColor = scripted ? "#d8c7ff" : "#b7e4d4";
+}
+function mock(body, msg){
+  api("/api/mock", {body: body}).then(function(r){
+    toast(msg + " → " + r.detail, "ok");
+  }).catch(function(e){ toast("模拟器指令失败：" + e.message, "err"); });
+}
+$("mkSetSimMode").addEventListener("click", function(){
+  mock({action:"set_sim_mode", mode: $("mkSimMode").value}, "数据模式切换");
+});
+$("mkJump").addEventListener("click", function(){ mock({action:"jump_phase", phase:Number($("mkPhase").value)}, "已跳转"); });
+$("mkReset").addEventListener("click", function(){ mock({action:"reset"}, "已重置"); });
+$("mkInject").addEventListener("click", function(){ mock({action:"inject_fault", code:$("mkFault").value}, "已注入"); });
+$("mkClear").addEventListener("click", function(){ mock({action:"clear_faults"}, "已清除"); });
+$("mkOn").addEventListener("click", function(){ mock({action:"sensors", online:true}, "传感器上线"); });
+$("mkOff").addEventListener("click", function(){ mock({action:"sensors", online:false}, "传感器离线"); });
+$("mkSetMode").addEventListener("click", function(){ mock({action:"set_mode", mode:$("mkMode").value}, "模式设置"); });
+$("mkSetRpm").addEventListener("click", function(){ mock({action:"set_target_rpm", rpm:Number($("mkRpm").value)}, "转速设置"); });
+
+/* URL 参数：?min=60&bucket=60 —— 便于分享/书签某个特定视图 */
+(function(){
+  var q;
+  try { q = new URLSearchParams(location.search); } catch (e) { return; }
+  var m = q.get("min");
+  if (m && /^\d+$/.test(m)){
+    TREND_MIN = Number(m);
+    document.querySelectorAll("#trendTabs .tab").forEach(function(b){
+      b.classList.toggle("active", Number(b.dataset.min) === TREND_MIN);
+    });
+  }
+  var b = q.get("bucket");
+  if (b && /^(\d+|auto)$/.test(b)){
+    TREND_BUCKET = b;
+    $("trendBucket").value = b;
+  }
+})();
+
+/* 趋势刷新间隔随窗口自适应：
+   1 分钟窗口贴近实时看 → 每秒刷（与采集频率 1 Hz 对齐）；
+   长窗口刷那么勤没意义，只是白烧 CPU 和网络。 */
+function trendInterval(){
+  if (TREND_MIN <= 1) return 1000;
+  if (TREND_MIN <= 5) return 2000;
+  if (TREND_MIN <= 60) return 5000;
+  if (TREND_MIN <= 360) return 15000;
+  /* 24 小时：桶宽已经 144s，每 15 秒重拉一遍纯属浪费带宽和 CPU */
+  return 60000;
+}
+function fmtInterval(ms){
+  var s = Math.round(ms / 1000);
+  return (s >= 60 ? (s / 60) + " 分钟" : s + " 秒");
+}
+var _trendTimer = null;
+function scheduleTrend(){
+  if (_trendTimer) clearTimeout(_trendTimer);
+  _trendTimer = setTimeout(function(){ loadTrend(); scheduleTrend(); }, trendInterval());
+}
+
+/* 启动 */
+/* 训练与标定工作台是 edge 自带的 UI，跑在同一台机器的 :8766（只在本机回环之外也监听）。
+   用当前页面的 hostname 拼，这样换 IP / 换域名访问都不会指错。 */
+$("btnEdgeUi").href = location.protocol + "//" + location.hostname + ":8766/";
+loadHealth();
+loadStatus();
+loadTrend();
+loadEvents();
+loadAudit();
+loadStats();
+setInterval(tick, 1000);
+setInterval(loadStatus, 1000);
+setInterval(loadEvents, 5000);
+scheduleTrend();
+setInterval(loadHealth, 15000);
+setInterval(loadStats, 15000);
+setInterval(loadAudit, 15000);
+</script>
+</body>
+</html>

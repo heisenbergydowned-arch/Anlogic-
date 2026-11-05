@@ -1,0 +1,78 @@
+diff --git a/drivers/npu/cma_mem_driver/cma_mem.c b/drivers/npu/cma_mem_driver/cma_mem.c
+index 062f65ad9..25d690b29 100644
+--- a/drivers/npu/cma_mem_driver/cma_mem.c
++++ b/drivers/npu/cma_mem_driver/cma_mem.c
+@@ -336,6 +336,7 @@ static long cma_ioctl(struct file *filp, u_int cmd, u_long arg)
+ 				_dev_err(cma_dev, "Phy_addr[0x%llx] be Managed Twice",
+ 						bf_node->buffer.phys_addr);
+ 				up(&s_cma_sem);
++				spin_unlock(&s_cma_lock);
+ 				return -EFAULT;
+ 			}
+ 			list_node->mem_sum += bf_node->buffer.size;
+@@ -397,7 +398,7 @@ static int __init cma_mem_init(void)
+ 	}
+ 
+ 	cma_dev = cma_mem_misc.this_device;
+-	cma_dev->coherent_dma_mask = ~0;
++	dma_set_coherent_mask(cma_dev, DMA_BIT_MASK(32));
+ 
+ 	_dev_info(cma_dev, "registered.\n");
+ 	return ret;
+diff --git a/drivers/npu/hard_npu_driver/hard_npu.c b/drivers/npu/hard_npu_driver/hard_npu.c
+index 2fe59aac5..f6dc33d46 100644
+--- a/drivers/npu/hard_npu_driver/hard_npu.c
++++ b/drivers/npu/hard_npu_driver/hard_npu.c
+@@ -199,6 +199,7 @@ static int drv_hard_npu_probe(struct platform_device *pdev);
+ static int drv_hard_npu_remove(struct platform_device *pdev);
+ static const struct of_device_id hard_npu_match_table[] = {
+ 	{.compatible = "anlogic,hard_npu"},
++	{},
+ };
+ 
+ static struct platform_driver hard_npu_driver = {.probe = drv_hard_npu_probe,
+diff --git a/drivers/npu/soft_npu_driver/soft_npu.c b/drivers/npu/soft_npu_driver/soft_npu.c
+index b9f3bae53..e3647ef65 100644
+--- a/drivers/npu/soft_npu_driver/soft_npu.c
++++ b/drivers/npu/soft_npu_driver/soft_npu.c
+@@ -254,6 +254,7 @@ static int drv_soft_npu_probe(struct platform_device *pdev);
+ static int drv_soft_npu_remove(struct platform_device *pdev);
+ static const struct of_device_id soft_npu_match_table[] = {
+ 	{.compatible = "anlogic,soft_npu"},
++	{},
+ };
+ 
+ static struct platform_driver soft_npu_driver = {.probe = drv_soft_npu_probe,
+diff --git a/drivers/video/fbdev/Kconfig b/drivers/video/fbdev/Kconfig
+index 37089d5a7..7d463af42 100644
+--- a/drivers/video/fbdev/Kconfig
++++ b/drivers/video/fbdev/Kconfig
+@@ -2240,3 +2240,16 @@ config FB_SM712
+ source "drivers/video/fbdev/omap/Kconfig"
+ source "drivers/video/fbdev/omap2/Kconfig"
+ source "drivers/video/fbdev/mmp/Kconfig"
++
++config FB_ANLOGIC
++	tristate "Anlogic VDMA framebuffer"
++	depends on FB && ANLOGIC_DMA && AXI_VDMA
++	select FB_CFB_FILLRECT
++	select FB_CFB_COPYAREA
++	select FB_CFB_IMAGEBLIT
++	select VIDEOMODE_HELPERS
++	select OF_VIDEOMODE
++
++config R46_DYNCLK
++	bool "R46 reviewed 720p dynamic clock profile"
++	depends on FB_ANLOGIC && OF
+diff --git a/drivers/video/fbdev/Makefile b/drivers/video/fbdev/Makefile
+index 7795c4126..b5492cab9 100644
+--- a/drivers/video/fbdev/Makefile
++++ b/drivers/video/fbdev/Makefile
+@@ -132,3 +132,7 @@ obj-$(CONFIG_FB_SIMPLE)           += simplefb.o
+ 
+ # the test framebuffer is last
+ obj-$(CONFIG_FB_VIRTUAL)          += vfb.o
++
++obj-$(CONFIG_FB_ANLOGIC) += anlogic-vdmafb.o
++
++obj-$(CONFIG_R46_DYNCLK) += r46-dynclk.o

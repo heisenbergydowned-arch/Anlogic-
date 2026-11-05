@@ -1,0 +1,27 @@
+{
+  "status": "PASS_REAL_NORMAL_ADVISORY_HOST_TRAINING",
+  "normal_holdout_frames": 2107,
+  "normal_holdout_alarm_rate": 0.011865211200759373,
+  "false_alarm_budget": 0.05,
+  "fault_detection_accuracy": null,
+  "fault_classes_trained": [],
+  "qualified": false,
+  "selected": {
+    "alpha": 0.1,
+    "seed": 20261102,
+    "calibration_mse": 0.2762020569018598,
+    "constant_mean_mse": 3.0151009559631348,
+    "iterations": 1952,
+    "seconds": 2.510809875006089,
+    "warnings": []
+  },
+  "holdout_scores": {
+    "p50": 0.4033358526324217,
+    "p95": 0.6971131142007807,
+    "p99": 1.0430437807530708
+  },
+  "real_normal_training_only": true,
+  "npu_executed": false,
+  "normalization_fitted_on_train": true,
+  "test_used_for_training_selection_or_threshold": false
+}

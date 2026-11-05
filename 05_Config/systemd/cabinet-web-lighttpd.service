@@ -1,0 +1,21 @@
+[Unit]
+Description=Cabinet web panel (lighttpd front-end + mod_proxy API)
+Documentation=file:/home/uisrc/web/README.md
+After=network.target cabinet-web-api.service
+Wants=cabinet-web-api.service
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/lighttpd -D -f /home/uisrc/web/lighttpd.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=2
+User=root
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cabinet-web-lighttpd
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

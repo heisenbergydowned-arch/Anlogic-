@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "review": "Codex in-app browser, localhost-only MOCK service",
+  "checked": [
+    "TEST and MOCK displayed; nominal uncalibrated current/pressure labeled",
+    "simultaneous OC_HARD/TEMP_HARD retain L3 and INHIBIT while model result is TEST_OBSERVATION",
+    "SHUTDOWN_REQUEST separate from UNSUPPORTED receipt",
+    "history preserves peak severity after recovery",
+    "service termination clears all six live values and displays UNKNOWN/UNAVAILABLE; historical ACK disabled"
+  ],
+  "physical_acceptance": false
+}

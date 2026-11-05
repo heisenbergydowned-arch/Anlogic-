@@ -1,0 +1,16 @@
+AXIS2Vid_PIXELS_PER_CLOCK : 1 : U : En : 1;;2;;4;;8 :  : 
+AXIS2Vid_S_AXIS_COMPONENT_WIDTH : 8 : U : En : 8;;10;;12;;16 :  : 
+AXIS2Vid_NATIVE_COMPONENT_WIDTH : 8 : U : En : 8;;10;;12;;16 :  : 
+AXIS2Vid_HYSTERESIS_LEVEL : 12 : U : En :  :  : 
+video_format : RGB : U : En : YUV 4:2:2:;;YUV 4:4:4:;;RGB;;YUV 4:2:0:;;YUVA 4:2:2:;;YUVA 4:4:4:;;RGBA;;YUVA 4:2:0:;;YUVD 4:2:2:;;YUVD 4:4:4:;;RGBD;;SMPTE 352 YUV 4:2:0:;;Mono / Sensor :  : 
+fifo_depth : 32 : U : En : 32;;1024;;2048;;4096;;8192 :  : 
+clock_mode_sync : 0 : U : En :  :  : 
+clock_mode_async : 1 : U : En :  :  : 
+timing_mode_slave : 1 : U : En :  :  : 
+timing_mode_master : 0 : U : En :  :  : 
+AXIS2Vid_COMPONENTS_PER_PIXEL : 3 : G : En :  :  : 
+AXIS2Vid_NATIVE_DATA_WIDTH : 24 : G : En :  :  : 
+AXIS2Vid_S_AXIS_TDATA_WIDTH : 24 : G : En :  :  : 
+AXIS2Vid_HAS_ASYNC_CLK : 1 : G : En :  :  : 
+AXIS2Vid_ADDR_WIDTH : 5 : G : En :  :  : 
+AXIS2Vid_VTG_MASTER_SLAVE : 0 : G : En :  :  : 

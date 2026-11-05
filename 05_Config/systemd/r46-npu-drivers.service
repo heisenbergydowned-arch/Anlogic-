@@ -1,0 +1,14 @@
+[Unit]
+Description=R46 verified NPU kernel drivers; no inference or actuator commands
+After=local-fs.target systemd-udevd.service
+Before=cabinet-npu-v4-shadow.service
+ConditionKernelCommandLine=r46_npu=candidate4
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/r46-npu-drivers.sh
+RemainAfterExit=yes
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target

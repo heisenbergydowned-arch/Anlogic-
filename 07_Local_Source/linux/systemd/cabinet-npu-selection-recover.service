@@ -1,0 +1,17 @@
+[Unit]
+Description=Recover an interrupted saved NPU selection without learning
+Requires=r46-npu-drivers.service
+After=local-fs.target r46-npu-drivers.service
+Before=cabinet-normal-npu.service cabinet-labeled-npu.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/cabinet/linux
+Environment=PYTHONDONTWRITEBYTECODE=1
+UMask=0077
+ExecStart=/usr/bin/python3 -B -m labeled_npu.deploy --reconcile-boot
+RemainAfterExit=yes
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target

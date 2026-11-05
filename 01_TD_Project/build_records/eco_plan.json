@@ -1,0 +1,2198 @@
+{
+  "status": "REVIEWED_SIX_LUT_CHANGES_AND_RED_LED_NET_ONLY",
+  "physical_changes": {
+    "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_938": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "6 / 31",
+          "Out Pins": "1 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=568 y=131",
+          "Grid": "col=35 row=8",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=A*~B*C*D*~E",
+          "LUT5B": "=0",
+          "LUTMODE": ":LUT6",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mean_ready"
+          ],
+          "ib": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[4]"
+          ],
+          "ic": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/monitor_status[11]"
+          ],
+          "id": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_safety/current_good_n1"
+          ],
+          "ie": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[5]"
+          ],
+          "ima": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n22"
+          ],
+          "other_lut6": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 568 136]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_390"
+          ],
+          "olut5a": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 568 136]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "6 / 31",
+          "Out Pins": "1 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=568 y=131",
+          "Grid": "col=35 row=8",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=1",
+          "LUT5B": "=0",
+          "LUTMODE": ":LUT6",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mean_ready"
+          ],
+          "ib": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[4]"
+          ],
+          "ic": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/monitor_status[11]"
+          ],
+          "id": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_safety/current_good_n1"
+          ],
+          "ie": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[5]"
+          ],
+          "ima": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n22"
+          ],
+          "other_lut6": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 568 136]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 568 136]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_390"
+          ],
+          "olut5a": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 568 136]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 568 136]",
+            "Nil"
+          ]
+        }
+      }
+    },
+    "system/u_subsys_acq/environment/read_data_reg[22]_syn_2": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "9 / 31",
+          "Out Pins": "4 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=568 y=173",
+          "Grid": "col=35 row=10",
+          "Offset": "6",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CEBMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=(D*B*E)",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=(D*B)",
+          "LUT5B_SD2": ":ID",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "OQBMUX": ":QB",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":IMA",
+          "REGB_REGSET_ASYNC": ":RESET",
+          "REGB_REGSET_SYNC": ":RESET",
+          "REGB_SD": ":IMB",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 568 168]",
+            "system/u_subsys_acq/sys_rst_n_dup_135559"
+          ],
+          "cea": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/error_b_n"
+          ],
+          "ceb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/error_b_n"
+          ],
+          "clk": [
+            "[ 568 168]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ib": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/monitor_status[12]"
+          ],
+          "ic": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "id": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/thermal_armed_n4"
+          ],
+          "ie": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ima": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data_b1[22]"
+          ],
+          "imb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data_b1[18]"
+          ],
+          "imc": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_331"
+          ],
+          "other_lut6": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 568 168]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_392"
+          ],
+          "ofb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/read_data_b1[5]_syn_4"
+          ],
+          "olut5a": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data[22]"
+          ],
+          "oqb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data[18]"
+          ],
+          "relut6": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 568 168]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "9 / 31",
+          "Out Pins": "4 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=568 y=173",
+          "Grid": "col=35 row=10",
+          "Offset": "6",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CEBMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=1",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=(D*B)",
+          "LUT5B_SD2": ":ID",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "OQBMUX": ":QB",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":IMA",
+          "REGB_REGSET_ASYNC": ":RESET",
+          "REGB_REGSET_SYNC": ":RESET",
+          "REGB_SD": ":IMB",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 568 168]",
+            "system/u_subsys_acq/sys_rst_n_dup_135559"
+          ],
+          "cea": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/error_b_n"
+          ],
+          "ceb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/error_b_n"
+          ],
+          "clk": [
+            "[ 568 168]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ib": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/monitor_status[12]"
+          ],
+          "ic": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "id": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/thermal_armed_n4"
+          ],
+          "ie": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ima": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data_b1[22]"
+          ],
+          "imb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data_b1[18]"
+          ],
+          "imc": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_331"
+          ],
+          "other_lut6": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 568 168]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_392"
+          ],
+          "ofb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/read_data_b1[5]_syn_4"
+          ],
+          "olut5a": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data[22]"
+          ],
+          "oqb": [
+            "[ 568 168]",
+            "system/u_subsys_acq/environment/read_data[18]"
+          ],
+          "relut6": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 568 168]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 568 168]",
+            "Nil"
+          ]
+        }
+      }
+    },
+    "system/u_subsys_acq/u_control/u_temperature_pwm/mux67_syn_166": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "8 / 31",
+          "Out Pins": "2 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=520 y=115",
+          "Grid": "col=32 row=7",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=(A*B*C*D*E)",
+          "LUT5A_SD0": ":IMA",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=(C*~(E*D*~(~A*~B)))",
+          "LUT5B_SD2": ":IMB",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[3]"
+          ],
+          "ib": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[2]"
+          ],
+          "ic": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_365"
+          ],
+          "id": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[0]"
+          ],
+          "ie": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[8]"
+          ],
+          "ima": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[1]"
+          ],
+          "imb": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_367"
+          ],
+          "imc": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux67_syn_158"
+          ],
+          "other_lut6": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 520 120]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux67_syn_160"
+          ],
+          "ofb": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/error_b8_n4"
+          ],
+          "olut5a": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 520 120]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "8 / 31",
+          "Out Pins": "2 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=520 y=115",
+          "Grid": "col=32 row=7",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=(A*B*C*D*E)",
+          "LUT5A_SD0": ":IMA",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=1",
+          "LUT5B_SD2": ":IMB",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[3]"
+          ],
+          "ib": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[2]"
+          ],
+          "ic": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_365"
+          ],
+          "id": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[0]"
+          ],
+          "ie": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[8]"
+          ],
+          "ima": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age[1]"
+          ],
+          "imb": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_regs/read_data_b1[0]_syn_367"
+          ],
+          "imc": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux67_syn_158"
+          ],
+          "other_lut6": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 520 120]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux67_syn_160"
+          ],
+          "ofb": [
+            "[ 520 120]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/error_b8_n4"
+          ],
+          "olut5a": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 520 120]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 520 120]",
+            "Nil"
+          ]
+        }
+      }
+    },
+    "system/u_subsys_acq/u_control/u_temperature_pwm/trip_reasons_reg[3]_syn_2": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "9 / 31",
+          "Out Pins": "2 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=552 y=149",
+          "Grid": "col=34 row=9",
+          "Offset": "2",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=(B*C*E*~D)",
+          "LUT5A_SD0": ":IMA",
+          "LUT5A_SD1": ":IE",
+          "LUT5B": "=(B*A*~E*~D)",
+          "LUT5B_SD2": ":IMB",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":LUT5A",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 552 152]",
+            "system/u_subsys_acq/sys_rst_n_dup_135559"
+          ],
+          "cea": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_i_syn_2"
+          ],
+          "ceb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 552 152]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/monitor_status[11]"
+          ],
+          "ib": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mean_ready"
+          ],
+          "ic": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "id": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_7"
+          ],
+          "ie": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n22"
+          ],
+          "ima": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed"
+          ],
+          "imb": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[4]"
+          ],
+          "imc": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "other_lut6": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 552 152]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_13"
+          ],
+          "olut5a": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/trip_reasons[3]"
+          ],
+          "oqb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 552 152]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "9 / 31",
+          "Out Pins": "2 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=552 y=149",
+          "Grid": "col=34 row=9",
+          "Offset": "2",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=(B*C*E*~D)",
+          "LUT5A_SD0": ":IMA",
+          "LUT5A_SD1": ":IE",
+          "LUT5B": "=~D",
+          "LUT5B_SD2": ":IMB",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":LUT5A",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 552 152]",
+            "system/u_subsys_acq/sys_rst_n_dup_135559"
+          ],
+          "cea": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_i_syn_2"
+          ],
+          "ceb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 552 152]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/monitor_status[11]"
+          ],
+          "ib": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mean_ready"
+          ],
+          "ic": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "id": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_7"
+          ],
+          "ie": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n22"
+          ],
+          "ima": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed"
+          ],
+          "imb": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/causes[4]"
+          ],
+          "imc": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "other_lut6": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 552 152]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_13"
+          ],
+          "olut5a": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 552 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/trip_reasons[3]"
+          ],
+          "oqb": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 552 152]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 552 152]",
+            "Nil"
+          ]
+        }
+      }
+    },
+    "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_32": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "6 / 31",
+          "Out Pins": "1 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=520 y=147",
+          "Grid": "col=32 row=9",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=C*E*D*A*B",
+          "LUT5B": "=0",
+          "LUTMODE": ":LUT6",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_25"
+          ],
+          "ib": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_13"
+          ],
+          "ic": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_9"
+          ],
+          "id": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_safety/current_good_n1"
+          ],
+          "ie": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/bench_armed_n5"
+          ],
+          "ima": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n25"
+          ],
+          "other_lut6": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 520 152]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_27"
+          ],
+          "olut5a": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 520 152]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "6 / 31",
+          "Out Pins": "1 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=520 y=147",
+          "Grid": "col=32 row=9",
+          "Offset": "1",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "False",
+          "LUT5A": "=C*E*A*B",
+          "LUT5B": "=0",
+          "LUTMODE": ":LUT6",
+          "OFB_SD": ":LUTX"
+        },
+        "inputs": {
+          "asr": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "cea": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ceb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "clk": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_byteaddr": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_25"
+          ],
+          "ib": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_13"
+          ],
+          "ic": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_9"
+          ],
+          "id": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_safety/current_good_n1"
+          ],
+          "ie": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/bench_armed_n5"
+          ],
+          "ima": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/armed_n25"
+          ],
+          "other_lut6": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 520 152]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "ofb": [
+            "[ 520 152]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/lease_age_b[15]_syn_27"
+          ],
+          "olut5a": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "oqb": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "relut6": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 520 152]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 520 152]",
+            "Nil"
+          ]
+        }
+      }
+    },
+    "system/u_subsys_acq/u_control/u_temperature_pwm/mapped_target_reg[3]_syn_2": {
+      "before": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "11 / 31",
+          "Out Pins": "3 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=440 y=55",
+          "Grid": "col=27 row=3",
+          "Offset": "3",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CEBMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=~(~D*B*~(~A*~C*~E))",
+          "LUT5A_SD0": ":IC",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=(E*~(~A*C))",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "OQBMUX": ":QB",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":IMA",
+          "REGB_REGSET_ASYNC": ":RESET",
+          "REGB_REGSET_SYNC": ":RESET",
+          "REGB_SD": ":LUT6",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 440 56]",
+            "system/u_subsys_acq/sys_rst_n_dup_135558"
+          ],
+          "cea": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux14_syn_2[0]"
+          ],
+          "ceb": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/done_n"
+          ],
+          "clk": [
+            "[ 440 56]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/busy"
+          ],
+          "ib": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/denominator_b_n_syn_2"
+          ],
+          "ic": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/divider_start"
+          ],
+          "id": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/divider_done"
+          ],
+          "ie": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/q_next[2]"
+          ],
+          "ima": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mapped_target_b[3]"
+          ],
+          "imb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux16_syn_94"
+          ],
+          "other_lut6": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 440 56]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux14_syn_2[0]"
+          ],
+          "ofb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "olut5a": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mapped_target[3]"
+          ],
+          "oqb": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/quotient[2]"
+          ],
+          "relut6": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 440 56]",
+            "Nil"
+          ]
+        }
+      },
+      "after": {
+        "attrs": {
+          "Model": "DR1_PHY_LSLICE",
+          "Type": "SLICE",
+          "In Pins": "11 / 31",
+          "Out Pins": "3 / 10",
+          "Inout Pins": "0 / 0",
+          "Location": "x=440 y=55",
+          "Grid": "col=27 row=3",
+          "Offset": "3",
+          "Width": "16",
+          "Height": "2",
+          "IsPlaced": "True",
+          "IsFixed": "False",
+          "IsInMacro": "False",
+          "HadBound": "True",
+          "Bound id": "2",
+          "Bound name": "Intnl_0_0_81_40",
+          "Bound bbox": "0, 0, 1296, 640",
+          "ASRMUX": ":INV",
+          "CEAMUX": ":SIG",
+          "CEBMUX": ":SIG",
+          "CLKMUX": ":SIG",
+          "LATCHMODE": ":DFF",
+          "LUT5A": "=B*(D+~A*~C*~E)",
+          "LUT5A_SD0": ":IC",
+          "LUT5A_SD1": ":IMF",
+          "LUT5B": "=(E*~(~A*C))",
+          "LUTMODE": ":DLUT5",
+          "OFA_SD": ":LUT5A",
+          "OFB_SD": ":LUTX",
+          "OQAMUX": ":QA",
+          "OQBMUX": ":QB",
+          "REGA_REGSET_ASYNC": ":RESET",
+          "REGA_REGSET_SYNC": ":RESET",
+          "REGA_SD": ":IMA",
+          "REGB_REGSET_ASYNC": ":RESET",
+          "REGB_REGSET_SYNC": ":RESET",
+          "REGB_SD": ":LUT6",
+          "SSRMUX": ":0",
+          "SSROVERCE": ":ENABLE"
+        },
+        "inputs": {
+          "asr": [
+            "[ 440 56]",
+            "system/u_subsys_acq/sys_rst_n_dup_135558"
+          ],
+          "cea": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux14_syn_2[0]"
+          ],
+          "ceb": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/done_n"
+          ],
+          "clk": [
+            "[ 440 56]",
+            "I_sysclk_dup_1_created_gclkinst_auto_created_sclk_s_0_l_bk3_sclk_outnet"
+          ],
+          "dpram_byteaddr": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_rammode": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_shiftmode": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_wclk": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_we": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "dpram_width": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "f78i": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fci": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fci_f": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ia": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/busy"
+          ],
+          "ib": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/denominator_b_n_syn_2"
+          ],
+          "ic": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/divider_start"
+          ],
+          "id": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/divider_done"
+          ],
+          "ie": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/q_next[2]"
+          ],
+          "ima": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mapped_target_b[3]"
+          ],
+          "imb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "imc": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "imf": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux16_syn_94"
+          ],
+          "other_lut6": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shiqa": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shiqb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ssr": [
+            "[ 440 56]",
+            "Nil"
+          ]
+        },
+        "outputs": {
+          "fco": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "fco_f": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "ofa": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mux14_syn_2[0]"
+          ],
+          "ofb": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "olut5a": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "oqa": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/mapped_target[3]"
+          ],
+          "oqb": [
+            "[ 440 56]",
+            "system/u_subsys_acq/u_control/u_temperature_pwm/u_divide/quotient[2]"
+          ],
+          "relut6": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shoqa": [
+            "[ 440 56]",
+            "Nil"
+          ],
+          "shoqb": [
+            "[ 440 56]",
+            "Nil"
+          ]
+        }
+      }
+    }
+  },
+  "parent_db_sha256": "63001f14c94550c13e7e8226a92eee287dd66fd9392842ffbc93184e51ea7cd6",
+  "candidate_db_sha256": "f1ed781afbf7e9b72db628845dc3ce5ff70aea42aa73163b4e26c659c3faeab2",
+  "adc_sha256": "60f734e5bb8e36905e83f93610dac9353d80f7b4c296be141ff4b7f8c1fba18c",
+  "sdc_sha256": "584b7513f9f92377e277cf8a431460e8942dbee1415ff707783d9181b13be03e",
+  "rtl_sha256": "7c03f43b8a6d69b0b462193ce06b75b684039ccaa827ccd635c652cd498144f3",
+  "subsys_sha256": "a3f6eea456b83539c654368bfe1330a24a92e46460752da3caf948ab802297cc",
+  "setup_wns_ns": -0.008,
+  "timing_pass": false,
+  "timing_exception_previously_authorized": true,
+  "full_sta_repeated": false,
+  "routed_nets_changed": [
+    "system/u_subsys_acq/u_control/physical_level_b1_n",
+    "O_led4_alm_dup_3"
+  ],
+  "clock_constraints_changed": false
+}

@@ -1,0 +1,1316 @@
+AL_US_NUM : 1 : U : En :  :  : 
+AL_DS_NUM : 3 : U : En :  : 2 : 16
+AL_AXI_ID_WIDTH_USER : 1 : U : Dis :  :  : 
+AL_AXI_ID_WIDTH : 2 : G : En :  :  : 
+AL_AXI_ADDR_WIDTH : 33 : U : En :  : 2 : 64
+AL_AXI_DATA_WIDTH : 32 : U : En : 32;;64 :  : 
+AL_NUM_ADDR_RANGES : 1 : U : En :  :  : 
+AL_AXI_SUPPORTS_USER_SIGNALS : 0 : U : Dis :  :  : 
+AL_AXI_AWUSER_WIDTH : 1 : U : Dis :  :  : 
+AL_AXI_ARUSER_WIDTH : 1 : U : Dis :  :  : 
+AL_AXI_WUSER_WIDTH : 1 : U : Dis :  :  : 
+AL_AXI_RUSER_WIDTH : 1 : U : Dis :  :  : 
+AL_AXI_BUSER_WIDTH : 1 : U : Dis :  :  : 
+AL_PROTOCOL_SEL : 2 : G : En :  :  : 
+AL_DS_AXI_BASE_ADDR : 192'h000000008030000000000000801000000000000080200000 : G : En :  :  : 
+AL_US_AXI_THREAD_ID_WIDTH : 32'h00000001 : G : En :  :  : 
+AL_READ_REGISTER_TYPE : 0 : G : En :  :  : 
+AL_US_AXI_SINGLE_THREAD : 32'h00000000 : G : En :  :  : 
+AL_US_AXI_WRITE_ACCEPTANCE : 32'h00000001 : G : En :  :  : 
+AL_US_AXI_READ_ACCEPTANCE : 32'h00000001 : G : En :  :  : 
+AL_DS_AXI_WRITE_ISSUING : 96'h000000040000000400000004 : G : En :  :  : 
+AL_DS_AXI_READ_ISSUING : 96'h000000040000000400000004 : G : En :  :  : 
+AL_US_AXI_ARB_PRIORITY : 32'h00000000 : G : En :  :  : 
+AL_DS_AXI_SECURE : 96'h000000000000000000000000 : G : En :  :  : 
+AL_CONNECTIVITY_MODE : 0 : G : En :  :  : 
+protocol_axi4 : 0 : U : En :  :  : 
+protocol_axi3 : 0 : U : En :  :  : 
+protocol_axi4lite : 1 : U : En :  :  : 
+DS0_BASEADDR0 : 0000000080200000 : U : En :  :  : 
+DS0_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR0 : 0000000080100000 : U : En :  :  : 
+DS1_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS1_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR0 : 0000000080300000 : U : En :  :  : 
+DS2_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS2_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR0 : 0000000080030000 : U : Dis :  :  : 
+DS3_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS3_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR0 : 80040000 : U : Dis :  :  : 
+DS4_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS4_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR0 : 80050000 : U : Dis :  :  : 
+DS5_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS5_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR0 : 0000000000600000 : U : Dis :  :  : 
+DS6_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS6_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR0 : 0000000000700000 : U : Dis :  :  : 
+DS7_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS7_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR0 : 0000000000800000 : U : Dis :  :  : 
+DS8_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS8_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR0 : 0000000000900000 : U : Dis :  :  : 
+DS9_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS9_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR0 : 0000000000A00000 : U : Dis :  :  : 
+DS10_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS10_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR0 : 0000000000B00000 : U : Dis :  :  : 
+DS11_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS11_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR0 : 0000000000C00000 : U : Dis :  :  : 
+DS12_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS12_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR0 : 0000000000D00000 : U : Dis :  :  : 
+DS13_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS13_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR0 : 0000000000E00000 : U : Dis :  :  : 
+DS14_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS14_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR0 : 0000000000F00000 : U : Dis :  :  : 
+DS15_BASEADDR1 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR2 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR3 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR4 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR5 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR6 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR7 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR8 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR9 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR10 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR11 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR12 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR13 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR14 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS15_BASEADDR15 : FFFFFFFFFFFFFFFF : U : Dis :  :  : 
+DS0_BASEADDR_WIDTH0 : 12 : U : En :  : 1 : 33
+DS0_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS0_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH0 : 13 : U : En :  : 1 : 33
+DS1_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS1_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH0 : 16 : U : En :  : 16 : 16
+DS2_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS2_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH0 : 16 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS3_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH0 : 16 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS4_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH0 : 16 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS5_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS6_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS7_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS8_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS9_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS10_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS11_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS12_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS13_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS14_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH0 : 12 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH1 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH2 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH3 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH4 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH5 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH6 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH7 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH8 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH9 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH10 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH11 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH12 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH13 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH14 : 0 : U : Dis :  : 1 : 33
+DS15_BASEADDR_WIDTH15 : 0 : U : Dis :  : 1 : 33
+ds0range_baseaddr : 0000000080200000 : G : En :  :  : 
+ds1range_baseaddr : 0000000080100000 : G : En :  :  : 
+ds2range_baseaddr : 0000000080020000 : G : En :  :  : 
+ds3range_baseaddr : 0000000080030000 : G : En :  :  : 
+ds4range_baseaddr : 0000000080040000 : G : En :  :  : 
+ds5range_baseaddr : 0000000080050000 : G : En :  :  : 
+ds6range_baseaddr : 0000000000600000 : G : En :  :  : 
+ds7range_baseaddr : 0000000000700000 : G : En :  :  : 
+ds8range_baseaddr : 0000000000800000 : G : En :  :  : 
+ds9range_baseaddr : 0000000000900000 : G : En :  :  : 
+ds10range_baseaddr : 0000000000A00000 : G : En :  :  : 
+ds11range_baseaddr : 0000000000B00000 : G : En :  :  : 
+ds12range_baseaddr : 0000000000C00000 : G : En :  :  : 
+ds13range_baseaddr : 0000000000D00000 : G : En :  :  : 
+ds14range_baseaddr : 0000000000E00000 : G : En :  :  : 
+ds15range_baseaddr : 0000000000F00000 : G : En :  :  : 
+ds0range_baseaddr_width : 0000000C : G : En :  :  : 
+ds1range_baseaddr_width : 0000000D : G : En :  :  : 
+ds2range_baseaddr_width : 00000010 : G : En :  :  : 
+ds3range_baseaddr_width : 00000010 : G : En :  :  : 
+ds4range_baseaddr_width : 00000010 : G : En :  :  : 
+ds5range_baseaddr_width : 00000010 : G : En :  :  : 
+ds6range_baseaddr_width : 0000000C : G : En :  :  : 
+ds7range_baseaddr_width : 0000000C : G : En :  :  : 
+ds8range_baseaddr_width : 0000000C : G : En :  :  : 
+ds9range_baseaddr_width : 0000000C : G : En :  :  : 
+ds10range_baseaddr_width : 0000000C : G : En :  :  : 
+ds11range_baseaddr_width : 0000000C : G : En :  :  : 
+ds12range_baseaddr_width : 0000000C : G : En :  :  : 
+ds13range_baseaddr_width : 0000000C : G : En :  :  : 
+ds14range_baseaddr_width : 0000000C : G : En :  :  : 
+ds15range_baseaddr_width : 0000000C : G : En :  :  : 
+AL_DS_AXI_ADDR_WIDTH : 96'h000000100000000D0000000C : G : En :  :  : 
+AL_US_AXI_BASE_ID : 32'h00000000 : G : En :  :  : 
+us0_thread_id_width : 1 : G : Dis :  :  : 
+us1_thread_id_width : 1 : G : Dis :  :  : 
+us2_thread_id_width : 1 : G : Dis :  :  : 
+us3_thread_id_width : 1 : G : Dis :  :  : 
+us4_thread_id_width : 1 : G : Dis :  :  : 
+us5_thread_id_width : 1 : G : Dis :  :  : 
+us6_thread_id_width : 1 : G : Dis :  :  : 
+us7_thread_id_width : 1 : G : Dis :  :  : 
+us8_thread_id_width : 1 : G : Dis :  :  : 
+us9_thread_id_width : 1 : G : Dis :  :  : 
+us10_thread_id_width : 1 : G : Dis :  :  : 
+us11_thread_id_width : 1 : G : Dis :  :  : 
+us12_thread_id_width : 1 : G : Dis :  :  : 
+us13_thread_id_width : 1 : G : Dis :  :  : 
+us14_thread_id_width : 1 : G : Dis :  :  : 
+us15_thread_id_width : 1 : G : Dis :  :  : 
+write_m0s0 : 1 : U : En :  :  : 
+write_m1s0 : 1 : U : En :  :  : 
+write_m2s0 : 1 : U : En :  :  : 
+write_m3s0 : 1 : U : Dis :  :  : 
+write_m4s0 : 1 : U : Dis :  :  : 
+write_m5s0 : 1 : U : Dis :  :  : 
+write_m6s0 : 1 : U : Dis :  :  : 
+write_m7s0 : 1 : U : Dis :  :  : 
+write_m8s0 : 1 : U : Dis :  :  : 
+write_m9s0 : 1 : U : Dis :  :  : 
+write_m10s0 : 1 : U : Dis :  :  : 
+write_m11s0 : 1 : U : Dis :  :  : 
+write_m12s0 : 1 : U : Dis :  :  : 
+write_m13s0 : 1 : U : Dis :  :  : 
+write_m14s0 : 1 : U : Dis :  :  : 
+write_m15s0 : 1 : U : Dis :  :  : 
+write_m0s1 : 1 : U : Dis :  :  : 
+write_m1s1 : 1 : U : Dis :  :  : 
+write_m2s1 : 1 : U : Dis :  :  : 
+write_m3s1 : 1 : U : Dis :  :  : 
+write_m4s1 : 1 : U : Dis :  :  : 
+write_m5s1 : 1 : U : Dis :  :  : 
+write_m6s1 : 1 : U : Dis :  :  : 
+write_m7s1 : 1 : U : Dis :  :  : 
+write_m8s1 : 1 : U : Dis :  :  : 
+write_m9s1 : 1 : U : Dis :  :  : 
+write_m10s1 : 1 : U : Dis :  :  : 
+write_m11s1 : 1 : U : Dis :  :  : 
+write_m12s1 : 1 : U : Dis :  :  : 
+write_m13s1 : 1 : U : Dis :  :  : 
+write_m14s1 : 1 : U : Dis :  :  : 
+write_m15s1 : 1 : U : Dis :  :  : 
+write_m0s2 : 1 : U : Dis :  :  : 
+write_m1s2 : 1 : U : Dis :  :  : 
+write_m2s2 : 1 : U : Dis :  :  : 
+write_m3s2 : 1 : U : Dis :  :  : 
+write_m4s2 : 1 : U : Dis :  :  : 
+write_m5s2 : 1 : U : Dis :  :  : 
+write_m6s2 : 1 : U : Dis :  :  : 
+write_m7s2 : 1 : U : Dis :  :  : 
+write_m8s2 : 1 : U : Dis :  :  : 
+write_m9s2 : 1 : U : Dis :  :  : 
+write_m10s2 : 1 : U : Dis :  :  : 
+write_m11s2 : 1 : U : Dis :  :  : 
+write_m12s2 : 1 : U : Dis :  :  : 
+write_m13s2 : 1 : U : Dis :  :  : 
+write_m14s2 : 1 : U : Dis :  :  : 
+write_m15s2 : 1 : U : Dis :  :  : 
+write_m0s3 : 1 : U : Dis :  :  : 
+write_m1s3 : 1 : U : Dis :  :  : 
+write_m2s3 : 1 : U : Dis :  :  : 
+write_m3s3 : 1 : U : Dis :  :  : 
+write_m4s3 : 1 : U : Dis :  :  : 
+write_m5s3 : 1 : U : Dis :  :  : 
+write_m6s3 : 1 : U : Dis :  :  : 
+write_m7s3 : 1 : U : Dis :  :  : 
+write_m8s3 : 1 : U : Dis :  :  : 
+write_m9s3 : 1 : U : Dis :  :  : 
+write_m10s3 : 1 : U : Dis :  :  : 
+write_m11s3 : 1 : U : Dis :  :  : 
+write_m12s3 : 1 : U : Dis :  :  : 
+write_m13s3 : 1 : U : Dis :  :  : 
+write_m14s3 : 1 : U : Dis :  :  : 
+write_m15s3 : 1 : U : Dis :  :  : 
+write_m0s4 : 1 : U : Dis :  :  : 
+write_m1s4 : 1 : U : Dis :  :  : 
+write_m2s4 : 1 : U : Dis :  :  : 
+write_m3s4 : 1 : U : Dis :  :  : 
+write_m4s4 : 1 : U : Dis :  :  : 
+write_m5s4 : 1 : U : Dis :  :  : 
+write_m6s4 : 1 : U : Dis :  :  : 
+write_m7s4 : 1 : U : Dis :  :  : 
+write_m8s4 : 1 : U : Dis :  :  : 
+write_m9s4 : 1 : U : Dis :  :  : 
+write_m10s4 : 1 : U : Dis :  :  : 
+write_m11s4 : 1 : U : Dis :  :  : 
+write_m12s4 : 1 : U : Dis :  :  : 
+write_m13s4 : 1 : U : Dis :  :  : 
+write_m14s4 : 1 : U : Dis :  :  : 
+write_m15s4 : 1 : U : Dis :  :  : 
+write_m0s5 : 1 : U : Dis :  :  : 
+write_m1s5 : 1 : U : Dis :  :  : 
+write_m2s5 : 1 : U : Dis :  :  : 
+write_m3s5 : 1 : U : Dis :  :  : 
+write_m4s5 : 1 : U : Dis :  :  : 
+write_m5s5 : 1 : U : Dis :  :  : 
+write_m6s5 : 1 : U : Dis :  :  : 
+write_m7s5 : 1 : U : Dis :  :  : 
+write_m8s5 : 1 : U : Dis :  :  : 
+write_m9s5 : 1 : U : Dis :  :  : 
+write_m10s5 : 1 : U : Dis :  :  : 
+write_m11s5 : 1 : U : Dis :  :  : 
+write_m12s5 : 1 : U : Dis :  :  : 
+write_m13s5 : 1 : U : Dis :  :  : 
+write_m14s5 : 1 : U : Dis :  :  : 
+write_m15s5 : 1 : U : Dis :  :  : 
+write_m0s6 : 1 : U : Dis :  :  : 
+write_m1s6 : 1 : U : Dis :  :  : 
+write_m2s6 : 1 : U : Dis :  :  : 
+write_m3s6 : 1 : U : Dis :  :  : 
+write_m4s6 : 1 : U : Dis :  :  : 
+write_m5s6 : 1 : U : Dis :  :  : 
+write_m6s6 : 1 : U : Dis :  :  : 
+write_m7s6 : 1 : U : Dis :  :  : 
+write_m8s6 : 1 : U : Dis :  :  : 
+write_m9s6 : 1 : U : Dis :  :  : 
+write_m10s6 : 1 : U : Dis :  :  : 
+write_m11s6 : 1 : U : Dis :  :  : 
+write_m12s6 : 1 : U : Dis :  :  : 
+write_m13s6 : 1 : U : Dis :  :  : 
+write_m14s6 : 1 : U : Dis :  :  : 
+write_m15s6 : 1 : U : Dis :  :  : 
+write_m0s7 : 1 : U : Dis :  :  : 
+write_m1s7 : 1 : U : Dis :  :  : 
+write_m2s7 : 1 : U : Dis :  :  : 
+write_m3s7 : 1 : U : Dis :  :  : 
+write_m4s7 : 1 : U : Dis :  :  : 
+write_m5s7 : 1 : U : Dis :  :  : 
+write_m6s7 : 1 : U : Dis :  :  : 
+write_m7s7 : 1 : U : Dis :  :  : 
+write_m8s7 : 1 : U : Dis :  :  : 
+write_m9s7 : 1 : U : Dis :  :  : 
+write_m10s7 : 1 : U : Dis :  :  : 
+write_m11s7 : 1 : U : Dis :  :  : 
+write_m12s7 : 1 : U : Dis :  :  : 
+write_m13s7 : 1 : U : Dis :  :  : 
+write_m14s7 : 1 : U : Dis :  :  : 
+write_m15s7 : 1 : U : Dis :  :  : 
+write_m0s8 : 1 : U : Dis :  :  : 
+write_m1s8 : 1 : U : Dis :  :  : 
+write_m2s8 : 1 : U : Dis :  :  : 
+write_m3s8 : 1 : U : Dis :  :  : 
+write_m4s8 : 1 : U : Dis :  :  : 
+write_m5s8 : 1 : U : Dis :  :  : 
+write_m6s8 : 1 : U : Dis :  :  : 
+write_m7s8 : 1 : U : Dis :  :  : 
+write_m8s8 : 1 : U : Dis :  :  : 
+write_m9s8 : 1 : U : Dis :  :  : 
+write_m10s8 : 1 : U : Dis :  :  : 
+write_m11s8 : 1 : U : Dis :  :  : 
+write_m12s8 : 1 : U : Dis :  :  : 
+write_m13s8 : 1 : U : Dis :  :  : 
+write_m14s8 : 1 : U : Dis :  :  : 
+write_m15s8 : 1 : U : Dis :  :  : 
+write_m0s9 : 1 : U : Dis :  :  : 
+write_m1s9 : 1 : U : Dis :  :  : 
+write_m2s9 : 1 : U : Dis :  :  : 
+write_m3s9 : 1 : U : Dis :  :  : 
+write_m4s9 : 1 : U : Dis :  :  : 
+write_m5s9 : 1 : U : Dis :  :  : 
+write_m6s9 : 1 : U : Dis :  :  : 
+write_m7s9 : 1 : U : Dis :  :  : 
+write_m8s9 : 1 : U : Dis :  :  : 
+write_m9s9 : 1 : U : Dis :  :  : 
+write_m10s9 : 1 : U : Dis :  :  : 
+write_m11s9 : 1 : U : Dis :  :  : 
+write_m12s9 : 1 : U : Dis :  :  : 
+write_m13s9 : 1 : U : Dis :  :  : 
+write_m14s9 : 1 : U : Dis :  :  : 
+write_m15s9 : 1 : U : Dis :  :  : 
+write_m0s10 : 1 : U : Dis :  :  : 
+write_m1s10 : 1 : U : Dis :  :  : 
+write_m2s10 : 1 : U : Dis :  :  : 
+write_m3s10 : 1 : U : Dis :  :  : 
+write_m4s10 : 1 : U : Dis :  :  : 
+write_m5s10 : 1 : U : Dis :  :  : 
+write_m6s10 : 1 : U : Dis :  :  : 
+write_m7s10 : 1 : U : Dis :  :  : 
+write_m8s10 : 1 : U : Dis :  :  : 
+write_m9s10 : 1 : U : Dis :  :  : 
+write_m10s10 : 1 : U : Dis :  :  : 
+write_m11s10 : 1 : U : Dis :  :  : 
+write_m12s10 : 1 : U : Dis :  :  : 
+write_m13s10 : 1 : U : Dis :  :  : 
+write_m14s10 : 1 : U : Dis :  :  : 
+write_m15s10 : 1 : U : Dis :  :  : 
+write_m0s11 : 1 : U : Dis :  :  : 
+write_m1s11 : 1 : U : Dis :  :  : 
+write_m2s11 : 1 : U : Dis :  :  : 
+write_m3s11 : 1 : U : Dis :  :  : 
+write_m4s11 : 1 : U : Dis :  :  : 
+write_m5s11 : 1 : U : Dis :  :  : 
+write_m6s11 : 1 : U : Dis :  :  : 
+write_m7s11 : 1 : U : Dis :  :  : 
+write_m8s11 : 1 : U : Dis :  :  : 
+write_m9s11 : 1 : U : Dis :  :  : 
+write_m10s11 : 1 : U : Dis :  :  : 
+write_m11s11 : 1 : U : Dis :  :  : 
+write_m12s11 : 1 : U : Dis :  :  : 
+write_m13s11 : 1 : U : Dis :  :  : 
+write_m14s11 : 1 : U : Dis :  :  : 
+write_m15s11 : 1 : U : Dis :  :  : 
+write_m0s12 : 1 : U : Dis :  :  : 
+write_m1s12 : 1 : U : Dis :  :  : 
+write_m2s12 : 1 : U : Dis :  :  : 
+write_m3s12 : 1 : U : Dis :  :  : 
+write_m4s12 : 1 : U : Dis :  :  : 
+write_m5s12 : 1 : U : Dis :  :  : 
+write_m6s12 : 1 : U : Dis :  :  : 
+write_m7s12 : 1 : U : Dis :  :  : 
+write_m8s12 : 1 : U : Dis :  :  : 
+write_m9s12 : 1 : U : Dis :  :  : 
+write_m10s12 : 1 : U : Dis :  :  : 
+write_m11s12 : 1 : U : Dis :  :  : 
+write_m12s12 : 1 : U : Dis :  :  : 
+write_m13s12 : 1 : U : Dis :  :  : 
+write_m14s12 : 1 : U : Dis :  :  : 
+write_m15s12 : 1 : U : Dis :  :  : 
+write_m0s13 : 1 : U : Dis :  :  : 
+write_m1s13 : 1 : U : Dis :  :  : 
+write_m2s13 : 1 : U : Dis :  :  : 
+write_m3s13 : 1 : U : Dis :  :  : 
+write_m4s13 : 1 : U : Dis :  :  : 
+write_m5s13 : 1 : U : Dis :  :  : 
+write_m6s13 : 1 : U : Dis :  :  : 
+write_m7s13 : 1 : U : Dis :  :  : 
+write_m8s13 : 1 : U : Dis :  :  : 
+write_m9s13 : 1 : U : Dis :  :  : 
+write_m10s13 : 1 : U : Dis :  :  : 
+write_m11s13 : 1 : U : Dis :  :  : 
+write_m12s13 : 1 : U : Dis :  :  : 
+write_m13s13 : 1 : U : Dis :  :  : 
+write_m14s13 : 1 : U : Dis :  :  : 
+write_m15s13 : 1 : U : Dis :  :  : 
+write_m0s14 : 1 : U : Dis :  :  : 
+write_m1s14 : 1 : U : Dis :  :  : 
+write_m2s14 : 1 : U : Dis :  :  : 
+write_m3s14 : 1 : U : Dis :  :  : 
+write_m4s14 : 1 : U : Dis :  :  : 
+write_m5s14 : 1 : U : Dis :  :  : 
+write_m6s14 : 1 : U : Dis :  :  : 
+write_m7s14 : 1 : U : Dis :  :  : 
+write_m8s14 : 1 : U : Dis :  :  : 
+write_m9s14 : 1 : U : Dis :  :  : 
+write_m10s14 : 1 : U : Dis :  :  : 
+write_m11s14 : 1 : U : Dis :  :  : 
+write_m12s14 : 1 : U : Dis :  :  : 
+write_m13s14 : 1 : U : Dis :  :  : 
+write_m14s14 : 1 : U : Dis :  :  : 
+write_m15s14 : 1 : U : Dis :  :  : 
+write_m0s15 : 1 : U : Dis :  :  : 
+write_m1s15 : 1 : U : Dis :  :  : 
+write_m2s15 : 1 : U : Dis :  :  : 
+write_m3s15 : 1 : U : Dis :  :  : 
+write_m4s15 : 1 : U : Dis :  :  : 
+write_m5s15 : 1 : U : Dis :  :  : 
+write_m6s15 : 1 : U : Dis :  :  : 
+write_m7s15 : 1 : U : Dis :  :  : 
+write_m8s15 : 1 : U : Dis :  :  : 
+write_m9s15 : 1 : U : Dis :  :  : 
+write_m10s15 : 1 : U : Dis :  :  : 
+write_m11s15 : 1 : U : Dis :  :  : 
+write_m12s15 : 1 : U : Dis :  :  : 
+write_m13s15 : 1 : U : Dis :  :  : 
+write_m14s15 : 1 : U : Dis :  :  : 
+write_m15s15 : 1 : U : Dis :  :  : 
+read_m0s0 : 1 : U : En :  :  : 
+read_m1s0 : 1 : U : En :  :  : 
+read_m2s0 : 1 : U : En :  :  : 
+read_m3s0 : 1 : U : Dis :  :  : 
+read_m4s0 : 1 : U : Dis :  :  : 
+read_m5s0 : 1 : U : Dis :  :  : 
+read_m6s0 : 1 : U : Dis :  :  : 
+read_m7s0 : 1 : U : Dis :  :  : 
+read_m8s0 : 1 : U : Dis :  :  : 
+read_m9s0 : 1 : U : Dis :  :  : 
+read_m10s0 : 1 : U : Dis :  :  : 
+read_m11s0 : 1 : U : Dis :  :  : 
+read_m12s0 : 1 : U : Dis :  :  : 
+read_m13s0 : 1 : U : Dis :  :  : 
+read_m14s0 : 1 : U : Dis :  :  : 
+read_m15s0 : 1 : U : Dis :  :  : 
+read_m0s1 : 1 : U : Dis :  :  : 
+read_m1s1 : 1 : U : Dis :  :  : 
+read_m2s1 : 1 : U : Dis :  :  : 
+read_m3s1 : 1 : U : Dis :  :  : 
+read_m4s1 : 1 : U : Dis :  :  : 
+read_m5s1 : 1 : U : Dis :  :  : 
+read_m6s1 : 1 : U : Dis :  :  : 
+read_m7s1 : 1 : U : Dis :  :  : 
+read_m8s1 : 1 : U : Dis :  :  : 
+read_m9s1 : 1 : U : Dis :  :  : 
+read_m10s1 : 1 : U : Dis :  :  : 
+read_m11s1 : 1 : U : Dis :  :  : 
+read_m12s1 : 1 : U : Dis :  :  : 
+read_m13s1 : 1 : U : Dis :  :  : 
+read_m14s1 : 1 : U : Dis :  :  : 
+read_m15s1 : 1 : U : Dis :  :  : 
+read_m0s2 : 1 : U : Dis :  :  : 
+read_m1s2 : 1 : U : Dis :  :  : 
+read_m2s2 : 1 : U : Dis :  :  : 
+read_m3s2 : 1 : U : Dis :  :  : 
+read_m4s2 : 1 : U : Dis :  :  : 
+read_m5s2 : 1 : U : Dis :  :  : 
+read_m6s2 : 1 : U : Dis :  :  : 
+read_m7s2 : 1 : U : Dis :  :  : 
+read_m8s2 : 1 : U : Dis :  :  : 
+read_m9s2 : 1 : U : Dis :  :  : 
+read_m10s2 : 1 : U : Dis :  :  : 
+read_m11s2 : 1 : U : Dis :  :  : 
+read_m12s2 : 1 : U : Dis :  :  : 
+read_m13s2 : 1 : U : Dis :  :  : 
+read_m14s2 : 1 : U : Dis :  :  : 
+read_m15s2 : 1 : U : Dis :  :  : 
+read_m0s3 : 1 : U : Dis :  :  : 
+read_m1s3 : 1 : U : Dis :  :  : 
+read_m2s3 : 1 : U : Dis :  :  : 
+read_m3s3 : 1 : U : Dis :  :  : 
+read_m4s3 : 1 : U : Dis :  :  : 
+read_m5s3 : 1 : U : Dis :  :  : 
+read_m6s3 : 1 : U : Dis :  :  : 
+read_m7s3 : 1 : U : Dis :  :  : 
+read_m8s3 : 1 : U : Dis :  :  : 
+read_m9s3 : 1 : U : Dis :  :  : 
+read_m10s3 : 1 : U : Dis :  :  : 
+read_m11s3 : 1 : U : Dis :  :  : 
+read_m12s3 : 1 : U : Dis :  :  : 
+read_m13s3 : 1 : U : Dis :  :  : 
+read_m14s3 : 1 : U : Dis :  :  : 
+read_m15s3 : 1 : U : Dis :  :  : 
+read_m0s4 : 1 : U : Dis :  :  : 
+read_m1s4 : 1 : U : Dis :  :  : 
+read_m2s4 : 1 : U : Dis :  :  : 
+read_m3s4 : 1 : U : Dis :  :  : 
+read_m4s4 : 1 : U : Dis :  :  : 
+read_m5s4 : 1 : U : Dis :  :  : 
+read_m6s4 : 1 : U : Dis :  :  : 
+read_m7s4 : 1 : U : Dis :  :  : 
+read_m8s4 : 1 : U : Dis :  :  : 
+read_m9s4 : 1 : U : Dis :  :  : 
+read_m10s4 : 1 : U : Dis :  :  : 
+read_m11s4 : 1 : U : Dis :  :  : 
+read_m12s4 : 1 : U : Dis :  :  : 
+read_m13s4 : 1 : U : Dis :  :  : 
+read_m14s4 : 1 : U : Dis :  :  : 
+read_m15s4 : 1 : U : Dis :  :  : 
+read_m0s5 : 1 : U : Dis :  :  : 
+read_m1s5 : 1 : U : Dis :  :  : 
+read_m2s5 : 1 : U : Dis :  :  : 
+read_m3s5 : 1 : U : Dis :  :  : 
+read_m4s5 : 1 : U : Dis :  :  : 
+read_m5s5 : 1 : U : Dis :  :  : 
+read_m6s5 : 1 : U : Dis :  :  : 
+read_m7s5 : 1 : U : Dis :  :  : 
+read_m8s5 : 1 : U : Dis :  :  : 
+read_m9s5 : 1 : U : Dis :  :  : 
+read_m10s5 : 1 : U : Dis :  :  : 
+read_m11s5 : 1 : U : Dis :  :  : 
+read_m12s5 : 1 : U : Dis :  :  : 
+read_m13s5 : 1 : U : Dis :  :  : 
+read_m14s5 : 1 : U : Dis :  :  : 
+read_m15s5 : 1 : U : Dis :  :  : 
+read_m0s6 : 1 : U : Dis :  :  : 
+read_m1s6 : 1 : U : Dis :  :  : 
+read_m2s6 : 1 : U : Dis :  :  : 
+read_m3s6 : 1 : U : Dis :  :  : 
+read_m4s6 : 1 : U : Dis :  :  : 
+read_m5s6 : 1 : U : Dis :  :  : 
+read_m6s6 : 1 : U : Dis :  :  : 
+read_m7s6 : 1 : U : Dis :  :  : 
+read_m8s6 : 1 : U : Dis :  :  : 
+read_m9s6 : 1 : U : Dis :  :  : 
+read_m10s6 : 1 : U : Dis :  :  : 
+read_m11s6 : 1 : U : Dis :  :  : 
+read_m12s6 : 1 : U : Dis :  :  : 
+read_m13s6 : 1 : U : Dis :  :  : 
+read_m14s6 : 1 : U : Dis :  :  : 
+read_m15s6 : 1 : U : Dis :  :  : 
+read_m0s7 : 1 : U : Dis :  :  : 
+read_m1s7 : 1 : U : Dis :  :  : 
+read_m2s7 : 1 : U : Dis :  :  : 
+read_m3s7 : 1 : U : Dis :  :  : 
+read_m4s7 : 1 : U : Dis :  :  : 
+read_m5s7 : 1 : U : Dis :  :  : 
+read_m6s7 : 1 : U : Dis :  :  : 
+read_m7s7 : 1 : U : Dis :  :  : 
+read_m8s7 : 1 : U : Dis :  :  : 
+read_m9s7 : 1 : U : Dis :  :  : 
+read_m10s7 : 1 : U : Dis :  :  : 
+read_m11s7 : 1 : U : Dis :  :  : 
+read_m12s7 : 1 : U : Dis :  :  : 
+read_m13s7 : 1 : U : Dis :  :  : 
+read_m14s7 : 1 : U : Dis :  :  : 
+read_m15s7 : 1 : U : Dis :  :  : 
+read_m0s8 : 1 : U : Dis :  :  : 
+read_m1s8 : 1 : U : Dis :  :  : 
+read_m2s8 : 1 : U : Dis :  :  : 
+read_m3s8 : 1 : U : Dis :  :  : 
+read_m4s8 : 1 : U : Dis :  :  : 
+read_m5s8 : 1 : U : Dis :  :  : 
+read_m6s8 : 1 : U : Dis :  :  : 
+read_m7s8 : 1 : U : Dis :  :  : 
+read_m8s8 : 1 : U : Dis :  :  : 
+read_m9s8 : 1 : U : Dis :  :  : 
+read_m10s8 : 1 : U : Dis :  :  : 
+read_m11s8 : 1 : U : Dis :  :  : 
+read_m12s8 : 1 : U : Dis :  :  : 
+read_m13s8 : 1 : U : Dis :  :  : 
+read_m14s8 : 1 : U : Dis :  :  : 
+read_m15s8 : 1 : U : Dis :  :  : 
+read_m0s9 : 1 : U : Dis :  :  : 
+read_m1s9 : 1 : U : Dis :  :  : 
+read_m2s9 : 1 : U : Dis :  :  : 
+read_m3s9 : 1 : U : Dis :  :  : 
+read_m4s9 : 1 : U : Dis :  :  : 
+read_m5s9 : 1 : U : Dis :  :  : 
+read_m6s9 : 1 : U : Dis :  :  : 
+read_m7s9 : 1 : U : Dis :  :  : 
+read_m8s9 : 1 : U : Dis :  :  : 
+read_m9s9 : 1 : U : Dis :  :  : 
+read_m10s9 : 1 : U : Dis :  :  : 
+read_m11s9 : 1 : U : Dis :  :  : 
+read_m12s9 : 1 : U : Dis :  :  : 
+read_m13s9 : 1 : U : Dis :  :  : 
+read_m14s9 : 1 : U : Dis :  :  : 
+read_m15s9 : 1 : U : Dis :  :  : 
+read_m0s10 : 1 : U : Dis :  :  : 
+read_m1s10 : 1 : U : Dis :  :  : 
+read_m2s10 : 1 : U : Dis :  :  : 
+read_m3s10 : 1 : U : Dis :  :  : 
+read_m4s10 : 1 : U : Dis :  :  : 
+read_m5s10 : 1 : U : Dis :  :  : 
+read_m6s10 : 1 : U : Dis :  :  : 
+read_m7s10 : 1 : U : Dis :  :  : 
+read_m8s10 : 1 : U : Dis :  :  : 
+read_m9s10 : 1 : U : Dis :  :  : 
+read_m10s10 : 1 : U : Dis :  :  : 
+read_m11s10 : 1 : U : Dis :  :  : 
+read_m12s10 : 1 : U : Dis :  :  : 
+read_m13s10 : 1 : U : Dis :  :  : 
+read_m14s10 : 1 : U : Dis :  :  : 
+read_m15s10 : 1 : U : Dis :  :  : 
+read_m0s11 : 1 : U : Dis :  :  : 
+read_m1s11 : 1 : U : Dis :  :  : 
+read_m2s11 : 1 : U : Dis :  :  : 
+read_m3s11 : 1 : U : Dis :  :  : 
+read_m4s11 : 1 : U : Dis :  :  : 
+read_m5s11 : 1 : U : Dis :  :  : 
+read_m6s11 : 1 : U : Dis :  :  : 
+read_m7s11 : 1 : U : Dis :  :  : 
+read_m8s11 : 1 : U : Dis :  :  : 
+read_m9s11 : 1 : U : Dis :  :  : 
+read_m10s11 : 1 : U : Dis :  :  : 
+read_m11s11 : 1 : U : Dis :  :  : 
+read_m12s11 : 1 : U : Dis :  :  : 
+read_m13s11 : 1 : U : Dis :  :  : 
+read_m14s11 : 1 : U : Dis :  :  : 
+read_m15s11 : 1 : U : Dis :  :  : 
+read_m0s12 : 1 : U : Dis :  :  : 
+read_m1s12 : 1 : U : Dis :  :  : 
+read_m2s12 : 1 : U : Dis :  :  : 
+read_m3s12 : 1 : U : Dis :  :  : 
+read_m4s12 : 1 : U : Dis :  :  : 
+read_m5s12 : 1 : U : Dis :  :  : 
+read_m6s12 : 1 : U : Dis :  :  : 
+read_m7s12 : 1 : U : Dis :  :  : 
+read_m8s12 : 1 : U : Dis :  :  : 
+read_m9s12 : 1 : U : Dis :  :  : 
+read_m10s12 : 1 : U : Dis :  :  : 
+read_m11s12 : 1 : U : Dis :  :  : 
+read_m12s12 : 1 : U : Dis :  :  : 
+read_m13s12 : 1 : U : Dis :  :  : 
+read_m14s12 : 1 : U : Dis :  :  : 
+read_m15s12 : 1 : U : Dis :  :  : 
+read_m0s13 : 1 : U : Dis :  :  : 
+read_m1s13 : 1 : U : Dis :  :  : 
+read_m2s13 : 1 : U : Dis :  :  : 
+read_m3s13 : 1 : U : Dis :  :  : 
+read_m4s13 : 1 : U : Dis :  :  : 
+read_m5s13 : 1 : U : Dis :  :  : 
+read_m6s13 : 1 : U : Dis :  :  : 
+read_m7s13 : 1 : U : Dis :  :  : 
+read_m8s13 : 1 : U : Dis :  :  : 
+read_m9s13 : 1 : U : Dis :  :  : 
+read_m10s13 : 1 : U : Dis :  :  : 
+read_m11s13 : 1 : U : Dis :  :  : 
+read_m12s13 : 1 : U : Dis :  :  : 
+read_m13s13 : 1 : U : Dis :  :  : 
+read_m14s13 : 1 : U : Dis :  :  : 
+read_m15s13 : 1 : U : Dis :  :  : 
+read_m0s14 : 1 : U : Dis :  :  : 
+read_m1s14 : 1 : U : Dis :  :  : 
+read_m2s14 : 1 : U : Dis :  :  : 
+read_m3s14 : 1 : U : Dis :  :  : 
+read_m4s14 : 1 : U : Dis :  :  : 
+read_m5s14 : 1 : U : Dis :  :  : 
+read_m6s14 : 1 : U : Dis :  :  : 
+read_m7s14 : 1 : U : Dis :  :  : 
+read_m8s14 : 1 : U : Dis :  :  : 
+read_m9s14 : 1 : U : Dis :  :  : 
+read_m10s14 : 1 : U : Dis :  :  : 
+read_m11s14 : 1 : U : Dis :  :  : 
+read_m12s14 : 1 : U : Dis :  :  : 
+read_m13s14 : 1 : U : Dis :  :  : 
+read_m14s14 : 1 : U : Dis :  :  : 
+read_m15s14 : 1 : U : Dis :  :  : 
+read_m0s15 : 1 : U : Dis :  :  : 
+read_m1s15 : 1 : U : Dis :  :  : 
+read_m2s15 : 1 : U : Dis :  :  : 
+read_m3s15 : 1 : U : Dis :  :  : 
+read_m4s15 : 1 : U : Dis :  :  : 
+read_m5s15 : 1 : U : Dis :  :  : 
+read_m6s15 : 1 : U : Dis :  :  : 
+read_m7s15 : 1 : U : Dis :  :  : 
+read_m8s15 : 1 : U : Dis :  :  : 
+read_m9s15 : 1 : U : Dis :  :  : 
+read_m10s15 : 1 : U : Dis :  :  : 
+read_m11s15 : 1 : U : Dis :  :  : 
+read_m12s15 : 1 : U : Dis :  :  : 
+read_m13s15 : 1 : U : Dis :  :  : 
+read_m14s15 : 1 : U : Dis :  :  : 
+read_m15s15 : 1 : U : Dis :  :  : 
+write_connectivity_ds0 : 00000001 : G : En :  :  : 
+write_connectivity_ds1 : 00000001 : G : En :  :  : 
+write_connectivity_ds2 : 00000001 : G : En :  :  : 
+write_connectivity_ds3 : 00000001 : G : En :  :  : 
+write_connectivity_ds4 : 00000001 : G : En :  :  : 
+write_connectivity_ds5 : 00000001 : G : En :  :  : 
+write_connectivity_ds6 : 00000001 : G : En :  :  : 
+write_connectivity_ds7 : 00000001 : G : En :  :  : 
+write_connectivity_ds8 : 00000001 : G : En :  :  : 
+write_connectivity_ds9 : 00000001 : G : En :  :  : 
+write_connectivity_ds10 : 00000001 : G : En :  :  : 
+write_connectivity_ds11 : 00000001 : G : En :  :  : 
+write_connectivity_ds12 : 00000001 : G : En :  :  : 
+write_connectivity_ds13 : 00000001 : G : En :  :  : 
+write_connectivity_ds14 : 00000001 : G : En :  :  : 
+write_connectivity_ds15 : 00000001 : G : En :  :  : 
+read_connectivity_ds0 : 00000001 : G : En :  :  : 
+read_connectivity_ds1 : 00000001 : G : En :  :  : 
+read_connectivity_ds2 : 00000001 : G : En :  :  : 
+read_connectivity_ds3 : 00000001 : G : En :  :  : 
+read_connectivity_ds4 : 00000001 : G : En :  :  : 
+read_connectivity_ds5 : 00000001 : G : En :  :  : 
+read_connectivity_ds6 : 00000001 : G : En :  :  : 
+read_connectivity_ds7 : 00000001 : G : En :  :  : 
+read_connectivity_ds8 : 00000001 : G : En :  :  : 
+read_connectivity_ds9 : 00000001 : G : En :  :  : 
+read_connectivity_ds10 : 00000001 : G : En :  :  : 
+read_connectivity_ds11 : 00000001 : G : En :  :  : 
+read_connectivity_ds12 : 00000001 : G : En :  :  : 
+read_connectivity_ds13 : 00000001 : G : En :  :  : 
+read_connectivity_ds14 : 00000001 : G : En :  :  : 
+read_connectivity_ds15 : 00000001 : G : En :  :  : 
+AL_AXI_WRITE_CONNECTIVITY : 96'h000000010000000100000001 : G : En :  :  : 
+AL_AXI_READ_CONNECTIVITY : 96'h000000010000000100000001 : G : En :  :  : 
+single_thread_us0 : 0 : U : Dis :  :  : 
+single_thread_us1 : 0 : U : Dis :  :  : 
+single_thread_us2 : 0 : U : Dis :  :  : 
+single_thread_us3 : 0 : U : Dis :  :  : 
+single_thread_us4 : 0 : U : Dis :  :  : 
+single_thread_us5 : 0 : U : Dis :  :  : 
+single_thread_us6 : 0 : U : Dis :  :  : 
+single_thread_us7 : 0 : U : Dis :  :  : 
+single_thread_us8 : 0 : U : Dis :  :  : 
+single_thread_us9 : 0 : U : Dis :  :  : 
+single_thread_us10 : 0 : U : Dis :  :  : 
+single_thread_us11 : 0 : U : Dis :  :  : 
+single_thread_us12 : 0 : U : Dis :  :  : 
+single_thread_us13 : 0 : U : Dis :  :  : 
+single_thread_us14 : 0 : U : Dis :  :  : 
+single_thread_us15 : 0 : U : Dis :  :  : 
+ot_write_acceptance_us0 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us1 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us2 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us3 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us4 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us5 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us6 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us7 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us8 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us9 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us10 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us11 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us12 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us13 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us14 : 1 : U : Dis :  :  : 
+ot_write_acceptance_us15 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us0 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us1 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us2 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us3 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us4 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us5 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us6 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us7 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us8 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us9 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us10 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us11 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us12 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us13 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us14 : 1 : U : Dis :  :  : 
+ot_read_acceptance_us15 : 1 : U : Dis :  :  : 
+ot_write_issuing_ds0 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds1 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds2 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds3 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds4 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds5 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds6 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds7 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds8 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds9 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds10 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds11 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds12 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds13 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds14 : 4 : U : Dis :  :  : 
+ot_write_issuing_ds15 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds0 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds1 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds2 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds3 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds4 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds5 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds6 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds7 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds8 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds9 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds10 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds11 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds12 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds13 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds14 : 4 : U : Dis :  :  : 
+ot_read_issuing_ds15 : 4 : U : Dis :  :  : 
+arb_priority_us0 : 0 : U : En :  :  : 
+arb_priority_us1 : 0 : U : Dis :  :  : 
+arb_priority_us2 : 0 : U : Dis :  :  : 
+arb_priority_us3 : 0 : U : Dis :  :  : 
+arb_priority_us4 : 0 : U : Dis :  :  : 
+arb_priority_us5 : 0 : U : Dis :  :  : 
+arb_priority_us6 : 0 : U : Dis :  :  : 
+arb_priority_us7 : 0 : U : Dis :  :  : 
+arb_priority_us8 : 0 : U : Dis :  :  : 
+arb_priority_us9 : 0 : U : Dis :  :  : 
+arb_priority_us10 : 0 : U : Dis :  :  : 
+arb_priority_us11 : 0 : U : Dis :  :  : 
+arb_priority_us12 : 0 : U : Dis :  :  : 
+arb_priority_us13 : 0 : U : Dis :  :  : 
+arb_priority_us14 : 0 : U : Dis :  :  : 
+arb_priority_us15 : 0 : U : Dis :  :  : 
+support_secure_ds1 : 0 : U : En :  :  : 
+support_secure_ds2 : 0 : U : En :  :  : 
+support_secure_ds3 : 0 : U : Dis :  :  : 
+support_secure_ds4 : 0 : U : Dis :  :  : 
+support_secure_ds5 : 0 : U : Dis :  :  : 
+support_secure_ds6 : 0 : U : Dis :  :  : 
+support_secure_ds7 : 0 : U : Dis :  :  : 
+support_secure_ds8 : 0 : U : Dis :  :  : 
+support_secure_ds9 : 0 : U : Dis :  :  : 
+support_secure_ds10 : 0 : U : Dis :  :  : 
+support_secure_ds11 : 0 : U : Dis :  :  : 
+support_secure_ds12 : 0 : U : Dis :  :  : 
+support_secure_ds13 : 0 : U : Dis :  :  : 
+support_secure_ds14 : 0 : U : Dis :  :  : 
+support_secure_ds15 : 0 : U : Dis :  :  : 
+support_secure_ds0 : 0 : U : En :  :  : 
+ds0_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds1_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds2_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds3_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds4_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds5_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds6_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds7_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds8_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds9_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds10_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds11_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds12_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds13_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds14_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds15_base_addr_overflow_check : 0 -1 : G : En :  :  : 
+ds0_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds1_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds2_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds3_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds4_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds5_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds6_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds7_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds8_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds9_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds10_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds11_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds12_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds13_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds14_base_addr_align_check : 0 -1 : G : En :  :  : 
+ds15_base_addr_align_check : 0 -1 : G : En :  :  : 
+global_check : 0 : G : En :  :  : 
+ds0_base_addr_upper_bound : 0x80200fff : G : En :  :  : 
+ds1_base_addr_upper_bound : 0x80101fff : G : En :  :  : 
+ds2_base_addr_upper_bound : 0x8002ffff : G : En :  :  : 
+ds3_base_addr_upper_bound : 0x8003ffff : G : En :  :  : 
+ds4_base_addr_upper_bound : 0x8004ffff : G : En :  :  : 
+ds5_base_addr_upper_bound : 0x8005ffff : G : En :  :  : 
+ds6_base_addr_upper_bound : 0x600fff : G : En :  :  : 
+ds7_base_addr_upper_bound : 0x700fff : G : En :  :  : 
+ds8_base_addr_upper_bound : 0x800fff : G : En :  :  : 
+ds9_base_addr_upper_bound : 0x900fff : G : En :  :  : 
+ds10_base_addr_upper_bound : 0xa00fff : G : En :  :  : 
+ds11_base_addr_upper_bound : 0xb00fff : G : En :  :  : 
+ds12_base_addr_upper_bound : 0xc00fff : G : En :  :  : 
+ds13_base_addr_upper_bound : 0xd00fff : G : En :  :  : 
+ds14_base_addr_upper_bound : 0xe00fff : G : En :  :  : 
+ds15_base_addr_upper_bound : 0xf00fff : G : En :  :  : 
+ds0_base_addr_lower_bound : 0x0000000080200000 : G : En :  :  : 
+ds1_base_addr_lower_bound : 0x0000000080100000 : G : En :  :  : 
+ds2_base_addr_lower_bound : 0x0000000080300000 : G : En :  :  : 
+ds3_base_addr_lower_bound : 0x0000000080030000 : G : En :  :  : 
+ds4_base_addr_lower_bound : 0x80040000 : G : En :  :  : 
+ds5_base_addr_lower_bound : 0x80050000 : G : En :  :  : 
+ds6_base_addr_lower_bound : 0x0000000000600000 : G : En :  :  : 
+ds7_base_addr_lower_bound : 0x0000000000700000 : G : En :  :  : 
+ds8_base_addr_lower_bound : 0x0000000000800000 : G : En :  :  : 
+ds9_base_addr_lower_bound : 0x0000000000900000 : G : En :  :  : 
+ds10_base_addr_lower_bound : 0x0000000000A00000 : G : En :  :  : 
+ds11_base_addr_lower_bound : 0x0000000000B00000 : G : En :  :  : 
+ds12_base_addr_lower_bound : 0x0000000000C00000 : G : En :  :  : 
+ds13_base_addr_lower_bound : 0x0000000000D00000 : G : En :  :  : 
+ds14_base_addr_lower_bound : 0x0000000000E00000 : G : En :  :  : 
+ds15_base_addr_lower_bound : 0x0000000000F00000 : G : En :  :  : 
+conectivity_type : Shared-Data(SASD) : U : En : Shared-Data(SASD) :  : 
+read_channel_register : None : U : En : None;;Full;;Light;;Auto :  : 
+ds_num_min : 2 : G : En :  :  : 

@@ -1,0 +1,40 @@
+{
+  "status": "PASS_REAL_NORMAL_ADVISORY_HOST_TRAINING",
+  "quantized_reconstruction_comparison": {
+    "calibration": {
+      "quantized_reconstruction_mse": 0.1647764140301256,
+      "constant_mean_mse": 0.7328570300467755,
+      "improvement_fraction": 0.7751588546273362
+    },
+    "independent_test": {
+      "quantized_reconstruction_mse": 0.1672020701897128,
+      "constant_mean_mse": 0.7575234273576625,
+      "improvement_fraction": 0.7792780207828889
+    }
+  },
+  "minimum_quantized_reconstruction_gain": 0.1,
+  "normal_holdout_frames": 707,
+  "normal_holdout_alarm_rate": 0.0014144271570014145,
+  "false_alarm_budget": 0.05,
+  "fault_detection_accuracy": null,
+  "fault_classes_trained": [],
+  "qualified": false,
+  "selected": {
+    "alpha": 0.01,
+    "seed": 20261101,
+    "calibration_mse": 0.16082543432985896,
+    "constant_mean_mse": 0.7328569889068604,
+    "iterations": 1138,
+    "seconds": 0.7709498329786584,
+    "warnings": []
+  },
+  "holdout_scores": {
+    "p50": 0.5415549755096436,
+    "p95": 0.7509353820978747,
+    "p99": 0.8916854832001443
+  },
+  "real_normal_training_only": true,
+  "npu_executed": false,
+  "normalization_fitted_on_train": true,
+  "test_used_for_training_selection_or_threshold": false
+}

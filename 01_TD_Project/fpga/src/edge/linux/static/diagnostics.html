@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICM 通信诊断</title>
+<style>
+body{font:15px/1.6 system-ui,sans-serif;background:#f6f7f9;color:#202832;margin:0}main{max-width:1040px;margin:32px auto;padding:0 24px}a{color:#175a91}h1{font-size:25px;margin-bottom:6px}p{color:#596574}.bar{display:flex;gap:10px;margin:24px 0;flex-wrap:wrap}input,button{font:inherit;padding:7px 12px;border:1px solid #b8c0c8;border-radius:4px}input{min-width:220px}button{background:#fff;cursor:pointer}table{border-collapse:collapse;width:100%;background:white}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #e0e4e8}th{background:#eaf0f4;font-weight:600}td{font-variant-numeric:tabular-nums}#status{padding:12px 0;color:#505f6d}code{font-size:13px}.note{background:#fff7e1;border-left:3px solid #c98b25;padding:12px 16px}@media(max-width:650px){main{padding:0 12px}.scroll{overflow-x:auto}td,th{white-space:nowrap;padding:8px}}
+</style>
+<main><a href="/">← 实时监控</a><h1>ICM 通信诊断</h1><p>直接读取 PL 的独立原始采集状态，不等待双路特征帧。此页不下发控制，不启动推理。</p>
+<div class="bar"><input id="token" type="password" autocomplete="off" aria-label="访问令牌" placeholder="访问令牌（仅保存在本页内存）"><button id="connect">读取状态</button><button id="stop">停止刷新</button></div>
+<div id="status" role="status">未连接</div><div class="scroll"><table><thead><tr><th>项目</th><th>A 路</th><th>B 路</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p id="clocks"></p><p class="note">WHO=0x2E 仅表示允许诊断，不证明正品或 4kHz 合格。原始 XYZ 是有符号 ADC 码；未校准时不冒充物理加速度。测得采样率不是 NPU / 特征管线验收。DIAG_LOSS 也可能来自压差无效，不能单凭它判断 SPI。</p>
+</main><script>
+let timer=null,epoch=0;
+const statusNode=document.getElementById('status'),rows=document.getElementById('rows'),clocks=document.getElementById('clocks');
+function clearData(message){statusNode.textContent=message;rows.replaceChildren();clocks.textContent='';}
+function hex(value,digits){return Number.isInteger(value)?'0x'+value.toString(16).toUpperCase().padStart(digits,'0'):'—';}
+function render(state){
+ const diag=state.icm_diagnostics||{},sensors=diag.sensors||[];
+ clearData('连接：'+state.link+'　诊断：'+(diag.state||'DISABLED')+'　快照年龄：'+(diag.snapshot_age_ms??'—')+' ms');
+ const fields=[['WHO',sensor=>hex(sensor.who,2)],['驱动错误',sensor=>sensor.error?'是':'否'],['配置失败掩码',sensor=>hex(sensor.config_bad_mask,3)],['最近配置失败',sensor=>hex(sensor.config_failure.address,2)+' 预期 '+hex(sensor.config_failure.expected,2)+' / 实际 '+hex(sensor.config_failure.actual,2)],['原始 X / Y / Z',sensor=>sensor.raw?sensor.raw.join(' / '):'无有效样本'],['采样序号',sensor=>sensor.sequence],['有效样本累计 (16bit)',sensor=>sensor.valid_count],['最近采样年龄 (ms)',sensor=>sensor.sample_age_ms==null?'—':sensor.sample_age_ms.toFixed(2)],['观测采样率 (Hz)',sensor=>sensor.observed_rate_hz??'等待第二快照'],['符合 4kHz ±3%（非资格）',sensor=>sensor.rate_matches_4khz==null?'未知':sensor.rate_matches_4khz?'是':'否'],['DRDY=0 累计',sensor=>sensor.drdy_zero_count],['数据看门狗 / 重试',sensor=>sensor.watchdog_count+' / '+sensor.retry_count]];
+ for(const [name,get] of fields){const row=document.createElement('tr');for(const text of [name,...[0,1].map(index=>sensors[index]?String(get(sensors[index])):'—')]){const cell=document.createElement('td');cell.textContent=text;row.appendChild(cell);}rows.appendChild(row);}
+ if(diag.burst_spi_hz)clocks.textContent='SPI 数据突发 '+diag.burst_spi_hz+' Hz；配置 / WHO / 读回 '+diag.register_spi_hz+' Hz；轮询 '+diag.poll_hz+' Hz。';
+}
+async function refresh(run){
+ try{const response=await fetch('/api/status',{headers:{Authorization:'Bearer '+document.getElementById('token').value},cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const state=await response.json();if(run===epoch)render(state);}
+ catch(error){if(run===epoch)clearData('读取失败：'+error.message);}
+ if(run===epoch)timer=setTimeout(()=>refresh(run),1000);
+}
+document.getElementById('connect').onclick=()=>{clearTimeout(timer);refresh(++epoch);};
+document.getElementById('stop').onclick=()=>{++epoch;clearTimeout(timer);clearData('已停止刷新');};
+window.addEventListener('pagehide',()=>{++epoch;clearTimeout(timer);});
+</script></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>缩放保持自检（分辨率保留 / 换窗口复位）</title>
+<style>
+body{font:13px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;margin:12px;color:#1f2328}
+pre{background:#f6f8fa;border:1px solid #e2e5e9;border-radius:8px;padding:12px;font-size:13px}
+iframe{width:1240px;height:520px;border:1px solid #e2e5e9;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="margin:0 0 6px">自检：缩放后，改分辨率 / 换窗口都应立即复位</h3>
+<pre id="out">running...</pre>
+<iframe id="f"></iframe>
+<script>
+var log = [];
+function add(s){ log.push(s); document.getElementById("out").textContent = log.join("\n"); }
+function span(x){ return Math.round(x.max - x.min); }
+
+var f = document.getElementById("f");
+f.onload = function(){
+  setTimeout(function(){
+    try {
+      var w = f.contentWindow, doc = f.contentDocument;
+      var u = w.__uplot;
+      if (!u){ add("❌ 拿不到 uPlot 实例"); return; }
+      var full0 = span(u.scales.x);
+      add("初始跨度: " + full0 + " s");
+
+      function zoomTo(sec, cb){
+        var d = u.data[0];
+        var mid = d[0] + (d[d.length - 1] - d[0]) * 0.25;
+        u.setScale("x", {min: mid, max: mid + sec});
+        setTimeout(function(){ cb({min: u.scales.x.min, max: u.scales.x.max}); }, 150);
+      }
+      function tag(){ return (doc.getElementById("trendTag") || {}).textContent || ""; }
+
+      // ---- [1] 缩放 → 改分辨率：应【保留】 ----
+      zoomTo(60, function(z1){
+        add("");
+        add("[1] 缩放后跨度: " + span(z1) + " s");
+        var sel = doc.getElementById("trendBucket");
+        add("    改分辨率 " + sel.value + " -> 60");
+        sel.value = "60";
+        sel.dispatchEvent(new Event("change", {bubbles: true}));
+        setTimeout(function(){
+          var x2 = {min: u.scales.x.min, max: u.scales.x.max};
+          add("    改后跨度  : " + span(x2) + " s");
+          add(span(x2) > full0 * 0.9 ? "    OK 已复位到全窗口（预期行为）" : "    FAIL 仍是缩放状态（应复位）");
+          add("    标签含已缩放: " + (tag().indexOf("已缩放") >= 0 ? "FAIL 是（标记没清）" : "OK 否"));
+
+          // ---- [2] 缩放 → 换窗口：应【复位】 ----
+          zoomTo(60, function(z2){
+            add("");
+            add("[2] 再次缩放后跨度: " + span(z2) + " s");
+            var tabs = doc.querySelectorAll("#trendTabs .tab"), target = null;
+            for (var i = 0; i < tabs.length; i++){
+              if (tabs[i].dataset.min === "1440"){ target = tabs[i]; break; }
+            }
+            add("    切到 24 小时窗口");
+            target.click();
+            setTimeout(function(){
+              var s4 = span(u.scales.x);
+              add("    切换后跨度: " + s4 + " s");
+              add(s4 > 600 ? "    OK 已复位（预期行为，窗口放大到 " + Math.round(s4 / 60) + " 分钟）"
+                           : "    FAIL 仍是缩放状态（应复位）");
+              add("    标签含已缩放: " + (tag().indexOf("已缩放") >= 0 ? "FAIL 是（标记没清）" : "OK 否"));
+              add("");
+              add("测试结束");
+            }, 3000);
+          });
+        }, 2600);
+      });
+    } catch (e) {
+      add("❌ 测试异常: " + e.message);
+    }
+  }, 3000);
+};
+f.src = "/?min=5";
+</script>
+</body>
+</html>

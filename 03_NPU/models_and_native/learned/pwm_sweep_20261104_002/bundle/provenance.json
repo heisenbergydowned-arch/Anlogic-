@@ -1,0 +1,292 @@
+{
+  "source": "REAL_USER_DECLARED_NORMAL_DIAGNOSTIC",
+  "raw_capture_qualification_changed": false,
+  "training_objective": {
+    "schema": "cabinet-group-balanced-normal-loss-v1",
+    "squared_loss": "equal_mean_per_GROUPS_with_shared_features_summed",
+    "feature_target_scales": [
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.9309493362512627,
+      2.792848008753788,
+      2.792848008753788,
+      1.9748417658131499,
+      1.9748417658131499
+    ],
+    "architecture_unchanged": [
+      39,
+      32,
+      16,
+      39
+    ],
+    "output_units_unchanged": true,
+    "thresholds_or_domain_limits_relaxed": false
+  },
+  "input_contract": {
+    "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+    "configuration_words": [
+      1,
+      0,
+      0,
+      1073741824,
+      0,
+      885622,
+      17896,
+      2,
+      1,
+      13,
+      39,
+      65,
+      103,
+      154,
+      205,
+      257,
+      513
+    ],
+    "frame_identity": [
+      1,
+      0,
+      2
+    ],
+    "controller_mode": "STOPPING",
+    "controller_diagnostic_mode": true,
+    "pwm_operating_reference": {
+      "schema": "cabinet-user-normal-pwm-reference-v1",
+      "duty_nodes_percent": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "source": "THREE_REAL_USER_DECLARED_NORMAL_PWM_SWEEPS",
+      "steady_only": true
+    }
+  },
+  "sessions": {
+    "train": {
+      "rows": 1656,
+      "session_ids": [
+        "97b1a4e92fe24a9bbc5e81a0a732f792",
+        "cc96477a94d14454a08cab4976d7bbea"
+      ],
+      "captures": [
+        {
+          "session_id": "97b1a4e92fe24a9bbc5e81a0a732f792",
+          "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+          "rows": 744,
+          "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+          "raw_rows": 1281,
+          "session_sha256": "a09d34b601583ac41adc5c95f4232601833edfe7c74eaa070cae2e0592e25591",
+          "frames_sha256": "666bd5565769a91df2b90b979e6182d782cdef1625d52c479f63b3d2ca265cff",
+          "first_frame": 38678,
+          "last_frame": 40766,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "normal",
+          "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+          "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+          "raw_capture_qualification_changed": false,
+          "excluded_reason_counts": {
+            "OUTSIDE_REQUESTED_TRIAL": 343,
+            "SETTLING_OR_NOT_ACTIVE": 194
+          },
+          "pwm_coverage": {
+            "0": 67,
+            "10": 68,
+            "20": 70,
+            "30": 66,
+            "40": 69,
+            "50": 65,
+            "60": 66,
+            "70": 68,
+            "80": 68,
+            "90": 68,
+            "100": 69
+          },
+          "settling_excluded_seconds": 4,
+          "temperature_range_C": [
+            39.75,
+            43.6875
+          ]
+        },
+        {
+          "session_id": "cc96477a94d14454a08cab4976d7bbea",
+          "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+          "rows": 912,
+          "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+          "raw_rows": 1528,
+          "session_sha256": "05a6d6f35a71453f6a621d86bc17f57b26afb08f958f2987f6e90193c56af7ac",
+          "frames_sha256": "a2f309a8e3525a3d2bab1762c375950afa60091bc097a192286f86113a0e6a3a",
+          "first_frame": 35000,
+          "last_frame": 37124,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "normal",
+          "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+          "normal_confirmation_sha256": "f7f89c6a9ad27332e9322fa2b2bbb8c839d2f7147ab6c3b48f0d1d9a5ae9ea1d",
+          "raw_capture_qualification_changed": false,
+          "excluded_reason_counts": {
+            "OUTSIDE_REQUESTED_TRIAL": 391,
+            "SETTLING_OR_NOT_ACTIVE": 225
+          },
+          "pwm_coverage": {
+            "0": 80,
+            "10": 85,
+            "20": 80,
+            "30": 85,
+            "40": 82,
+            "50": 85,
+            "60": 85,
+            "70": 84,
+            "80": 81,
+            "90": 81,
+            "100": 84
+          },
+          "settling_excluded_seconds": 4,
+          "temperature_range_C": [
+            39.625,
+            44.0
+          ]
+        }
+      ]
+    },
+    "calibration": {
+      "rows": 745,
+      "session_ids": [
+        "6e8e20bc29c84a1fb92424aa5c169087"
+      ],
+      "captures": [
+        {
+          "session_id": "6e8e20bc29c84a1fb92424aa5c169087",
+          "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+          "rows": 745,
+          "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+          "raw_rows": 1311,
+          "session_sha256": "1b76dfca70c62d59275160a2410b5197856205744e5c1940aa0be6f98cd274a6",
+          "frames_sha256": "2a5b825a02424b0b674a85a9cdbba2297de999ca37466bbc1d888a74e75b469a",
+          "first_frame": 40891,
+          "last_frame": 42995,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "normal",
+          "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+          "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+          "raw_capture_qualification_changed": false,
+          "excluded_reason_counts": {
+            "OUTSIDE_REQUESTED_TRIAL": 364,
+            "SETTLING_OR_NOT_ACTIVE": 202
+          },
+          "pwm_coverage": {
+            "0": 66,
+            "10": 65,
+            "20": 66,
+            "30": 68,
+            "40": 68,
+            "50": 70,
+            "60": 68,
+            "70": 73,
+            "80": 68,
+            "90": 68,
+            "100": 65
+          },
+          "settling_excluded_seconds": 4,
+          "temperature_range_C": [
+            39.6875,
+            43.875
+          ]
+        }
+      ]
+    },
+    "test": {
+      "rows": 771,
+      "session_ids": [
+        "81ab50ee6888454ab0eb8c23c83f14a0"
+      ],
+      "captures": [
+        {
+          "session_id": "81ab50ee6888454ab0eb8c23c83f14a0",
+          "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+          "rows": 771,
+          "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+          "raw_rows": 1279,
+          "session_sha256": "f36957d9a9e6b4bc96f17b94a672b745d53299b248a5782165330247efe7ef10",
+          "frames_sha256": "2436038ad8d73dc0c7e74e4ff0128f328f25d4b8a1eb14ce3cb9fdaf56fdb5b7",
+          "first_frame": 43181,
+          "last_frame": 45207,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "normal",
+          "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+          "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+          "raw_capture_qualification_changed": false,
+          "excluded_reason_counts": {
+            "OUTSIDE_REQUESTED_TRIAL": 311,
+            "SETTLING_OR_NOT_ACTIVE": 197
+          },
+          "pwm_coverage": {
+            "0": 71,
+            "10": 69,
+            "20": 70,
+            "30": 70,
+            "40": 69,
+            "50": 73,
+            "60": 66,
+            "70": 70,
+            "80": 72,
+            "90": 71,
+            "100": 70
+          },
+          "settling_excluded_seconds": 4,
+          "temperature_range_C": [
+            39.625,
+            44.375
+          ]
+        }
+      ]
+    }
+  },
+  "calibration_used_for_model_selection_and_threshold": true,
+  "test_used_for_training": false,
+  "user_scope": "Use current user-declared normal data for live advisory NPU inference",
+  "limitations": [
+    "no fault-class data",
+    "normal operating domain not independently certified",
+    "physical units not calibrated",
+    "controller diagnostic/inhibited profile"
+  ]
+}

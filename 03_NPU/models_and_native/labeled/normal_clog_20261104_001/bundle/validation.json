@@ -1,0 +1,252 @@
+{
+  "status": "PASS_SCOPED_HOST_QUANTIZATION",
+  "trained_labels": [
+    "normal",
+    "clog"
+  ],
+  "untrained_labels": [
+    "imbalance",
+    "stall",
+    "overheat"
+  ],
+  "npu_executed": false,
+  "deployed": false,
+  "qualified": false,
+  "control_authority": "NONE",
+  "results": {
+    "validation": {
+      "checks": {
+        "quality": true,
+        "class_agreement": true,
+        "macro_f1_degradation": true,
+        "fp32_export": true,
+        "untrained_outputs_zero": true,
+        "normal_pwm": true
+      },
+      "quality": {
+        "passed": true,
+        "checks": {
+          "normal_false_positive": true,
+          "recall": true,
+          "macro_f1": true,
+          "coverage": true
+        },
+        "normal_false_positive_rate": 0.0,
+        "recall": {
+          "normal": 1.0,
+          "clog": 1.0
+        },
+        "macro_f1": 1.0,
+        "coverage": 1.0,
+        "rows": 2154,
+        "confusion_matrix": [
+          [
+            1448,
+            0,
+            0
+          ],
+          [
+            0,
+            706,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "normal",
+          "clog",
+          "rejected"
+        ]
+      },
+      "class_agreement": 1.0,
+      "clipped_count": 0,
+      "fp32_export_max_error": 6.996574974937886e-08,
+      "untrained_output_max_u8": 0,
+      "normal_pwm": {
+        "0": {
+          "rows": 66,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "10": {
+          "rows": 65,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "20": {
+          "rows": 66,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "30": {
+          "rows": 68,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "40": {
+          "rows": 68,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "50": {
+          "rows": 70,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "60": {
+          "rows": 68,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "70": {
+          "rows": 73,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "80": {
+          "rows": 68,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "90": {
+          "rows": 68,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "100": {
+          "rows": 65,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        }
+      }
+    },
+    "test": {
+      "checks": {
+        "quality": true,
+        "class_agreement": true,
+        "macro_f1_degradation": true,
+        "fp32_export": true,
+        "untrained_outputs_zero": true,
+        "normal_pwm": true
+      },
+      "quality": {
+        "passed": true,
+        "checks": {
+          "normal_false_positive": true,
+          "recall": true,
+          "macro_f1": true,
+          "coverage": true
+        },
+        "normal_false_positive_rate": 0.005427408412483039,
+        "recall": {
+          "normal": 0.991180461329715,
+          "clog": 1.0
+        },
+        "macro_f1": 0.9949684478249394,
+        "coverage": 0.9977064220183486,
+        "rows": 2180,
+        "confusion_matrix": [
+          [
+            1461,
+            8,
+            5
+          ],
+          [
+            0,
+            706,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "normal",
+          "clog",
+          "rejected"
+        ]
+      },
+      "class_agreement": 0.9977064220183486,
+      "clipped_count": 1,
+      "fp32_export_max_error": 6.146881294522011e-07,
+      "untrained_output_max_u8": 0,
+      "normal_pwm": {
+        "0": {
+          "rows": 71,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "10": {
+          "rows": 69,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "20": {
+          "rows": 70,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "30": {
+          "rows": 70,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "40": {
+          "rows": 69,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "50": {
+          "rows": 73,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "60": {
+          "rows": 66,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "70": {
+          "rows": 70,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "80": {
+          "rows": 72,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "90": {
+          "rows": 71,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        },
+        "100": {
+          "rows": 70,
+          "false_positive_rate": 0.0,
+          "normal_recall": 1.0,
+          "passed": true
+        }
+      }
+    }
+  },
+  "training_report_sha256": "b4cad58283e900290c17abaabb5fbd4dd71a0cdc2e22f5f86860be1551f93807",
+  "dataset_sha256": "368fcb52ae57601a621377936eb8b48d37fdb3ef15a9ca24886922aec1d1469a"
+}

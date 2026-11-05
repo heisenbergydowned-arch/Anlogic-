@@ -1,0 +1,14 @@
+{
+  "waveform": {
+    "enabled": false,
+    "reviewed_abi": 65536,
+    "transactions_per_poll": 64,
+    "budget_ms": 2
+  },
+  "snapshot_interval_ms": 1000,
+  "storage": {
+    "min_free_bytes": 67108864,
+    "max_database_bytes": 536870912,
+    "max_waveforms": 10000
+  }
+}

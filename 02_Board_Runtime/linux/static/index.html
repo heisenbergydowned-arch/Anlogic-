@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机柜风冷测控 · 工业 SCADA 实时监测中心</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --bg-elev: #111b27;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --dim: #5e748e;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --purple: #9b7bff;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.55 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; transition: opacity .15s; }
+a:hover { opacity: .85; text-decoration: underline; }
+
+/* Top SCADA Navigation Header */
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid;
+  place-items: center;
+  font: 700 14px var(--mono);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(42, 212, 197, 0.25);
+}
+.brand h1 {
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: .02em;
+  font-weight: 650;
+}
+.brand small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.nav-links a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.04);
+  border-color: var(--border);
+}
+.nav-links a.active {
+  color: #fff;
+  background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45);
+  font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff;
+  border-color: #26b395;
+  font-weight: 600;
+}
+
+.auth-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.auth-bar label {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.auth-bar input {
+  background: #0d1622;
+  border: 1px solid var(--border-hi);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  width: 190px;
+  font: 12px var(--mono);
+}
+.auth-bar input:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+
+/* Main container */
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 18px 24px 48px;
+}
+
+/* Health & LED Banner */
+.status-banner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+}
+#health {
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.03);
+  border-left: 4px solid var(--muted);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: .01em;
+}
+#health[data-level="0"] { border-color: var(--green); color: #bdf7d7; background: rgba(38, 208, 124, 0.08); }
+#health[data-level="1"] { border-color: var(--amber); color: #ffe0a3; background: rgba(245, 166, 35, 0.12); }
+#health[data-level="2"] { border-color: var(--amber); color: #ffe0a3; background: rgba(245, 166, 35, 0.12); }
+#health[data-level="3"] { border-color: var(--red); color: #ffc2c2; background: rgba(242, 85, 85, 0.15); }
+
+#stamp {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font: 12px var(--mono);
+}
+
+.led-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.led-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #0e1824;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #3c4f65;
+}
+.dot.on-green { background: var(--green); box-shadow: 0 0 10px var(--green); }
+.dot.on-red { background: var(--red); box-shadow: 0 0 10px var(--red); }
+.dot.on-amber { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+.dot.on-cyan { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+
+/* 6 Primary KPI Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.card {
+  background: linear-gradient(180deg, var(--card-alt) 0%, var(--card) 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  opacity: .65;
+}
+.card-title {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.value {
+  font: 700 24px/1.25 var(--mono);
+  margin: 8px 0 4px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.card-sub {
+  font: 11px var(--mono);
+  color: var(--dim);
+}
+
+/* SCADA Main Workspace Grid */
+.scada-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.panel-head h2 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font: 12px var(--mono);
+  color: var(--muted);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.swatch {
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+  display: inline-block;
+}
+canvas.chart {
+  width: 100%;
+  height: 235px;
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  display: block;
+}
+canvas.spectrum {
+  width: 100%;
+  height: 175px;
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  display: block;
+  margin-top: 10px;
+}
+
+/* NPU 5-Class Probabilities */
+.prob-list {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+.prob-row {
+  display: grid;
+  grid-template-columns: 82px 1fr 62px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.prob-track {
+  height: 10px;
+  background: #0d1622;
+  border: 1px solid #223449;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.prob-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  transition: width .25s ease;
+}
+.prob-val {
+  font: 600 12px var(--mono);
+  text-align: right;
+  color: var(--text);
+}
+
+/* 18D / 39D Feature Matrix */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.feat-box {
+  background: #0e1824;
+  border: 1px solid #1f3147;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.feat-box h3 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--cyan);
+  font-weight: 600;
+}
+.feat-kv {
+  display: flex;
+  justify-content: space-between;
+  font: 12px/1.65 var(--mono);
+  color: var(--muted);
+}
+.feat-kv b { color: var(--text); font-weight: 600; }
+
+/* Bottom Split: Details & Events Table */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 16px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th, td {
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-variant-numeric: tabular-nums;
+}
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  background: rgba(255,255,255,0.02);
+}
+#details td:first-child {
+  color: var(--muted);
+  width: 38%;
+}
+#details td:last-child {
+  font-family: var(--mono);
+  word-break: break-all;
+}
+button {
+  font: 600 12px var(--sans);
+  padding: 5px 11px;
+  border-radius: 6px;
+  border: 1px solid var(--cyan);
+  background: rgba(42, 212, 197, 0.14);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover:not(:disabled) {
+  background: rgba(42, 212, 197, 0.28);
+}
+button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+.badge-tag {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font: 600 11px var(--mono);
+  background: rgba(255,255,255,0.07);
+}
+.footer-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+@media (max-width: 1180px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .scada-grid, .bottom-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .grid, .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .status-banner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">R46</div>
+    <div>
+      <h1>机柜风冷测控 · 实时监测中心</h1>
+      <small>FPGA FCB1/EDG1 · Dual ICM-20602 4kHz · ALNPU V4 Telemetry</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/" class="active">实时监控</a>
+    <a href="/commissioning#thermal" class="cta">温控与调试</a>
+    <a class="cta" data-automatic-learning href="http://127.0.0.1:18768/commissioning#learn" target="_blank" rel="noopener">一键打开自动学习 ↗</a>
+    <a href="/commissioning#fan-life">寿命记录</a>
+    <a href="/history">历史曲线与波形</a>
+    <a href="/diagnostics">ICM 通信诊断</a>
+    <a href="/parameters">受控参数配置</a>
+    <a href="/pressure-calibration">压差健康标定</a>
+    <a href="/recording">故障样本录制</a>
+  </nav>
+  <div class="auth-bar"><a href="http://127.0.0.1:18768/" class="cta">连接本机授权监测</a>
+    <label>授权令牌 <input id="token" type="password" autocomplete="off" placeholder="仅本页内存，不保存"></label>
+  </div>
+</header>
+
+<main class="container">
+  <section class="status-banner">
+    <div>
+      <div id="health">连接中</div>
+      <p id="stamp" class="muted"></p>
+    </div>
+    <div class="led-strip">
+      <span class="led-pill"><i id="led-grn" class="dot"></i>绿灯 RUN (<span id="led-grn-text">OFF</span>)</span>
+      <span class="led-pill"><i id="led-red" class="dot"></i>红灯 ALM (<span id="led-red-text">OFF</span>)</span>
+      <span class="led-pill"><i id="led-cfg" class="dot"></i>温控配置 (<span id="led-cfg-text">待读取</span>)</span>
+      <span class="led-pill"><i id="led-key2" class="dot"></i>控制方式 (<span id="led-key2-text">待读取</span>)</span>
+      <span class="led-pill"><i id="led-inh" class="dot"></i>实际输出 (<span id="led-inh-text">--</span>)</span>
+    </div>
+  </section>
+
+  <!-- 6 Core Telemetry Cards -->
+  <section class="grid" id="cards"></section>
+
+  <!-- Row 1: Dual-Axis PID Tracking Chart + NPU 5-Class Inference & Environment -->
+  <section class="scada-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>温度、转速与 PWM 实时趋势</h2>
+        <div class="legend">
+          <span><i class="swatch" style="background:#f5a623"></i>核心温度 (℃)</span>
+          <span><i class="swatch" style="background:#2ad4c5"></i>实测转速 (RPM)</span>
+          <span><i class="swatch" style="background:#3b9eff"></i>目标 PWM (%)</span>
+          <span><i class="swatch" style="background:#9b7bff"></i>PWM 占空比 (%)</span>
+        </div>
+      </div>
+      <canvas id="pid-chart" class="chart" width="820" height="235"></canvas>
+      <div class="feature-grid" style="margin-top:12px">
+        <div class="feat-box">
+          <h3>温度直接调速</h3>
+          <div class="feat-kv"><span>风扇控制动作</span><b id="ctl-action">—</b></div>
+          <div class="feat-kv"><span>目标占空比</span><b id="ctl-ramped">— %</b></div>
+          <div class="feat-kv"><span>PWM 原始计数</span><b id="ctl-pwm-cnt">— / 4000</b></div>
+          <div class="feat-kv"><span>温度曲线端点</span><b id="ctl-temp-sp">—</b></div>
+        </div>
+        <div class="feat-box">
+          <h3>环境与风道压差</h3>
+          <div class="feat-kv"><span>AHT20 进风温度</span><b id="env-aht-t">— ℃</b></div>
+          <div class="feat-kv"><span>AHT20 相对湿度</span><b id="env-aht-h">— %RH</b></div>
+          <div class="feat-kv"><span>SDP810 原始码</span><b id="env-sdp-raw">—</b></div>
+        </div>
+        <div class="feat-box">
+          <h3>双路 ICM-20602 4kHz 采样</h3>
+          <div class="feat-kv"><span>A 路采样率 / WHO</span><b id="icm-a-stat">—</b></div>
+          <div class="feat-kv"><span>B 路采样率 / WHO</span><b id="icm-b-stat">—</b></div>
+          <div class="feat-kv"><span>A/B 振动比 (ratio_ab)</span><b id="icm-ratio">—</b></div>
+          <div class="feat-kv"><span>特征窗口帧号</span><b id="icm-frame-id">—</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>NPU 正常基线与故障识别</h2>
+        <span class="badge-tag" id="npu-badge">UNAVAILABLE</span>
+      </div>
+      <p id="normal-model" class="muted" style="white-space:pre-line">正在读取与 HDMI 同源的推理状态</p>
+      <p id="classifier-model" class="muted">五类识别等待有效模型结果</p>
+      <p><a class="cta" data-automatic-learning href="http://127.0.0.1:18768/commissioning#learn" target="_blank" rel="noopener">一键打开自动学习 ↗</a></p><p class="muted">自动连接本机训练服务与开发板，无需重复填写令牌。按现场工况采集、训练并保存到 SD 卡，全部完成后统一部署。</p>
+      <div class="prob-list" id="prob-bars">
+        <div class="prob-row"><span>正常 (normal)</span><div class="prob-track"><div class="prob-fill" id="bar-0" style="background:var(--green)"></div></div><span class="prob-val" id="val-0">—</span></div>
+        <div class="prob-row"><span>失衡 (imbalance)</span><div class="prob-track"><div class="prob-fill" id="bar-1" style="background:var(--amber)"></div></div><span class="prob-val" id="val-1">—</span></div>
+        <div class="prob-row"><span>卡死 (stall)</span><div class="prob-track"><div class="prob-fill" id="bar-2" style="background:var(--red)"></div></div><span class="prob-val" id="val-2">—</span></div>
+        <div class="prob-row"><span>堵塞 (clog)</span><div class="prob-track"><div class="prob-fill" id="bar-3" style="background:var(--purple)"></div></div><span class="prob-val" id="val-3">—</span></div>
+        <div class="prob-row"><span>过热 (overheat)</span><div class="prob-track"><div class="prob-fill" id="bar-4" style="background:var(--blue)"></div></div><span class="prob-val" id="val-4">—</span></div>
+      </div>
+      <div class="panel-head" style="margin-top:12px;margin-bottom:6px;padding-bottom:6px">
+        <h2>双路 ICM 8 频带 FFT 能量占比 (banda0..7 / bandb0..7)</h2>
+        <div class="legend">
+          <span><i class="swatch" style="background:#2ad4c5"></i>A 路频带</span>
+          <span><i class="swatch" style="background:#f5a623"></i>B 路频带</span>
+        </div>
+      </div>
+      <canvas id="fft-chart" class="spectrum" width="520" height="165"></canvas>
+      <div class="feature-grid" style="grid-template-columns:1fr 1fr;margin-top:10px">
+        <div class="feat-box">
+          <h3>A 路三轴振动统计 (RMS / PP)</h3>
+          <div class="feat-kv"><span>RMS (X/Y/Z)</span><b id="vib-a-rms">—</b></div>
+          <div class="feat-kv"><span>峰峰值 PP</span><b id="vib-a-pp">—</b></div>
+          <div class="feat-kv"><span>峭度 Kurt</span><b id="vib-a-kurt">—</b></div>
+        </div>
+        <div class="feat-box">
+          <h3>B 路三轴振动统计 (RMS / PP)</h3>
+          <div class="feat-kv"><span>RMS (X/Y/Z)</span><b id="vib-b-rms">—</b></div>
+          <div class="feat-kv"><span>峰峰值 PP</span><b id="vib-b-pp">—</b></div>
+          <div class="feat-kv"><span>峭度 Kurt</span><b id="vib-b-kurt">—</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 2: Diagnostics Table + Recent 20 Alarm Events -->
+  <section class="bottom-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>诊断与实际动作</h2>
+        <span class="muted">FPGA 寄存器与 NPU 决策回执</span>
+      </div>
+      <table id="details"></table>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>报警记录（最近 20 条）</h2>
+        <span class="muted">历史记录；当前告警以实时状态为准</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>原因</th><th>级别 / 状态</th><th>来源</th><th>确认</th></tr></thead>
+          <tbody id="events"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-note">
+    <span class="muted">告警只提示，不切断温控 PWM。参数与学习结果由工作台保存到 SD 卡；0% PWM 不等于风机断电。</span>
+    <span class="muted">
+      <a href="/recording">故障样本录制与下载</a> ·
+      <a href="/history">历史曲线、故障原始波形回放与导出</a> ·
+      <a href="/parameters">受控参数配置</a> ·
+      <a href="/pressure-calibration">压差健康标定</a> ·
+      <a href="/diagnostics">ICM 通信诊断</a>
+    </span>
+  </footer>
+</main>
+
+<script>
+const el=id=>document.getElementById(id);
+const text=(tag,value)=>{let n=document.createElement(tag);n.textContent=String(value??'—');return n};
+function row(name,value){let tr=document.createElement('tr');tr.append(text('td',name),text('td',value));return tr}
+const authHeaders=()=>el('token').value?{Authorization:'Bearer '+el('token').value}:{};
+
+const historyBuffer=[];
+const MAX_POINTS=120;
+
+function drawPidChart(){
+  const canvas=el('pid-chart');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const w=Math.max(320,canvas.clientWidth||800),h=235;
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,w,h);
+
+  const padL=48,padR=52,padT=18,padB=24;
+  const pw=w-padL-padR,ph=h-padT-padB;
+
+  ctx.strokeStyle='#1d2f44';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=padT+(ph*i)/4;
+    ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(padL+pw,y);ctx.stroke();
+  }
+
+  if(!historyBuffer.length){
+    ctx.fillStyle='#6c849e';ctx.font='12px system-ui';
+    ctx.fillText('等待实时采集样本流 (每秒刷新)…',padL+16,padT+ph/2);
+    return;
+  }
+
+  const temps=historyBuffer.map(p=>p.temp).filter(Number.isFinite);
+  const rpms=historyBuffer.map(p=>p.rpm).filter(Number.isFinite);
+  const tMin=temps.length?Math.floor(Math.min(...temps)-2):15;
+  const tMax=temps.length?Math.ceil(Math.max(...temps)+2):45;
+  const rMin=0;
+  const rMax=rpms.length?Math.max(1500,Math.ceil(Math.max(...rpms)*1.15/500)*500):5000;
+
+  ctx.fillStyle='#f5a623';ctx.font='11px ui-monospace,monospace';
+  ctx.fillText(tMax.toFixed(0)+'℃',6,padT+8);
+  ctx.fillText(((tMin+tMax)/2).toFixed(1)+'℃',6,padT+ph/2+4);
+  ctx.fillText(tMin.toFixed(0)+'℃',6,padT+ph);
+
+  ctx.fillStyle='#2ad4c5';
+  ctx.fillText(rMax+' RPM',w-padR+6,padT+8);
+  ctx.fillText(Math.round(rMax/2)+' RPM',w-padR+6,padT+ph/2+4);
+  ctx.fillText('0 RPM',w-padR+6,padT+ph);
+
+  const plotLine=(getter,ymin,ymax,color,dashed=false)=>{
+    ctx.save();
+    ctx.strokeStyle=color;ctx.lineWidth=2;
+    if(dashed)ctx.setLineDash([5,4]);
+    ctx.beginPath();
+    let started=false;
+    historyBuffer.forEach((pt,idx)=>{
+      const v=getter(pt);
+      if(!Number.isFinite(v)){started=false;return;}
+      const x=padL+(idx/Math.max(1,MAX_POINTS-1))*pw;
+      const y=padT+ph-Math.max(0,Math.min(1,(v-ymin)/Math.max(1e-6,ymax-ymin)))*ph;
+      if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+    ctx.restore();
+  };
+
+  plotLine(p=>p.pwm,0,100,'#9b7bff',true);
+  plotLine(p=>p.target,0,100,'#3b9eff',true);
+  plotLine(p=>p.rpm,rMin,rMax,'#2ad4c5',false);
+  plotLine(p=>p.temp,tMin,tMax,'#f5a623',false);
+}
+
+function drawFftChart(v){
+  const canvas=el('fft-chart');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1;
+  const w=Math.max(260,canvas.clientWidth||500),h=165;
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,w,h);
+
+  const padL=34,padR=14,padT=14,padB=26;
+  const pw=w-padL-padR,ph=h-padT-padB;
+  ctx.strokeStyle='#1d2f44';ctx.lineWidth=1;
+  for(let i=0;i<=2;i++){
+    const y=padT+(ph*i)/2;
+    ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(padL+pw,y);ctx.stroke();
+  }
+  const hasBands=v&&Number.isFinite(v.banda0);
+  const groupW=pw/8;
+  ctx.font='10px ui-monospace,monospace';
+  for(let b=0;b<8;b++){
+    const x0=padL+b*groupW;
+    const va=hasBands?Math.max(0,Math.min(1,v['banda'+b]||0)):0;
+    const vb=hasBands?Math.max(0,Math.min(1,v['bandb'+b]||0)):0;
+    const bw=Math.max(6,(groupW-10)/2);
+    const ha=va*ph,hb=vb*ph;
+    ctx.fillStyle='#2ad4c5';
+    ctx.fillRect(x0+4,padT+ph-ha,bw,ha);
+    ctx.fillStyle='#f5a623';
+    ctx.fillRect(x0+4+bw+2,padT+ph-hb,bw,hb);
+    ctx.fillStyle='#8ea4be';
+    ctx.fillText('B'+b,x0+groupW/2-7,h-8);
+  }
+  ctx.fillStyle='#8ea4be';
+  ctx.fillText('1.0',6,padT+8);
+  ctx.fillText('0.5',6,padT+ph/2+4);
+  ctx.fillText('0.0',6,padT+ph);
+}
+
+function fmtTriplet(v,prefix){
+  if(!v||!Number.isFinite(v[prefix+'_x']))return '—';
+  return [v[prefix+'_x'],v[prefix+'_y'],v[prefix+'_z']].map(n=>Number(n).toFixed(3)).join(' / ');
+}
+
+let refreshing=false;
+async function refresh(){
+  if(refreshing)return;
+  refreshing=true;
+  let abort=new AbortController(),timer=setTimeout(()=>abort.abort(),2000);
+  try{
+    let get=async url=>{
+      let r=await fetch(url,{signal:abort.signal,cache:'no-store',headers:authHeaders()});
+      if(!r.ok)throw Error('HTTP '+r.status);
+      return r.json();
+    };
+    const fetchStarted=performance.now();
+    let [s,events]=await Promise.all([get('/api/status'),get('/api/events').catch(()=>null)]);
+    let p=s.status||{},frame=s.frame||{},v=frame.values||{},online=s.link==='ONLINE',fresh=s.frame_age_ms!=null&&s.frame_age_ms<=1000,uncal=(frame.quality&4096)!==0;
+    const c=s.temperature_pwm||{}, mf=s.monitor_display?.available?(s.monitor_display.fields||{}):{};
+    el('health').textContent=(online?'设备已连接':'设备失联 / 未连接')+' · '+(c.state==='RUNNING'?'温控运行':c.state||'温控状态未知')+' · L'+(s.level??'—');
+    el('health').dataset.level=String(s.level||0);
+    if(c.speed_alarm?.state==='WARNING')el('health').textContent+=' · 持续高速预警';
+    if(c.speed_alarm?.state==='ALARM')el('health').textContent+=' · 异常超速报警';
+    el('stamp').textContent='最近更新 '+(s.updated_utc||'—')+'；状态年龄 '+(s.status_age_ms??'—')+' ms；特征年龄 '+(s.frame_age_ms??'—')+' ms';
+
+    // LED indicators
+    const isStableRun=online&&c.state==='RUNNING'&&(s.level||0)===0;
+    const isAlarm=online&&(s.level||0)>0;
+    el('led-grn').className='dot'+(isStableRun?' on-green':'');
+    el('led-grn-text').textContent=isStableRun?'ON':'OFF';
+    el('led-red').className='dot'+(isAlarm?((s.level||0)===1?' on-amber':' on-red'):'');
+    el('led-red-text').textContent=isAlarm?((s.level||0)===1?'预警':'报警')+' (L'+s.level+')':'OFF';
+    el('led-cfg').className='dot'+(c.saved?' on-cyan':'');
+    el('led-cfg-text').textContent=c.saved?'已保存 SD':'待读取';
+    el('led-key2').className='dot'+(c.hardware_supported?' on-green':'');
+    el('led-key2-text').textContent=c.hardware_supported?'网页配置':'状态未知';
+    el('led-inh').className='dot'+(c.hardware_armed?' on-green':'');
+    el('led-inh-text').textContent=online&&c.feedback_valid&&Number.isFinite(c.actual_pwm_percent)?(c.actual_pwm_percent.toFixed(1)+'%'):'--';
+
+    const pwmPct=c.feedback_valid&&Number.isFinite(c.actual_pwm_percent)?c.actual_pwm_percent.toFixed(1):null;
+    const tempC=p.input_validity?.temperature&&Number.isFinite(c.temperature_C)?c.temperature_C.toFixed(1):null;
+    const curVal=mf.daily_current_valid==='1'?mf.daily_current_value:null;
+    const prsVal=fresh&&!(frame.quality&1024)&&v.pressure!=null?v.pressure.toFixed(3):null;
+    const pressureDisplay=s.pressure_display;
+    const factoryPressure=pressureDisplay?.source==='SDP810_FACTORY_60_COUNTS_PER_PA';
+    const pressureMean=factoryPressure&&pressureDisplay.valid===true&&Number.isFinite(pressureDisplay.mean_pressure_Pa)?pressureDisplay.mean_pressure_Pa.toFixed(3):null;
+
+    el('cards').replaceChildren();
+    for(let [k,x,unit,sub] of [
+      ['实际转速',p.input_validity?.rpm?p.measured_rpm:null,'RPM','FG 周期 '+(p.raw_words?.[24]??'—')+' clk'],
+      ['目标 PWM',c.feedback_valid&&Number.isFinite(c.target_pwm_percent)?c.target_pwm_percent.toFixed(1):null,'%','由已保存温度曲线计算'],
+      ['实际 PWM',pwmPct,'%','计数 '+(p.applied_pwm_counts??'—')+' / 4000'],
+      ['器件温度',tempC,'℃','DS18B20 原始码 '+(p.temp_raw_1_16_C??'—')],
+      ['电流 · 5秒平均',curVal,'A','与 HDMI 同源 · '+(mf.daily_current_average_count||0)+' 个采样 · 名义灵敏度'],
+      [factoryPressure?'风道压差 · 5秒平均':(uncal?'差压（名义值，未标定）':'差压'),factoryPressure?pressureMean:prsVal,factoryPressure?'Pa':'kPa',factoryPressure?(pressureMean!==null?'SDP810-500Pa · 原厂标定换算 · '+pressureDisplay.sample_count+' 个有效采样':'等待有效 SDP810 采样'):(prsVal!=null?(Number(prsVal)*1000).toFixed(1)+' Pa ('+(frame.pressure_source||'SDP810')+')':'源: '+(frame.pressure_source||'SDP810'))]
+    ]){
+      let d=text('div','');d.className='card';
+      let t=text('div',k);t.className='card-title';
+      let n=text('div',online?(x??'—')+' '+unit:'—');n.className='value';
+      let sb=text('div',online?sub:'离线');sb.className='card-sub';
+      d.append(t,n,sb);el('cards').append(d);
+    }
+
+    if(online){
+      historyBuffer.push({
+        temp:tempC!==null?Number(tempC):null,
+        rpm:p.input_validity?.rpm?p.measured_rpm:null,
+        target:c.feedback_valid?c.target_pwm_percent:null,
+        pwm:pwmPct!==null?Number(pwmPct):null
+      });
+      if(historyBuffer.length>MAX_POINTS)historyBuffer.shift();
+    }
+    drawPidChart();
+    drawFftChart(fresh?v:null);
+
+    // Sub-boxes update
+    el('ctl-action').textContent=online?(c.state==='RUNNING'?'温控运行 · 告警不停止 PWM':c.state||'—'):'—';
+    el('ctl-ramped').textContent=c.feedback_valid&&c.target_pwm_percent!=null?c.target_pwm_percent.toFixed(1)+' %':'—';
+    el('ctl-pwm-cnt').textContent=online&&(p.applied_pwm_counts!=null)?p.applied_pwm_counts+' / 4000':'—';
+    el('ctl-temp-sp').textContent=c.settings?c.settings.low_C+'℃ → 0% / '+c.settings.high_C+'℃ → 100%':'待读取';
+
+    const env=s.environment||{};
+    el('env-aht-t').textContent=env.inlet_temperature_C!=null?Number(env.inlet_temperature_C).toFixed(2)+' ℃':'—';
+    el('env-aht-h').textContent=env.inlet_humidity_percent!=null?Number(env.inlet_humidity_percent).toFixed(1)+' %RH':'—';
+    el('env-sdp-raw').textContent=p.pressure_raw_code!=null?String(p.pressure_raw_code):'—';
+
+    const icm=(s.icm_diagnostics&&s.icm_diagnostics.sensors)||[];
+    const fmtIcm=sen=>sen?(sen.observed_rate_hz?sen.observed_rate_hz.toFixed(1)+'Hz':'等待')+' / WHO 0x'+(sen.who||0).toString(16).toUpperCase():'—';
+    el('icm-a-stat').textContent=fmtIcm(icm[0]);
+    el('icm-b-stat').textContent=fmtIcm(icm[1]);
+    el('icm-ratio').textContent=fresh&&v.ratio_ab!=null?Number(v.ratio_ab).toFixed(3):'—';
+    el('icm-frame-id').textContent=frame.frame_id!=null?'#'+frame.frame_id+' ('+(frame.bitstream_id||'—')+')':'—';
+
+    el('vib-a-rms').textContent=fresh?fmtTriplet(v,'rms_a'):'—';
+    el('vib-a-pp').textContent=fresh?fmtTriplet(v,'pp_a'):'—';
+    el('vib-a-kurt').textContent=fresh?fmtTriplet(v,'kurt_a'):'—';
+    el('vib-b-rms').textContent=fresh?fmtTriplet(v,'rms_b'):'—';
+    el('vib-b-pp').textContent=fresh?fmtTriplet(v,'pp_b'):'—';
+    el('vib-b-kurt').textContent=fresh?fmtTriplet(v,'kurt_b'):'—';
+
+    // Use the same validated source and expiry gates as the HDMI display.
+    const displayNow=Number(s.snapshot_monotonic)*1000+(performance.now()-fetchStarted);
+    const nn=mf.panel_nn_valid==='1'&&Number(mf.panel_nn_deadline_ms)>displayNow, classified=mf.panel_classifier_valid==='1'&&Number(mf.panel_classifier_deadline_ms)>displayNow;
+    const advisory={NORMAL:'基线匹配',PENDING:'短时偏离，待确认',WARN:'持续偏离',RECOVERING:'恢复观察',UNKNOWN:'等待有效输入'};
+    const assessment={NORMAL_RECONSTRUCTION_MATCH:'当前输入与基线匹配',OUTSIDE_TRAINING_DOMAIN:'当前输入超出训练范围',OUTSIDE_OPERATING_REFERENCE:'当前PWM工况超出原基线，推理结果仅供参考',NEURAL_DEVIATION:'重建误差偏离基线'};
+    const npuReasons={OUTPUT_OUTSIDE_REFERENCE:'当前 PWM 已离开原有基线工况，等待匹配工况的模型',RESULT_EXPIRED:'等待新的有效推理结果',FRAME_STALE:'等待新鲜传感器数据',SERVICE_RESULT_UNAVAILABLE:'推理服务暂无结果',RESULT_BOOT_CHANGED:'等待本次开机的推理结果',HARDWARE_FAULT_ACTIVE:'采集状态未满足推理条件'};
+    const normalText=nn?(mf.panel_nn_assessment==='OUTSIDE_OPERATING_REFERENCE'?'实推理 · 工况超出基线':(advisory[mf.panel_nn_advisory_state]||'实推理')):'暂无有效推理';
+    el('npu-badge').textContent=classified?'五类模型 · 实推理':nn?'正常基线 · 实推理':'推理等待中';
+    el('normal-model').textContent='正常基线：'+normalText+'\n'+(nn?'重建误差 '+mf.panel_nn_score+' / 1.00 · '+mf.panel_nn_latency_ms+' ms · 累计 '+mf.panel_nn_count+' 次\n'+(assessment[mf.panel_nn_assessment]||mf.panel_nn_assessment||''):(npuReasons[mf.panel_nn_reason]||mf.panel_nn_reason||'等待有效输入'));
+    const names={normal:'正常',imbalance:'失衡',stall:'卡死',clog:'堵塞',overheat:'过热',uncertain:'未确认'};
+    el('classifier-model').textContent=classified?'五类识别：'+(names[mf.panel_classifier_label]||'未确认'):'五类识别：暂无有效结果；样本与模型进度见学习工作台';
+    ['normal','imbalance','stall','clog','overheat'].forEach((name,i)=>{
+      const raw=mf['panel_prob_'+name], value=raw===undefined?NaN:Number(raw);
+      const pv=classified&&Number.isFinite(value)?Math.max(0,Math.min(100,value)):null;
+      el('bar-'+i).style.width=pv!==null?pv.toFixed(1)+'%':'0%';
+      el('val-'+i).textContent=pv!==null?pv.toFixed(1)+'%':'—';
+    });
+
+    el('details').replaceChildren(
+      row('FPGA 原因',online?((p.active||[]).join('、')||'无'):'UNKNOWN'),
+      row('锁存原因',online?((p.latched||[]).join('、')||'无'):'UNKNOWN'),
+      row('温控状态',online?c.state:'UNKNOWN'),
+      row('正常基线',normalText),
+      row('NPU 实推理',nn||classified?'Alnpu':'暂无有效结果'),
+      row('温控告警',(c.alarm_causes||c.faults||[]).join('、')||'无'),
+      row('特征帧',frame.frame_id),
+      row('特征质量',(frame.quality_reasons||[]).join('、')||'—'),
+      row('链路错误',s.error||'无')
+    );
+    if(events)el('events').replaceChildren();
+    for(let e of (events||[]).slice(0,20)){
+      let tr=document.createElement('tr');
+      tr.append(
+        text('td',e.code),
+        text('td','L'+e.severity_current+' / '+e.state+'（峰值 L'+e.severity_peak+'）'),
+        text('td',e.source+(e.maintenance_test_flag?'（测试）':''))
+      );
+      let td=text('td',e.acknowledged?'已确认':'');
+      if(!e.acknowledged){
+        let b=text('button','确认');
+        b.onclick=async()=>{
+          try{
+            let r=await fetch('/api/ack',{method:'POST',headers:{'Content-Type':'application/json',...authHeaders()},body:JSON.stringify({event_id:e.event_id})});
+            if(!r.ok)throw Error('HTTP '+r.status);
+            refresh();
+          }catch(e){b.textContent='确认失败'}
+        };
+        td.append(b);
+      }
+      tr.append(td);
+      el('events').append(tr);
+    }
+  }catch(e){
+    el('health').textContent='服务不可达 · 实时数值不可用';
+    el('health').dataset.level='2';
+    el('stamp').textContent='连接已失效；报警记录为历史记录';
+    for(let n of el('cards').querySelectorAll('.value'))n.textContent='—';
+    el('details').replaceChildren(row('设备状态','UNKNOWN'),row('模型状态','UNAVAILABLE'));
+    el('npu-badge').textContent='连接中断';el('normal-model').textContent='暂无有效推理';el('classifier-model').textContent='暂无有效结果';
+    for(let i=0;i<5;i++){el('bar-'+i).style.width='0%';el('val-'+i).textContent='—'}
+    for(const name of ['grn','red','cfg','key2','inh']){el('led-'+name).className='dot';el('led-'+name+'-text').textContent='--'}
+    for(let b of el('events').querySelectorAll('button'))b.disabled=true;
+  }finally{
+    clearTimeout(timer);
+    refreshing=false;
+  }
+}
+window.addEventListener('resize',()=>drawPidChart());
+refresh();
+setInterval(refresh,1000);
+</script>
+</body>
+</html>

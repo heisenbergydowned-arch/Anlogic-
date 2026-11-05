@@ -1,0 +1,155 @@
+{
+  "_comment": "机柜风冷边缘智能测控系统 · Web 面板配置 —— 本地 Linux 原型（lighttpd mod_proxy）",
+  "web": {
+    "port": 8080,
+    "bind": "0.0.0.0",
+    "server_name": "机柜风冷边缘智能测控系统"
+  },
+  "paths": {
+    "root": "/home/uisrc/web",
+    "state_json": "/run/cabinet-live/state.json",
+    "db": "/home/uisrc/web/data/cabinet.sqlite3",
+    "log": "/home/uisrc/web/logs"
+  },
+  "collector": {
+    "sample_interval_s": 1.0,
+    "store_mode": "deadband",
+    "heartbeat_s": 10,
+    "_deadband_note": "相对上次入库值比较：转速 30 RPM、温度 0.5 ℃、屏幕 5 秒平均电流 0.01 A、屏幕 5 秒平均风道压差 0.05 Pa；无变化时按 heartbeat_s 记录。",
+    "deadband": {
+      "rpm": 30,
+      "temp_c": 0.5,
+      "current_a": 0.01,
+      "pressure_pa": 0.05
+    },
+    "purge_check_interval_s": 600,
+    "retain_days": 7,
+    "retain_events_days": 30,
+    "_retention_note": "快照保留 7 天（面板最长窗口 24h，留 7 倍余量）；事件保留 30 天（故障证据比快照重要）。清理后若空闲页占比超 compact_free_ratio 就 VACUUM 真正缩文件。",
+    "min_write_interval_s": 2,
+    "_min_write_note": "模拟量变化最小写入间隔；运行状态、测量有效性和参考/标定类型变化立即记录，不受此限制。",
+    "compact_free_ratio": 0.25,
+    "compact_min_bytes": 524288,
+    "_compact_note": "空闲页占比 ≥25% 且空闲 ≥512KB 时执行 VACUUM。auto_vacuum=0 时删行只进 freelist，文件不会自己缩。"
+  },
+  "mock": {
+    "_comment": "原型阶段用模拟器产生数据；上真机时把 enabled 改成 false",
+    "enabled": false,
+    "device": "/home/uisrc/web/mock_device.py",
+    "state_json": "/run/cabinet-live/mock_state.json",
+    "cmd_file": "/home/uisrc/web/data/mock_cmd.json",
+    "tick_ms": 100,
+    "_sim_mode_note": "sim_mode: random = 随机过程模拟（默认，像真实遥测）；scripted = 原来那套 7 幕脚本，便于演示固定剧情",
+    "sim_mode": "random",
+    "seed": null,
+    "_random_note": "随机过程的参数。theta 越大越贴目标值；sigma 是过程噪声（单位/√s）；tau 是时间常数（秒）",
+    "random": {
+      "rpm": {
+        "theta": 0.3,
+        "sigma": 12.0,
+        "targets": [
+          0,
+          1200,
+          2400,
+          2400,
+          2400,
+          2800
+        ],
+        "target_hold_s": [
+          20,
+          70
+        ],
+        "min": 0.0,
+        "max": 3200.0
+      },
+      "temp": {
+        "tau_s": 25.0,
+        "sigma": 0.08,
+        "base_c": 25.0,
+        "gain_c": 32.0,
+        "ambient_sigma": 0.25,
+        "ambient_tau_s": 90.0
+      },
+      "current": {
+        "tau_s": 0.7,
+        "sigma": 4.0,
+        "full_scale": 1023,
+        "at_nominal": 500.0
+      },
+      "dropout": {
+        "_note": "传感器随机掉线 → 自然产生 null 缺口（前端断线绘制）",
+        "rate_per_s": 0.02,
+        "dur_s": [
+          3,
+          15
+        ]
+      },
+      "faults": {
+        "_note": "condition 为 null 表示纯随机；否则只在对应测量值越限时才有概率触发。rate 是每秒触发概率，dwell_s 是平均持续秒数（指数分布）",
+        "TEMP_WARN": {
+          "rate": 0.02,
+          "dwell_s": 40,
+          "condition": [
+            "temp_c",
+            ">",
+            58
+          ]
+        },
+        "TEMP_HARD": {
+          "rate": 0.012,
+          "dwell_s": 30,
+          "condition": [
+            "temp_c",
+            ">",
+            66
+          ]
+        },
+        "CURRENT_HIGH": {
+          "rate": 0.015,
+          "dwell_s": 35,
+          "condition": [
+            "current_raw",
+            ">",
+            620
+          ]
+        },
+        "OC_HARD": {
+          "rate": 0.008,
+          "dwell_s": 25,
+          "condition": [
+            "current_raw",
+            ">",
+            780
+          ]
+        },
+        "VIB_WARN": {
+          "rate": 0.004,
+          "dwell_s": 30,
+          "condition": null
+        },
+        "FG_LOSS": {
+          "rate": 0.003,
+          "dwell_s": 25,
+          "condition": null
+        },
+        "AUX_LOSS": {
+          "rate": 0.002,
+          "dwell_s": 45,
+          "condition": null
+        },
+        "DIAG_LOSS": {
+          "rate": 0.002,
+          "dwell_s": 40,
+          "condition": null
+        }
+      }
+    }
+  },
+  "api": {
+    "max_body_bytes": 65536,
+    "max_points": 2000,
+    "default_points": 600,
+    "max_events": 500,
+    "export_max_rows": 100000
+  }
+}

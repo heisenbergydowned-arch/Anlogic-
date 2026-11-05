@@ -1,0 +1,58 @@
+{
+  "schema": "cabinet-edge-v1",
+  "device_id": "CONFIGURE_DEVICE_ID",
+  "database": "./runtime/cabinet.sqlite3",
+  "poll_ms": 128,
+  "link_stale_ms": 2000,
+  "transport": {
+    "kind": "mmio",
+    "device": "/dev/uio0",
+    "library": "./native/libedge_mmio.so"
+  },
+  "contract": {
+    "feature_config_id": 539423744,
+    "calibration_id": 0,
+    "sample_mode_id": 2,
+    "max_frame_age_ms": 1000,
+    "max_result_age_ms": 500,
+    "max_temp_age_ms": 2000
+  },
+  "control": {
+    "enabled": false,
+    "qualified": false,
+    "evidence": null,
+    "heartbeat_ms": 250,
+    "target_refresh_ms": 250
+  },
+  "temperature_loop": {
+    "enabled": false,
+    "qualified": false,
+    "evidence": null,
+    "setpoint_C": null,
+    "kp_rpm_per_C": null,
+    "ki_rpm_per_C_s": null,
+    "rpm_min": null,
+    "rpm_max": null,
+    "slew_rpm_per_s": null,
+    "temp_age_ms": null
+  },
+  "model": {
+    "backend": "disabled",
+    "model_id": "unqualified",
+    "qualified": false,
+    "evidence": null,
+    "timeout_ms": 200,
+    "command": [],
+    "path": null
+  },
+  "policy": {
+    "confidence_min": 0.8,
+    "confirm_ms": 2000
+  },
+  "uplink": {
+    "url": null,
+    "token_env": "CABINET_UPLINK_TOKEN",
+    "timeout_s": 2,
+    "loopback_test": false
+  }
+}

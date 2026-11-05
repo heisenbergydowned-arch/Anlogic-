@@ -1,0 +1,21 @@
+# cooling_link_top / cooling_link_test_top. Camera is disabled in this variant.
+# Original PS/HDMI/NPU clocks retained. New GP0 CSR handshake crosses 75->100MHz.
+create_clock -period 10.0 -name sysclk [get_ports I_sysclk]
+set_max_delay 8.0 -to [get_ports O_adc_reset]
+set_min_delay 0.0 -to [get_ports O_adc_reset]
+derive_clocks
+rename_clock -name clk_75m [get_clocks {system/design_0_inst/design_0_pll_75m_Inst/dr1_phy_pll_1f386b1db2c3_Inst/u_DR1_PHY_PLL.clkc[0]}]
+rename_clock -name clk_fabric_150m [get_clocks {system/design_0_inst/design_0_pll_75m_Inst/dr1_phy_pll_1f386b1db2c3_Inst/u_DR1_PHY_PLL.clkc[1]}]
+rename_clock -name clk_vtg [get_clocks {system/design_0_inst/design_0_video_timing_generator_v01_0_Inst/video_timing_generator_v01_e2dadf6740ca_Inst/dr1_pll_vtc_Inst/u_DR1_PHY_PLL.clkc[0]}]
+rename_clock -name clk_hdmi [get_clocks {system/design_0_inst/design_0_PLL_3_Inst/dr1_phy_pll_58e32fb6dd07_Inst/u_DR1_PHY_PLL.clkc[0]}]
+set_false_path -from [get_nets {system/design_0_inst/design_0_ARM_Processor_System_0_Inst/p2f_rst0_n}]
+set_clock_groups -asynchronous -group [get_clocks sysclk] -group [get_clocks {clk_75m clk_fabric_150m}] -group [get_clocks {clk_vtg clk_hdmi}]
+set_false_path -from [get_ports {I_spi_miso I_adc_douta I_adc_busy I_adc_frstdata I_fan_fg I_key1 I_key2 I_pl_uart_rx I_rs485_rx IO_j12_19_reserved IO_temp_core_dq IO_i2c_sda_ext IO_i2c_scl_ext IO_iic_sda IO_iic_scl}]
+set_false_path -to [get_ports {O_led_grn O_led_red O_led3_hb O_led4_alm O_buzzer_en O_rs485_tx O_rs485_de O_fan_pwm O_pl_uart_tx}]
+# Bundled request/response buses are held for the entire four-phase handshake.
+# STA exclusions do not validate CDC placement; review synchronizer/metastability
+# and payload propagation (two destination cycles of settle) after routing.
+
+# Use only clocks which actually exist in this variant. Missing PS native
+# GEN_PL_* clocks are a separate release-blocking coverage issue; an invalid
+# name in a TD group aborts the entire set_clock_groups command.

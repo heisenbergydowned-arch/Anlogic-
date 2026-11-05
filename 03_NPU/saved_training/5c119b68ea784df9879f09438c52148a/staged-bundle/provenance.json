@@ -1,0 +1,217 @@
+{
+  "source": "REAL_USER_DECLARED_NORMAL_DIAGNOSTIC",
+  "raw_capture_qualification_changed": false,
+  "training_objective": {
+    "schema": "cabinet-group-balanced-normal-loss-v1",
+    "squared_loss": "equal_mean_per_GROUPS_with_shared_features_summed",
+    "feature_target_scales": [
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.6582805886043833,
+      0.9309493362512627,
+      2.792848008753788,
+      2.792848008753788,
+      1.9748417658131499,
+      1.9748417658131499
+    ],
+    "architecture_unchanged": [
+      39,
+      32,
+      16,
+      39
+    ],
+    "output_units_unchanged": true,
+    "thresholds_or_domain_limits_relaxed": false
+  },
+  "input_contract": {
+    "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+    "configuration_words": [
+      1,
+      0,
+      0,
+      1073741824,
+      0,
+      885622,
+      17896,
+      2,
+      1,
+      13,
+      39,
+      65,
+      103,
+      154,
+      205,
+      257,
+      513
+    ],
+    "frame_identity": [
+      1,
+      0,
+      2
+    ],
+    "controller_mode": "STOPPING",
+    "controller_diagnostic_mode": true
+  },
+  "sessions": {
+    "train": {
+      "rows": 1412,
+      "session_ids": [
+        "54b602b0-b795-4790-81b0-758dfde163a1"
+      ],
+      "captures": [
+        {
+          "session_id": "54b602b0-b795-4790-81b0-758dfde163a1",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 1412,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/5dbe2c6e/852f7efa-a8ff-41d4-9f1f-7dff14264185/1",
+          "raw_rows": 1412,
+          "excluded_windows": [],
+          "missing_windows": 3,
+          "gap_events": 3,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "ebae70ebb548dd1a95cd5dd029b8d344e3a6ae0443dd360ba23522d490d24fd9",
+          "session_sha256": "b798a363f6501b1e6529354a93363177dcf2cee53f05412c482b738ea262f672",
+          "first_frame": 557,
+          "last_frame": 1971,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    },
+    "calibration": {
+      "rows": 707,
+      "session_ids": [
+        "8e8fa8a4-2bbb-4be5-91d3-ebf63fe0bbcb"
+      ],
+      "captures": [
+        {
+          "session_id": "8e8fa8a4-2bbb-4be5-91d3-ebf63fe0bbcb",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 707,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/5dbe2c6e/852f7efa-a8ff-41d4-9f1f-7dff14264185/1",
+          "raw_rows": 707,
+          "excluded_windows": [],
+          "missing_windows": 0,
+          "gap_events": 0,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "f9a69ad2fd596f87aba30f3cadb4672ba3a6fc37d48684f05ceea136e6bc38d4",
+          "session_sha256": "1cba78191fb2b9693a9a8dbfa231479e1e4205ce4d08eb6ca6c70130687508b4",
+          "first_frame": 2263,
+          "last_frame": 2969,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    },
+    "test": {
+      "rows": 707,
+      "session_ids": [
+        "af19c7d9-a7c2-4b60-95bd-9bfc1600f3ff"
+      ],
+      "captures": [
+        {
+          "session_id": "af19c7d9-a7c2-4b60-95bd-9bfc1600f3ff",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 707,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/5dbe2c6e/852f7efa-a8ff-41d4-9f1f-7dff14264185/1",
+          "raw_rows": 707,
+          "excluded_windows": [],
+          "missing_windows": 0,
+          "gap_events": 0,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "5854cf2e9cebb09fdfb586eddceb32281f1e58542d587a93c87d1e64c59b70d7",
+          "session_sha256": "2e4ae470eaead814931e44a9d2d73a8154679ae2ef0522c481f79aeae84c559b",
+          "first_frame": 3067,
+          "last_frame": 3773,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    }
+  },
+  "calibration_used_for_model_selection_and_threshold": true,
+  "test_used_for_training": false,
+  "user_scope": "Use current user-declared normal data for live advisory NPU inference",
+  "limitations": [
+    "no fault-class data",
+    "normal operating domain not independently certified",
+    "physical units not calibrated",
+    "controller diagnostic/inhibited profile"
+  ]
+}

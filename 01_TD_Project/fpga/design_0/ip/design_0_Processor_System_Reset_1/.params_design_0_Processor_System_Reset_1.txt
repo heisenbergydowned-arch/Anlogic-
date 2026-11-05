@@ -1,0 +1,8 @@
+EXTERNAL_RESET_PULSE_WIDTH : 4 : U : En : 1;;2;;3;;4;;5;;6;;7;;8;;9;;10;;11;;12;;13;;14;;15;;16 : 1 : 16
+AUXILIARY_RESET_PULSE_WIDTH : 4 : U : En : 1;;2;;3;;4;;5;;6;;7;;8;;9;;10;;11;;12;;13;;14;;15;;16 : 1 : 16
+EXTERNAL_RESET_IS_HIGH : 1 : U : En : 0;;1 :  : 
+AUXILIARY_RESET_IS_HIGH : 0 : U : En : 0;;1 :  : 
+NUMBER_BUS_OF_RESET : 1 : U : En : 1;;2;;3;;4;;5;;6;;7;;8 : 1 : 8
+NUMBER_OF_PERIPHERALS_RESET : 1 : U : En : 1;;2;;3;;4;;5;;6;;7;;8;;9;;10;;11;;12;;13;;14;;15;;16 : 1 : 16
+NUMBER_OF_INTERCONNECT_ARESETN : 1 : U : En : 1;;2;;3;;4;;5;;6;;7;;8 : 1 : 8
+NUMBER_OF_PERIPHERALS_ARESETN : 1 : U : En : 1;;2;;3;;4;;5;;6;;7;;8;;9;;10;;11;;12;;13;;14;;15;;16 : 1 : 16

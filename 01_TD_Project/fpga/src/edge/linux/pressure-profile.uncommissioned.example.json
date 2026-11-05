@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "device_id": "REPLACE_WITH_CONFIG_DEVICE_ID",
+  "fan_id": "REPLACE_WITH_REAL_FAN_ID",
+  "installation_id": "REPLACE_WITH_REAL_INSTALLATION_REVISION",
+  "sensor_id": "REPLACE_WITH_REAL_SDP810_ID",
+  "pickup": "REPLACE_WITH_POSITIVE_PORT_AND_NEGATIVE_PORT_DESCRIPTION",
+  "pressure_min_valid_pa": null,
+  "temperature_min_C": null,
+  "temperature_max_C": null
+}

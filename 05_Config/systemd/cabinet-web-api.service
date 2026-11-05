@@ -1,0 +1,25 @@
+[Unit]
+Description=Cabinet web API (resident FastCGI-less backend, mod_proxy target)
+Documentation=file:/home/uisrc/web/README.md
+After=network.target cabinet-web-collector.service
+Wants=cabinet-web-collector.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/uisrc/web
+Environment=CABINET_WEB_CONFIG=/home/uisrc/web/config.json
+Environment=PYTHONIOENCODING=utf-8
+Environment=CABINET_API_HOST=127.0.0.1
+Environment=CABINET_API_PORT=8081
+ExecStart=/usr/bin/python3 -u /home/uisrc/web/apiserver.py
+Restart=on-failure
+RestartSec=3
+User=root
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cabinet-web-api
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

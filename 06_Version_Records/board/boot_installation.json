@@ -1,0 +1,27 @@
+{
+  "status": "BOOT_AND_SOFTWARE_WRITTEN_READBACK_VERIFIED_REBOOT_REQUIRED",
+  "boot_id": "c6874389-232e-40d5-b5c1-f12ff6fb5a35",
+  "manifest_sha256": "32b5f1e0a4ca578271faf0349f03903e2297efc3db46cc2a1bbb6929230deb60",
+  "previous_boot_sha256": "970d51def42df5bcd9cee18e197cd33dc5505dffe5bcdb314294f76d50607c82",
+  "new_boot_sha256": "bad541a36f7b17386f44c97eeab90f88906ff1eb390d3d2b864900e8ee6e714a",
+  "temperature_C": 22.625,
+  "kernel_modified": false,
+  "baseline_modified": false,
+  "timing_pass": false,
+  "user_authorized_setup_wns_ns": -0.008,
+  "configured_files": {
+    "/etc/cabinet/fan-life.json": "1dff86f8be3b4bad9306e73e7a1d58e281661c0f8e86fcee433c43932342dd3d",
+    "/etc/cabinet/npu-learning-platform.json": "7fa8365cb2317d6428c0e3b3a46005ad60b29b67e7ec93244f628e6506586b48",
+    "/etc/cabinet/display-calibration.json": "7ba0c17b9df01bfa8fccf16d03463096321378977ffd5d6bdc30c8b45b55a065",
+    "/etc/cabinet/learning.json": "34388d9d64b3ea6f33c80e155c5e1413da7bc9445874b139c03458a1cb550bed",
+    "/etc/cabinet/temperature-pwm.json": "fd86fafa30c59201e64cf56fb3b6a46857b55ad8dc8bb5e39dc1495eda734c6c",
+    "/etc/cabinet/fan-life.json.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/etc/cabinet/normal-npu.env": "04bbc134c5f35570c378dbda9aabbaa618ceaaf777e6202d18ba606134ab3122",
+    "/etc/cabinet/npu-v4.env": "2df45fcb603077d7c80d94107e17a4779fe49de74e8cb176592945d96fbb279f",
+    "/etc/cabinet/edge.json": "f17e61e8ddbef0c931dc38d20d91bac6e192104476281787ccc97c9eff25230b",
+    "/etc/cabinet/capture-contract.json": "30d27ae1047121797b5ff6be3894438d3d098e30090dad8b23f732106e2ab3bc",
+    "/etc/cabinet/web.env": "3f2160b36be45d15630985e5e81b49c0caf28941001c55aa1db0184279089da2"
+  },
+  "new_runtime": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux",
+  "software_manifest_sha256": "cf74695581a6a2fcd0e740ec76ce7b70d4db3c4b27c96801f5cfeb126b522866"
+}

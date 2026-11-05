@@ -1,0 +1,20 @@
+[Unit]
+Description=LVGL frontend with optional private operator RPC; no MMIO ownership
+After=cabinet-edge.service
+Wants=cabinet-edge.service
+Conflicts=cabinet-live-display.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cabinet/linux/hmi_daily
+ExecStart=/usr/bin/python3 /opt/cabinet/linux/hmi_daily/run_live.py
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=10
+NoNewPrivileges=true
+EnvironmentFile=-/etc/cabinet/operator.env
+Environment=CABINET_CONFIG=/etc/cabinet/edge.json
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

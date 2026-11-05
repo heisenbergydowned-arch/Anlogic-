@@ -1,0 +1,39 @@
+{
+  "schema": "cabinet-alnpu-half-lsb-bias-v1",
+  "source_model_sha256": "9d1308d436ec8e9b593355b292da0515f45b2f3764bd665df93f308980a286dd",
+  "hardware_model_sha256": "dbe1a95dcfce554cbeabed33b2596320c4db2f9719843fd1949a620d9f75a9d4",
+  "reference_and_thresholds_unchanged": true,
+  "trained_weights_unchanged": true,
+  "model_topology_unchanged": true,
+  "bias_integer_offsets": {
+    "bias0_quantized": 42,
+    "bias1_quantized": 169,
+    "bias2_quantized": 65
+  },
+  "correction_details": [
+    {
+      "layer": 0,
+      "initializer": "bias0_quantized",
+      "integer_offset": 42,
+      "output_counts": 0.49646071622251
+    },
+    {
+      "layer": 1,
+      "initializer": "bias1_quantized",
+      "integer_offset": 169,
+      "output_counts": 0.5007216674040914
+    },
+    {
+      "layer": 2,
+      "initializer": "bias2_quantized",
+      "integer_offset": 65,
+      "output_counts": 0.501853887096702
+    }
+  ],
+  "compiler_sha256": "18ee07bc1756826ab9df8d578890b4297c36ab57d31ee6d3a26ba2f35dfb2dc9",
+  "source_normalization_sha256": "a7cfb30b30a71ead573b6a3e9101c7de4e7136b494a91edd8150a7c240599073",
+  "source_thresholds_sha256": "31a797c22d538d203c6237980118b4d316e494c2dd9a3bf87481d7b06be09724",
+  "source_golden_sha256": "3edbe237689e482d5e3975fadd685ad865e5325d3c5e7163d3d3e97c8379f86e",
+  "derived_program_hardware_tested": false,
+  "derivation": "Nearest integer to half output quantization step, in bias units; no fitting against labels"
+}

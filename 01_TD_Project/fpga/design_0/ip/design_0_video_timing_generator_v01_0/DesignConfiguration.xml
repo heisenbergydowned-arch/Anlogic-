@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:designConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:user="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>user</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>designConfig_design_0_video_timing_generator_v01_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:viewConfiguration>
+        <ipxact:instanceName>video_timing_generator_v01_e2dadf6740ca_Inst</ipxact:instanceName>
+        <ipxact:view viewRef="video_timing_generator_v01_rtl"/>
+    </ipxact:viewConfiguration>
+    <ipxact:vendorExtensions>
+        <user:displayname>video_timing_generator_v01</user:displayname>
+        <user:ipGenVersion value="174230 2025/09/09">1.0</user:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:designConfiguration>

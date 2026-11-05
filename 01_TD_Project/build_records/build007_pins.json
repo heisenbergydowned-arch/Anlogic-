@@ -1,0 +1,8 @@
+{
+  "tools/eco_review.py": "3d5dcd70cb575a5e0e78bb245ca39946399228dc99ce6e691aec220e84d3a0f1",
+  "build002_spec.json": "dd39dcc34ce52d34b4c5d23dd0bdd492a3bf7f41bd29fc0ba3840ea62d266706",
+  "fpga/src/control/temperature_pwm.v": "7c03f43b8a6d69b0b462193ce06b75b684039ccaa827ccd635c652cd498144f3",
+  "fpga/src/acq/subsys_acq.v": "a3f6eea456b83539c654368bfe1330a24a92e46460752da3caf948ab802297cc",
+  "tools/build007.py": "9d524f0a93de9cf71410af8aabe376d5a6d124af4b2da5e18a2ea9987bb547ce",
+  "tools/build007.tcl": "507add163f7b6a527ce8eaf9bc848237f1557d884cc6fb66cd75bb47cbe0d083"
+}

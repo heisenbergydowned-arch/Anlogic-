@@ -1,0 +1,10 @@
+{
+  "schema": "cabinet-fan-life-settings-v1",
+  "revision": 2,
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "nominal_hours": 5000,
+  "end_speed_ratio": 0.8,
+  "reference_request": 1,
+  "declaration": "USER_SUPPLIED_NOMINAL_LIFE",
+  "curve": "LINEAR_FULL_SPEED_RETENTION"
+}

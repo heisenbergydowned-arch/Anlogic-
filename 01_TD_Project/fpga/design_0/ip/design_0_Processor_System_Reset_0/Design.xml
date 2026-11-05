@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:anlogic="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_design_0_Processor_System_Reset_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>proc_sys_reset_8c00addebbd4_Inst</ipxact:instanceName>
+            <ipxact:componentRef vendor="anlogic.com" library="ip" name="proc_sys_reset" version="1.0"/>
+            <ipxact:configurableElementValues>
+                <ipxact:configurableElementValue referenceId="EXTERNAL_RESET_PULSE_WIDTH">4</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AUXILIARY_RESET_PULSE_WIDTH">4</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="EXTERNAL_RESET_IS_HIGH">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AUXILIARY_RESET_IS_HIGH">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUMBER_BUS_OF_RESET">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUMBER_OF_PERIPHERALS_RESET">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUMBER_OF_INTERCONNECT_ARESETN">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUMBER_OF_PERIPHERALS_ARESETN">1</ipxact:configurableElementValue>
+            </ipxact:configurableElementValues>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>clk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="clk"/>
+                <ipxact:externalPortReference portRef="clk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>external_reset</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="external_reset"/>
+                <ipxact:externalPortReference portRef="external_reset"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>aux_rst</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="aux_rst"/>
+                <ipxact:externalPortReference portRef="aux_rst"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>system_rst</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="system_rst"/>
+                <ipxact:externalPortReference portRef="system_rst"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>pll_locked</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="pll_locked"/>
+                <ipxact:externalPortReference portRef="pll_locked"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>soc_reset</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="soc_reset"/>
+                <ipxact:externalPortReference portRef="soc_reset"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>bus_reset</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="bus_reset"/>
+                <ipxact:externalPortReference portRef="bus_reset"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>peripheral_reset</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="peripheral_reset"/>
+                <ipxact:externalPortReference portRef="peripheral_reset"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>interconnect_aresetn</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="interconnect_aresetn"/>
+                <ipxact:externalPortReference portRef="interconnect_aresetn"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>peripheral_aresetn</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="proc_sys_reset_8c00addebbd4_Inst" portRef="peripheral_aresetn"/>
+                <ipxact:externalPortReference portRef="peripheral_aresetn"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+    <ipxact:vendorExtensions>
+        <anlogic:device>DR1M90MEG484</anlogic:device>
+        <anlogic:displayname>Processor System Reset</anlogic:displayname>
+        <anlogic:ipGenVersion>1.0</anlogic:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:design>

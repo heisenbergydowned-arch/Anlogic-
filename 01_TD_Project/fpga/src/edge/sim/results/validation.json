@@ -1,0 +1,417 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-08T05:25:12.733815+00:00",
+  "tests": [
+    {
+      "test": "tb_edge_cdc",
+      "status": "PASS",
+      "seconds": 0.125,
+      "marker": "tb_edge_cdc ALL PASS 80 asynchronous transactions"
+    },
+    {
+      "test": "tb_edge_mailbox",
+      "status": "PASS",
+      "seconds": 0.109,
+      "marker": "tb_edge_mailbox ALL PASS          68 operations"
+    },
+    {
+      "test": "tb_edge_router",
+      "status": "PASS",
+      "seconds": 0.094,
+      "marker": "tb_edge_router ALL PASS AW/W ordering, old/new route, simultaneous read/write and backpressure"
+    },
+    {
+      "test": "tb_edge_window",
+      "status": "PASS",
+      "seconds": 0.187,
+      "marker": "tb_edge_window ALL PASS boundary rail, stalled-consumer abort, sequence gap, transient and RAM backpressure"
+    },
+    {
+      "test": "tb_edge_float",
+      "status": "PASS",
+      "seconds": 0.172,
+      "marker": "tb_edge_float ALL PASS 2102 corner/random FP32 and bounded latency comparisons"
+    },
+    {
+      "test": "tb_edge_rs485",
+      "status": "PASS",
+      "seconds": 0.125,
+      "marker": "tb_edge_rs485 ALL PASS real UART/DE/Modbus CRC and bad-frame rejection"
+    },
+    {
+      "test": "tb_edge_icm",
+      "status": "PASS",
+      "seconds": 1.609,
+      "marker": "tb_edge_icm ALL PASS power/interface/readback fault isolation"
+    },
+    {
+      "test": "tb_edge_subsys",
+      "status": "PASS",
+      "seconds": 82.204,
+      "marker": "tb_edge_subsys ALL PASS live acquisition top -> asynchronous PS AXI -> complete 39D frame; PWM inhibited"
+    },
+    {
+      "test": "tb_edge_features",
+      "status": "PASS",
+      "seconds": 74.375,
+      "marker": "tb_edge_features ALL PASS 3 complete frames"
+    },
+    {
+      "test": "three_overlapping_frames_vs_numpy",
+      "status": "PASS",
+      "features_compared": 117
+    },
+    {
+      "test": "linux_policy_journal_uplink_hmi",
+      "status": "PASS",
+      "output": "ring (test_chain.PersistenceTests.test_event_recovery_peak_and_platform_reordering) ... ok\ntest_journal_failure_retains_pl_fifo (test_chain.PersistenceTests.test_journal_failure_retains_pl_fifo) ... ok\ntest_uplink_priority_and_no_repeated_candidate_updates (test_chain.PersistenceTests.test_uplink_priority_and_no_repeated_candidate_updates) ... ok\ntest_outer_loop_requires_calibration (test_chain.PolicyTests.test_outer_loop_requires_calibration) ... ok\ntest_physical_priority_and_confirm_time (test_chain.PolicyTests.test_physical_priority_and_confirm_time) ... ok\ntest_wrong_model_result_and_timeout (test_chain.PolicyTests.test_wrong_model_result_and_timeout) ... ok\ntest_frame_model_events_hmi_and_offline_retry (test_chain.WholeServiceTests.test_frame_model_events_hmi_and_offline_retry) ... ok\ntest_inference_timeout_does_not_block_status (test_chain.WholeServiceTests.test_inference_timeout_does_not_block_status) ... ok\ntest_network_and_live_control_defaults (test_chain.WholeServiceTests.test_network_and_live_control_defaults) ... ok\ntest_persistent_npu_contract_and_latched_timeout (test_chain.WholeServiceTests.test_persistent_npu_contract_and_latched_timeout) ... ok\ntest_atomic_feature_commit_and_invalid_contracts (test_commission.CommissionTests.test_atomic_feature_commit_and_invalid_contracts) ... ok\ntest_stale_state_and_durable_short_fault (test_commission.CommissionTests.test_stale_state_and_durable_short_fault) ... ok\ntest_unqualified_model_stays_observation (test_commission.CommissionTests.test_unqualified_model_stays_observation) ... ok\ntest_aligned_word_access_and_exclusive_owner (test_native.NativeTests.test_aligned_word_access_and_exclusive_owner) ... skipped 'Set EDGE_TEST_MMIO_LIB to a compiled host test library'\ntest_linux_socket_contract (test_unix_npu.UnixNpuTests.test_linux_socket_contract) ... skipped 'Board transport uses a Linux Unix socket'\n\n----------------------------------------------------------------------\nRan 19 tests in 2.874s\n\nOK (skipped=2)\n"
+    }
+  ],
+  "completed_utc": "2026-10-08T05:27:54.916266+00:00",
+  "sources": [
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\cooling_link_test_top.v",
+      "sha256": "ee93078d1c1d0816e7d9528bbdcdbcea7c853e2a39d36d10c2dc7f019996864f"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\cooling_link_top.v",
+      "sha256": "39f3cef324c014b84e1813aaba7a3d2e6ec806f5f766438fd0613bbf71602870"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_axil_router.v",
+      "sha256": "23b8a8d5a87fab21c5a82ddcd63ff84535ffe648d3b0bd1b23b1a4044fc387b3"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_csr_cdc.v",
+      "sha256": "1c2281062c3905805d41c7fc0f60b21852e28caec05f25fcc0f4a598c85cbbbc"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_csr_mux.v",
+      "sha256": "f0b4b455a339eda417cc4df44f04c3c9b3c3c807300be7f22e05d603f0b63e20"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_eval_top.v",
+      "sha256": "2f960c07ea8c7342fc1033461c034106dc756da6a62982cefe8b16e548856467"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_features.v",
+      "sha256": "64f1dd5bbc72133c0ddf7cce230dce419662d09a009098c12ba44fe4b89536bb"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_mailbox.v",
+      "sha256": "b5a6c45960eef524c464d19668605f6cb54377d9417446dc000b192370a7d271"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_rs485.v",
+      "sha256": "7775e6c9f60f1422aa00a62f34c4a0f8c15075ead5a3f6a101db48fb3f43b249"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_test_source.v",
+      "sha256": "13227e5f4183dc011790bfa340f546c8106f80f595707bbe9882ab2a6161153a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_uart_byte.v",
+      "sha256": "0bb3903888c89f2146989637b60e936f475852c5f135b4fff0f81638e11943b6"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_window.v",
+      "sha256": "b2b3a6fe083700d9df2bcf9286f9a15c25d8d28ca159ec7c9b217e65bc8f3d1e"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_window_mean.v",
+      "sha256": "5ef7609bbc26ccf01d690d37501719440490378fa5d66b76e32ccc63d9537594"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\config.example.json",
+      "sha256": "6a6c9522192c837203b78cd5337981ad6add80490435c41754c1cb9e2eb92c66"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\fcb1_client.py",
+      "sha256": "0effcd8f4f3f54eada1f0af21b3dec8f2d90b9a70622091183dae58c00673ce8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\feature_config.example.json",
+      "sha256": "f12ed727ab35e30892a5493649b3f90e5a2f0d4a13522a22a1b8c526e0a68fef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\link_cli.py",
+      "sha256": "1f6f887a5297606ff742d552a28cc901b77985a2f27f32f91ea5d4faf8486140"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\npu_server.py",
+      "sha256": "508a6f77273ebf7cc107dd727a996b53b06ae45f570c24161ad186462adf75c9"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\run_edge.py",
+      "sha256": "577724131315fb2e46fac137408ed6ff9e77cd2c9005231999e7eac1e4d58a68"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\test_backend.example.json",
+      "sha256": "9c66c66a7d3e685770b5cc80970ebc5588262904ff66c60fde40f6aaaa1afa26"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\io.py",
+      "sha256": "a803b6ede33f26c4503b4457d6060a86a27f6c12c4a6b2a062dee5ea5e46f03c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\load.py",
+      "sha256": "51b676ce94ed6e7bf3bf8a50a6ba416e52a65c95ba19cf244bc9d681807746ef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\mock.py",
+      "sha256": "5c35017c2c57763786b4213072c572cb83ac11be7a671fb4e268c420f6cce9ef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\model.py",
+      "sha256": "893eef9d8a328bf8d836ccc0320bdfbc9cd8e9812b911603307887d5a7d03e89"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\policy.py",
+      "sha256": "7dbb3452ba8dbda26d55f9200f744272e3d7c95d57f07c44a139f7994bb6762d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\protocol.py",
+      "sha256": "d83e2614d5ad955410d108b1e85e614ea1dec54f782eee6d219fe81b85d39b8c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\service.py",
+      "sha256": "df4fc79fd4b652738770fcecb9ba94a3f48cd2adc89a6413490b9de07ea4c1d3"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\store.py",
+      "sha256": "2f2ef77685fcee0a7bcf4903f8a37d3d578d8b00cab8612fbf577ee7794e6c7a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\uplink.py",
+      "sha256": "b1c4c5241ba564c0a698a142703def18d3d96e5326196e52ed66f7a2aef07102"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\web.py",
+      "sha256": "5e97ae1199852efc9b93bfbba9d2bc3f1cd3f2cb9bd1966ec583a53bbb4d7a8b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\__init__.py",
+      "sha256": "9a5605ebbc753a4edbf689212b317092f325f521dd21c040f5fa7ccaaa1c9a1f"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\native\\mmio.c",
+      "sha256": "5908c2031ae09f46bc6f960eaf2ce16f9ba2851b37a1286870b4d5b8965fa364"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\static\\index.html",
+      "sha256": "3f98acedc2ca43c6e492d6283002658194e305619393d6bf250bf3095a9fe59b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_chain.py",
+      "sha256": "c5385155d3a5c9f6d80dfb0b8d1570187e20b29b4912a5cb3b8eb6a4cb3b48ed"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_commission.py",
+      "sha256": "b62ac61f45c7479c90ba89e02e7b6c38f7cda3bc498fb9947be68126982379ee"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_native.py",
+      "sha256": "2c1ebdd71c154e7cade9361e45eff1aaafe558059e3ceeffe2f9ae2a7ac45714"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_unix_npu.py",
+      "sha256": "ab915cc08f507164b62c2822c574c8bc581908323ff6b184f9f4e88cd57deff8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\build_td.py",
+      "sha256": "e4add48c5571f0b063bb8efaadacfd50170977438bafcebb32907bef61320b47"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\check_clocks.py",
+      "sha256": "7fb6dcd9e00d6767a9047313ce17140c8902a0f2f519fb46318fa96bd2f1bf39"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\check_elaboration.py",
+      "sha256": "acaa94796e5f415e3f1245fb31e90912a2f01225652dacafd040686df412d5fc"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\integrate.py",
+      "sha256": "b16a51da69c9b00833b6220c656893007d2ab88ffbec7b403e7fa536067845fd"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\package_delivery.py",
+      "sha256": "879dbe811e32265b9a69d95d0e6819641657e0dbf772bef3ae1a6e7239a36cef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\run_regression.py",
+      "sha256": "47bbd84ad3d278094fb77889d9a229fc425824ffc02ee1500faaa564b5d481ba"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\tools\\run_support_checks.py",
+      "sha256": "6621ac99c4665206aae49ad76d79eb7eef97c110e617b471eb2be1d1e1a84dd8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_extract.v",
+      "sha256": "b7367a93125ca3119c99965c84a8bc7f2cd7f87509e79f070fccd9d118a8c409"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_fft_ram.v",
+      "sha256": "6b5085cb9020252d7abd65dbfa2e6733290b768e052e6fa4720ed3f1c975c495"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_float_serial.v",
+      "sha256": "55af01ac13145230b8a8857dbdaf131008ec34f3f493acf2649b2104226984ed"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_hann_rom.v",
+      "sha256": "aa51800b410f11f43e5f3dbbe1d9b6e8b39c466ab8f235198582f75abf5152f9"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_isqrt.v",
+      "sha256": "adb32fa70e0e6de7df93df9d86b1261459ac29370a69cf23309f5469c016551a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_process_convert.v",
+      "sha256": "f29901bdf9e3dc04996f8c30803dbc626807a1cd8693e73eba450e8629055a41"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_q16_float.v",
+      "sha256": "07425ea0cfd053b2d74f161da28c35f5498717c626561116cd4c67c8f1d33a8f"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_twiddle_rom.v",
+      "sha256": "d32b5613e4d28bd06c97343c32a8e56856391a64f39daa6287b16320e250124a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_udiv.v",
+      "sha256": "52c54cbf8eb08b9b90eb8068cdead20350eb664db9603bbf9553fa8d13d2916b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\fft1024_iter.v",
+      "sha256": "bcfb41259004c8c19b3a2fc755b6e6006821ea35f5c0e3e17aee1a506c6b8a38"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\tools\\feature_reference.py",
+      "sha256": "4e2437d2468373d9af86f033137469f0e5e54348c56fe06daf9678039f57afb5"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\tools\\generate_roms.py",
+      "sha256": "378bf6625acb5659d38dbe51e4bbc9f46252e889d81b5bec568e51c2ffa577e4"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\tools\\run_regression.py",
+      "sha256": "6dbb687c9be1464a6a1e729e8f4bb28ba96c7ede346aac29b6d89661a53ecdb3"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\tools\\run_td_synthesis.py",
+      "sha256": "f88176177da3a58ae0490990d4aa481f282c329ff58eca41b695036cae778401"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\alarm_outputs.v",
+      "sha256": "6cde22d10d7183e398eca9b2af4ad9c547582ac6a57c38fc5bdca39c0bfcb735"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\config_unqualified.template.json",
+      "sha256": "4c9da3287bc68bd96222e05c26e7f9bc34dbfaf70a9730ff05ec06b851f07100"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\control_arbiter.v",
+      "sha256": "1ce16419416c7cc235a1751d3c9f90a7877c37d06a03565be5c313ca58278eb4"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_axi_lite.v",
+      "sha256": "3ad96276bbe73f43f05fa22e5d7a6562e8cb41d0aa526ce7f23983cbd4f23779"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_buttons.v",
+      "sha256": "02a40ce8aa2419751390a6ade8e485d276a8bc5b844218c4cea8510e35eb691d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_control.v",
+      "sha256": "2705543eef162ea868b170e1ccac59e84467bf04aeaaf0a82d8b652c7d0c2778"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_regs.v",
+      "sha256": "9e1346dfb1f0ca64da336d29436da41cbfe7b6d4c9ac6d09e421513786759416"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_tick.v",
+      "sha256": "aa453a9fd9e7f976b4fbceba7091a210fa4ede6284bd5e41fd37c3f03696bad2"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_uart.v",
+      "sha256": "dcf924e562773da78578054338728a3076a1bafd7031bd85d9cecfc97c13df3a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\fault_filter.v",
+      "sha256": "0a939b24443b61f3ac2e8925b8408f510fc61fa47520f99d2fff1b3a9b7bf45c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\protect_fsm.v",
+      "sha256": "bc792876f08d83eafc0569217459048880d1b04746afe85d9f1c961897c77c74"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_measure.v",
+      "sha256": "54879c33ede563f96ef6dba930b0520b478cac90def060f073e11011dfec88c1"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_pi.v",
+      "sha256": "84506db3b85728c303a1333831a5087fdfa0fb323a5140f3feea5a00402d4447"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\safety_monitor.v",
+      "sha256": "d4745760ea15afa27d4797dff8ca2a5ea7bd4b598b3c8e103d9dd047e0eaa6ec"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\collect_validation.py",
+      "sha256": "56ed8870586e641058f2d6623621f817662a72606fa63a3661e05fb9ec86f27a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\control_cli.py",
+      "sha256": "0effcd8f4f3f54eada1f0af21b3dec8f2d90b9a70622091183dae58c00673ce8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\run_regression.py",
+      "sha256": "4b1a729e99ccea2fa469918e4ae39be2d411a9eb271a3957efca93f5c2e3303d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\run_td_synthesis.py",
+      "sha256": "5e6cb3da75fe74afd9fc7a808ffc5e83baf6e9e1872b63e6a425a544d5ad7a3a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ads7606_if.v",
+      "sha256": "a3870cb2638ce9757e9c18a56e108dfc18b9381437e86118656366b775ee97e8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\aht20_drv.v",
+      "sha256": "2a11e3d3533900bd0b6fb5e3ffc9b41f27b0ceb4137737729d7825c8c4cef2d6"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\bmp280_drv.v",
+      "sha256": "1b7b14b78f36d5bd31b3d2067b6ebafb43b202ae68ef407b95415d450f99255b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\dbg_uart.v",
+      "sha256": "a7ecc923943c36a67bc9ac0577281d843b1513e4f83ccf2967c6f3e240ea351a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ds18b20.v",
+      "sha256": "d31be74d262ae6676bc315fdb74e64eadac133311f6e0426ef99f484e671c720"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\fg_cap.v",
+      "sha256": "715961ea144dffc61bb33fc2ded050e5cdba7f1f8a8333fa9b89d7658f012588"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\i2c_master.v",
+      "sha256": "cf2771a1ec4ccf9dd3401670470be3123a5bdef229c01353abe1ac7ed3a5c5eb"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\pwm_out.v",
+      "sha256": "b3abc77edd9da372865586217aa72dc11235d7eb2e2966e830b57b8addef451e"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+      "sha256": "28165ac8413dc4eae58278dfc31ecf38581c30c4ab8d89e1d5aed68942004e6b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\subsys_acq.v",
+      "sha256": "fce39d60584a596047d00e9811a30dba5d3641aa993a071aab659c1ebffbb4f7"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:root xmlns:xsi="http" xmlns:ipxact="http" xmlns:anlogic="http" xsi:schemaLocation="http">
+    <ipxact:compositeFile compositeFileTopName="design_0">
+        <ipxact:fileCollection>
+            <ipxact:file name="ip/AXI_Protocol_Converter_0/AXI_Protocol_Converter_0.xml">
+                <ipxact:instanceName>AXI_Protocol_Converter_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_ARM_Processor_System_0/design_0_ARM_Processor_System_0.xml">
+                <ipxact:instanceName>ARM_Processor_System_0</ipxact:instanceName>
+                <ipxact:customTool>use_ps</ipxact:customTool>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Concat_0/design_0_Concat_0.xml">
+                <ipxact:instanceName>Concat_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_AXI_Matrix_0/design_0_AXI_Matrix_0.xml">
+                <ipxact:instanceName>AXI_Matrix_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_PLL_0/design_0_PLL_0.xml">
+                <ipxact:instanceName>pll_75m</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Processor_System_Reset_0/design_0_Processor_System_Reset_0.xml">
+                <ipxact:instanceName>rst_n_75m</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_PLL_1/design_0_PLL_1.xml">
+                <ipxact:instanceName>PLL_npu</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Processor_System_Reset_1/design_0_Processor_System_Reset_1.xml">
+                <ipxact:instanceName>rstn_150m</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_pwm_0/design_0_pwm_0.xml">
+                <ipxact:instanceName>pwm_0</ipxact:instanceName>
+                <ipxact:ipPath>/data/ws/designs/npu_demo_hw/D20.2_NPU_MIPI_USB_HDMI/MLK_PAI/td_prjs/TD_D20.1_AD103V20_2025.1/src/pwm.v</ipxact:ipPath>
+                <ipxact:customTool>use_rtl</ipxact:customTool>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_PLL_2/design_0_PLL_2.xml">
+                <ipxact:instanceName>pll_150m</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Processor_System_Reset_2/design_0_Processor_System_Reset_2.xml">
+                <ipxact:instanceName>rstn_npu</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_AXI_Matrix_1/design_0_AXI_Matrix_1.xml">
+                <ipxact:instanceName>AXI_Matrix_1</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_AXI_Protocol_Converter_1/design_0_AXI_Protocol_Converter_1.xml">
+                <ipxact:instanceName>AXI_Protocol_Converter_1</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Video_NPU_0/design_0_Video_NPU_0.xml">
+                <ipxact:instanceName>Video_NPU_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_fvdma_ctrl_0/design_0_fvdma_ctrl_0.xml">
+                <ipxact:instanceName>fvdma_ctrl_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_VDMA_0/design_0_VDMA_0.xml">
+                <ipxact:instanceName>VDMA_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_video_timing_generator_v01_0/design_0_video_timing_generator_v01_0.xml">
+                <ipxact:instanceName>video_timing_generator_v01_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_AXI4_Stream_to_Video_Out_0/design_0_AXI4_Stream_to_Video_Out_0.xml">
+                <ipxact:instanceName>AXI4_Stream_to_Video_Out_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_AXI_Matrix_2/design_0_AXI_Matrix_2.xml">
+                <ipxact:instanceName>AXI_Matrix_2</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_PLL_3/design_0_PLL_3.xml">
+                <ipxact:instanceName>PLL_3</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Utility_Vector_Logic_0/design_0_Utility_Vector_Logic_0.xml">
+                <ipxact:instanceName>Utility_Vector_Logic_0</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_Utility_Vector_Logic_1/design_0_Utility_Vector_Logic_1.xml">
+                <ipxact:instanceName>Utility_Vector_Logic_1</ipxact:instanceName>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_uihdmi_tx_0/design_0_uihdmi_tx_0.xml">
+                <ipxact:instanceName>uihdmi_tx_0</ipxact:instanceName>
+                <ipxact:ipPath>/data/ws/designs/npu_demo_hw/D20.2_NPU_MIPI_USB_HDMI/MLK_PAI/td_prjs/TD_D20.2_MLKPAI_25.7/src/hdmi_tx/uihdmi_tx.v</ipxact:ipPath>
+                <ipxact:customTool>use_rtl</ipxact:customTool>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_pwm_0_0/design_0_pwm_0_0.xml">
+                <ipxact:instanceName>pwm_0_0</ipxact:instanceName>
+                <ipxact:ipPath>/data/ws/designs/npu_demo_hw/D20.2_NPU_MIPI_USB_HDMI/MLK_PAI/td_prjs/TD_D20.1_AD103V20_2025.1/src/pwm.v</ipxact:ipPath>
+                <ipxact:customTool>use_rtl</ipxact:customTool>
+            </ipxact:file>
+            <ipxact:file name="ip/design_0_pwm_0_1/design_0_pwm_0_1.xml">
+                <ipxact:instanceName>pwm_0_1</ipxact:instanceName>
+                <ipxact:ipPath>/data/ws/designs/npu_demo_hw/D20.2_NPU_MIPI_USB_HDMI/MLK_PAI/td_prjs/TD_D20.1_AD103V20_2025.1/src/pwm.v</ipxact:ipPath>
+                <ipxact:customTool>use_rtl</ipxact:customTool>
+            </ipxact:file>
+        </ipxact:fileCollection>
+    </ipxact:compositeFile>
+</ipxact:root>

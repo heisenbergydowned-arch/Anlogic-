@@ -1,0 +1,19 @@
+[Unit]
+Description=Cabinet measured parameter application and closed-loop operator transactions
+After=local-fs.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cabinet/linux
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -B /opt/cabinet/linux/commissioning_manager.py --directory /var/lib/cabinet/commissioning-workbench --config /etc/cabinet/edge.json
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=60
+UMask=0077
+RuntimeDirectory=cabinet-commissioning
+RuntimeDirectoryMode=0700
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

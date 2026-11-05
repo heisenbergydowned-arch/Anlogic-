@@ -1,0 +1,151 @@
+{
+  "generated_utc": "2026-10-07T14:15:56.982533+00:00",
+  "control_source_gate": "PASS",
+  "hardware_release_ready": false,
+  "scope": "Implemented PL control/protection/alarm logic, connected to original acquisition top",
+  "current_source_evidence": [
+    {
+      "name": "control_regression",
+      "report": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\results\\validation.json",
+      "run_utc": "2026-10-07T14:06:40.622189+00:00",
+      "reported_status": "PASS",
+      "matches_current_sources": true,
+      "changed_since_report": [],
+      "tests": [
+        {
+          "test": "tb_control_edges",
+          "status": "PASS",
+          "seconds": 0.096,
+          "marker": "ALL PASS tb_control_edges checks=13"
+        },
+        {
+          "test": "tb_control_axi",
+          "status": "PASS",
+          "seconds": 0.091,
+          "marker": "ALL PASS tb_control_axi checks=146"
+        },
+        {
+          "test": "tb_control_uart",
+          "status": "PASS",
+          "seconds": 0.277,
+          "marker": "ALL PASS tb_control_uart checks=566 debug_frames=6"
+        },
+        {
+          "test": "tb_control_unqualified",
+          "status": "PASS",
+          "seconds": 0.287,
+          "marker": "ALL PASS tb_control_unqualified checks=10"
+        },
+        {
+          "test": "tb_cooling_control",
+          "status": "PASS",
+          "seconds": 4.765,
+          "marker": "ALL PASS tb_cooling_control checks=1411"
+        },
+        {
+          "test": "tb_rpm_vectors",
+          "status": "PASS",
+          "seconds": 0.114,
+          "marker": "ALL PASS tb_rpm_vectors vectors=80"
+        },
+        {
+          "test": "tb_pi_vectors",
+          "status": "PASS",
+          "seconds": 0.104,
+          "marker": "ALL PASS tb_pi_vectors vectors=492"
+        },
+        {
+          "test": "tb_pwm_out",
+          "status": "PASS",
+          "seconds": 0.176,
+          "marker": "tb_pwm_out: ALL PASS"
+        },
+        {
+          "test": "tb_dbg_uart",
+          "status": "PASS",
+          "seconds": 1.385,
+          "marker": "tb_dbg_uart: ALL PASS"
+        },
+        {
+          "test": "tb_subsys_control",
+          "status": "PASS",
+          "seconds": 6.366,
+          "marker": "ALL PASS tb_subsys_control actual_115200_UART_compressed_POR pwm_edges=65"
+        },
+        {
+          "test": "control_cli",
+          "status": "PASS",
+          "marker": "ALL PASS control_cli CRC/stream/lost-reply retry/configuration selftest (no serial access)"
+        }
+      ],
+      "gate_setup_wns_ns": null,
+      "sta_coverage_percent": null,
+      "resources": null
+    },
+    {
+      "name": "final_control_core",
+      "report": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\td_control_final\\synthesis.json",
+      "run_utc": "2026-10-07T14:07:09.384064+00:00",
+      "reported_status": "PASS",
+      "matches_current_sources": true,
+      "changed_since_report": [],
+      "tests": null,
+      "gate_setup_wns_ns": 0.989,
+      "sta_coverage_percent": 89.55,
+      "resources": {
+        "lut": 6713,
+        "register": 5010,
+        "slice_estimate": 5800,
+        "eram": 0,
+        "dsp": 4
+      }
+    },
+    {
+      "name": "final_real_acquisition_top",
+      "report": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\td_acq_release\\synthesis.json",
+      "run_utc": "2026-10-07T14:06:40.618664+00:00",
+      "reported_status": "PASS",
+      "matches_current_sources": true,
+      "changed_since_report": [],
+      "tests": null,
+      "gate_setup_wns_ns": 0.805,
+      "sta_coverage_percent": 99.97,
+      "resources": {
+        "lut": 9550,
+        "register": 7405,
+        "slice_estimate": 8023,
+        "eram": 0,
+        "dsp": 4
+      }
+    }
+  ],
+  "integration_assessment_snapshot": {
+    "name": "full_soc_budget_snapshot_before_final_mode_format_fixes",
+    "report": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\td_soc_release\\synthesis.json",
+    "run_utc": "2026-10-07T14:03:16.221919+00:00",
+    "reported_status": "TIMING_NOT_MET",
+    "matches_current_sources": false,
+    "changed_since_report": [
+      "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_control.v",
+      "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_regs.v"
+    ],
+    "tests": null,
+    "gate_setup_wns_ns": -2.909,
+    "sta_coverage_percent": 99.24,
+    "resources": {
+      "lut": 67420,
+      "register": 48444,
+      "slice_estimate": 52049,
+      "eram": 259,
+      "dsp": 147
+    }
+  },
+  "remaining": [
+    "Full-chip synthesis must be refreshed after the final mode/format fixes; latest budget snapshot nearly fills slices and has negative global Setup.",
+    "No new whole-chip P&R, routed Hold, bitstream or physical acceptance.",
+    "Fan PWM/FG/PPR, sensor thresholds, fallback, PI and buzzer/heat-load executor need physical calibration and acceptance.",
+    "Existing ICM initialization and actual sampling rate must be closed before vibration production qualification.",
+    "Full 39D overlapping window and PS/AXI data path remain separate unfinished integration.",
+    "Optional same-domain AXI adapter is verified but not connected to PS; no website/model/local-persistence completion claim."
+  ]
+}

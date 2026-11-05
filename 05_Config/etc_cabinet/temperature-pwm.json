@@ -1,0 +1,37 @@
+{
+  "schema": "cabinet-temperature-pwm-v1",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "revision": 35,
+  "enabled": true,
+  "low_C": 25.0,
+  "high_C": 80.0,
+  "guards": {
+    "current_zero_code": 16346,
+    "mean_trip_code": 970,
+    "peak_trip_code": 2425,
+    "max_rpm": 5000,
+    "reference": {
+      "qualified": false,
+      "current_sensor": "ACS712-05B",
+      "adc_span_V": 10,
+      "sensitivity_V_per_A": 0.185,
+      "zero_measurement": 16345.668674698794,
+      "zero_capture_id": "5dcc426f-77a5-4593-883c-46ce64cd5fe7",
+      "fan_rated_rpm": 6000,
+      "fan_rated_A": 0.7,
+      "external_psu_limit_A": 0.7,
+      "mean_samples": 64,
+      "nominal_mean_trip_A": 0.8,
+      "nominal_peak_trip_A": 2,
+      "source": "USER_CONFIRMED_HARDWARE_AND_SAVED_MEASURED_ZERO",
+      "fan_measured_max_rpm": 4500
+    }
+  },
+  "speed_alarm": {
+    "warning_rpm": 4500,
+    "warning_hold_ms": 10000,
+    "warning_clear_rpm": 4400,
+    "recovery_ms": 1000,
+    "source": "USER_MEASURED_4500RPM_20261104"
+  }
+}

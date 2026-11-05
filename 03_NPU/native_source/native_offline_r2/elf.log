@@ -1,0 +1,136 @@
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Shared object file)
+  Machine:                           AArch64
+  Version:                           0x1
+  Entry point address:               0x43e0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          57120 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         8
+  Size of section headers:           64 (bytes)
+  Number of section headers:         34
+  Section header string table index: 33
+
+Program Headers:
+  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align
+  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0090f1 0x0090f1 R E 0x10000
+  LOAD           0x009938 0x0000000000019938 0x0000000000019938 0x0006e0 0x000710 RW  0x10000
+  DYNAMIC        0x0099c0 0x00000000000199c0 0x00000000000199c0 0x000260 0x000260 RW  0x8
+  NOTE           0x000200 0x0000000000000200 0x0000000000000200 0x000024 0x000024 R   0x4
+  TLS            0x009938 0x0000000000019938 0x0000000000019938 0x000000 0x000028 R   0x8
+  GNU_EH_FRAME   0x008378 0x0000000000008378 0x0000000000008378 0x00015c 0x00015c R   0x4
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10
+  GNU_RELRO      0x009938 0x0000000000019938 0x0000000000019938 0x0006c8 0x0006c8 R   0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .note.gnu.build-id .hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt .text .fini .rodata .eh_frame_hdr .eh_frame .gcc_except_table 
+   01     .init_array .fini_array .data.rel.ro .dynamic .got .data .bss 
+   02     .dynamic 
+   03     .note.gnu.build-id 
+   04     .tbss 
+   05     .eh_frame_hdr 
+   06     
+   07     .init_array .fini_array .data.rel.ro .dynamic .got 
+
+Dynamic section at offset 0x99c0 contains 34 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000001 (NEEDED)             Shared library: [libarmnn.so.32]
+ 0x0000000000000001 (NEEDED)             Shared library: [libarmnnOnnxParser.so.24]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x000000000000000e (SONAME)             Library soname: [libnormal_npu.so]
+ 0x000000000000000c (INIT)               0x3db0
+ 0x000000000000000d (FINI)               0x7ca4
+ 0x0000000000000019 (INIT_ARRAY)         0x19938
+ 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)
+ 0x000000000000001a (FINI_ARRAY)         0x19948
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x0000000000000004 (HASH)               0x228
+ 0x0000000000000005 (STRTAB)             0x1588
+ 0x0000000000000006 (SYMTAB)             0x6b8
+ 0x000000000000000a (STRSZ)              6521 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000003 (PLTGOT)             0x19c20
+ 0x0000000000000002 (PLTRELSZ)           2280 (bytes)
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000017 (JMPREL)             0x34c8
+ 0x000000006ffffef6 (TLSDESC_PLT)        0x43c0
+ 0x000000006ffffef7 (TLSDESC_GOT)        0x19f3f
+ 0x0000000000000007 (RELA)               0x30f0
+ 0x0000000000000008 (RELASZ)             984 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x0000000000000018 (BIND_NOW)           
+ 0x000000006ffffffb (FLAGS_1)            Flags: NOW
+ 0x000000006ffffffe (VERNEED)            0x3040
+ 0x000000006fffffff (VERNEEDNUM)         3
+ 0x000000006ffffff0 (VERSYM)             0x2f02
+ 0x000000006ffffff9 (RELACOUNT)          4
+ 0x0000000000000000 (NULL)               0x0
+
+Version symbols section '.gnu.version' contains 158 entries:
+ Addr: 0000000000002f02  Offset: 0x002f02  Link: 3 (.dynsym)
+  000:   0 (*local*)       0 (*local*)       0 (*local*)       1 (*global*)   
+  004:   2 (GLIBC_2.17)    1 (*global*)      1 (*global*)      0 (*local*)    
+  008:   1 (*global*)      3 (GLIBCXX_3.4)   0 (*local*)       0 (*local*)    
+  00c:   0 (*local*)       1 (*global*)      4 (GLIBCXX_3.4.21)    1 (*global*)   
+  010:   3 (GLIBCXX_3.4)   0 (*local*)       3 (GLIBCXX_3.4)   1 (*global*)   
+  014:   2 (GLIBC_2.17)    2 (GLIBC_2.17)    0 (*local*)       3 (GLIBCXX_3.4)
+  018:   4 (GLIBCXX_3.4.21)    1 (*global*)      5 (CXXABI_1.3)    1 (*global*)   
+  01c:   0 (*local*)       0 (*local*)       1 (*global*)      5 (CXXABI_1.3) 
+  020:   0 (*local*)       0 (*local*)       1 (*global*)      3 (GLIBCXX_3.4)
+  024:   0 (*local*)       1 (*global*)      1 (*global*)      0 (*local*)    
+  028:   2 (GLIBC_2.17)    0 (*local*)       3 (GLIBCXX_3.4)   0 (*local*)    
+  02c:   5 (CXXABI_1.3)    3 (GLIBCXX_3.4)   5 (CXXABI_1.3)    1 (*global*)   
+  030:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  034:   1 (*global*)      0 (*local*)       1 (*global*)      0 (*local*)    
+  038:   1 (*global*)      1 (*global*)      0 (*local*)       1 (*global*)   
+  03c:   1 (*global*)      1 (*global*)      0 (*local*)       1 (*global*)   
+  040:   0 (*local*)       0 (*local*)       0 (*local*)       1 (*global*)   
+  044:   1 (*global*)      3 (GLIBCXX_3.4)   4 (GLIBCXX_3.4.21)    1 (*global*)   
+  048:   1 (*global*)      3 (GLIBCXX_3.4)   6 (CXXABI_1.3.9)   3 (GLIBCXX_3.4)
+  04c:   0 (*local*)       1 (*global*)      0 (*local*)       0 (*local*)    
+  050:   1 (*global*)      4 (GLIBCXX_3.4.21)    1 (*global*)      0 (*local*)    
+  054:   1 (*global*)      2 (GLIBC_2.17)    7 (GLIBCXX_3.4.9)   1 (*global*)   
+  058:   2 (GLIBC_2.17)    0 (*local*)       1 (*global*)      0 (*local*)    
+  05c:   2 (GLIBC_2.17)    0 (*local*)       0 (*local*)       5 (CXXABI_1.3) 
+  060:   1 (*global*)      1 (*global*)      0 (*local*)       0 (*local*)    
+  064:   1 (*global*)      3 (GLIBCXX_3.4)   3 (GLIBCXX_3.4)   1 (*global*)   
+  068:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  06c:   1 (*global*)      3 (GLIBCXX_3.4)   5 (CXXABI_1.3)    0 (*local*)    
+  070:   0 (*local*)       1 (*global*)      1 (*global*)      0 (*local*)    
+  074:   3 (GLIBCXX_3.4)   0 (*local*)       0 (*local*)       0 (*local*)    
+  078:   1 (*global*)      0 (*local*)       0 (*local*)       0 (*local*)    
+  07c:   7 (GLIBCXX_3.4.9)   0 (*local*)       1 (*global*)      4 (GLIBCXX_3.4.21) 
+  080:   1 (*global*)      5 (CXXABI_1.3)    1 (*global*)      1 (*global*)   
+  084:   1 (*global*)      5 (CXXABI_1.3)    1 (*global*)      1 (*global*)   
+  088:   5 (CXXABI_1.3)    3 (GLIBCXX_3.4)   0 (*local*)       8 (CXXABI_1.3.7)
+  08c:   0 (*local*)       9 (GCC_3.0)       1 (*global*)      1 (*global*)   
+  090:   3 (GLIBCXX_3.4)   0 (*local*)       1 (*global*)      3 (GLIBCXX_3.4)
+  094:   0 (*local*)       2 (GLIBC_2.17)    1 (*global*)      0 (*local*)    
+  098:   3 (GLIBCXX_3.4)   4 (GLIBCXX_3.4.21)    1 (*global*)      1 (*global*)   
+  09c:   3 (GLIBCXX_3.4)   3 (GLIBCXX_3.4)
+
+Version needs section '.gnu.version_r' contains 3 entries:
+ Addr: 0x0000000000003040  Offset: 0x003040  Link: 4 (.dynstr)
+  000000: Version: 1  File: libgcc_s.so.1  Cnt: 1
+  0x0010:   Name: GCC_3.0  Flags: none  Version: 9
+  0x0020: Version: 1  File: libstdc++.so.6  Cnt: 6
+  0x0030:   Name: CXXABI_1.3.7  Flags: none  Version: 8
+  0x0040:   Name: GLIBCXX_3.4.9  Flags: none  Version: 7
+  0x0050:   Name: CXXABI_1.3.9  Flags: none  Version: 6
+  0x0060:   Name: CXXABI_1.3  Flags: none  Version: 5
+  0x0070:   Name: GLIBCXX_3.4.21  Flags: none  Version: 4
+  0x0080:   Name: GLIBCXX_3.4  Flags: none  Version: 3
+  0x0090: Version: 1  File: libc.so.6  Cnt: 1
+  0x00a0:   Name: GLIBC_2.17  Flags: none  Version: 2

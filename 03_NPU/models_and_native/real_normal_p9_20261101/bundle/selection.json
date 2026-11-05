@@ -1,0 +1,29 @@
+[
+  {
+    "alpha": 0.01,
+    "seed": 20261101,
+    "calibration_mse": 0.430017062829337,
+    "constant_mean_mse": 3.0151009559631348,
+    "iterations": 1408,
+    "seconds": 1.9795018330041785,
+    "warnings": []
+  },
+  {
+    "alpha": 0.1,
+    "seed": 20261102,
+    "calibration_mse": 0.2762020569018598,
+    "constant_mean_mse": 3.0151009559631348,
+    "iterations": 1952,
+    "seconds": 2.510809875006089,
+    "warnings": []
+  },
+  {
+    "alpha": 1.0,
+    "seed": 20261103,
+    "calibration_mse": 0.38864005309769756,
+    "constant_mean_mse": 3.0151009559631348,
+    "iterations": 762,
+    "seconds": 1.1721087920013815,
+    "warnings": []
+  }
+]

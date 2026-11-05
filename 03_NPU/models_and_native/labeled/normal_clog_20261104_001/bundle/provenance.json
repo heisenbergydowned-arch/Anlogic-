@@ -1,0 +1,282 @@
+{
+  "source": "REAL_USER_DECLARED_LABELED_DIAGNOSTIC",
+  "input_contract": {
+    "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+    "configuration_words": [
+      1,
+      0,
+      0,
+      1073741824,
+      0,
+      885622,
+      17896,
+      2,
+      1,
+      13,
+      39,
+      65,
+      103,
+      154,
+      205,
+      257,
+      513
+    ],
+    "frame_identity": [
+      1,
+      0,
+      2
+    ],
+    "controller_diagnostic_mode": true,
+    "input_policy": "LABELED_USER_GROUNDTRUTH_FG_UNKNOWN_V2",
+    "allowed_controller_modes": [
+      "STOPPING"
+    ]
+  },
+  "bitstream_sha256": "586850fd5fbcb004d95dc38a0d90d7200871dc79fbddcb9e7617578c6f084b53",
+  "sessions": [
+    {
+      "session_id": "d34f477d-9172-4841-8fa8-43255abfb734",
+      "label": "normal",
+      "episode_id": "8bb1d274-32d1-4d23-8f28-0cc334652ee4",
+      "split": "train",
+      "rows": 706,
+      "frames_sha256": "6ffeb771472b4c4b854b92756529dc5712af76bb67c5808e672e0815e9581c16",
+      "session_sha256": "cb8376c822d19a5995a33fe760fd4bfed4520107f4a8b4519db65e212ed38150",
+      "learning_sha256": "a3acac8361f8409d8a3744fc76f6f8bdacb64270adda4e658a258c450d40cc8a",
+      "controller_mode": "STOPPING",
+      "first_frame": 13836,
+      "last_frame": 14542,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "6eaef17f-e431-4b11-8fb7-aeff85f190f9",
+      "label": "clog",
+      "episode_id": "e606f543-20d2-437e-82fa-7b364fa6011a",
+      "split": "train",
+      "rows": 706,
+      "frames_sha256": "097e5cd310f0f2a5ea551d740b90bc55b9cae6f085c4b2ed64d364a2a55e38b4",
+      "session_sha256": "8580a8da864ef0cb19eeff7600921e611a32a68bcf433714584ea72241e8d6d1",
+      "learning_sha256": "42d7428c154d520fb1039fafe4e1211b9afc77aad1f574d908255e6f6bf8cc9f",
+      "controller_mode": "STOPPING",
+      "first_frame": 16358,
+      "last_frame": 17064,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "b94e15fd-ef4c-4593-8031-349fc3046dbe",
+      "label": "normal",
+      "episode_id": "afeac755-2ae2-48bd-b304-23a017505678",
+      "split": "train",
+      "rows": 706,
+      "frames_sha256": "1150632a94dd773e1494697fb00398ff662a42a19e96dd5c193e6e66cb10222c",
+      "session_sha256": "92e954ff2ee770554eb3dfda1c4fe83ed07361bcbbdd74b7eac4c9c19b95afd0",
+      "learning_sha256": "713825af06d7764c06360c75148966c42e73ea8d9779500d33ce70214e051ea8",
+      "controller_mode": "STOPPING",
+      "first_frame": 17682,
+      "last_frame": 18388,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "a9fed9cc-bc6b-4459-a795-d2827a9f6c92",
+      "label": "clog",
+      "episode_id": "228c4629-82e7-47e7-be19-76f0a1b77f11",
+      "split": "train",
+      "rows": 706,
+      "frames_sha256": "56a1c9904b42f463921d23a6685703f59790e4e29034a373d2b1bb78e6f09319",
+      "session_sha256": "caef6485f42067137b15c7ef4fa5ef42625c9dcf6306272ec48adf66b45cb98b",
+      "learning_sha256": "65e67d51a0f021a017aa73e87b3bfc3fc860944f548a25d223e63a0aec6470af",
+      "controller_mode": "STOPPING",
+      "first_frame": 18938,
+      "last_frame": 19645,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "1d31191d-27e8-47a5-8934-7750c70cba4d",
+      "label": "normal",
+      "episode_id": "51632c72-0264-4bb0-9c9a-8dd31c5d1606",
+      "split": "validation",
+      "rows": 703,
+      "frames_sha256": "803a72b7e30d8540d923e49a3c6a7fcc3ae3e08151dbca1ce55888b9ed3c81ac",
+      "session_sha256": "932c954bbae3f06975e8eb0d6d0dee5426dc3b09c9092463c13648948f6431d6",
+      "learning_sha256": "04b5ee4d45102f617afb7ac75704843417e9d816facb060913d6d84446155bca",
+      "controller_mode": "STOPPING",
+      "first_frame": 20847,
+      "last_frame": 21553,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "6a5b1c60-d4af-4e0f-9a23-62a5dd99f080",
+      "label": "clog",
+      "episode_id": "92674ee5-501a-4862-b028-689b8acb2067",
+      "split": "validation",
+      "rows": 706,
+      "frames_sha256": "243d6dd125b6466ae31a15b01ae72dc36826badce41aa6ef5407184f3fa7a314",
+      "session_sha256": "cbac5ebd1dc9a2472224b4f33c1945b476e9dce061593d878e118e0187fd8d68",
+      "learning_sha256": "c4798d4eb382d6de191758b07bcb4a2fbc4a3fb8cd7419e07385b9dfef148323",
+      "controller_mode": "STOPPING",
+      "first_frame": 22164,
+      "last_frame": 22871,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "c57bfe68-0af0-46c8-aaa2-c7d76b639ed9",
+      "label": "normal",
+      "episode_id": "e6f422ef-38de-439a-9354-f7e923e81e7c",
+      "split": "test",
+      "rows": 703,
+      "frames_sha256": "fd05bf42ac53f99cb731e81263d54c9cbf6b394ef95c081421053bc9a36490d3",
+      "session_sha256": "a0b73ad7ea023e653ae308c6900653ac34196b8d689ee4b43122add550535223",
+      "learning_sha256": "b5011f16f9cf776d5dde57f8aa041596aea834d0e2bbbb12317e51bd3352cb7f",
+      "controller_mode": "STOPPING",
+      "first_frame": 24218,
+      "last_frame": 24924,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "5199ffae-2574-4fd8-b133-64ce6a0c98da",
+      "label": "clog",
+      "episode_id": "1303ce0c-984c-4c44-9d9e-7f2ae1d25ce7",
+      "split": "test",
+      "rows": 706,
+      "frames_sha256": "a772af6cae61adc97ee1718f10f037be77a2b5d43c527a784ca209a29de4bac9",
+      "session_sha256": "ffea474993b3af5a3ec637b3dc06fa46ff77fb357661de214b362703fcb9098b",
+      "learning_sha256": "737b601449c78f526c2f38d39ffc0494a275c83820978b8fb610651984f22a73",
+      "controller_mode": "STOPPING",
+      "first_frame": 25969,
+      "last_frame": 26675,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/eacfd758-b538-46fa-aacd-d1378a75171b/1"
+    },
+    {
+      "session_id": "b8a64d00-beea-4743-892f-f85b383b5f99",
+      "label": "clog",
+      "episode_id": "8296754a-8879-4ac0-be59-c0bb0624ace6",
+      "split": "train",
+      "rows": 693,
+      "frames_sha256": "b4211df6a72103db3f0638ec3650f0c74638ac3c3255f13adf58bb4810ad7d3a",
+      "session_sha256": "dc4ead6cfcbd030d2ab195f177a13989a514107b9a77da1610dcdf6ee5015a49",
+      "learning_sha256": "5f87c2a51d653fd35ac9172060647d0f4a78d6a03ddac5ac723c281683f03242",
+      "controller_mode": "STOPPING",
+      "first_frame": 62941,
+      "last_frame": 63646,
+      "boot_id": "machine:843ad8d6299240c898a32874a96fe333/edbeb905/723916d0-e6d1-4e95-beae-3508987f79c2/1"
+    }
+  ],
+  "dataset_sha256": "368fcb52ae57601a621377936eb8b48d37fdb3ef15a9ca24886922aec1d1469a",
+  "raw_capture_qualification_changed": false,
+  "normal_pwm_provenance": {
+    "train": {
+      "session_id": "97b1a4e92fe24a9bbc5e81a0a732f792",
+      "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+      "rows": 744,
+      "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+      "raw_rows": 1281,
+      "session_sha256": "a09d34b601583ac41adc5c95f4232601833edfe7c74eaa070cae2e0592e25591",
+      "frames_sha256": "666bd5565769a91df2b90b979e6182d782cdef1625d52c479f63b3d2ca265cff",
+      "first_frame": 38678,
+      "last_frame": 40766,
+      "capture_formal_accepted": 0,
+      "capture_label_declared": "normal",
+      "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+      "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+      "raw_capture_qualification_changed": false,
+      "excluded_reason_counts": {
+        "OUTSIDE_REQUESTED_TRIAL": 343,
+        "SETTLING_OR_NOT_ACTIVE": 194
+      },
+      "pwm_coverage": {
+        "0": 67,
+        "10": 68,
+        "20": 70,
+        "30": 66,
+        "40": 69,
+        "50": 65,
+        "60": 66,
+        "70": 68,
+        "80": 68,
+        "90": 68,
+        "100": 69
+      },
+      "settling_excluded_seconds": 4,
+      "temperature_range_C": [
+        39.75,
+        43.6875
+      ]
+    },
+    "validation": {
+      "session_id": "6e8e20bc29c84a1fb92424aa5c169087",
+      "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+      "rows": 745,
+      "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+      "raw_rows": 1311,
+      "session_sha256": "1b76dfca70c62d59275160a2410b5197856205744e5c1940aa0be6f98cd274a6",
+      "frames_sha256": "2a5b825a02424b0b674a85a9cdbba2297de999ca37466bbc1d888a74e75b469a",
+      "first_frame": 40891,
+      "last_frame": 42995,
+      "capture_formal_accepted": 0,
+      "capture_label_declared": "normal",
+      "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+      "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+      "raw_capture_qualification_changed": false,
+      "excluded_reason_counts": {
+        "OUTSIDE_REQUESTED_TRIAL": 364,
+        "SETTLING_OR_NOT_ACTIVE": 202
+      },
+      "pwm_coverage": {
+        "0": 66,
+        "10": 65,
+        "20": 66,
+        "30": 68,
+        "40": 68,
+        "50": 70,
+        "60": 68,
+        "70": 73,
+        "80": 68,
+        "90": 68,
+        "100": 65
+      },
+      "settling_excluded_seconds": 4,
+      "temperature_range_C": [
+        39.6875,
+        43.875
+      ]
+    },
+    "test": {
+      "session_id": "81ab50ee6888454ab0eb8c23c83f14a0",
+      "source": "REAL_FRM1_USER_DECLARED_NORMAL_PWM_SWEEP",
+      "rows": 771,
+      "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+      "raw_rows": 1279,
+      "session_sha256": "f36957d9a9e6b4bc96f17b94a672b745d53299b248a5782165330247efe7ef10",
+      "frames_sha256": "2436038ad8d73dc0c7e74e4ff0128f328f25d4b8a1eb14ce3cb9fdaf56fdb5b7",
+      "first_frame": 43181,
+      "last_frame": 45207,
+      "capture_formal_accepted": 0,
+      "capture_label_declared": "normal",
+      "advisory_label_source": "USER_CONFIRMED_BLOCKAGE_REMOVED",
+      "normal_confirmation_sha256": "5c77b5eea2faf62b5ff61c61bd00f1ea6cb9f38508145144c3d9548202b23869",
+      "raw_capture_qualification_changed": false,
+      "excluded_reason_counts": {
+        "OUTSIDE_REQUESTED_TRIAL": 311,
+        "SETTLING_OR_NOT_ACTIVE": 197
+      },
+      "pwm_coverage": {
+        "0": 71,
+        "10": 69,
+        "20": 70,
+        "30": 70,
+        "40": 69,
+        "50": 73,
+        "60": 66,
+        "70": 70,
+        "80": 72,
+        "90": 71,
+        "100": 70
+      },
+      "settling_excluded_seconds": 4,
+      "temperature_range_C": [
+        39.625,
+        44.375
+      ]
+    }
+  }
+}

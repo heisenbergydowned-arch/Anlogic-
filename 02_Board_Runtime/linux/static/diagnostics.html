@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICM 通信诊断 · 机柜风冷测控</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.55 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid; place-items: center;
+  font: 700 14px var(--mono); color: #fff;
+}
+.brand h1 { font-size: 18px; margin: 0; font-weight: 650; }
+.brand small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: 13px;
+  color: var(--muted); border: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--border); text-decoration: none; }
+.nav-links a.active {
+  color: #fff; background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45); font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff; border-color: #26b395; font-weight: 600;
+}
+main { max-width: 1320px; margin: 0 auto; padding: 20px 24px 56px; }
+.bar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.bar-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+input, button {
+  font: inherit;
+  padding: 7px 14px;
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  background: #0d1622;
+  color: var(--text);
+}
+input { min-width: 240px; font: 12px var(--mono); }
+button {
+  background: linear-gradient(135deg, #166a8f, #158578);
+  border-color: var(--cyan);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+button#stop {
+  background: rgba(242, 85, 85, 0.16);
+  border-color: var(--red);
+  color: #ffcccc;
+}
+#status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(42, 212, 197, 0.1);
+  border: 1px solid rgba(42, 212, 197, 0.3);
+  color: #b7f5ee;
+  font: 12px var(--mono);
+}
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.kpi-card {
+  background: linear-gradient(180deg, var(--card-alt), var(--card));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+.kpi-card span { font-size: 12px; color: var(--muted); display: block; }
+.kpi-card strong { font: 700 20px/1.35 var(--mono); color: #fff; display: block; margin-top: 4px; }
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-variant-numeric: tabular-nums;
+}
+th {
+  background: rgba(255,255,255,0.03);
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 12px;
+}
+td:nth-child(2), td:nth-child(3) { font-family: var(--mono); }
+#clocks { font: 12px var(--mono); color: var(--muted); margin: 12px 0 0; }
+.note {
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f3d7a2;
+  font-size: 13px;
+}
+@media(max-width:760px){ .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">ICM1</div>
+    <div>
+      <h1>双路 ICM-20602 SPI 实时硬件通信诊断</h1>
+      <small>0x3100 PL Independent Snapshot · 8kHz Poll / 4kHz ODR Early-CS Recovery</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">实时监控</a>
+    <a href="/commissioning" class="cta">调试与标定工作台 →</a>
+    <a href="/history">历史曲线与波形</a>
+    <a href="/diagnostics" class="active">ICM 通信诊断</a>
+    <a href="/parameters">受控参数配置</a>
+    <a href="/pressure-calibration">压差健康标定</a>
+    <a href="/recording">故障样本录制</a>
+  </nav>
+</header>
+
+<main>
+  <div class="bar">
+    <div class="bar-controls">
+      <input id="token" type="password" autocomplete="off" aria-label="访问令牌" placeholder="访问令牌（仅保存在本页内存）">
+      <button id="connect">读取并持续刷新</button>
+      <button id="stop">停止刷新</button>
+    </div>
+    <div id="status" role="status">未连接</div>
+  </div>
+
+  <section class="kpi-strip">
+    <div class="kpi-card"><span>A 路实测采样率</span><strong id="kpi-rate-a">— Hz</strong></div>
+    <div class="kpi-card"><span>B 路实测采样率</span><strong id="kpi-rate-b">— Hz</strong></div>
+    <div class="kpi-card"><span>A / B WHO_AM_I 标识</span><strong id="kpi-who">— / —</strong></div>
+    <div class="kpi-card"><span>A / B DRDY=0 早释计数</span><strong id="kpi-drdy0">— / —</strong></div>
+  </section>
+
+  <section class="panel">
+    <div class="scroll">
+      <table>
+        <thead><tr><th style="width:32%">诊断寄存器项目</th><th style="width:34%">A 路传感器 (O_cs_icm_a / V6)</th><th style="width:34%">B 路传感器 (O_cs_icm_b / U7)</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p id="clocks"></p>
+  </section>
+
+  <p class="note">
+    说明：直接读取 PL 的 `0x3100` 独立原始采集快照，不等待双路 1024 点特征帧。此页不下发控制，不启动推理。`WHO=0x2E` 仅表示允许诊断；原始 XYZ 是有符号 16 位 ADC 码，未校准时不冒充物理加速度 $g$。
+  </p>
+</main>
+
+<script>
+let timer=null,epoch=0;
+const statusNode=document.getElementById('status'),rows=document.getElementById('rows'),clocks=document.getElementById('clocks');
+function clearData(message){statusNode.textContent=message;rows.replaceChildren();clocks.textContent='';}
+function hex(value,digits){return Number.isInteger(value)?'0x'+value.toString(16).toUpperCase().padStart(digits,'0'):'—';}
+function render(state){
+  const diag=state.icm_diagnostics||{},sensors=diag.sensors||[];
+  clearData('连接：'+state.link+'　诊断：'+(diag.state||'DISABLED')+'　快照年龄：'+(diag.snapshot_age_ms??'—')+' ms');
+  const s0=sensors[0]||{},s1=sensors[1]||{};
+  document.getElementById('kpi-rate-a').textContent=s0.observed_rate_hz!=null?s0.observed_rate_hz.toFixed(2)+' Hz':'等待第二快照';
+  document.getElementById('kpi-rate-b').textContent=s1.observed_rate_hz!=null?s1.observed_rate_hz.toFixed(2)+' Hz':'等待第二快照';
+  document.getElementById('kpi-who').textContent=hex(s0.who,2)+' / '+hex(s1.who,2);
+  document.getElementById('kpi-drdy0').textContent=(s0.drdy_zero_count??'—')+' / '+(s1.drdy_zero_count??'—');
+
+  const fields=[
+    ['WHO',sensor=>hex(sensor.who,2)],
+    ['驱动错误',sensor=>sensor.error?'是':'否'],
+    ['配置失败掩码',sensor=>hex(sensor.config_bad_mask,3)],
+    ['最近配置失败',sensor=>hex(sensor.config_failure.address,2)+' 预期 '+hex(sensor.config_failure.expected,2)+' / 实际 '+hex(sensor.config_failure.actual,2)],
+    ['原始 X / Y / Z',sensor=>sensor.raw?sensor.raw.join(' / '):'无有效样本'],
+    ['采样序号',sensor=>sensor.sequence],
+    ['有效样本累计 (16bit)',sensor=>sensor.valid_count],
+    ['最近采样年龄 (ms)',sensor=>sensor.sample_age_ms==null?'—':sensor.sample_age_ms.toFixed(2)],
+    ['观测采样率 (Hz)',sensor=>sensor.observed_rate_hz??'等待第二快照'],
+    ['符合 4kHz ±3%（非资格）',sensor=>sensor.rate_matches_4khz==null?'未知':sensor.rate_matches_4khz?'是':'否'],
+    ['DRDY=0 累计',sensor=>sensor.drdy_zero_count],
+    ['数据看门狗 / 重试',sensor=>sensor.watchdog_count+' / '+sensor.retry_count]
+  ];
+  for(const [name,get] of fields){
+    const row=document.createElement('tr');
+    for(const text of [name,...[0,1].map(index=>sensors[index]?String(get(sensors[index])):'—')]){
+      const cell=document.createElement('td');cell.textContent=text;row.appendChild(cell);
+    }
+    rows.appendChild(row);
+  }
+  if(diag.burst_spi_hz)clocks.textContent='SPI 数据突发 '+diag.burst_spi_hz+' Hz；配置 / WHO / 读回 '+diag.register_spi_hz+' Hz；轮询 '+diag.poll_hz+' Hz。';
+}
+async function refresh(run){
+  try{
+    const response=await fetch('/api/status',{headers:{Authorization:'Bearer '+document.getElementById('token').value},cache:'no-store'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const state=await response.json();
+    if(run===epoch)render(state);
+  }catch(error){
+    if(run===epoch)clearData('读取失败：'+error.message);
+  }
+  if(run===epoch)timer=setTimeout(()=>refresh(run),1000);
+}
+document.getElementById('connect').onclick=()=>{clearTimeout(timer);refresh(++epoch);};
+document.getElementById('stop').onclick=()=>{++epoch;clearTimeout(timer);clearData('已停止刷新');};
+window.addEventListener('pagehide',()=>{++epoch;clearTimeout(timer);});
+</script>
+</body>
+</html>

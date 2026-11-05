@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>机柜 · 受控参数</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;color:#28313a;background:#f5f6f7}main{background:white;border:1px solid #d5dadd;padding:28px}h1{font-size:24px}label{display:block;margin:16px 0}input{display:block;padding:8px;width:min(95%,400px)}button{padding:8px 18px;margin:8px 8px 8px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f3;padding:14px}small{color:#58636d}.notice{border-left:3px solid #af6f23;padding-left:14px}</style></head>
+<body><main><a href="/">← 运行状态</a> / <a href="/history">历史</a> / <a href="/pressure-calibration">压差健康标定</a><h1>受控参数配置</h1>
+<p class="notice">仅修改已投运温度外环的运行时设定值。不启用控制、不清除锁存、不修改硬保护、PI增益、转速上下限或标定。重启恢复原投运配置。</p>
+<label>只读访问令牌<input id="read-token" type="password" autocomplete="off"></label><label>独立控制令牌<input id="control-token" type="password" autocomplete="off"></label>
+<small>令牌仅保存在当前页面内存。写操作只允许本机回环连接；远端请使用受控 SSH 隧道，不经明文局域网直接调参。</small>
+<p><button id="refresh">读取当前参数</button></p><p id="overview" role="status">尚未连接</p><details><summary>技术详情与执行回执</summary><pre id="state">尚未连接</pre></details>
+<label>温度设定值（°C）<input id="setpoint" type="number" step="0.1" disabled></label>
+<button id="preview" disabled>预览变更</button><button id="commit" disabled>确认提交</button><pre id="result" role="status">未提交变更</pre>
+<p><small>QUEUED 只表示排队；APPLIED_PS_SETPOINT 只表示采集器已修改 PS 外环参数，不是实际转速/PWM执行确认。请继续核对实时PL目标、实际转速和告警。</small></p></main>
+<script>
+'use strict';
+let current=null,preview=null,expiryTimer=null;
+const field=id=>document.getElementById(id);
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',cache:'no-store',headers:{Authorization:'Bearer '+field('read-token').value,'X-Cabinet-Control-Token':field('control-token').value,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const result=await response.json();if(!response.ok)throw Error(result.error||'请求失败');return result;}
+function resetPreview(){preview=null;clearTimeout(expiryTimer);field('commit').disabled=true;}
+function renderState(state){current=state;field('state').textContent=JSON.stringify(state,null,2);field('overview').textContent=state.enabled?'当前设定 '+state.setpoint_C+' °C · 投运范围 '+state.bounds[0]+'–'+state.bounds[1]+' °C · 版本 '+state.revision+(state.pending?' · 有变更排队中':''):'参数写入未启用。需先完成现场投运、标定和允许范围审核。';field('setpoint').disabled=!state.enabled;field('preview').disabled=!state.enabled;if(state.enabled){field('setpoint').min=state.bounds[0];field('setpoint').max=state.bounds[1];field('setpoint').value=state.setpoint_C;}const latest=state.recent[state.recent.length-1];if(latest?.state==='APPLIED_PS_SETPOINT_NOT_PL_OUTPUT_CONFIRMATION')field('result').textContent='PS 温度外环设定已更新为 '+latest.setpoint_C+' °C（版本 '+latest.revision+'）。尚未确认实际转速或 PWM 输出。';else if(latest?.state==='REJECTED_NOT_APPLIED')field('result').textContent='变更被拒绝，未应用：'+latest.error;}
+field('setpoint').addEventListener('input',resetPreview);
+field('refresh').onclick=async()=>{try{resetPreview();renderState(await api('/api/parameters'));}catch(error){current=null;field('preview').disabled=true;field('setpoint').disabled=true;field('result').textContent=error.message;}};
+field('preview').onclick=async()=>{try{resetPreview();if(!current)throw Error('先读取当前参数');if(!field('setpoint').value.trim()||!field('setpoint').checkValidity())throw Error('请输入投运范围内的有效数值');const bytes=crypto.getRandomValues(new Uint8Array(16));const request_id=Array.from(bytes,value=>value.toString(16).padStart(2,'0')).join('');preview=await api('/api/parameters/preview',{request_id,expected_revision:current.revision,context:current.context,setpoint_C:Number(field('setpoint').value)});field('result').textContent=preview.previous_setpoint_C+' °C → '+preview.setpoint_C+' °C。尚未应用，请在30秒内确认。';field('commit').disabled=false;expiryTimer=setTimeout(()=>{resetPreview();field('result').textContent='预览已过期，未提交。请重新读取并预览。';},preview.expires_in_s*1000);}catch(error){field('result').textContent=error.message;}};
+field('commit').onclick=async()=>{field('commit').disabled=true;clearTimeout(expiryTimer);try{if(!preview)throw Error('先预览并在30秒内确认');const result=await api('/api/parameters/commit',{request_id:preview.request_id,nonce:preview.nonce});field('result').textContent=result.state==='QUEUED_NOT_APPLIED'?'变更已排队，尚不能认定已执行。点击“读取当前参数”核对新版本及执行回执。':JSON.stringify(result,null,2);preview=null;}catch(error){field('result').textContent=error.message+'；若网络中断，先读取当前参数核对状态，勿假定执行成功。';}};
+</script></body></html>

@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:anlogic="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_design_0_VDMA_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>VDMA_5083a055b14c_Inst</ipxact:instanceName>
+            <ipxact:componentRef vendor="anlogic.com" library="ip" name="VDMA" version="1.0"/>
+            <ipxact:configurableElementValues>
+                <ipxact:configurableElementValue referenceId="INCLUDE_MM2S">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="INCLUDE_S2MM">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="M_AXI_MM2S_DATA_WIDTH">64</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="MM2S_MAX_BURST_LENGTH">16</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="M_AXIS_MM2S_TDATA_WIDTH">24</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="PRMRY_IS_ACLK_ASYNC">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES">3</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="INCLUDE_MM2S_DRE">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="MM2S_LINEBUFFER_DEPTH">4096</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="VDMA_CONFIG_AUTO">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="mm2s_fsync">&quot;none&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="mm2s_genlock">&quot;Master&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="USE_MM2S_FSYNC">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="MM2S_GENLOCK_MODE">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_1">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_2">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_3">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_4">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_5">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_6">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_7">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_8">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_9">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_10">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_11">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_12">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_13">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_14">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_15">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="NUM_FSTORES_16">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="mm2s_frmdly_display">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="s2mm_frmdly_display">0</ipxact:configurableElementValue>
+            </ipxact:configurableElementValues>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_lite_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axi_lite_aclk"/>
+                <ipxact:externalPortReference portRef="s_axi_lite_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_aclk"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_aclk"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_aclk"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_aclk"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>resetn</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="resetn"/>
+                <ipxact:externalPortReference portRef="resetn"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_awvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_awvalid"/>
+                <ipxact:externalPortReference portRef="axi_lite_awvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_awready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_awready"/>
+                <ipxact:externalPortReference portRef="axi_lite_awready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_awaddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_awaddr"/>
+                <ipxact:externalPortReference portRef="axi_lite_awaddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_wvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_wvalid"/>
+                <ipxact:externalPortReference portRef="axi_lite_wvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_wready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_wready"/>
+                <ipxact:externalPortReference portRef="axi_lite_wready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_wdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_wdata"/>
+                <ipxact:externalPortReference portRef="axi_lite_wdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_bresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_bresp"/>
+                <ipxact:externalPortReference portRef="axi_lite_bresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_bvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_bvalid"/>
+                <ipxact:externalPortReference portRef="axi_lite_bvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_bready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_bready"/>
+                <ipxact:externalPortReference portRef="axi_lite_bready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_arvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_arvalid"/>
+                <ipxact:externalPortReference portRef="axi_lite_arvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_arready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_arready"/>
+                <ipxact:externalPortReference portRef="axi_lite_arready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_araddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_araddr"/>
+                <ipxact:externalPortReference portRef="axi_lite_araddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_rvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_rvalid"/>
+                <ipxact:externalPortReference portRef="axi_lite_rvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_rready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_rready"/>
+                <ipxact:externalPortReference portRef="axi_lite_rready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_rdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_rdata"/>
+                <ipxact:externalPortReference portRef="axi_lite_rdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>axi_lite_rresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="axi_lite_rresp"/>
+                <ipxact:externalPortReference portRef="axi_lite_rresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>mm2s_frame_ptr_out</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="mm2s_frame_ptr_out"/>
+                <ipxact:externalPortReference portRef="mm2s_frame_ptr_out"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s2mm_frame_ptr_out</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s2mm_frame_ptr_out"/>
+                <ipxact:externalPortReference portRef="s2mm_frame_ptr_out"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_araddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_araddr"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_araddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arlen</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arlen"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arlen"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arsize</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arsize"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arsize"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arburst</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arburst"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arburst"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arprot</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arprot"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arprot"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arcache</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arcache"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arcache"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arvalid"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_arready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_arready"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_arready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_rdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_rdata"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_rdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_rresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_rresp"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_rresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_rlast</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_rlast"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_rlast"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_rvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_rvalid"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_rvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_mm2s_rready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_mm2s_rready"/>
+                <ipxact:externalPortReference portRef="m_axi_mm2s_rready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tdata"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tkeep</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tkeep"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tkeep"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tuser</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tuser"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tuser"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tvalid"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tready"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axis_mm2s_tlast</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axis_mm2s_tlast"/>
+                <ipxact:externalPortReference portRef="m_axis_mm2s_tlast"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awaddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awaddr"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awaddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awlen</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awlen"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awlen"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awsize</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awsize"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awsize"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awburst</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awburst"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awburst"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awprot</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awprot"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awprot"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awcache</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awcache"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awcache"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awvalid"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_awready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_awready"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_awready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_wdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_wdata"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_wdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_wstrb</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_wstrb"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_wstrb"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_wlast</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_wlast"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_wlast"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_wvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_wvalid"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_wvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_wready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_wready"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_wready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_bresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_bresp"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_bresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_bvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_bvalid"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_bvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>m_axi_s2mm_bready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="m_axi_s2mm_bready"/>
+                <ipxact:externalPortReference portRef="m_axi_s2mm_bready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tdata"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tkeep</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tkeep"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tkeep"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tuser</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tuser"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tuser"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tvalid"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tready"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_s2mm_tlast</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s_axis_s2mm_tlast"/>
+                <ipxact:externalPortReference portRef="s_axis_s2mm_tlast"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>mm2s_introut</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="mm2s_introut"/>
+                <ipxact:externalPortReference portRef="mm2s_introut"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s2mm_introut</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s2mm_introut"/>
+                <ipxact:externalPortReference portRef="s2mm_introut"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>mm2s_fsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="mm2s_fsync"/>
+                <ipxact:externalPortReference portRef="mm2s_fsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s2mm_fsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="VDMA_5083a055b14c_Inst" portRef="s2mm_fsync"/>
+                <ipxact:externalPortReference portRef="s2mm_fsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+    <ipxact:vendorExtensions>
+        <anlogic:device>DR1M90MEG484</anlogic:device>
+        <anlogic:displayname>VDMA</anlogic:displayname>
+        <anlogic:ipGenVersion value="171484 2025/08/11">1.0</anlogic:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:design>

@@ -1,0 +1,4 @@
+{
+  "status": "SUPERSEDED",
+  "reason": "The isolated 100MHz result identified an FP32 conversion path. Replaced it with a bounded serial converter; final whole-chip P&R uses the updated source."
+}

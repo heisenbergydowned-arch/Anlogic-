@@ -1,0 +1,9 @@
+{
+  "status": "COMPILED_REAL_NORMAL_REFERENCE_FOR_ALNPU_PENDING_VALIDATION",
+  "manifest_sha256": "c53958fb53b879ff295078d2b32745a4ec891f12d58b6f009a66d42227f479de",
+  "reference_manifest_sha256": "4fa232783c10b7226130219cf277a8dd763ed074ebdb9ea68179e6801955125e",
+  "compiler_sha256": "18ee07bc1756826ab9df8d578890b4297c36ab57d31ee6d3a26ba2f35dfb2dc9",
+  "source_trainer_sha256": "ff6028753fcbad99a8787d543a10e156b858da8bc11bd41c83f9ac22604569bc",
+  "npu_executed": false,
+  "deployed": false
+}

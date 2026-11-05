@@ -1,0 +1,14 @@
+{
+  "schema": "cabinet-current-display-v1",
+  "sensor": "ACS712-05B",
+  "supply_V": 5,
+  "adc_positive_full_scale_V": 5,
+  "adc_range_confirmed": true,
+  "zero_code": 16345.668674698794,
+  "zero_source": "USER_CONFIRMED_LOAD_DISCONNECTED",
+  "zero_session_id": "5dcc426f-77a5-4593-883c-46ce64cd5fe7",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "note": "实测零点+标称灵敏度，仅显示换算；未完成独立增益校准。",
+  "schematic_positive_full_scale_V": 10,
+  "confirmation_source": "USER_EXPLICITLY_SELECTED_PLUS_MINUS_5V_AND_ACCEPTED_16365_CONVERSION_AGAINST_DC_SUPPLY"
+}

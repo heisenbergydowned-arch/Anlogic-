@@ -1,0 +1,10 @@
+clk; 1
+external_reset; 1
+aux_rst; 1
+system_rst; 1
+pll_locked; 1
+soc_reset; 1
+bus_reset; 1
+peripheral_reset; 1
+interconnect_aresetn; 1
+peripheral_aresetn; 1

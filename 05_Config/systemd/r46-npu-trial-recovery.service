@@ -1,0 +1,11 @@
+[Unit]
+Description=R46 one-shot kernel trial recovery
+After=local-fs.target
+ConditionKernelCommandLine=r46_npu_trial=candidate4
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -B /usr/local/sbin/r46-npu-trial-recovery.py
+
+[Install]
+WantedBy=multi-user.target

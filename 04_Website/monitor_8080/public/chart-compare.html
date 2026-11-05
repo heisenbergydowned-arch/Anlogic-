@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>图表库对比 · 同一份带 null 缺口的数据</title>
+<script src="/vendor/uPlot.iife.min.js"></script>
+<link rel="stylesheet" href="/vendor/uPlot.min.css">
+<script src="/vendor/chart.umd.js"></script>
+<script src="/vendor/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="/vendor/echarts.min.js"></script>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--bd:#e2e5e9;--tx:#1f2328;--mut:#656d76;--dim:#8b949e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:13px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  padding:20px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-size:17px;font-weight:600;margin:0 0 6px}
+.sub{color:var(--mut);font-size:12.5px;margin-bottom:16px}
+.sub code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:12px}
+.pane{background:var(--card);border:1px solid var(--bd);border-radius:10px;
+      padding:12px 14px;margin-bottom:14px}
+.phead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.pname{font-size:14px;font-weight:600}
+.pmeta{font-size:12px;color:var(--dim)}
+.pmeta b{color:var(--tx);font-weight:600}
+.tag{font-size:11px;border-radius:99px;padding:1px 8px;border:1px solid}
+.t-ok{color:#1a7f37;background:#dafbe1;border-color:#aceebb}
+.t-warn{color:#9a6700;background:#fff8c5;border-color:#f5e08a}
+.t-acc{color:#0969da;background:#ddf4ff;border-color:#b6e3ff}
+.t-mut{color:var(--mut);background:#f0f1f3;border-color:#cfd4da}
+.box{position:relative}
+.box svg{display:block;width:100%;height:auto;overflow:visible}
+table.sum{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:16px}
+table.sum th,table.sum td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd)}
+table.sum th{color:var(--mut);font-size:12px;background:#fafbfc}
+table.sum td.n{text-align:right;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>图表库对比 —— 同一份带 <code>null</code> 缺口的数据</h1>
+  <div class="sub">
+    数据：600 个点（5 秒间隔，约 50 分钟），<b>第 180–239 点和第 420–449 点为 null</b>
+    （模拟传感器离线）。<br>
+    观察重点：<b>缺口处必须断线</b>，绝不能把 null 当成 0 连成一条假曲线。
+    所有库的 JS 都由本机 lighttpd 提供（<code>/vendor/</code>），无 CDN 依赖。
+  </div>
+
+  <table class="sum" id="sum">
+    <thead><tr><th>实现</th><th class="n">体积(raw)</th><th class="n">体积(gzip)</th>
+      <th class="n">渲染耗时</th><th>null 断线</th><th>依赖</th></tr></thead>
+    <tbody id="sumBody"></tbody>
+  </table>
+
+  <div class="pane">
+    <div class="phead"><span class="pname">① 当前实现 · 手写 SVG</span>
+      <span class="tag t-mut">零依赖</span>
+      <span class="pmeta">渲染耗时 <b id="t-svg">—</b></span></div>
+    <div class="box" id="svg-box"></div>
+  </div>
+
+  <div class="pane">
+    <div class="phead"><span class="pname">② uPlot 1.6.32</span>
+      <span class="tag t-ok">51 KB + 1.9 KB CSS</span>
+      <span class="pmeta">渲染耗时 <b id="t-uplot">—</b></span></div>
+    <div class="box" id="uplot-box"></div>
+  </div>
+
+  <div class="pane">
+    <div class="phead"><span class="pname">③ Chart.js 4.5.1</span>
+      <span class="tag t-warn">209 KB + 51 KB 时间轴适配器</span>
+      <span class="pmeta">渲染耗时 <b id="t-chartjs">—</b></span></div>
+    <div class="box" id="chartjs-box" style="height:300px"></div>
+  </div>
+
+  <div class="pane">
+    <div class="phead"><span class="pname">④ ECharts 5</span>
+      <span class="tag t-warn">1034 KB</span>
+      <span class="pmeta">渲染耗时 <b id="t-echarts">—</b></span></div>
+    <div class="box" id="echarts-box" style="height:300px"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+var W = 1000, H = 300;
+
+/* ---------------- 同一份数据（带两处 null 缺口） ---------------- */
+var N = 600, STEP = 5, T0 = Math.floor(Date.now() / 1000) - N * STEP;
+var xs = [], rpm = [], temp = [];
+for (var i = 0; i < N; i++) {
+  xs.push(T0 + i * STEP);
+  var gap = (i >= 180 && i < 240) || (i >= 420 && i < 450);
+  if (gap) { rpm.push(null); temp.push(null); continue; }
+  var ph = i / N;
+  rpm.push(Math.round(2400 + 260 * Math.sin(ph * 6.0) + 40 * Math.sin(ph * 37.0)));
+  temp.push(+(42 + 6 * Math.sin(ph * 3.0) + 0.6 * Math.sin(ph * 29.0)).toFixed(2));
+}
+
+/* ---------------- ① 手写 SVG（复刻 index.html 的做法） ---------------- */
+function renderSVG() {
+  var L = 58, R = 58, T = 14, B = 30;
+  var pw = W - L - R, ph = H - T - B;
+  var t0 = xs[0], t1 = xs[xs.length - 1];
+  function xf(t){ return L + (t - t0) / (t1 - t0) * pw; }
+  function scale(v){
+    var s = v.filter(function(x){ return x !== null; });
+    var lo = Math.min.apply(null, s), hi = Math.max.apply(null, s);
+    var pad = (hi - lo) * 0.12; return {lo: lo - pad, hi: hi + pad};
+  }
+  var sR = scale(rpm), sT = scale(temp);
+  function yf(sc){ return function(v){ return T + ph * (1 - (v - sc.lo) / (sc.hi - sc.lo)); }; }
+  function segs(vals, y){
+    var out = [], cur = [];
+    for (var i = 0; i < xs.length; i++){
+      if (vals[i] === null){ if (cur.length){ out.push(cur); cur = []; } continue; }
+      cur.push([xf(xs[i]), y(vals[i])]);
+    }
+    if (cur.length) out.push(cur);
+    return out;
+  }
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, at, txt){
+    var e = document.createElementNS(NS, tag);
+    for (var k in at) e.setAttribute(k, at[k]);
+    if (txt != null) e.textContent = txt;
+    return e;
+  }
+  var svg = el("svg", {viewBox:"0 0 " + W + " " + H, preserveAspectRatio:"none"});
+  for (var g = 0; g <= 4; g++){
+    var y = T + ph * g / 4;
+    svg.appendChild(el("line", {x1:L, y1:y, x2:W-R, y2:y, stroke:"#e2e5e9", "stroke-width":1}));
+    svg.appendChild(el("text", {x:L-8, y:y+4, "text-anchor":"end", "font-size":11, fill:"#0969da"},
+      (sR.hi - (sR.hi - sR.lo) * g / 4).toFixed(0)));
+    svg.appendChild(el("text", {x:W-R+8, y:y+4, "text-anchor":"start", "font-size":11, fill:"#bc4c00"},
+      (sT.hi - (sT.hi - sT.lo) * g / 4).toFixed(1)));
+  }
+  [[rpm, sR, "#0969da"], [temp, sT, "#bc4c00"]].forEach(function(spec){
+    segs(spec[0], yf(spec[1])).forEach(function(seg){
+      svg.appendChild(el("polyline", {fill:"none", stroke:spec[2], "stroke-width":2,
+        "stroke-linejoin":"round", "stroke-linecap":"round",
+        points: seg.map(function(p){ return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" ")}));
+    });
+  });
+  for (var k = 0; k <= 4; k++){
+    var t = t0 + (t1 - t0) * k / 4;
+    var d = new Date(t * 1000);
+    svg.appendChild(el("text", {x:xf(t), y:H-8, "text-anchor":"middle", "font-size":11, fill:"#8b949e"},
+      (d.getHours()<10?"0":"") + d.getHours() + ":" + (d.getMinutes()<10?"0":"") + d.getMinutes()));
+  }
+  var box = document.getElementById("svg-box");
+  box.innerHTML = ""; box.appendChild(svg);
+}
+
+/* ---------------- ② uPlot ---------------- */
+function renderUPlot() {
+  var opts = {
+    width: W, height: H,
+    scales: { x: {time: true}, rpm: {}, temp: {} },
+    axes: [
+      {stroke:"#8b949e", grid:{stroke:"#e2e5e9"}},
+      {scale:"rpm",  side:3, stroke:"#0969da", grid:{stroke:"#e2e5e9"}},
+      {scale:"temp", side:1, stroke:"#bc4c00", grid:{show:false}}
+    ],
+    series: [
+      {},
+      {label:"rpm",  scale:"rpm",  stroke:"#0969da", width:2, spanGaps:false, points:{show:false}},
+      {label:"temp", scale:"temp", stroke:"#bc4c00", width:2, spanGaps:false, points:{show:false}}
+    ],
+    legend: {show: true},
+    cursor: {show: true}
+  };
+  new uPlot(opts, [xs, rpm, temp], document.getElementById("uplot-box"));
+}
+
+/* ---------------- ③ Chart.js ---------------- */
+function renderChartJS() {
+  var pts = function(vals){
+    return xs.map(function(t, i){ return {x: t * 1000, y: vals[i]}; });
+  };
+  new Chart(document.getElementById("cjs"), {
+    type: "line",
+    data: {datasets: [
+      {label:"rpm",  data: pts(rpm),  borderColor:"#0969da", yAxisID:"y",
+       spanGaps:false, pointRadius:0, borderWidth:2},
+      {label:"temp", data: pts(temp), borderColor:"#bc4c00", yAxisID:"y1",
+       spanGaps:false, pointRadius:0, borderWidth:2}
+    ]},
+    options: {
+      responsive:false, animation:false, parsing:false,
+      layout:{padding:{right:8}},
+      scales: {
+        x: {type:"time", time:{unit:"minute", displayFormats:{minute:"HH:mm"}},
+            ticks:{color:"#8b949e"}, grid:{color:"#e2e5e9"}},
+        y: {position:"left",  ticks:{color:"#0969da"}, grid:{color:"#e2e5e9"},
+            title:{display:true, text:"rpm", color:"#0969da"}},
+        y1:{position:"right", ticks:{color:"#bc4c00"}, grid:{drawOnChartArea:false},
+            title:{display:true, text:"°C", color:"#bc4c00"}}
+      },
+      plugins:{legend:{position:"top", labels:{boxWidth:14, font:{size:11}}}}
+    }
+  });
+}
+
+/* ---------------- ④ ECharts ---------------- */
+function renderECharts() {
+  var pts = function(vals){
+    return xs.map(function(t, i){ return [t * 1000, vals[i]]; });
+  };
+  echarts.init(document.getElementById("ecs"), null, {width: W, height: H}).setOption({
+    animation: false,
+    tooltip: {trigger: "axis"},
+    legend: {data: ["rpm", "temp"], top: 0},
+    grid: {left: 58, right: 62, top: 34, bottom: 30},
+    xAxis: {type: "time", axisLabel:{color:"#8b949e"}, splitLine:{lineStyle:{color:"#e2e5e9"}}},
+    yAxis: [
+      {type:"value", name:"rpm", nameTextStyle:{color:"#0969da"}, axisLabel:{color:"#0969da"},
+       splitLine:{lineStyle:{color:"#e2e5e9"}}},
+      {type:"value", name:"°C", nameTextStyle:{color:"#bc4c00"}, axisLabel:{color:"#bc4c00"},
+       splitLine:{show:false}}
+    ],
+    series: [
+      {name:"rpm",  type:"line", yAxisIndex:0, showSymbol:false, connectNulls:false,
+       lineStyle:{width:2, color:"#0969da"}, itemStyle:{color:"#0969da"}, data: pts(rpm)},
+      {name:"temp", type:"line", yAxisIndex:1, showSymbol:false, connectNulls:false,
+       lineStyle:{width:2, color:"#bc4c00"}, itemStyle:{color:"#bc4c00"}, data: pts(temp)}
+    ]
+  });
+}
+
+/* ---------------- 跑起来并计时 ---------------- */
+function timed(id, fn) {
+  var t0 = performance.now();
+  try { fn(); } catch (e) {
+    document.getElementById(id).textContent = "失败: " + e.message;
+    return null;
+  }
+  var ms = performance.now() - t0;
+  document.getElementById(id).textContent = ms.toFixed(1) + " ms";
+  return ms;
+}
+
+window.addEventListener("load", function () {
+  // Chart.js / ECharts 需要固定尺寸的容器
+  var cb = document.getElementById("chartjs-box");
+  cb.innerHTML = '<canvas id="cjs" width="' + W + '" height="' + H + '"></canvas>';
+  var eb = document.getElementById("echarts-box");
+  eb.innerHTML = '<div id="ecs" style="width:' + W + 'px;height:' + H + 'px"></div>';
+
+  var tSvg = timed("t-svg", renderSVG);
+  var tUp  = timed("t-uplot", renderUPlot);
+  var tCj  = timed("t-chartjs", renderChartJS);
+  var tEc  = timed("t-echarts", renderECharts);
+
+  var rows = [
+    ["① 手写 SVG（当前实现）", "0 B", "0 B", tSvg, '<span class="tag t-ok">是</span>', "无"],
+    ["② uPlot 1.6.32", "52.9 KB", "22.8 KB", tUp, '<span class="tag t-ok">是</span>', "无"],
+    ["③ Chart.js 4.5.1", "259.2 KB", "82.1 KB", tCj, '<span class="tag t-ok">是</span>', "需 date-fns 适配器"],
+    ["④ ECharts 5", "1034 KB", "334 KB", tEc, '<span class="tag t-ok">是</span>', "无"]
+  ];
+  document.getElementById("sumBody").innerHTML = rows.map(function (r) {
+    return "<tr><td>" + r[0] + '</td><td class="n">' + r[1] + '</td><td class="n">' + r[2] +
+      '</td><td class="n">' + (r[3] == null ? "—" : r[3].toFixed(1) + " ms") +
+      "</td><td>" + r[4] + "</td><td>" + r[5] + "</td></tr>";
+  }).join("");
+});
+</script>
+</body>
+</html>

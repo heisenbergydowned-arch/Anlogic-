@@ -1,0 +1,230 @@
+{
+  "task": "Alarm-only temperature PWM; external red flash, active-low buzzer, HDMI warnings; no alarm may stop PWM",
+  "board_ip": "192.168.0.107",
+  "board_runtime": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux",
+  "p51": "BUILT_NOT_FLASHED_SUPERSEDED",
+  "p52": "DEPLOYED_WITH_NPU_STARTUP_SOFTWARE_FIX",
+  "rejected_build": "build_001 full eco route degraded setup WNS to -1.348 ns, not authorized or flashed",
+  "current_build": "P52 build_008 already deployed; FPGA unchanged in this software fix",
+  "no_questions": true,
+  "no_agents": true,
+  "rejected_builds": {
+    "build_001": "full ECO timing degraded; never flashed",
+    "build_002": "report command crash before export; never flashed",
+    "build_003": "manual routing was not committed; never flashed",
+    "build_004": "old red route conflict; never flashed",
+    "build_005": "unused old red net incorrectly left open in manual routing; never flashed"
+  },
+  "merged_website": "Current HDMI source projection and TPW1 statuses implemented; 6 Python and 5 JS cases passed",
+  "status": "PASS_PWM_SWEEP_NORMAL_BASELINE_DEPLOYED_AND_HDMI_VERIFIED",
+  "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+  "current_boot_sha256": "bad541a36f7b17386f44c97eeab90f88906ff1eb390d3d2b864900e8ee6e714a",
+  "verification_stopped_by_user": false,
+  "restoration": {
+    "curve_enabled": true,
+    "revision": 14,
+    "low_C": 25.0,
+    "high_C": 80.0,
+    "state": "RUNNING",
+    "temperature_C": 30.3125,
+    "actual_pwm_percent": 9.65,
+    "services_active": [
+      "cabinet-edge",
+      "cabinet-local-display",
+      "cabinet-normal-npu",
+      "cabinet-commissioning-manager",
+      "cabinet-fan-life"
+    ]
+  },
+  "notes": [
+    "Build 008 and saved database replay passed; P52 firmware flashed and boot/runtime/config readback passed.",
+    "Initial deployed software manifest A then life notification/website patch B then feedback coherence patch C are on board.",
+    "Patch C file writes completed; SIGHUP stopped edge without automatic restart. User requested stop/restore; systemctl start restored all normal services.",
+    "Alarm verification 001 failed on observer age 1.010s while PWM remained nonzero; 002 and 120-second observation were NOT run. No claim of completed alarm/outage validation.",
+    "Root deployment payload and global ACTIVE_SOFTWARE/INSTALLED_BOARD pointers have NOT been refreshed to final software C; do not treat old payload as current.",
+    "User explicitly requested this stored-model NPU startup repair. Saved model, sensor/control configuration and all recorded labeled data passed unchanged-file verification."
+  ],
+  "current_local_software_manifest_sha256": "1c6674086b5eae518078df7570404746ffddfe61ac6b25abc810988259f143c1",
+  "restored_utc": "2026-11-04T05:14:06.135328+00:00",
+  "baseline_learning": {
+    "job_id": "69e0862f7b1d4ea0bde75865e210b4c7",
+    "state": "COMPLETED",
+    "evidence": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/current_baseline_20261104T052323Z",
+    "model_sha256": "d1cddce7ebf8fde943172b38e4de659630ea17d95de1b1015a339424de0f06af",
+    "model_id": "real-normal-ae39-20261104-69e0862f7b1d4ea0bde75865e210b4c7-alnpu",
+    "bundle_path": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle",
+    "live_samples": 512,
+    "live_alarm_rate": 0.0,
+    "startup_policy": "LOAD_SAVED_NO_AUTOMATIC_LEARNING",
+    "host_startup_issue": "LaunchAgent child lacked Documents access; completed using explicitly resumed authorised session",
+    "software_fix": "Isolate own NPU advisory from three learning checks; host input contract synced to P52"
+  },
+  "training_host": {
+    "status": "TRAINING_HOST_READY",
+    "runtime": "/Users/heisenberg/Library/Application Support/CabinetCooling/runtime/p52_20261104T061735Z",
+    "evidence": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/training_host_20261104T061735Z",
+    "gateway": "http://127.0.0.1:18768/commissioning#learn",
+    "launchagent": "/Users/heisenberg/Library/LaunchAgents/com.cabinet.npu-learning.plist"
+  },
+  "last_labeled_capture": {
+    "job_id": "9d356a77aeda4845ba57e13862a8969e",
+    "label": "clog",
+    "episode_split": "test",
+    "state": "COLLECTED_WAITING_DATA",
+    "evidence": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/labeled_clog_test_20261104T070102Z",
+    "coverage": {
+      "normal": {
+        "train": 2,
+        "validation": 1,
+        "test": 1
+      },
+      "imbalance": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "stall": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "clog": {
+        "train": 2,
+        "validation": 1,
+        "test": 1
+      },
+      "overheat": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "saved_on_sd": true
+  },
+  "fpga_changed_by_npu_fix": false,
+  "npu_startup_fix": {
+    "status": "PASS_STORED_NPU_RUNTIME_RESTORED",
+    "board_ip": "192.168.0.107",
+    "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+    "model_id": "real-normal-ae39-20261104-69e0862f7b1d4ea0bde75865e210b4c7-alnpu",
+    "model_sha256": "d1cddce7ebf8fde943172b38e4de659630ea17d95de1b1015a339424de0f06af",
+    "startup_selftest": "PASS_CURRENT_BOOT_HARDWARE_SELFTEST",
+    "hardware_vectors": 128,
+    "hardware_irq_delta": {
+      "HARD_NPU_IRQ": 384,
+      "SOFT_NPU_IRQ": 0
+    },
+    "npu_observation": {
+      "seconds": 60.048314617000415,
+      "samples": 232,
+      "running_fresh_samples": 232,
+      "hmi_valid_samples": 224,
+      "first_count": 143,
+      "last_count": 577,
+      "counter_monotonic": true,
+      "latency_p99_ms": 4.120073999729357,
+      "invalid_reasons": []
+    },
+    "median_execute_ms": 0.38706200007254665,
+    "hdmi_observation": {
+      "samples": 100,
+      "valid": 100,
+      "direct": 100,
+      "first": {
+        "updated_ms": "3808384",
+        "link_valid": "1",
+        "nn_present": "1",
+        "nn_valid": "1",
+        "nn_direct": "1",
+        "nn_count": "751",
+        "nn_deadline_ms": "3809034",
+        "age_ms": 130.3440160001628
+      },
+      "last": {
+        "updated_ms": "3828425",
+        "link_valid": "1",
+        "nn_present": "1",
+        "nn_valid": "1",
+        "nn_direct": "1",
+        "nn_count": "899",
+        "nn_deadline_ms": "3828880",
+        "age_ms": 45.122300000395626
+      }
+    },
+    "protected_files_checked": 132,
+    "changed_protected_files": [],
+    "labeled_coverage": {
+      "normal": {
+        "train": 2,
+        "validation": 1,
+        "test": 1
+      },
+      "imbalance": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "stall": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      },
+      "clog": {
+        "train": 2,
+        "validation": 1,
+        "test": 1
+      },
+      "overheat": {
+        "train": 0,
+        "validation": 0,
+        "test": 0
+      }
+    },
+    "board_rebooted": false,
+    "fpga_changed": false,
+    "new_software_manifest": "0928aab5bca16167bdc00d387ad1f9a9f558885216a98c74db4bc069a7ff66dd",
+    "local_tests_passed": 138,
+    "reference_scope": "OUTSIDE_OPERATING_REFERENCE",
+    "screenshot": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/npu_startup_fix_20261104T070604Z/hdmi_after.png",
+    "changed_files": [
+      "cabinet/local_display.py",
+      "hmi_daily/cabinet_dashboard",
+      "hmi_daily/dashboard.c",
+      "normal_npu/advisory.py",
+      "normal_npu/core.py",
+      "normal_npu/live.py",
+      "normal_npu/presentation.py",
+      "normal_npu/probe.py",
+      "normal_npu/selftest.py",
+      "static/commissioning.html",
+      "static/index.html",
+      "tests/test_normal_npu_freshness.py",
+      "tests/test_npu_input_worker_p38.py",
+      "tests/test_normal_startup_pwm_p53.py"
+    ],
+    "evidence": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/npu_startup_fix_20261104T070604Z"
+  },
+  "pwm_sweep": {
+    "state": "COMPLETE",
+    "board": "192.168.0.107",
+    "root": "/var/lib/cabinet/pwm-baseline/normal_pwm_20261104_002",
+    "label": "normal",
+    "previous_classifier_captures_untouched": true,
+    "candidate_deployed": true,
+    "evidence": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/pwm_normal_sweep_20261104T071342Z",
+    "fixed": [
+      "historical learning job parsing in renewal path",
+      "bench start timestamp preceding request",
+      "full frame sleep during finite PWM renewal"
+    ],
+    "additional_training_sweep": "/var/lib/cabinet/pwm-baseline/normal_pwm_20261104_001/train",
+    "physical_condition": "USER_CONFIRMED_UNOBSTRUCTED_NORMAL",
+    "active_board_manifest": "1c6674086b5eae518078df7570404746ffddfe61ac6b25abc810988259f143c1",
+    "manifest_sha256": "c53958fb53b879ff295078d2b32745a4ec891f12d58b6f009a66d42227f479de",
+    "sd_model": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle",
+    "preservation_unchanged_files": 130,
+    "summary": "/Users/heisenberg/Documents/Codex/2026-11-01/kan/work/r46_alarm_only_pwm_p52_20261103/evidence/pwm_normal_sweep_20261104T071342Z/summary.json",
+    "display_verified": true,
+    "l1_warning_remaining": true
+  }
+}

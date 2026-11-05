@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+ [bootloader, destination_cpu = apu-0, destination_device = ps, checksum = sha2] fsbl.from-card.elf
+ [partition_owner = fsbl, destination_cpu = apu-0, destination_device = pl, checksum = sha2, load = 0x00200000] cooling_link.bit
+ [partition_owner = fsbl, destination_cpu = apu-0, destination_device = ps, checksum = sha2] u-boot.from-card.elf
+}

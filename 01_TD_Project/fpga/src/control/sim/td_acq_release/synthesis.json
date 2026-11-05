@@ -1,0 +1,119 @@
+{
+  "run_utc": "2026-10-07T14:06:40.618664+00:00",
+  "scope": "acq",
+  "top": "subsys_acq",
+  "device": "DR1M90GEG400 -2",
+  "status": "PASS",
+  "gate_setup_wns_ns": 0.805,
+  "sta_coverage_percent": 99.97,
+  "resources": {
+    "lut": 9550,
+    "register": 7405,
+    "slice_estimate": 8023,
+    "eram": 0,
+    "dsp": 4
+  },
+  "limitations": "Gate synthesis only. No placement/routing, routed Hold, new bitstream or physical acceptance.",
+  "warnings": [
+    "SYN-5025 WARNING: Using 0 for all undriven pins and nets",
+    "SYN-6021 CRITICAL-WARNING: 33 out of 33 logical ports has no user assigned specific location constraint."
+  ],
+  "sources": [
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\alarm_outputs.v",
+      "sha256": "6cde22d10d7183e398eca9b2af4ad9c547582ac6a57c38fc5bdca39c0bfcb735"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\control_arbiter.v",
+      "sha256": "1ce16419416c7cc235a1751d3c9f90a7877c37d06a03565be5c313ca58278eb4"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_axi_lite.v",
+      "sha256": "3ad96276bbe73f43f05fa22e5d7a6562e8cb41d0aa526ce7f23983cbd4f23779"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_buttons.v",
+      "sha256": "02a40ce8aa2419751390a6ade8e485d276a8bc5b844218c4cea8510e35eb691d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_control.v",
+      "sha256": "ab940beb48b942435e8d35fac0f9484911cb4865ac7d94d82601548a4d59ef38"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_regs.v",
+      "sha256": "9e1346dfb1f0ca64da336d29436da41cbfe7b6d4c9ac6d09e421513786759416"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_tick.v",
+      "sha256": "aa453a9fd9e7f976b4fbceba7091a210fa4ede6284bd5e41fd37c3f03696bad2"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_uart.v",
+      "sha256": "dcf924e562773da78578054338728a3076a1bafd7031bd85d9cecfc97c13df3a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\fault_filter.v",
+      "sha256": "0a939b24443b61f3ac2e8925b8408f510fc61fa47520f99d2fff1b3a9b7bf45c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\protect_fsm.v",
+      "sha256": "bc792876f08d83eafc0569217459048880d1b04746afe85d9f1c961897c77c74"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_measure.v",
+      "sha256": "54879c33ede563f96ef6dba930b0520b478cac90def060f073e11011dfec88c1"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_pi.v",
+      "sha256": "84506db3b85728c303a1333831a5087fdfa0fb323a5140f3feea5a00402d4447"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\safety_monitor.v",
+      "sha256": "d4745760ea15afa27d4797dff8ca2a5ea7bd4b598b3c8e103d9dd047e0eaa6ec"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_udiv.v",
+      "sha256": "52c54cbf8eb08b9b90eb8068cdead20350eb664db9603bbf9553fa8d13d2916b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ads7606_if.v",
+      "sha256": "a3870cb2638ce9757e9c18a56e108dfc18b9381437e86118656366b775ee97e8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\aht20_drv.v",
+      "sha256": "2a11e3d3533900bd0b6fb5e3ffc9b41f27b0ceb4137737729d7825c8c4cef2d6"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\bmp280_drv.v",
+      "sha256": "1b7b14b78f36d5bd31b3d2067b6ebafb43b202ae68ef407b95415d450f99255b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\dbg_uart.v",
+      "sha256": "a7ecc923943c36a67bc9ac0577281d843b1513e4f83ccf2967c6f3e240ea351a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ds18b20.v",
+      "sha256": "d31be74d262ae6676bc315fdb74e64eadac133311f6e0426ef99f484e671c720"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\fg_cap.v",
+      "sha256": "715961ea144dffc61bb33fc2ded050e5cdba7f1f8a8333fa9b89d7658f012588"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\i2c_master.v",
+      "sha256": "cf2771a1ec4ccf9dd3401670470be3123a5bdef229c01353abe1ac7ed3a5c5eb"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\pwm_out.v",
+      "sha256": "b3abc77edd9da372865586217aa72dc11235d7eb2e2966e830b57b8addef451e"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+      "sha256": "03da6c328caa6d5044b098164e5d4cad062e563c435c2545808fa53f7f6865fe"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\subsys_acq.v",
+      "sha256": "c51fb169709d2ec8011626a8f93536270d086d46deca16f6522d484b7424fe6a"
+    }
+  ]
+}

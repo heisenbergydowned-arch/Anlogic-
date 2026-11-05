@@ -1,0 +1,15 @@
+{
+  "schema": "cabinet-edge-address-v1",
+  "updated": "2026-10-08",
+  "base": "0x80400000",
+  "size": "0x10000",
+  "ps_port": "M_AXI_GP0 through the existing width converter",
+  "implementation": "hdl/design_0.v: edge_axil_router",
+  "clock": "75 MHz PS-side AXI; held request/response CDC to 100 MHz acquisition CSR",
+  "control_abi": "FCB1 0x00010000 at page offset 0x0000",
+  "feature_abi": "EDG1/FRM1 0x00010000 at page offset 0x1000",
+  "gui_metadata_contains_extension": false,
+  "generation_rule": "SystemBuilder generation overwrites the hand-edited HDL. Reapply src/edge/tools/integrate.py, then rerun RTL and full-chip validation.",
+  "linux_device_tree": "src/edge/linux/dts/cabinet-uio.dtsi",
+  "physical_validation": "pending"
+}

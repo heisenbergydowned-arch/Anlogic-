@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:user="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>user</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_design_0_fvdma_ctrl_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>fvdma_ctrl_300e9b49f7b5_Inst</ipxact:instanceName>
+            <ipxact:componentRef vendor="user" library="module" name="fvdma_ctrl" version="1.0"/>
+            <ipxact:configurableElementValues>
+                <ipxact:configurableElementValue referenceId="C_S_AXI_DATA_WIDTH">32</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="C_S_AXI_ADDR_WIDTH">4</ipxact:configurableElementValue>
+            </ipxact:configurableElementValues>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>camera_base_addr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="camera_base_addr"/>
+                <ipxact:externalPortReference portRef="camera_base_addr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>camera_start</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="camera_start"/>
+                <ipxact:externalPortReference portRef="camera_start"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>camera_clear</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="camera_clear"/>
+                <ipxact:externalPortReference portRef="camera_clear"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_aclk"/>
+                <ipxact:externalPortReference portRef="s_axi_aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_aresetn</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_aresetn"/>
+                <ipxact:externalPortReference portRef="s_axi_aresetn"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awaddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_awaddr"/>
+                <ipxact:externalPortReference portRef="s_axi_awaddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awprot</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_awprot"/>
+                <ipxact:externalPortReference portRef="s_axi_awprot"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_awvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_awvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_awready"/>
+                <ipxact:externalPortReference portRef="s_axi_awready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_wdata"/>
+                <ipxact:externalPortReference portRef="s_axi_wdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wstrb</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_wstrb"/>
+                <ipxact:externalPortReference portRef="s_axi_wstrb"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_wvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_wvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_wready"/>
+                <ipxact:externalPortReference portRef="s_axi_wready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_bresp"/>
+                <ipxact:externalPortReference portRef="s_axi_bresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_bvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_bvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_bready"/>
+                <ipxact:externalPortReference portRef="s_axi_bready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_araddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_araddr"/>
+                <ipxact:externalPortReference portRef="s_axi_araddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_arprot</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_arprot"/>
+                <ipxact:externalPortReference portRef="s_axi_arprot"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_arvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_arvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_arvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_arready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_arready"/>
+                <ipxact:externalPortReference portRef="s_axi_arready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_rdata"/>
+                <ipxact:externalPortReference portRef="s_axi_rdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_rresp"/>
+                <ipxact:externalPortReference portRef="s_axi_rresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_rvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_rvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="fvdma_ctrl_300e9b49f7b5_Inst" portRef="s_axi_rready"/>
+                <ipxact:externalPortReference portRef="s_axi_rready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+    <ipxact:vendorExtensions>
+        <user:device>DR1M90MEG484</user:device>
+        <user:displayname>fvdma_ctrl</user:displayname>
+        <user:ipGenVersion>1.0</user:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:design>

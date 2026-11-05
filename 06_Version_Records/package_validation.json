@@ -1,0 +1,34 @@
+{
+  "status": "PASS_SNAPSHOT_AND_INPUT_VALIDATION",
+  "project_references": 123,
+  "missing_project_inputs": [],
+  "snapshot_changed_files": [],
+  "board_source_files": 299,
+  "local_source_files": 302,
+  "board_vs_local_differences": 5,
+  "active_model": {
+    "ADMISSION": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/admission.json",
+    "ADMISSION_SHA256": "38ceeb4291da649a01f6d1a0428d1b1d0f2224ffcd20f17082c648ee73ddda85",
+    "BUNDLE": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle",
+    "BUNDLE_SHA256": "4edf2cc5d189cd50aa8710167313bb39c2c67725f3fbea9b5562e3b6b474f0a8",
+    "LIBRARY": "/opt/cabinet/npu/real_normal_p9_20261101/libnormal_npu.so",
+    "LIBRARY_SHA256": "70256ce5a102eff026be96876b2a9ae8f1df75699cdff0d3bdcadc0078aa9069"
+  },
+  "td_build": {
+    "status": "BUILT_P52_ALARM_ONLY_PWM",
+    "started_utc": "2026-11-04T04:59:22.101282+00:00",
+    "timing_pass": false,
+    "source_setup_wns_ns": -0.008,
+    "route_scope": "TWO_INDICATOR_NETS_ONLY",
+    "pid": 1436,
+    "bit_sha256": "2a09883497ca92c6e4b82c850047eeb7891a5b5f256a769b39609f4256fbb268",
+    "bit_bytes": 4052216,
+    "candidate_db_sha256": "f1ed781afbf7e9b72db628845dc3ce5ff70aea42aa73163b4e26c659c3faeab2",
+    "plan_sha256": "a1beb36761fb08923d38732c38e2def6f508184ffecf86dd87eaa65eea2c7733",
+    "physical_changes_verified": true,
+    "properties_verification": "SIX_LUT_CHANGES_SINGLE_RED_FLASH_NET_EXPLICIT_MPNR_COMMIT_NATIVE_BITGEN_CHECK_PASS",
+    "adc_sdc_unchanged": true,
+    "completed_utc": "2026-11-04T05:05:52.227382+00:00"
+  },
+  "archive_creation_is_not_new_build_or_deployment": true
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "EDG1-config-v1",
+  "feature_config_id": 539423744,
+  "calibration_id": 0,
+  "qualified": false,
+  "evidence": null,
+  "current_zero_q16": 1073741824,
+  "pressure_zero_q16": 0,
+  "current_gain_q30": 885622,
+  "pressure_gain_q30": 17896,
+  "ppr": null,
+  "edges": [1, 13, 39, 65, 103, 154, 205, 257, 513],
+  "sample_mode_id": 2,
+  "note": "REAL SDP810 v4 commissioning TEMPLATE ONLY. PPR is unknown and must be measured; null intentionally fails pack_feature. Coefficients are nominal and unqualified. Edge/learning JSON does not program EDG1: review calibration, obtain local maintenance permission, commit the matching PL feature configuration, and verify its readback/frame contract before starting services. Changed contracts require a new configuration ID and re-reviewed baselines/model. Never enable actuators from this template."
+}

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>压差健康标定 · 机柜风冷测控</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.55 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid; place-items: center;
+  font: 700 14px var(--mono); color: #fff;
+}
+.brand h1 { font-size: 18px; margin: 0; font-weight: 650; }
+.brand small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: 13px;
+  color: var(--muted); border: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--border); text-decoration: none; }
+.nav-links a.active {
+  color: #fff; background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45); font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff; border-color: #26b395; font-weight: 600;
+}
+main { max-width: 1360px; margin: 0 auto; padding: 20px 24px 60px; }
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 16px 0;
+}
+h2 { font-size: 16px; margin: 0 0 14px; color: #fff; }
+p { margin: 8px 0; }
+.note {
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f3d7a2;
+}
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+label { display: block; font-size: 12px; color: var(--muted); }
+input, select {
+  font: 13px var(--mono);
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  background: #0d1622;
+  color: var(--text);
+}
+input[type=checkbox] { display: inline; width: auto; margin: 0 6px 0 0; }
+button {
+  font: 600 13px var(--sans);
+  border: 1px solid var(--border-hi);
+  background: #182b3f;
+  color: var(--text);
+  padding: 8px 15px;
+  margin: 12px 8px 0 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button.primary {
+  background: linear-gradient(135deg, #166a8f, #158578);
+  color: #fff;
+  border-color: var(--cyan);
+}
+button:disabled { opacity: .4; cursor: not-allowed; }
+#message {
+  white-space: pre-wrap;
+  min-height: 36px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(42, 212, 197, 0.35);
+  background: rgba(42, 212, 197, 0.08);
+  color: #b7f5ee;
+  font: 13px var(--mono);
+}
+#connection { font-weight: 600; color: var(--cyan); font-family: var(--mono); }
+.metrics { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 12px; }
+.metrics strong { font: 700 28px/1.35 var(--mono); color: #fff; display: block; }
+.muted, small { color: var(--muted); font-size: 12px; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 13px; }
+th, td { text-align: right; padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--cyan); background: rgba(255,255,255,0.02); font-size: 12px; }
+.table { overflow-x: auto; margin-top: 12px; }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 350px;
+  overflow: auto;
+  font: 12px/1.55 var(--mono);
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  padding: 12px;
+  color: #b7f5ee;
+}
+#draft-note { color: var(--amber); font-size: 12px; }
+canvas#curve-chart {
+  width: 100%;
+  height: 210px;
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  display: block;
+  margin-top: 12px;
+}
+footer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 20px; }
+@media(max-width:760px){ .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">SDP</div>
+    <div>
+      <h1>风道压差健康标定 · 10%~100% 占空比基线</h1>
+      <small>SDP810-500Pa Passive Sweep · 70% Retention Maintenance Alarm</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">实时监控</a>
+    <a href="/commissioning" class="cta">调试与标定工作台 →</a>
+    <a href="/history">历史曲线与波形</a>
+    <a href="/diagnostics">ICM 通信诊断</a>
+    <a href="/parameters">受控参数配置</a>
+    <a href="/pressure-calibration" class="active">压差健康标定</a>
+    <a href="/recording">故障样本录制</a>
+  </nav>
+</header>
+
+<main>
+  <p class="note">
+    这里只建立同 PWM 占空比下的健康风道压差参考基线（单位 Pa），不代表剩余寿命。70% 保持率为用户指定维护提示值，不是硬保护；不会改变 PWM、清除保护或自动覆盖健康基准。
+  </p>
+
+  <section>
+    <h2>连接与权限</h2>
+    <div class="grid">
+      <label>只读令牌<input id="read-token" type="password" autocomplete="off" placeholder="Bearer 只读令牌"></label>
+      <label>独立控制令牌<input id="control-token" type="password" autocomplete="off" placeholder="X-Cabinet-Control-Token"></label>
+      <div>
+        <button id="connect" class="primary">连接 / 读取状态</button>
+        <p id="connection">尚未连接</p>
+      </div>
+    </div>
+    <small>令牌只保存在当前页面内存。写入仅允许回环地址；远程使用已审核的 SSH 隧道。未投运时可查看页面，不能启动标定。</small>
+  </section>
+
+  <div id="message" role="status" aria-live="polite">未提交操作</div>
+
+  <section>
+    <h2>01 / 采样规则与线性转换参数</h2>
+    <p id="profile" class="muted">等待读取投运身份；噪声门槛和温度范围需现场确认，不能用示例值代替。</p>
+    <div class="grid" id="form">
+      <label>模式<select id="mode"><option value="passive">被动：等待原温控自然经过</option><option disabled>主动扫档：未投运，不可用</option></select></label>
+      <label>本次目标档位（%，逗号分隔）<input id="duties" value="10,20,30,40,50,60,70,80,90,100"></label>
+      <label>到档容差（百分点，≤1）<input id="tolerance" type="number" min="0.1" max="1" step="0.1" value="1"></label>
+      <label>过渡等待（秒，≥3）<input id="settle" type="number" min="3" max="60" value="3"></label>
+      <label>稳定窗口（秒，≥3）<input id="stable" type="number" min="3" max="60" value="3"></label>
+      <label>采样窗口（秒，≥5）<input id="capture" type="number" min="5" max="120" value="5"></label>
+      <label>最少独立FRM1记录（≥20）<input id="records" type="number" min="20" max="1000" value="20"></label>
+      <label>本档超时（秒）<input id="timeout" type="number" min="30" max="300" value="30"></label>
+      <label>压差波动CV上限（≤5%）<input id="pressure-cv" type="number" min="0.001" max="0.05" step="0.001" value="0.05"></label>
+      <label>转速波动CV上限（≤3%）<input id="rpm-cv" type="number" min="0.001" max="0.03" step="0.001" value="0.03"></label>
+      <label>允许温度下限（℃）<input id="temp-min" type="number" step="0.1" placeholder="须投运配置"></label>
+      <label>允许温度上限（℃）<input id="temp-max" type="number" step="0.1" placeholder="须投运配置"></label>
+      <label>维护阈值<input value="≤70%，连续5秒（默认）" disabled></label>
+      <label>恢复阈值（保持率，默认80%）<input id="recover" type="number" min="0.71" max="1" step="0.01" value="0.8"></label>
+      <label>提示 / 恢复持续时间（秒，各≥5）<span class="grid" style="grid-template-columns:1fr 1fr"><input id="alarm-hold" aria-label="提示持续时间" type="number" min="5" max="120" value="5"><input id="recover-hold" aria-label="恢复持续时间" type="number" min="5" max="120" value="5"></span></label>
+      <label>配置保存方式<select id="persistence"><option value="runtime_only">仅本次运行；重启丢弃</option><option value="sd">保存到已配置的SD目录</option></select></label>
+    </div>
+    <p id="draft-note">建议起步参数，尚未应用。页面刷新不等于新采样。</p>
+    <button id="config-preview" disabled>预览配置</button>
+    <button id="config-commit" class="primary" disabled>确认应用配置</button>
+  </section>
+
+  <section>
+    <h2>02 / 采集健康基准与占空比-压差特性曲线</h2>
+    <div class="grid" style="grid-template-columns:1fr 2fr;align-items:end">
+      <label>操作者<input id="operator" maxlength="80" placeholder="姓名或工号"></label>
+      <label style="padding-bottom:8px"><input id="healthy" type="checkbox">我确认当前风机、风道及取压管路健康，本次数据可作为参考</label>
+    </div>
+    <p id="live-values" class="muted">实时工况：尚未读取</p>
+    <div>
+      <button id="job-preview" disabled>预览被动标定</button>
+      <button id="job-start" class="primary" disabled>确认开始</button>
+      <button id="finish" disabled>结束采集，保留已完成档</button>
+      <button id="cancel" disabled>取消本次任务</button>
+    </div>
+    <p id="job-state" class="muted">无活动任务。开始后页面每 3 秒续约；失去心跳 10 秒停止采集，最长 30 分钟。不自动保存。</p>
+    <canvas id="curve-chart" width="960" height="210"></canvas>
+    <div class="table">
+      <table>
+        <thead><tr><th>目标 PWM</th><th>实际 PWM</th><th>健康压差 Pa</th><th>转速 RPM</th><th>波动 CV</th><th>独立记录</th><th>结果</th></tr></thead>
+        <tbody id="points"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>03 / 保存与日常滤网堵塞检测</h2>
+    <p class="muted">确认候选后写 SD 新版本，读回校验，再切换有效基准。未经过的档位留空；不跨缺档插值，不外推。</p>
+    <button id="export" disabled>导出本次候选 JSON</button>
+    <button id="save-preview" disabled>预览保存基准到 SD</button>
+    <button id="save-commit" class="primary" disabled>确认保存并启用</button>
+    <p id="baseline" class="muted">尚未读取有效基准</p>
+    <div class="metrics">
+      <div>压差保持率<strong id="ratio">—</strong></div>
+      <div>维护状态<strong id="health">不可判断</strong></div>
+    </div>
+    <p id="reason" class="muted">仅在有效、稳定、同 PWM 工况下比较。</p>
+  </section>
+
+  <section>
+    <details>
+      <summary style="cursor:pointer;color:var(--cyan)">接口状态、执行回执与诊断 JSON</summary>
+      <pre id="details">尚未连接</pre>
+    </details>
+  </section>
+
+  <footer>R46 / 被动 FRM1 压差基线标定 · SDP810-500Pa (60 counts/Pa) · 保持率 ≤70% 维护告警</footer>
+</main>
+
+<script>
+'use strict';
+const field=id=>document.getElementById(id),prefix='/api/pressure-calibration/v1';
+let current=null,connected=false,polling=false,preview={},expiry={},operation=null,lastHeartbeat=0;
+const id=()=>Array.from(crypto.getRandomValues(new Uint8Array(16)),value=>value.toString(16).padStart(2,'0')).join('');
+const message=value=>{field('message').textContent=value;};
+async function api(route,body){const response=await fetch(prefix+route,{method:body?'POST':'GET',cache:'no-store',headers:{Authorization:'Bearer '+field('read-token').value,'X-Cabinet-Control-Token':field('control-token').value,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const result=await response.json();if(!response.ok)throw Error(result.reason||result.error||'请求失败');return result;}
+function invalidate(kind){delete preview[kind];clearTimeout(expiry[kind]);field(kind+'-commit'==='job-commit'?'job-start':kind+'-commit').disabled=true;}
+function common(){if(!current)throw Error('先连接并读取当前状态');return {request_id:id(),expected_revision:current.revision,context:current.context};}
+
+function drawCurve(state){
+  const canvas=field('curve-chart');
+  if(!canvas)return;
+  const dpr=window.devicePixelRatio||1,w=Math.max(320,canvas.clientWidth||900),h=210;
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);
+  const padL=48,padR=24,padT=22,padB=28,pw=w-padL-padR,ph=h-padT-padB;
+  ctx.strokeStyle='#1d2f44';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=padT+(ph*i)/4;ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(padL+pw,y);ctx.stroke();}
+  const basePts=state?.baseline?.points||{},jobPts=state?.job?.points||{};
+  const allVals=[...Object.values(basePts),...Object.values(jobPts)].map(p=>p.pressure_pa).filter(Number.isFinite);
+  const pMax=allVals.length?Math.max(50,Math.ceil(Math.max(...allVals)*1.15/10)*10):250;
+  ctx.fillStyle='#8ea4be';ctx.font='11px ui-monospace,monospace';
+  ctx.fillText(pMax+' Pa',4,padT+8);ctx.fillText((pMax/2).toFixed(0)+' Pa',4,padT+ph/2+4);ctx.fillText('0 Pa',4,padT+ph);
+  for(let d=10;d<=100;d+=10){
+    const x=padL+((d-10)/90)*pw;
+    ctx.fillText(d+'%',x-10,h-8);
+  }
+  const plotSet=(pts,color,dashed)=>{
+    ctx.save();ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=2;
+    if(dashed)ctx.setLineDash([4,4]);
+    ctx.beginPath();let started=false;
+    for(let d=10;d<=100;d+=10){
+      const pt=pts[String(d)];
+      if(!pt||!Number.isFinite(pt.pressure_pa)){started=false;continue;}
+      const x=padL+((d-10)/90)*pw,y=padT+ph-(pt.pressure_pa/pMax)*ph;
+      if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    for(let d=10;d<=100;d+=10){
+      const pt=pts[String(d)];
+      if(!pt||!Number.isFinite(pt.pressure_pa))continue;
+      const x=padL+((d-10)/90)*pw,y=padT+ph-(pt.pressure_pa/pMax)*ph;
+      ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fill();
+    }
+    ctx.restore();
+  };
+  plotSet(basePts,'#26d07c',false);
+  plotSet(jobPts,'#2ad4c5',true);
+  if(state?.live?.eligible&&Number.isFinite(state.live.duty)&&Number.isFinite(state.live.pressure)){
+    const x=padL+Math.max(0,Math.min(1,(state.live.duty-10)/90))*pw;
+    const y=padT+ph-Math.max(0,Math.min(1,state.live.pressure/pMax))*ph;
+    ctx.fillStyle='#f5a623';ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill();
+  }
+}
+
+function render(state){
+  current=state;connected=true;
+  field('connection').textContent=state.enabled?'已连接 · 配置版本 '+state.revision:'已连接 · 未投运';
+  const collecting=state.job?.state==='COLLECTING',ready=state.job?.state==='CANDIDATE_READY',busy=state.pending.length>0;
+  for(const key of ['config-preview','job-preview'])field(key).disabled=!state.enabled||collecting||busy||state.storage_uncertain;
+  field('job-preview').disabled=field('job-preview').disabled||!state.live.eligible;
+  field('finish').disabled=!collecting||!Object.keys(state.job.points).length;
+  field('cancel').disabled=!collecting;
+  field('save-preview').disabled=!ready||busy||!state.live.eligible||state.storage_uncertain;
+  field('export').disabled=!ready;
+  field('live-values').textContent=state.live.eligible?'实时工况：PWM '+state.live.duty.toFixed(1)+'% / '+state.live.pressure.toFixed(2)+' Pa / '+state.live.rpm.toFixed(0)+' RPM / '+state.live.temperature.toFixed(1)+' ℃':'当前不可标定：'+state.live.reason;
+  field('profile').textContent=state.profile?'设备 '+state.profile.device_id+' / 风机 '+state.profile.fan_id+' / 安装 '+state.profile.installation_id+' / 传感器 '+state.profile.sensor_id+' / 取压 '+state.profile.pickup+' / 噪声门槛 '+state.profile.pressure_min_valid_pa+' Pa':'需在服务端配置投运身份、正向压差噪声门槛、允许温度和私有SD目录。';
+  field('job-state').textContent=state.job?'任务 '+state.job.id.slice(0,8)+' · '+state.job.state+' / '+(state.job.phase||'')+(state.job.reason?' · '+state.job.reason:''):'无活动任务';
+  field('points').replaceChildren();
+  for(let duty=10;duty<=100;duty+=10){
+    const point=state.job?.points[String(duty)],row=document.createElement('tr');
+    for(const text of [duty+'%',point?point.actual_pwm_percent.toFixed(1)+'%':'—',point?point.pressure_pa.toFixed(2):'—',point?point.rpm.toFixed(0):'—',point?(point.pressure_cv*100).toFixed(1)+'%':'—',point?point.records:'—',point?'已完成':'未标定']){
+      const cell=document.createElement('td');cell.textContent=text;row.append(cell);
+    }
+    field('points').append(row);
+  }
+  drawCurve(state);
+  const detection=state.detection;
+  field('ratio').textContent=detection.retention_ratio==null?'—':(detection.retention_ratio*100).toFixed(1)+'%';
+  field('health').textContent=detection.state==='UNAVAILABLE'?'不可判断':detection.maintenance_alarm?'维护提示':detection.state==='COMPARABLE'?'可比较':'等待稳定';
+  field('reason').textContent=detection.reason||detection.state;
+  field('baseline').textContent=state.baseline?'有效基准 '+state.baseline.id.slice(0,8)+' · SD目录 · '+Object.keys(state.baseline.points).length+'档；底层物理介质需现场核实':'无有效基准。SD保存未完成前不会启用候选。';
+  field('details').textContent=JSON.stringify(state,null,2);
+}
+function loadForm(){const config=current.config,map={tolerance:'duty_tolerance_pp',settle:'settle_s',stable:'stable_window_s',capture:'capture_window_s',records:'min_fresh_records',timeout:'point_timeout_s','pressure-cv':'pressure_cv_max','rpm-cv':'rpm_cv_max','temp-min':'temperature_min_C','temp-max':'temperature_max_C',recover:'retention_recover_ratio','alarm-hold':'alarm_hold_s','recover-hold':'recover_hold_s'};for(const [element,key] of Object.entries(map))field(element).value=config[key]??'';field('duties').value=config.duties_percent.join(',');field('persistence').value=current.persistence;field('draft-note').textContent='当前配置已载入；修改后需预览和确认。';}
+function configuration(){const result={...current.config,mode:'passive',duties_percent:field('duties').value.split(',').map(value=>Number(value.trim()))};const map={tolerance:'duty_tolerance_pp',settle:'settle_s',stable:'stable_window_s',capture:'capture_window_s',records:'min_fresh_records',timeout:'point_timeout_s','pressure-cv':'pressure_cv_max','rpm-cv':'rpm_cv_max','temp-min':'temperature_min_C','temp-max':'temperature_max_C',recover:'retention_recover_ratio','alarm-hold':'alarm_hold_s','recover-hold':'recover_hold_s'};for(const [element,key] of Object.entries(map)){if(!field(element).value||!field(element).checkValidity())throw Error('检查采样参数和投运温度范围');result[key]=Number(field(element).value);}return result;}
+async function makePreview(kind,route,payload){invalidate(kind);preview[kind]=await api(route,{...common(),...payload});const button=field(kind==='job'?'job-start':kind+'-commit');button.disabled=false;expiry[kind]=setTimeout(()=>{invalidate(kind);message('预览已过期，请重新预览。');},30000);const detail=kind==='config'?'档位 '+payload.config.duties_percent.join(',')+'%；保存方式 '+payload.persistence:kind==='job'?'被动采集 '+current.config.duties_percent.join(',')+'%；不改变PWM':'保存 '+Object.keys(current.job.points).join(',')+'% 已完成档到SD，其余档仍未标定';message('预览通过：'+detail+'。尚未应用，请在30秒内确认。');}
+async function commit(kind,route){const saved=preview[kind];if(!saved)throw Error('先预览');invalidate(kind);const receipt=await api(route,{request_id:id(),preview_id:saved.preview_id,nonce:saved.nonce});operation=receipt.id;message('请求已排队，尚未确认完成。正在核对执行回执。');}
+function handle(action){return async()=>{try{await action();}catch(error){message(error.message+'；如网络中断，先读取状态，勿假定保存成功。');}};}
+field('connect').onclick=handle(async()=>{render(await api('/state'));loadForm();});
+for(const element of field('form').querySelectorAll('input,select'))element.addEventListener('input',()=>{invalidate('config');field('draft-note').textContent='有未应用的编辑。先预览并确认配置，再开始标定。';});
+for(const element of [field('healthy'),field('operator')])element.addEventListener('input',()=>invalidate('job'));
+field('config-preview').onclick=handle(()=>makePreview('config','/config/preview',{config:configuration(),persistence:field('persistence').value}));field('config-commit').onclick=handle(()=>commit('config','/config/commit'));
+field('job-preview').onclick=handle(async()=>{if(!field('healthy').checked||!field('operator').value.trim())throw Error('请填写操作者并确认健康工况');await makePreview('job','/jobs/preview',{mode:'passive',operator:field('operator').value.trim(),healthy_confirmed:true});});field('job-start').onclick=handle(()=>commit('job','/jobs/start'));
+for(const action of ['finish','cancel'])field(action).onclick=handle(async()=>{await api('/jobs/'+current.job.id+'/'+action,common());render(await api('/state'));message(action==='finish'?'已结束补点，候选尚未保存。':'已取消，不会保存或改变PWM。');});
+field('save-preview').onclick=handle(()=>makePreview('save','/baselines/preview-save',{candidate_sha256:current.job.candidate_sha256,expected_storage_medium:'sd'}));field('save-commit').onclick=handle(()=>commit('save','/baselines/commit-save'));
+field('export').onclick=handle(async()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(current.job.candidate,null,2)],{type:'application/json'})),anchor=document.createElement('a');anchor.href=url;anchor.download='pressure-candidate-'+current.job.id+'.json';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+setInterval(async()=>{if(!connected||polling)return;polling=true;try{const state=await api('/state');render(state);if(state.job?.state==='COLLECTING'&&Date.now()-lastHeartbeat>3000){await api('/jobs/'+state.job.id+'/heartbeat',common());lastHeartbeat=Date.now();}if(operation){const receipt=await api('/operations/'+operation);if(receipt.state!=='QUEUED_NOT_APPLIED'){message(receipt.state==='SAVED_VERIFIED_AND_ACTIVE'?'SD写入及读回校验通过，基准已启用。':receipt.state==='APPLIED_CONFIG_NOT_PWM'?'配置已应用；未改变PWM、未启动标定。':receipt.state==='STARTED_PASSIVE_NO_PWM'?'被动采集已启动，等待原温控自然到档。':receipt.state+' / '+(receipt.error||''));if(receipt.state==='APPLIED_CONFIG_NOT_PWM')loadForm();operation=null;}}}catch(error){connected=false;current=null;field('connection').textContent='连接中断';field('ratio').textContent='—';field('health').textContent='不可判断';for(const button of document.querySelectorAll('button:not(#connect)'))button.disabled=true;for(const key of ['config','job','save'])invalidate(key);message(error.message+'；停止续约，任务将自动过期。');}finally{polling=false;}},1000);
+window.addEventListener('resize',()=>drawCurve(current));
+drawCurve(null);
+</script>
+</body>
+</html>

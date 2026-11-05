@@ -1,0 +1,15 @@
+{
+  "board_only": [],
+  "local_only": [
+    "tests/test_alarm_message_p55.py",
+    "tests/test_learning_busy_cache.py",
+    "tests/test_vibration_monitor.py"
+  ],
+  "different": [
+    "static/commissioning.html",
+    "tests/test_bench_guard_p18.py",
+    "tests/test_mailbox_catchup_p35.py",
+    "tests/test_native.py",
+    "tests/test_normal_startup_pwm_p53.py"
+  ]
+}

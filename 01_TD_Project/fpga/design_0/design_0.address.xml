@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:address xmlns:xsi="http" xmlns:ipxact="http" xmlns:anlogic="http" xsi:schemaLocation="http">
+    <ipxact:addressSources>
+        <ipxact:addressSource type="inst">
+            <ipxact:name>ARM Processor System</ipxact:name>
+            <ipxact:displayName>ARM_Processor_System_0</ipxact:displayName>
+            <ipxact:interfaceName>M_AXI_GP0</ipxact:interfaceName>
+            <ipxact:baseAddress>0x80000000</ipxact:baseAddress>
+            <ipxact:addressDests>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>fvdma_ctrl</ipxact:name>
+                    <ipxact:displayName>fvdma_ctrl_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXILite</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x0000000080300000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x000000008030FFFF</ipxact:highAddress>
+                </ipxact:addressDest>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>VDMA</ipxact:name>
+                    <ipxact:displayName>VDMA_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXI_LITE</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x0000000080200000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x0000000080200FFF</ipxact:highAddress>
+                </ipxact:addressDest>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>video_timing_generator_v01</ipxact:name>
+                    <ipxact:displayName>video_timing_generator_v01_0</ipxact:displayName>
+                    <ipxact:interfaceName>AXI_Lite</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x0000000080100000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x0000000080101FFF</ipxact:highAddress>
+                </ipxact:addressDest>
+            </ipxact:addressDests>
+        </ipxact:addressSource>
+        <ipxact:addressSource type="inst">
+            <ipxact:name>ARM Processor System</ipxact:name>
+            <ipxact:displayName>ARM_Processor_System_0</ipxact:displayName>
+            <ipxact:interfaceName>M_AXI_GP1</ipxact:interfaceName>
+            <ipxact:baseAddress>0xA0000000</ipxact:baseAddress>
+            <ipxact:addressDests>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>Video_NPU</ipxact:name>
+                    <ipxact:displayName>Video_NPU_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXI_Lite</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x00000001F0000000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x00000001F000FFFF</ipxact:highAddress>
+                </ipxact:addressDest>
+            </ipxact:addressDests>
+        </ipxact:addressSource>
+        <ipxact:addressSource type="inst">
+            <ipxact:name>Video_NPU</ipxact:name>
+            <ipxact:displayName>Video_NPU_0</ipxact:displayName>
+            <ipxact:interfaceName>M_AXI</ipxact:interfaceName>
+            <ipxact:baseAddress>0x00000000</ipxact:baseAddress>
+            <ipxact:addressDests>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>ARM Processor System</ipxact:name>
+                    <ipxact:displayName>ARM_Processor_System_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXI_HP0</ipxact:interfaceName>
+                    <ipxact:slaveSegName>reg</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x00000000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x0000000000000000</ipxact:highAddress>
+                </ipxact:addressDest>
+            </ipxact:addressDests>
+        </ipxact:addressSource>
+        <ipxact:addressSource type="inst">
+            <ipxact:name>VDMA</ipxact:name>
+            <ipxact:displayName>VDMA_0</ipxact:displayName>
+            <ipxact:interfaceName>M_AXI_MM2S</ipxact:interfaceName>
+            <ipxact:baseAddress>0x00000000</ipxact:baseAddress>
+            <ipxact:addressDests>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>ARM Processor System</ipxact:name>
+                    <ipxact:displayName>ARM_Processor_System_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXI_HP1</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x0000000000000000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x00000000FFFFFFFF</ipxact:highAddress>
+                </ipxact:addressDest>
+            </ipxact:addressDests>
+        </ipxact:addressSource>
+        <ipxact:addressSource type="design port">
+            <ipxact:name>hp1_w</ipxact:name>
+            <ipxact:displayName>hp1_w</ipxact:displayName>
+            <ipxact:interfaceName>hp1_w</ipxact:interfaceName>
+            <ipxact:baseAddress>0x00000000</ipxact:baseAddress>
+            <ipxact:addressDests>
+                <ipxact:addressDest type="inst">
+                    <ipxact:name>ARM Processor System</ipxact:name>
+                    <ipxact:displayName>ARM_Processor_System_0</ipxact:displayName>
+                    <ipxact:interfaceName>S_AXI_HP1</ipxact:interfaceName>
+                    <ipxact:slaveSegName>seg0</ipxact:slaveSegName>
+                    <ipxact:baseAddress>0x0000000000000000</ipxact:baseAddress>
+                    <ipxact:highAddress>0x00000000FFFFFFFF</ipxact:highAddress>
+                </ipxact:addressDest>
+            </ipxact:addressDests>
+        </ipxact:addressSource>
+    </ipxact:addressSources>
+</ipxact:address>

@@ -1,0 +1,236 @@
+{
+  "run_utc": "2026-10-08T03:53:56.168290+00:00",
+  "status": "PASS",
+  "scope": "Control RTL and native-unit/reference arithmetic; no board, bitstream or routed timing acceptance",
+  "tests": [
+    {
+      "test": "tb_control_edges",
+      "status": "PASS",
+      "seconds": 0.089,
+      "marker": "ALL PASS tb_control_edges checks=13"
+    },
+    {
+      "test": "tb_control_axi",
+      "status": "PASS",
+      "seconds": 0.089,
+      "marker": "ALL PASS tb_control_axi checks=146"
+    },
+    {
+      "test": "tb_control_uart",
+      "status": "PASS",
+      "seconds": 0.244,
+      "marker": "ALL PASS tb_control_uart checks=566 debug_frames=6"
+    },
+    {
+      "test": "tb_control_unqualified",
+      "status": "PASS",
+      "seconds": 0.263,
+      "marker": "ALL PASS tb_control_unqualified checks=10"
+    },
+    {
+      "test": "tb_cooling_control",
+      "status": "PASS",
+      "seconds": 5.875,
+      "marker": "ALL PASS tb_cooling_control checks=1411"
+    },
+    {
+      "test": "tb_rpm_vectors",
+      "status": "PASS",
+      "seconds": 0.144,
+      "marker": "ALL PASS tb_rpm_vectors vectors=80"
+    },
+    {
+      "test": "tb_pi_vectors",
+      "status": "PASS",
+      "seconds": 0.122,
+      "marker": "ALL PASS tb_pi_vectors vectors=492"
+    },
+    {
+      "test": "tb_pwm_out",
+      "status": "PASS",
+      "seconds": 0.197,
+      "marker": "tb_pwm_out: ALL PASS"
+    },
+    {
+      "test": "tb_dbg_uart",
+      "status": "PASS",
+      "seconds": 1.311,
+      "marker": "tb_dbg_uart: ALL PASS"
+    },
+    {
+      "test": "tb_subsys_control",
+      "status": "PASS",
+      "seconds": 10.44,
+      "marker": "ALL PASS tb_subsys_control actual_115200_UART_compressed_POR pwm_edges=65"
+    },
+    {
+      "test": "control_cli",
+      "status": "PASS",
+      "marker": "ALL PASS control_cli CRC/stream/lost-reply retry/configuration selftest (no serial access)"
+    }
+  ],
+  "rpm_reference_vectors": 80,
+  "pi_reference_vectors": 492,
+  "sources": [
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_dbg_uart.v",
+      "sha256": "9d3cf95003fa9a61b1c613f5b97e5723b04917399789872543281b3ef1e1a223"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_pwm_out.v",
+      "sha256": "1111533ee46cffc58f0397c3f970561bea062e44f51b6c26e90d6a956f795e8d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ads7606_if.v",
+      "sha256": "a3870cb2638ce9757e9c18a56e108dfc18b9381437e86118656366b775ee97e8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\aht20_drv.v",
+      "sha256": "2a11e3d3533900bd0b6fb5e3ffc9b41f27b0ceb4137737729d7825c8c4cef2d6"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\bmp280_drv.v",
+      "sha256": "1b7b14b78f36d5bd31b3d2067b6ebafb43b202ae68ef407b95415d450f99255b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\dbg_uart.v",
+      "sha256": "a7ecc923943c36a67bc9ac0577281d843b1513e4f83ccf2967c6f3e240ea351a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\ds18b20.v",
+      "sha256": "d31be74d262ae6676bc315fdb74e64eadac133311f6e0426ef99f484e671c720"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\fg_cap.v",
+      "sha256": "715961ea144dffc61bb33fc2ded050e5cdba7f1f8a8333fa9b89d7658f012588"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\i2c_master.v",
+      "sha256": "cf2771a1ec4ccf9dd3401670470be3123a5bdef229c01353abe1ac7ed3a5c5eb"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\pwm_out.v",
+      "sha256": "b3abc77edd9da372865586217aa72dc11235d7eb2e2966e830b57b8addef451e"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+      "sha256": "28165ac8413dc4eae58278dfc31ecf38581c30c4ab8d89e1d5aed68942004e6b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\subsys_acq.v",
+      "sha256": "fce39d60584a596047d00e9811a30dba5d3641aa993a071aab659c1ebffbb4f7"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\alarm_outputs.v",
+      "sha256": "6cde22d10d7183e398eca9b2af4ad9c547582ac6a57c38fc5bdca39c0bfcb735"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\config_unqualified.template.json",
+      "sha256": "4c9da3287bc68bd96222e05c26e7f9bc34dbfaf70a9730ff05ec06b851f07100"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\control_arbiter.v",
+      "sha256": "1ce16419416c7cc235a1751d3c9f90a7877c37d06a03565be5c313ca58278eb4"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_axi_lite.v",
+      "sha256": "3ad96276bbe73f43f05fa22e5d7a6562e8cb41d0aa526ce7f23983cbd4f23779"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_buttons.v",
+      "sha256": "02a40ce8aa2419751390a6ade8e485d276a8bc5b844218c4cea8510e35eb691d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_control.v",
+      "sha256": "2705543eef162ea868b170e1ccac59e84467bf04aeaaf0a82d8b652c7d0c2778"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_regs.v",
+      "sha256": "9e1346dfb1f0ca64da336d29436da41cbfe7b6d4c9ac6d09e421513786759416"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_tick.v",
+      "sha256": "aa453a9fd9e7f976b4fbceba7091a210fa4ede6284bd5e41fd37c3f03696bad2"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\cooling_uart.v",
+      "sha256": "dcf924e562773da78578054338728a3076a1bafd7031bd85d9cecfc97c13df3a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\fault_filter.v",
+      "sha256": "0a939b24443b61f3ac2e8925b8408f510fc61fa47520f99d2fff1b3a9b7bf45c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\protect_fsm.v",
+      "sha256": "bc792876f08d83eafc0569217459048880d1b04746afe85d9f1c961897c77c74"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_measure.v",
+      "sha256": "54879c33ede563f96ef6dba930b0520b478cac90def060f073e11011dfec88c1"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\rpm_pi.v",
+      "sha256": "84506db3b85728c303a1333831a5087fdfa0fb323a5140f3feea5a00402d4447"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\safety_monitor.v",
+      "sha256": "d4745760ea15afa27d4797dff8ca2a5ea7bd4b598b3c8e103d9dd047e0eaa6ec"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_control_axi.v",
+      "sha256": "751032b9af15534e6e8c5fab57909e6c77c3bcb1644c1d40b7e03119512e909a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_control_edges.v",
+      "sha256": "068a645a9a92d3eef2408c7e46d18b047769c4cb3d431a99e1104237fc334b58"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_control_uart.v",
+      "sha256": "6f268c28212c43ab40683a6486fdc6b9f1d65521ad6eef793c728ee9537c004e"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_control_unqualified.v",
+      "sha256": "bfe097e3641dcdd992b5fbf3f76ab019268427f6a74c4acfcce25a9527412092"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_cooling_control.v",
+      "sha256": "1fd693b8d6314f20b7fc98145e42d955c01afa26b5d53c6011684a7efaa83960"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_pi_vectors.v",
+      "sha256": "aae88fde26ee7f2eb36dfaddec8dcaffa0d4638ea19f8dacc9cdf13c244b4a21"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_rpm_vectors.v",
+      "sha256": "9a9f3aab3d239d4caa8d62fe792f33b83f7256be50a259d3d7105a164984520f"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\sim\\tb_subsys_control.v",
+      "sha256": "a6b6b0a93820bdd0f1a162bc5425b0724c888f98c47171f812e14750726fbf0a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\control_cli.py",
+      "sha256": "0effcd8f4f3f54eada1f0af21b3dec8f2d90b9a70622091183dae58c00673ce8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\control\\tools\\run_regression.py",
+      "sha256": "4b1a729e99ccea2fa469918e4ae39be2d411a9eb271a3957efca93f5c2e3303d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_csr_mux.v",
+      "sha256": "f0b4b455a339eda417cc4df44f04c3c9b3c3c807300be7f22e05d603f0b63e20"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_rs485.v",
+      "sha256": "62e76e4fdf39241e8c0dc1cf452c4904be407cfdab6c03e80b60b8ddf0b7aeaa"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\rtl\\edge_uart_byte.v",
+      "sha256": "0bb3903888c89f2146989637b60e936f475852c5f135b4fff0f81638e11943b6"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\features\\feature_udiv.v",
+      "sha256": "52c54cbf8eb08b9b90eb8068cdead20350eb664db9603bbf9553fa8d13d2916b"
+    }
+  ]
+}

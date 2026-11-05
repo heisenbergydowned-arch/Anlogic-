@@ -1,0 +1,9 @@
+{
+  "schema": "cabinet-installed-platform-for-normal-learning-v1",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "pl_build_id": 539365623,
+  "bitstream_sha256": "586850fd5fbcb004d95dc38a0d90d7200871dc79fbddcb9e7617578c6f084b53",
+  "boot_image_sha256": "970d51def42df5bcd9cee18e197cd33dc5505dffe5bcdb314294f76d50607c82",
+  "source": "INSTALLED_RELEASE_RECEIPT",
+  "formal_qualification": false
+}

@@ -1,0 +1,130 @@
+#=============================================================================
+# top_merge.adc — M1 合并版引脚约束（demo io.adc 原样 + 采集骨架 v0.6.1）
+#
+# 构成（README_HDMI.md §3.1 / §5）：
+#   1. NPU demo 引脚（MIPI 摄像头链保留空转 / EMIO I2C0 / HDMI 4 对差分）——逐行照抄
+#      demo 的 src/constraint/io.adc，仅 LED 三行按冲突表重分配；
+#   2. 采集子系统引脚——照抄 FU_Code/Code/constraint/top.adc v0.6.1，
+#      删除 O_led1/O_led2 两行（端口已随 M1 去顶层化删除）。
+#
+# LED 重分配（唯一真实引脚冲突，§3.1 冲突表在此落定）：
+#   | 板载灯   | ball | BANK  | 合并后归属                              |
+#   |----------|------|-------|-----------------------------------------|
+#   | LED1     | T19  | 32(1.8V) | demo led[0]  = pwm（呼吸灯）        |
+#   | LED2     | R19  | 32(1.8V) | demo led[1]  = vtg_lock（视频锁定）  |
+#   | LED3     | J15  | 33    | 采集 O_led3_hb = 心跳 1Hz（demo led[2] 让位）|
+#   | LED4     | M20  | 33    | 采集 O_led4_alm = 告警闪烁             |
+#   demo 的 led[2]（axis_to_video_lock）改接 J12 空闲脚 W11（pin25，
+#   继电器取消后释放的备用脚；要看该状态需杜邦线外接 LED/万用表量电平）。
+#
+# 与 demo io.adc 的冲突核对：仅 T19/R19/J15 三脚（上表处置）；
+# 其余 demo 引脚（MIPI/LP、V20/W20、T20/U20、K17/M14/F16/D19）与采集
+# 引脚（H16、J12×20、L17/N16/N15、M20、K19/J19、J16/K16、L14/L15）零重叠。
+#=============================================================================
+
+#=============================================================================
+# ── demo 原有：MIPI 摄像头链（保留空转，引脚照抄 demo io.adc）──
+#=============================================================================
+# camera
+# mipi
+set_pin_assignment	{ I_clk_hs_p     }	{ LOCATION = N18; IOSTANDARD = LVDS18; PULLTYPE = NONE; }
+
+set_pin_assignment	{ I_data_hs_p[0] }	{ LOCATION = N20; IOSTANDARD = LVDS18; PULLTYPE = NONE;  INDEL = 20;}
+set_pin_assignment	{ I_data_hs_p[1] }	{ LOCATION = R16; IOSTANDARD = LVDS18; PULLTYPE = NONE;  INDEL = 20;}
+set_pin_assignment	{ I_data_hs_p[2] }	{ LOCATION = N17; IOSTANDARD = LVDS18; PULLTYPE = NONE;  INDEL = 20;}
+set_pin_assignment	{ I_data_hs_p[3] }	{ LOCATION = T17; IOSTANDARD = LVDS18; PULLTYPE = NONE;  INDEL = 20;}
+
+set_pin_assignment	{ I_data_lp_p[0] }	{ LOCATION = Y18; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_n[0] }	{ LOCATION = Y19; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_p[1] }	{ LOCATION = V17; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_n[1] }	{ LOCATION = V18; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_p[2] }	{ LOCATION = Y16; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_n[2] }	{ LOCATION = Y17; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_p[3] }	{ LOCATION = W18; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_data_lp_n[3] }	{ LOCATION = W19; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+
+# cam rst_n and clk
+set_pin_assignment	{ O_imax334_rst_n }		{ LOCATION = V20; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ O_imx334_clk_24m }	{ LOCATION = W20; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+
+
+# IIC0 -> MIPI Sensor
+# iic0 camera
+set_pin_assignment	{ SCL0 }	{ LOCATION = T20; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment	{ SDA0 }	{ LOCATION = U20; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+
+
+# hdmi
+set_pin_assignment	{ O_hdmi_clk_p   }	{ LOCATION = K17; IOSTANDARD = LVDS33_E; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ O_hdmi_tx_p[0] }	{ LOCATION = M14; IOSTANDARD = LVDS33_E; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ O_hdmi_tx_p[1] }	{ LOCATION = F16; IOSTANDARD = LVDS33_E; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ O_hdmi_tx_p[2] }	{ LOCATION = D19; IOSTANDARD = LVDS33_E; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+
+
+#=============================================================================
+# ── demo LED 重分配（原 J15 行改 W11；T19/R19 行照抄 demo）──
+# led[0]=pwm（demo 呼吸灯）         → T19（原采集 LED1 让位）
+# led[1]=vtg_lock（视频时序锁定）   → R19（原采集 LED2 让位）
+# led[2]=axis_to_video_lock         → W11（J12 pin25 空闲脚；原 J15 让给采集心跳）
+#=============================================================================
+set_pin_assignment	{ led[0] }	{ LOCATION = T19;  IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ led[1] }	{ LOCATION = R19;  IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment	{ led[2] }	{ LOCATION = W11;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+# set_pin_assignment	{ pwm_3 }	{ LOCATION = M22; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+
+
+#=============================================================================
+# ── 采集子系统（subsys_acq v0.6.1，照抄 FU_Code/Code/constraint/top.adc，
+#    删 O_led1/O_led2 两行）──
+# BANK11 = J12 GPIO 排针（3.3V）  BANK33 = 板载（3.3V）
+#=============================================================================
+
+# ============ 时钟（demo 顶层未占用，采集子系统独占）============
+set_pin_assignment { I_sysclk } { LOCATION = H16; }
+
+# ============ J12 GPIO（BANK11, 3.3V）============
+# SPI 总线（ICM-20602×2）
+set_pin_assignment { O_spi_sclk    } { LOCATION = Y12; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_spi_mosi    } { LOCATION = T9;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { I_spi_miso    } { LOCATION = T5;  IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { O_cs_icm_a    } { LOCATION = V6;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_cs_icm_b    } { LOCATION = U7;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+# AD7606 串行接口（CS 复用原 ADS1118 脚 U9；BUSY/FRSTDATA 复用原 ICM INT 脚；
+# CONVST/SCLK/DOUTA 启用 J12 备用脚 W6/V7/U8。输入上拉：器件不在位时
+# BUSY 恒高→10µs 超时置 err，状态确定不浮空）
+set_pin_assignment { O_adc_convst   } { LOCATION = W6;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_adc_sclk     } { LOCATION = V7;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_adc_reset    } { LOCATION = W9;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLDOWN; SLEWRATE = FAST; PACKREG = ON; }
+set_pin_assignment { I_adc_douta    } { LOCATION = U8;  IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { O_adc_cs       } { LOCATION = U9;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { I_adc_busy     } { LOCATION = V11; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { I_adc_frstdata } { LOCATION = Y7;  IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+# 数字传感器（唯一核心温度DS18B20/S4b + AHT20/BMP280；J12-19/Y9为高阻闲置脚，
+# 正式接线用外部 4.7kΩ 上拉到 3.3V，I2C 模块通常自带上拉）
+set_pin_assignment { IO_j12_19_reserved } { LOCATION = Y9;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment { IO_temp_core_dq } { LOCATION = V10; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment { IO_i2c_sda_ext  } { LOCATION = Y6;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment { IO_i2c_scl_ext  } { LOCATION = Y8;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+# 风机执行/反馈
+set_pin_assignment { I_fan_fg      } { LOCATION = V8;  IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { O_fan_pwm     } { LOCATION = W10; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_buzzer_en   } { LOCATION = Y13; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_led_grn     } { LOCATION = U10; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_led_red     } { LOCATION = U5;  IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+
+# ============ 板载固定（BANK33, 3.3V）============
+set_pin_assignment { O_rs485_tx  } { LOCATION = L17; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { I_rs485_rx  } { LOCATION = N16; IOSTANDARD = LVCMOS33; PULLTYPE = NONE; }
+set_pin_assignment { O_rs485_de  } { LOCATION = N15; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_led3_hb   } { LOCATION = J15; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { O_led4_alm  } { LOCATION = M20; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { I_key1      } { LOCATION = K19; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { I_key2      } { LOCATION = J19; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { O_pl_uart_tx } { LOCATION = J16; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = NONE; }
+set_pin_assignment { I_pl_uart_rx } { LOCATION = K16; IOSTANDARD = LVCMOS33; PULLTYPE = PULLUP; }
+set_pin_assignment { IO_iic_sda  } { LOCATION = L14; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+set_pin_assignment { IO_iic_scl  } { LOCATION = L15; IOSTANDARD = LVCMOS33; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+
+# 注：原 top.adc 的 O_led1(T19)/O_led2(R19) 两行删除——端口已删，脚位归 demo led[0]/led[1]
+# W8/J12-22 is reserved high-Z with internal weak pulldown, not a supply output.
+set_pin_assignment { IO_j12_22_reserved } { LOCATION = W8; IOSTANDARD = LVCMOS33; PULLTYPE = PULLDOWN; }

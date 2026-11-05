@@ -1,0 +1,13 @@
+{
+  "schema": "cabinet-learning-v1",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "installation_id": "",
+  "contract": {
+    "feature_config_id": 539423744,
+    "sample_mode_id": 2,
+    "calibration_id": 0,
+    "max_frame_age_ms": 1000,
+    "max_temp_age_ms": 2000
+  },
+  "advisory_qualified": false
+}

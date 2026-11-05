@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>防闪自检</title>
+<style>
+body{font:13px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;margin:12px;color:#1f2328}
+pre{background:#f6f8fa;border:1px solid #e2e5e9;border-radius:8px;padding:12px;font-size:13px}
+iframe{width:1240px;height:760px;border:1px solid #e2e5e9;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="margin:0 0 6px">防闪自检：DOM 节点是否跨更新存活</h3>
+<pre id="out">running...</pre>
+<iframe id="f"></iframe>
+<script>
+var log = [];
+function add(s){ log.push(s); document.getElementById("out").textContent = log.join("\n"); }
+
+var f = document.getElementById("f");
+f.onload = function(){
+  setTimeout(function(){
+    try {
+      var doc = f.contentDocument;
+      var cards = doc.querySelectorAll("#cards .card");
+      add("卡片数量: " + cards.length);
+      if (!cards.length){ add("❌ 没找到卡片，测试中止"); return; }
+
+      /* ---- 1) 打标记，检查节点是否被重建 ---- */
+      cards[0].__marker = "KEEP";
+      var metaRow = doc.querySelector("#meta .m");
+      var badge0 = doc.querySelectorAll("#hbadges .badge")[0];
+      var featCell = doc.querySelector("#featBody .featgrid div");
+      var chartRoot = doc.querySelector("#chartbox .uplot");
+      var seqBefore = (doc.querySelector("#meta .m:last-child b") || {}).textContent || "";
+
+      add("");
+      add("已打标记，等 3 秒（期间会刷新 3 次）…");
+
+      setTimeout(function(){
+        add("");
+        add("=== 3 秒后：节点存活 ===");
+        var c2 = doc.querySelectorAll("#cards .card");
+        add("卡片节点存活    : " + (c2[0] === cards[0] && c2[0].__marker === "KEEP" ? "✅ 同一个节点（未重建）" : "❌ 被重建了"));
+        add("meta 行存活     : " + (doc.querySelector("#meta .m") === metaRow ? "✅" : "❌ 被重建"));
+        add("徽标存活        : " + (doc.querySelectorAll("#hbadges .badge")[0] === badge0 ? "✅" : "❌ 被重建"));
+        add("特征格子存活    : " + (doc.querySelector("#featBody .featgrid div") === featCell ? "✅" : "❌ 被重建"));
+        add("uPlot 实例存活  : " + (doc.querySelector("#chartbox .uplot") === chartRoot ? "✅ 同一个实例（只 setData）" : "❌ 被销毁重建"));
+
+        var seqAfter = (doc.querySelector("#meta .m:last-child b") || {}).textContent || "";
+        add("采样序号 " + seqBefore + " → " + seqAfter + "  " + (seqBefore !== seqAfter ? "✅ 数据仍在实时更新" : "⚠ 序号没变"));
+
+        add("");
+        add("结论：全部 ✅ → 更新时只改文本节点，不会再闪。");
+      }, 3000);
+    } catch (e) {
+      add("❌ 测试异常: " + e.message);
+    }
+  }, 2500);
+};
+f.src = "/?min=1";
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[Unit]
+Description=Cabinet v4 Alnpu shadow-only worker
+After=local-fs.target
+
+[Service]
+WorkingDirectory=/opt/cabinet/linux
+RuntimeDirectory=cabinet-npu-v4
+RuntimeDirectoryMode=0700
+EnvironmentFile=/etc/cabinet/npu-v4.env
+ExecStart=/usr/bin/python3 -m v4_runtime.server --backend alnpu --socket /run/cabinet-npu-v4/npu.sock --bundle ${BUNDLE} --manifest-sha256 ${BUNDLE_SHA256} --library ${LIBRARY} --library-sha256 ${LIBRARY_SHA256}
+Restart=no
+KillMode=process
+TimeoutStopSec=infinity
+
+[Install]
+WantedBy=multi-user.target

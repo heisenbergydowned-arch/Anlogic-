@@ -1,0 +1,82 @@
+INCLUDE_MM2S : 1 : U : En :  :  : 
+INCLUDE_S2MM : 0 : U : En :  :  : 
+M_AXI_MM2S_DATA_WIDTH : 64 : U : En : 32;;64;;128;;256;;512;;1024 :  : 
+MM2S_MAX_BURST_LENGTH : 16 : U : En : 2;;4;;8;;16;;32;;64;;128;;256 :  : 
+M_AXI_S2MM_DATA_WIDTH : 128 : U : Dis : 32;;64;;128;;256;;512;;1024 :  : 
+S2MM_MAX_BURST_LENGTH : 8 : U : Dis : 2;;4;;8;;16;;32;;64;;128;;256 :  : 
+MM2S_VSIZE : 1080 : U : Dis :  :  : 
+MM2S_HSIZE : 7680 : U : Dis :  :  : 
+MM2S_STRIDE : 8000 : U : Dis :  :  : 
+MM2S_FRAME_DELAY : 1 : U : Dis :  : 0 : 3
+S2MM_FRAME_DELAY : 0 : U : Dis :  : 0 : 3
+S2MM_STRIDE : 8000 : U : Dis :  :  : 
+S2MM_VSIZE : 1080 : U : Dis :  :  : 
+S2MM_HSIZE : 7680 : U : Dis :  :  : 
+MM2S_START_ADDRESS1 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS2 : 8640000 : U : Dis :  :  : 
+MM2S_START_ADDRESS3 : 17280000 : U : Dis :  :  : 
+MM2S_START_ADDRESS4 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS5 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS6 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS7 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS8 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS9 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS10 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS11 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS12 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS13 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS14 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS15 : 0 : U : Dis :  :  : 
+MM2S_START_ADDRESS16 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS1 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS2 : 8640000 : U : Dis :  :  : 
+S2MM_START_ADDRESS3 : 17280000 : U : Dis :  :  : 
+S2MM_START_ADDRESS4 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS5 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS6 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS7 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS8 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS9 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS10 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS11 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS12 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS13 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS14 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS15 : 0 : U : Dis :  :  : 
+S2MM_START_ADDRESS16 : 0 : U : Dis :  :  : 
+M_AXIS_MM2S_TDATA_WIDTH : 24 : U : En : 8;;16;;24;;32;;40;;48;;56;;64;;72;;80;;88;;96;;104;;112;;120;;128;;136;;144;;152;;160;;168;;176;;184;;192;;200;;208;;216;;224;;232;;240;;248;;256 : 8 : 1024
+S_AXIS_S2MM_TDATA_WIDTH : 32 : U : Dis : 8;;16;;24;;32;;40;;48;;56;;64;;72;;80;;88;;96;;104;;112;;120;;128;;136;;144;;152;;160;;168;;176;;184;;192;;200;;208;;216;;224;;232;;240;;248;;256 : 8 : 1024
+PRMRY_IS_ACLK_ASYNC : 1 : U : En :  :  : 
+NUM_FSTORES : 3 : U : En : 1;;2;;3;;4;;5;;6;;7;;8;;9;;10;;11;;12;;13;;14;;15;;16 : 1 : 16
+INCLUDE_S2MM_DRE : 0 : U : Dis :  :  : 
+INCLUDE_MM2S_DRE : 1 : U : En :  :  : 
+ENABLE_VERT_FLIP : 0 : U : Dis :  :  : 
+MM2S_LINEBUFFER_DEPTH : 4096 : U : En : 128;;256;;512;;1024;;2048;;4096;;8192;;16384 :  : 
+S2MM_LINEBUFFER_DEPTH : 512 : U : Dis : 128;;256;;512;;1024;;2048;;4096;;8192;;16384 :  : 
+VDMA_CONFIG_AUTO : 0 : U : En :  :  : 
+mm2s_fsync : none : U : En : none;;mm2s fsync :  : 
+s2mm_fsync : s2mm tuser : U : Dis : none;;s2mm fsync;;s2mm tuser :  : 
+mm2s_genlock : Master : U : En : Master;;Slave;;Dynamic-Master;;Dynamic-Slave :  : 
+s2mm_genlock : Dynamic-Master : U : Dis : Master;;Slave;;Dynamic-Master;;Dynamic-Slave :  : 
+USE_MM2S_FSYNC : 0 : G : En :  :  : 
+USE_S2MM_FSYNC : 2 : G : Dis :  :  : 
+MM2S_GENLOCK_MODE : 0 : G : En :  :  : 
+S2MM_GENLOCK_MODE : 2 : G : Dis :  :  : 
+NUM_FSTORES_1 : 1 : G : En :  :  : 
+NUM_FSTORES_2 : 1 : G : En :  :  : 
+NUM_FSTORES_3 : 1 : G : En :  :  : 
+NUM_FSTORES_4 : 0 : G : En :  :  : 
+NUM_FSTORES_5 : 0 : G : En :  :  : 
+NUM_FSTORES_6 : 0 : G : En :  :  : 
+NUM_FSTORES_7 : 0 : G : En :  :  : 
+NUM_FSTORES_8 : 0 : G : En :  :  : 
+NUM_FSTORES_9 : 0 : G : En :  :  : 
+NUM_FSTORES_10 : 0 : G : En :  :  : 
+NUM_FSTORES_11 : 0 : G : En :  :  : 
+NUM_FSTORES_12 : 0 : G : En :  :  : 
+NUM_FSTORES_13 : 0 : G : En :  :  : 
+NUM_FSTORES_14 : 0 : G : En :  :  : 
+NUM_FSTORES_15 : 0 : G : En :  :  : 
+NUM_FSTORES_16 : 0 : G : En :  :  : 
+mm2s_frmdly_display : 0 : G : En :  :  : 
+s2mm_frmdly_display : 0 : G : En :  :  : 

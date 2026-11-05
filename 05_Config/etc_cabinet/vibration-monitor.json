@@ -1,0 +1,26 @@
+{
+  "schema": "cabinet-vibration-monitor-v1",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "enabled": true,
+  "thresholds": {
+    "a": {
+      "normal_p99": 0.1131781949935404,
+      "warning_rms": 0.20372075098837272,
+      "alarm_rms": 0.33953458498062117
+    },
+    "b": {
+      "normal_p99": 0.03606993449452812,
+      "warning_rms": 0.06492588209015061,
+      "alarm_rms": 0.10820980348358436
+    }
+  },
+  "reference": {
+    "source": "USER_CONFIRMED_NORMAL_CAPTURE",
+    "job_id": "5c119b68ea784df9879f09438c52148a",
+    "candidate_model_sha256": "4edf2cc5d189cd50aa8710167313bb39c2c67725f3fbea9b5562e3b6b474f0a8",
+    "units": "FRM1_RMS_RELATIVE_INPUT_UNITS",
+    "training_rows": 1412
+  },
+  "control_authority": "NONE",
+  "action": "ALARM_ONLY"
+}

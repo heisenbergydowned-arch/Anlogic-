@@ -1,0 +1,14 @@
+{
+  "schema": "EDG1-config-v1",
+  "feature_config_id": 2,
+  "calibration_id": 0,
+  "qualified": false,
+  "evidence": null,
+  "current_zero_q16": 1073741824,
+  "pressure_zero_q16": 1073741824,
+  "current_gain_q30": 885622,
+  "pressure_gain_q30": 163840,
+  "ppr": 2,
+  "edges": [1, 13, 39, 65, 103, 154, 205, 257, 513],
+  "note": "Nominal unqualified bench coefficients only. Match the control PPR and algorithm contract before qualification."
+}

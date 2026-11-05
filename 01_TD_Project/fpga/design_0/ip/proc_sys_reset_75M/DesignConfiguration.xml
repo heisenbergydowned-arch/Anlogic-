@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:designConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:anlogic.com="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>designConfig_proc_sys_reset_75M</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:viewConfiguration>
+        <ipxact:instanceName>proc_sys_reset_c36d787ffe77_Inst</ipxact:instanceName>
+        <ipxact:view viewRef="view"/>
+    </ipxact:viewConfiguration>
+    <ipxact:vendorExtensions>
+        <anlogic.com:displayname>proc_sys_reset_1.0</anlogic.com:displayname>
+        <anlogic.com:ipGenVersion>1.0</anlogic.com:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:designConfiguration>

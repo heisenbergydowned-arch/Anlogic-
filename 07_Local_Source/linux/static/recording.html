@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>故障样本录制 · 机柜风冷测控</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.6 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid; place-items: center;
+  font: 700 14px var(--mono); color: #fff;
+}
+.brand h1 { font-size: 18px; margin: 0; font-weight: 650; }
+.brand small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: 13px;
+  color: var(--muted); border: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--border); text-decoration: none; }
+.nav-links a.active {
+  color: #fff; background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45); font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff; border-color: #26b395; font-weight: 600;
+}
+main { max-width: 1180px; margin: 0 auto; padding: 24px 24px 56px; }
+.notice {
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f3d7a2;
+  margin-bottom: 16px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+h2 { font-size: 16px; margin: 0 0 14px; color: #fff; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+label { display: block; font-size: 13px; color: var(--muted); }
+input, select, textarea {
+  font: 13px var(--mono);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 11px;
+  margin-top: 5px;
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  background: #0d1622;
+  color: var(--text);
+  display: block;
+}
+button {
+  font: 600 13px var(--sans);
+  padding: 9px 18px;
+  margin: 14px 8px 0 0;
+  border-radius: 6px;
+  border: 1px solid var(--cyan);
+  background: linear-gradient(135deg, #166a8f, #158578);
+  color: #fff;
+  cursor: pointer;
+}
+button#stop {
+  background: rgba(242, 85, 85, 0.18);
+  border-color: var(--red);
+  color: #ffd0d0;
+}
+button:disabled { opacity: .4; cursor: not-allowed; }
+#progress {
+  font: 700 18px var(--mono);
+  color: var(--cyan);
+  padding: 10px 14px;
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  margin: 14px 0 0;
+}
+#message {
+  white-space: pre-wrap;
+  padding: 12px 14px;
+  background: rgba(59, 158, 255, 0.1);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+  margin-top: 16px;
+  font: 13px var(--mono);
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 12px/1.55 var(--mono);
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  padding: 12px;
+  color: #b7f5ee;
+}
+details summary { cursor: pointer; color: var(--cyan); font-size: 13px; margin-top: 8px; }
+@media(max-width:680px){ .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">REC</div>
+    <div>
+      <h1>39 维故障样本录制与落盘归档</h1>
+      <small>FRM1 v1 Durable Session Recorder · REAL & DIAGNOSTIC Modes</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">实时监控</a>
+    <a href="/commissioning" class="cta">调试与标定工作台 →</a>
+    <a href="/history">历史曲线与波形</a>
+    <a href="/diagnostics">ICM 通信诊断</a>
+    <a href="/parameters">受控参数配置</a>
+    <a href="/pressure-calibration">压差健康标定</a>
+    <a href="/recording" class="active">故障样本录制</a>
+  </nav>
+</header>
+
+<main>
+  <p class="notice">
+    录制独立于 NPU 推理。先采集真实数据，再训练、审核模型。`REAL` 需有效标定、39 维帧及证据；`DIAGNOSTIC` 只排查链路，不会自动变成训练数据。此页面不改变 PWM 或保护。
+  </p>
+
+  <section class="panel">
+    <h2>01 / 鉴权连接与录制引擎状态</h2>
+    <div class="grid">
+      <label>只读令牌 <input id="read" type="password" autocomplete="off" placeholder="Bearer 只读令牌"></label>
+      <label>独立控制令牌 <input id="control" type="password" autocomplete="off" placeholder="X-Cabinet-Control-Token (>=32位)"></label>
+    </div>
+    <button id="connect">连接 / 读取录制状态</button>
+    <p id="progress">未连接</p>
+  </section>
+
+  <section class="panel">
+    <h2>02 / 本组工况录制配置</h2>
+    <div class="grid">
+      <label>安装编号 <input id="installation" maxlength="80" placeholder="例如 fan-A-duct-v1"></label>
+      <label>记录人 <input id="operator" maxlength="80" placeholder="姓名或工号"></label>
+      <label>声明标签
+        <select id="label">
+          <option value="unlabelled">未标注 (unlabelled)</option>
+          <option value="normal">正常 (normal)</option>
+          <option value="imbalance">失衡 (imbalance)</option>
+          <option value="clog">堵塞 (clog)</option>
+          <option value="stall">卡滞 (stall)</option>
+          <option value="overheat">过热 (overheat)</option>
+        </select>
+      </label>
+      <label>持续秒数 <input id="seconds" type="number" value="60" min="1" max="3600"></label>
+      <label>模式
+        <select id="mode">
+          <option value="REAL">REAL / 真实采样候选</option>
+          <option value="DIAGNOSTIC">DIAGNOSTIC / 仅诊断，不用于训练</option>
+        </select>
+      </label>
+      <label>实际位流 SHA256 <input id="bit" maxlength="64" placeholder="必须是核实后的位流SHA，不是BOOT SHA"></label>
+      <label>实际标定证据文件 SHA256 <input id="calibration" maxlength="64" placeholder="64位十六进制标定证据SHA"></label>
+    </div>
+    <label style="margin-top:12px">工况及安全备注 <textarea id="note" maxlength="240" rows="2" placeholder="记录现场负载、堵塞物或风道状态"></textarea></label>
+    <div>
+      <button id="start" disabled>开始本组录制</button>
+      <button id="stop" disabled>结束本组</button>
+      <button id="download" disabled>下载已落盘会话 ZIP</button>
+    </div>
+    <p id="message" role="status">等待连接。一次录制对应一个 UUID 目录；下载保留原始帧、会话、合同和 SHA 摘要。</p>
+  </section>
+
+  <section class="panel">
+    <details open>
+      <summary>状态与证据边界 JSON</summary>
+      <pre id="details">尚未读取</pre>
+    </details>
+    <p style="color:var(--muted);font-size:12px;margin-top:10px">
+      时间到或点击结束后，须看到 `COMPLETED` / `DIAGNOSTIC_SAVED` 及持久帧数。`ABORTED` 保留证据但不可当完整训练集。
+    </p>
+  </section>
+</main>
+
+<script>
+'use strict';const field=id=>document.getElementById(id);let state=null,connected=false,busy=false,polling=false;
+const identity=()=>crypto.randomUUID?crypto.randomUUID():([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,value=>(value^crypto.getRandomValues(new Uint8Array(1))[0]&15>>value/4).toString(16));
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',cache:'no-store',headers:{Authorization:'Bearer '+field('read').value,'X-Cabinet-Control-Token':field('control').value,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});if(!response.ok){const result=await response.json();throw Error(result.reason||result.error||'请求失败');}return response;}
+function render(value){state=value;field('progress').textContent=value.available?value.state+' · '+(value.elapsed_s||0)+' / '+(value.duration_s||0)+'秒 · 持久帧 '+(value.durable_frames||0)+' · 接受 '+(value.accepted||0)+' / 拒绝 '+(value.rejected||0):'录制未配置';field('details').textContent=JSON.stringify(value,null,2);field('start').disabled=busy||!value.available||value.state==='RECORDING'||(field('mode').value==='REAL'&&!value.ready);field('stop').disabled=busy||value.state!=='RECORDING';field('download').disabled=busy||!['COMPLETED','DIAGNOSTIC_SAVED','ABORTED'].includes(value.state)||!(value.durable_frames>0);}
+async function refresh(){render(await (await api('/api/capture/status')).json());}
+function handle(action){return async()=>{busy=true;try{await action();}catch(error){field('message').textContent=error.message+'；若网络中断，先核对状态，不要假定成功。';}finally{busy=false;if(state)render(state);}};}
+field('connect').onclick=handle(async()=>{await refresh();connected=true;field('message').textContent=state.available?'已连接：'+state.ready_reason:state.reason;});field('mode').onchange=()=>{if(state)render(state);};
+field('start').onclick=handle(async()=>{if(!state)throw Error('先读取状态');const real=field('mode').value==='REAL';for(const name of ['installation','operator','note'])if(!field(name).value.trim())throw Error('填写安装编号、记录人和工况备注');if(!field('seconds').checkValidity())throw Error('检查持续秒数');if(real&&(!/^[0-9a-f]{64}$/.test(field('bit').value)||!/^[0-9a-f]{64}$/.test(field('calibration').value)))throw Error('REAL需经核实的位流和标定证据SHA');const payload={expected_boot:state.boot,installation_id:field('installation').value.trim(),operator:field('operator').value.trim(),label:field('label').value,duration_s:Number(field('seconds').value),capture_mode:field('mode').value,bitstream_sha256:real?field('bit').value:null,calibration_evidence_sha256:real?field('calibration').value:null,note:field('note').value.trim()};const result=await (await api('/api/capture/start',{request_id:identity(),payload})).json();render(result.status);field('message').textContent='会话 '+state.session_id+' 已开始；尚未完成持久化验收。';});
+field('stop').onclick=handle(async()=>{const result=await (await api('/api/capture/stop',{request_id:identity(),payload:{session_id:state.session_id}})).json();render(result.status);field('message').textContent='采集器回执：'+state.state+'，请核对持久帧数并下载。';});
+field('download').onclick=handle(async()=>{const response=await api('/api/capture/download/'+state.session_id),blob=await response.blob();const url=URL.createObjectURL(blob),anchor=document.createElement('a');anchor.href=url;anchor.download='recording-'+state.session_id+'.zip';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);field('message').textContent='会话ZIP已交给浏览器下载；正式训练仍需标签和证据审核。';});
+setInterval(async()=>{if(!connected||polling||busy)return;polling=true;try{await refresh();}catch(error){connected=false;state=null;field('progress').textContent='连接中断，不能确认录制状态';for(const name of ['start','stop','download'])field(name).disabled=true;field('message').textContent=error.message+'；恢复连接后核对服务器状态，勿假定录制成功。';}finally{polling=false;}},1000);
+</script>
+</body>
+</html>

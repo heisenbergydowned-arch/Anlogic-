@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>缩放保持自检</title>
+<style>
+body{font:13px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;margin:12px;color:#1f2328}
+pre{background:#f6f8fa;border:1px solid #e2e5e9;border-radius:8px;padding:12px;font-size:13px}
+iframe{width:1240px;height:560px;border:1px solid #e2e5e9;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="margin:0 0 6px">自检：缩放之后，轮询更新是否保住了视图</h3>
+<pre id="out">running...</pre>
+<iframe id="f"></iframe>
+<script>
+var log = [];
+function add(s){ log.push(s); document.getElementById("out").textContent = log.join("\n"); }
+function fmt(v){ return v == null ? "auto" : Math.round(v); }
+function span(x){ return Math.round(x.max - x.min); }
+
+var f = document.getElementById("f");
+f.onload = function(){
+  setTimeout(function(){
+    try {
+      var u = f.contentWindow.__uplot;
+      if (!u){ add("❌ 拿不到 uPlot 实例（window.__uplot）"); return; }
+
+      var x0 = {min: u.scales.x.min, max: u.scales.x.max};
+      var span0 = span(x0);
+      add("初始 x 范围   : " + fmt(x0.min) + " ~ " + fmt(x0.max) + "   跨度 " + span0 + " s");
+
+      // 程序化缩放（等价于用户拖拽后的结果）。uPlot 下一帧才重绘，
+      // 必须等一会儿再读，否则读到的是旧值。
+      var d0 = u.data[0];
+      var t0 = d0[0], t1 = d0[d0.length - 1];
+      var mid = t0 + (t1 - t0) * 0.25;
+      u.setScale("x", {min: mid, max: mid + 60});
+
+      setTimeout(function(){
+        var x1 = {min: u.scales.x.min, max: u.scales.x.max};
+        var span1 = span(x1);
+        add("缩放后 x 范围 : " + fmt(x1.min) + " ~ " + fmt(x1.max) + "   跨度 " + span1 + " s");
+        if (span1 < span0 * 0.8){
+          add("✅ 缩放已生效（跨度缩到 " + Math.round(span1 / span0 * 100) + "%）");
+        } else {
+          add("⚠ 缩放没生效，后面结论不可靠");
+        }
+
+        add("");
+        add("等 4 秒（期间会刷新 2~4 次）…");
+
+        setTimeout(function(){
+          var x2 = {min: u.scales.x.min, max: u.scales.x.max};
+          var span2 = span(x2);
+          add("");
+          add("更新后 x 范围 : " + fmt(x2.min) + " ~ " + fmt(x2.max) + "   跨度 " + span2 + " s");
+          add("");
+          if (span2 < span0 * 0.8 && Math.abs(x2.min - x1.min) < 1){
+            add("✅ 缩放被完整保留 —— 轮询更新没有重置视图，位置也没漂移");
+          } else if (span2 < span0 * 0.8){
+            add("⚠ 缩放保住了但位置漂移 " + Math.round(Math.abs(x2.min - x1.min)) + " s");
+          } else {
+            add("❌ 缩放被重置 —— 回到 " + span2 + " s 全窗口");
+          }
+          add("");
+          add("（双击图表应能复位缩放）");
+
+          // 第三段：验证双击复位
+          var hostEl = u.root.parentNode;
+          hostEl.dispatchEvent(new MouseEvent("dblclick", {bubbles: true, view: f.contentWindow}));
+          setTimeout(function(){
+            var x3 = {min: u.scales.x.min, max: u.scales.x.max};
+            var span3 = span(x3);
+            add("");
+            add("双击后 x 范围 : " + fmt(x3.min) + " ~ " + fmt(x3.max) + "   跨度 " + span3 + " s");
+            if (span3 > span0 * 0.9){
+              add("✅ 双击复位成功 —— 回到全窗口");
+            } else {
+              add("❌ 双击没复位（仍 " + span3 + " s）");
+            }
+          }, 400);
+        }, 4000);
+      }, 150);
+    } catch (e) {
+      add("❌ 测试异常: " + e.message);
+    }
+  }, 3000);
+};
+f.src = "/?min=5";
+</script>
+</body>
+</html>

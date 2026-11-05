@@ -1,0 +1,46 @@
+{
+  "schema": "cabinet-normal-clog-npu-v1",
+  "model_id": "normal-clog-368fcb52ae57",
+  "labels": [
+    "normal",
+    "clog"
+  ],
+  "wire_labels": [
+    "normal",
+    "imbalance",
+    "stall",
+    "clog",
+    "overheat"
+  ],
+  "source": "REAL_USER_DECLARED_LABELED_DIAGNOSTIC",
+  "qualified": false,
+  "control_authority": "NONE",
+  "input_shape": [
+    1,
+    39
+  ],
+  "output_shape": [
+    1,
+    5
+  ],
+  "architecture": [
+    39,
+    32,
+    16,
+    5
+  ],
+  "native_abi": 3,
+  "execution_model": "ALNPU_LOGITS_PS_SOFTMAX",
+  "input_policy": "LABELED_USER_GROUNDTRUTH_FG_UNKNOWN_V2",
+  "training_rows": 4261,
+  "artifacts_sha256": {
+    "model_u8.onnx": "5d5e274c55904940d30d72fb9e2ac3608842eb1560bd46983b91d3477161f54a",
+    "training.json": "b4cad58283e900290c17abaabb5fbd4dd71a0cdc2e22f5f86860be1551f93807",
+    "provenance.json": "9c98017720e8013b484b4d7db638feba9ef61558577a0a6f08b431c03cd2144c",
+    "model_alnpu_u8.onnx": "7a2db16c29124a8f20fe959e89dc5450b3e25c5212b3dae26d1675be24a3884c",
+    "normalization.json": "f7c22dc757fe302ee5673addfd9a6ff79095a5afdbf54b7aa9f44c7869dd6b39",
+    "validation.json": "2abc1d64ba7525e8b5053c27d5b24778bc697f6850a912bb8a9d5ac42317418e",
+    "golden.json": "9ea054a9e522844dc6ac47e7c4743060c58b9b35bddecb5bff2cfdf21688ce44",
+    "conversion.json": "143c5294ec203432e3be47ae5c0ff832c29ecbb727d5584a7c3bb784bb9de9e3"
+  }
+}

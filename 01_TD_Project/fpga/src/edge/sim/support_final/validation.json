@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-08T05:13:47.009453+00:00",
+  "checks": [
+    {
+      "name": "tb_sns_sync_compile",
+      "status": "PASS",
+      "command": [
+        "C:\\Users\\Heisen\\AppData\\Local\\Programs\\iverilog-v14\\bin\\iverilog.exe",
+        "-g2005",
+        "-s",
+        "tb_sns_sync",
+        "-Ptb_sns_sync.CLK_FREQ=25000000",
+        "-Ptb_sns_sync.SPI_DIV_TEST=2",
+        "-o",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\sim\\support_final\\tb_sns_sync.vvp",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\models\\icm20602_model.v",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_sns_sync.v"
+      ],
+      "marker": null
+    },
+    {
+      "name": "tb_sns_sync",
+      "status": "PASS",
+      "command": [
+        "C:\\Users\\Heisen\\AppData\\Local\\Programs\\iverilog-v14\\bin\\vvp.exe",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\sim\\support_final\\tb_sns_sync.vvp"
+      ],
+      "marker": "ALL PASS"
+    },
+    {
+      "name": "tb_sns_timeout_compile",
+      "status": "PASS",
+      "command": [
+        "C:\\Users\\Heisen\\AppData\\Local\\Programs\\iverilog-v14\\bin\\iverilog.exe",
+        "-g2005",
+        "-s",
+        "tb_sns_timeout",
+        "-o",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\sim\\support_final\\tb_sns_timeout.vvp",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\models\\icm20602_model.v",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_sns_timeout.v"
+      ],
+      "marker": null
+    },
+    {
+      "name": "tb_sns_timeout",
+      "status": "PASS",
+      "command": [
+        "C:\\Users\\Heisen\\AppData\\Local\\Programs\\iverilog-v14\\bin\\vvp.exe",
+        "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\sim\\support_final\\tb_sns_timeout.vvp"
+      ],
+      "marker": "ALL PASS"
+    },
+    {
+      "name": "alnpu_sdk_syntax",
+      "status": "PASS",
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "g++",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsyntax-only",
+        "-I/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/sim/sdk_headers",
+        "/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/linux/npu/edge_npu.cpp"
+      ],
+      "marker": null
+    },
+    {
+      "name": "mmio_host_compile",
+      "status": "PASS",
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-shared",
+        "-fPIC",
+        "-o",
+        "/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/sim/libedge_mmio_host.so",
+        "/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/linux/native/mmio.c"
+      ],
+      "marker": null
+    },
+    {
+      "name": "linux_service_tests",
+      "status": "PASS",
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--exec",
+        "env",
+        "EDGE_TEST_MMIO_LIB=/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/sim/libedge_mmio_host.so",
+        "python3",
+        "-c",
+        "import sys,unittest;sys.path.insert(0,'/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/linux');r=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.discover('/mnt/d/Desktop/FU_Code/soc_merge/soc_merge/src/edge/linux/tests'));sys.exit(not r.wasSuccessful())"
+      ],
+      "marker": "OK"
+    }
+  ],
+  "completed_utc": "2026-10-08T05:17:34.585966+00:00",
+  "limitations": "Linux x86 host C and mock model tests; SDK syntax only, not ARM link/NPU/board",
+  "sources": [
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_sns_sync.v",
+      "sha256": "db94317be54cf0c48d10a047e537b2ea65ceb850087be164fd581ac180a8afdf"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\tb_sns_timeout.v",
+      "sha256": "90937662319a661496840697d2281f0c44a54cb5cbec7d1d9bffdc0c16825b55"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\sim\\models\\icm20602_model.v",
+      "sha256": "506cc1371a188752ca4441a27e8fab39bf7c4d84f264c6d0319e70f455ad7469"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\acq\\sns_sync.v",
+      "sha256": "28165ac8413dc4eae58278dfc31ecf38581c30c4ab8d89e1d5aed68942004e6b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\config.example.json",
+      "sha256": "6a6c9522192c837203b78cd5337981ad6add80490435c41754c1cb9e2eb92c66"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\fcb1_client.py",
+      "sha256": "0effcd8f4f3f54eada1f0af21b3dec8f2d90b9a70622091183dae58c00673ce8"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\feature_config.example.json",
+      "sha256": "f12ed727ab35e30892a5493649b3f90e5a2f0d4a13522a22a1b8c526e0a68fef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\link_cli.py",
+      "sha256": "1f6f887a5297606ff742d552a28cc901b77985a2f27f32f91ea5d4faf8486140"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\npu_server.py",
+      "sha256": "508a6f77273ebf7cc107dd727a996b53b06ae45f570c24161ad186462adf75c9"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\run_edge.py",
+      "sha256": "577724131315fb2e46fac137408ed6ff9e77cd2c9005231999e7eac1e4d58a68"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\test_backend.example.json",
+      "sha256": "9c66c66a7d3e685770b5cc80970ebc5588262904ff66c60fde40f6aaaa1afa26"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\io.py",
+      "sha256": "a803b6ede33f26c4503b4457d6060a86a27f6c12c4a6b2a062dee5ea5e46f03c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\load.py",
+      "sha256": "51b676ce94ed6e7bf3bf8a50a6ba416e52a65c95ba19cf244bc9d681807746ef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\mock.py",
+      "sha256": "5c35017c2c57763786b4213072c572cb83ac11be7a671fb4e268c420f6cce9ef"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\model.py",
+      "sha256": "893eef9d8a328bf8d836ccc0320bdfbc9cd8e9812b911603307887d5a7d03e89"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\policy.py",
+      "sha256": "7dbb3452ba8dbda26d55f9200f744272e3d7c95d57f07c44a139f7994bb6762d"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\protocol.py",
+      "sha256": "d83e2614d5ad955410d108b1e85e614ea1dec54f782eee6d219fe81b85d39b8c"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\service.py",
+      "sha256": "df4fc79fd4b652738770fcecb9ba94a3f48cd2adc89a6413490b9de07ea4c1d3"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\store.py",
+      "sha256": "2f2ef77685fcee0a7bcf4903f8a37d3d578d8b00cab8612fbf577ee7794e6c7a"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\uplink.py",
+      "sha256": "b1c4c5241ba564c0a698a142703def18d3d96e5326196e52ed66f7a2aef07102"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\web.py",
+      "sha256": "5e97ae1199852efc9b93bfbba9d2bc3f1cd3f2cb9bd1966ec583a53bbb4d7a8b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\cabinet\\__init__.py",
+      "sha256": "9a5605ebbc753a4edbf689212b317092f325f521dd21c040f5fa7ccaaa1c9a1f"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\native\\mmio.c",
+      "sha256": "5908c2031ae09f46bc6f960eaf2ce16f9ba2851b37a1286870b4d5b8965fa364"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\npu\\edge_npu.cpp",
+      "sha256": "20961d42c33cba0980bd8b650b8033f07d743e14d70abe53ebecad8eb7823a3b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\static\\index.html",
+      "sha256": "3f98acedc2ca43c6e492d6283002658194e305619393d6bf250bf3095a9fe59b"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_chain.py",
+      "sha256": "c5385155d3a5c9f6d80dfb0b8d1570187e20b29b4912a5cb3b8eb6a4cb3b48ed"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_commission.py",
+      "sha256": "b62ac61f45c7479c90ba89e02e7b6c38f7cda3bc498fb9947be68126982379ee"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_native.py",
+      "sha256": "2c1ebdd71c154e7cade9361e45eff1aaafe558059e3ceeffe2f9ae2a7ac45714"
+    },
+    {
+      "path": "D:\\Desktop\\FU_Code\\soc_merge\\soc_merge\\src\\edge\\linux\\tests\\test_unix_npu.py",
+      "sha256": "ab915cc08f507164b62c2822c574c8bc581908323ff6b184f9f4e88cd57deff8"
+    }
+  ]
+}

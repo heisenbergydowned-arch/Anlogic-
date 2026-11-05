@@ -1,0 +1,10 @@
+`define F2P_IRQ_Available_9c4afc9a72e9
+`define P2F_Reset0_Available_9c4afc9a72e9
+`define Master_AXI_GP0_Interface_9c4afc9a72e9
+`define Master_AXI_GP1_Interface_9c4afc9a72e9
+`define Slave_AXI_HP0_Interface_9c4afc9a72e9
+`define Slave_AXI_HP1_Interface_9c4afc9a72e9
+`define SD0_cd_Dot_Enable_9c4afc9a72e9
+`define I2C0_Available_9c4afc9a72e9
+`define I2C1_Available_9c4afc9a72e9
+`define Timer0_Available_9c4afc9a72e9

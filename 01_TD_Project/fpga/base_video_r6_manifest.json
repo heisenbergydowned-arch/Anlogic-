@@ -1,0 +1,43 @@
+{
+  "status": "PREPARED_NOT_TD_OR_BOARD_ACCEPTED",
+  "user_authorized_isolated_video_changes": true,
+  "reference_mhz": 75,
+  "pixel_mhz_1080p": 148.5,
+  "serializer_mhz_1080p": 742.5,
+  "pixel_mhz_720p": 74.25,
+  "serializer_mhz_720p": 371.25,
+  "changed_files": [
+    "soc_prj.al",
+    "cooling_link_test.al",
+    "cooling_link.al",
+    "design_0/hdl/design_0.v",
+    "design_0/ip/design_0_video_timing_generator_v01_0/Design.xml",
+    "design_0/ip/design_0_video_timing_generator_v01_0/design_0_video_timing_generator_v01_0.v",
+    "design_0/ip/design_0_PLL_3/design_0_PLL_3.v",
+    "design_0/ip/design_0_video_timing_generator_v01_0/RTL/video_timing_generator_v01_e2dadf6740ca.sv"
+  ],
+  "geometry_unchanged": true,
+  "acquisition_npu_axi_clocks_unchanged": true,
+  "timing_guards_unchanged": true,
+  "linux_display_reference_alignment_required": true,
+  "ide_topology_regeneration_not_accepted": true,
+  "boot_modified": false,
+  "board_programmed": false,
+  "release_qualified": false,
+  "source_sha256": {
+    "soc_prj.al": "7fbce2fd91054dca3e07756ea9f352bbaa8a847b0df9044e580e2145e1dec9f9",
+    "cooling_link_test.al": "f18e938445bb673e79ef322c9d06340b07b6840e09f0880dd67bfa2358fc2823",
+    "cooling_link.al": "273cbd8cb397c1f4a1b7a73aec989d55393cba7595186cd22f2547ae78263154",
+    "design_0/hdl/design_0.v": "6cc73b844faaf527cd8e616da6b5c41fb88f2da6ebfbd3c53e0734ae70bb7792",
+    "design_0/ip/design_0_video_timing_generator_v01_0/Design.xml": "8a3652594b57f47a795d93a623f16fbd87a86c78c1fb08e4a1ba414ffab8354c",
+    "design_0/ip/design_0_video_timing_generator_v01_0/design_0_video_timing_generator_v01_0.v": "60fdf56ac6f12899f38ae69a95525aa1eae618bc07266d37d25e7374695c1c24",
+    "design_0/ip/design_0_PLL_3/design_0_PLL_3.v": "ef9fb4432d36678b93af1fd35193d93c7419580ce25c5aa0ba466b2b415e1af6",
+    "design_0/ip/design_0_video_timing_generator_v01_0/RTL/video_timing_generator_v01_e2dadf6740ca.sv": "84a424c30362e21e8d819776fb6417f57bfb0e66e0d28a33c804b80d8ee75813"
+  },
+  "base_filter_manifest_sha256": "0fbb1bd55ea1f1808c6f6d72b24b84f9470c6e3dcec0d7ffea2d2da352b22a6b",
+  "candidate": "/Users/heisenberg/Documents/Codex/cabinet-cooling/fpga_work/video_repair_r6/candidate",
+  "base": "/Users/heisenberg/Documents/Codex/cabinet-cooling/fpga_work/filter_v4/candidate",
+  "schema": "cabinet-isolated-video-r6-candidate",
+  "gate_status": "PASS_CLOCK_GATE_ONLY_NOT_ROUTED",
+  "gate_validation_sha256": "7283f90b16e7302b5b864dfbe176a7b0ad5ac1cd2cf3f70dafe0e8550570a91e"
+}

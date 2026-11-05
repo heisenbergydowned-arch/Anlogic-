@@ -1,0 +1,22 @@
+{
+  "boot_id": "45051e12-0278-4d1f-a859-272e5abb0f8b",
+  "before_manifest": "cf74695581a6a2fcd0e740ec76ce7b70d4db3c4b27c96801f5cfeb126b522866",
+  "after_manifest": "d31e53c202f45a989eb78ec8df7e54ff1e053ff6d843aa9bf180c4c18d80b888",
+  "changes": {
+    "cabinet/fan_life.py": {
+      "before": "8bc212790bbf8744d25aa088cb9455fbacdc7977f4114059ee719123693ccfcd",
+      "after": "bb2a301b4c6ed8f6b43c89002b787c3bbd94da92674bbf7b8e4848e82f6e6e9d"
+    },
+    "tests/test_fan_life_p46.py": {
+      "before": "9d1cfa24c75030685a37a0647344afc83630b1c7dd73e6c494b3540ea19a9199",
+      "after": "59d1c14d51a5b39c5e4f12a97b5d4287395d6bd82f3169396e963b260fa60b64"
+    },
+    "static/index.html": {
+      "before": "e86851d05008fc08424311f63a4f84224878663b20d07a57c6f26b72bd63d717",
+      "after": "eaa516663883d77a5dbdc6bcc8ab1c4c67e07adf6ebf65fc952767b778f03fe8"
+    }
+  },
+  "status": "PASS_LIFE_NOTIFICATION_PATCH",
+  "settings_and_reference_preserved": true,
+  "pwm_service_restarted": false
+}

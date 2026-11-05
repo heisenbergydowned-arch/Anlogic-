@@ -1,0 +1,34 @@
+{
+  "schema": "cabinet-real-normal-npu-v2",
+  "model_id": "real-normal-ae39-20261104-pwm_normal_sweep_20261104T071342Z-alnpu",
+  "source": "REAL_USER_DECLARED_NORMAL_DIAGNOSTIC",
+  "qualified": false,
+  "fault_classes_trained": [],
+  "control_authority": "NONE",
+  "architecture": [
+    39,
+    32,
+    16,
+    39
+  ],
+  "input_shape": [
+    1,
+    39
+  ],
+  "output_shape": [
+    1,
+    39
+  ],
+  "model_kind": "NORMAL_ONLY_RECONSTRUCTION",
+  "artifacts_sha256": {
+    "model_u8.onnx": "c82c26dd334e3ed4a0af3d41386f6ed287d8bef02fdcaa0b805b83fdff60bab4",
+    "normalization.json": "825667681e899e9910928820c25df21d4ad1d80c14ff4463fa53b81dcaee05ab",
+    "thresholds.json": "88d4384b97a285b8824379e5cd9fea488eb2194dad634313f523365403929f2a",
+    "provenance.json": "0a6ae60c41ada2f7f6787990ba79bd5bf5f03a03aa870fae1207514c60a32886",
+    "golden.json": "045d1b4e6a00d6ad68d16b5fa1077b98538cb979f0b1cf527dbf8bc7c3ed849f",
+    "model_alnpu_u8.onnx": "9735c46319cf3d1c1e1fddf739350107edc92a2fb6ffa0a144e0e2cf2dc8e7e1",
+    "alnpu_conversion.json": "563b8a0bc9ab730303c225c6af9d35c30ce9c7c966e5f50123f609c7a874dec2"
+  },
+  "training_rows": 1656,
+  "created_utc": "2026-11-04T07:42:39.585294+00:00"
+}

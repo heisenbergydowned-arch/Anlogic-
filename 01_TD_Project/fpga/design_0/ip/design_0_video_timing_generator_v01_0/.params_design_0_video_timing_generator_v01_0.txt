@@ -1,0 +1,18 @@
+REF_CLK_FREQ : 50 : U : En :  : -2147483648 : 2147483647
+FPS : 60 : U : En :  : -2147483648 : 2147483647
+H_FRONT_Display : 16'd88 : U : En :  :  : 
+H_ACTIVE_Display : 16'd1920 : U : En :  :  : 
+H_SYNC_Display : 16'd44 : U : En :  :  : 
+H_BACK_Display : 16'd148 : U : En :  :  : 
+V_FRONT_Display : 16'd4 : U : En :  :  : 
+V_ACTIVE_Display : 16'd1080 : U : En :  :  : 
+V_SYNC_Display : 16'd5 : U : En :  :  : 
+V_BACK_Display : 16'd36 : U : En :  :  : 
+H_FRONT : 16'd88 : G : En :  :  : 
+H_ACTIVE : 16'd1920 : G : En :  :  : 
+H_SYNC : 16'd44 : G : En :  :  : 
+H_BACK : 16'd148 : G : En :  :  : 
+V_FRONT : 16'd4 : G : En :  :  : 
+V_ACTIVE : 16'd1080 : G : En :  :  : 
+V_SYNC : 16'd5 : G : En :  :  : 
+V_BACK : 16'd36 : G : En :  :  : 

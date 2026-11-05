@@ -1,0 +1,17 @@
+[Unit]
+Description=Observed fan running hours and full-speed life estimate; no actuator ownership
+After=cabinet-edge.service
+Wants=cabinet-edge.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cabinet/linux
+ExecStart=/usr/bin/python3 -B -m cabinet.fan_life
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=10
+NoNewPrivileges=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

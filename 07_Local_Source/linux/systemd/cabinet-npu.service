@@ -1,0 +1,14 @@
+[Unit]
+Description=Cabinet Alnpu inference worker (observation until qualified)
+After=local-fs.target
+
+[Service]
+WorkingDirectory=/opt/cabinet/linux
+RuntimeDirectory=cabinet
+ExecStart=/usr/bin/python3 npu_server.py --socket /run/cabinet/npu.sock --model /etc/cabinet/model.onnx --model-id REPLACE_AFTER_EXPORT --feature-config-id 1 --calibration-id 1
+# A timeout latches unavailable; do not blindly restart a possibly active DMA job.
+Restart=no
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

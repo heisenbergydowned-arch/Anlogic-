@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>分辨率切换自检</title>
+<style>
+body{font:13px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;margin:12px;color:#1f2328}
+pre{background:#f6f8fa;border:1px solid #e2e5e9;border-radius:8px;padding:12px;font-size:13px}
+iframe{width:1240px;height:500px;border:1px solid #e2e5e9;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="margin:0 0 6px">自检：切换分辨率，图表数据是否真的变了</h3>
+<pre id="out">running...</pre>
+<iframe id="f"></iframe>
+<script>
+var log = [];
+function add(s){ log.push(s); document.getElementById("out").textContent = log.join("\n"); }
+function span(x){ return Math.round(x.max - x.min); }
+
+var f = document.getElementById("f");
+f.onload = function(){
+  setTimeout(function(){
+    try {
+      var w = f.contentWindow, doc = f.contentDocument;
+      var u = w.__uplot;
+      if (!u){ add("❌ 拿不到 uPlot 实例"); return; }
+
+      function snap(label){
+        var tag = (doc.getElementById("trendTag") || {}).textContent || "";
+        var n = (u.data && u.data[0]) ? u.data[0].length : -1;
+        add(label + ": 点数=" + n + "  跨度=" + span(u.scales.x) + "s");
+        add("       标签: " + tag.slice(0, 72));
+        return {n: n, tag: tag};
+      }
+
+      var a = snap("切换前");
+
+      // 依次试三档分辨率
+      var sel = doc.getElementById("trendBucket");
+      var steps = ["60", "10", "auto"];
+      var i = 0;
+
+      function next(){
+        if (i >= steps.length){ add(""); add("测试结束"); return; }
+        var v = steps[i++];
+        add("");
+        add("---- 设置分辨率为 " + v + " ----");
+        sel.value = v;
+        sel.dispatchEvent(new Event("change", {bubbles: true}));
+        setTimeout(function(){
+          var b = snap("切换后");
+          add(b.n !== a.n || b.tag !== a.tag ? "    ✅ 有变化" : "    ❌ 没变化（这就是问题）");
+          a = b;
+          next();
+        }, 2600);
+      }
+      next();
+    } catch (e) {
+      add("❌ 测试异常: " + e.message);
+    }
+  }, 3000);
+};
+f.src = "/?min=5";
+</script>
+</body>
+</html>

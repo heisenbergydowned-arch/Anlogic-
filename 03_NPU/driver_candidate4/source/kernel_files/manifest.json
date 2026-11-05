@@ -1,0 +1,13 @@
+{
+  "kernel_commit": "bbf36f1c3259e8948c816030ea3c09c7fb152227",
+  "kernel_remote": "https://gitee.com/anlogic/linux.git",
+  "files": {
+    "drivers/video/fbdev/anlogic-vdmafb.c": "96a43d3b2e4e385f79b0431a3ed8478699b1bde937db5c603f51c438066f938b",
+    "drivers/video/fbdev/anlogic-vtc.h": "d4fd8c0c603f7971ce0d0588ab2486e33b7bf34a4baa438e4b34af0ebfbdd577",
+    "drivers/video/fbdev/r46-dynclk.c": "74c925f1cce078c56032acbad93d6c75e126f1dce29e3b944e9b73113ae1d1c4",
+    "drivers/reset/reset-anlogic.c": "f54993b279460d3b175baf32826c54621cf877f4f09b80951afed0a351aaf609",
+    "drivers/dma/anlogic/axi-vdma.c": "21af9533269f5cc0cd2c69da467988114aa737afbe84543c9020ef268ad08dc8",
+    "include/linux/dma/anlogic_dma.h": "b72a94a57ee0b85ffe92c915d2a56117a02e69520f221db718e2621512531b3f"
+  },
+  "final_framebuffer_has_single_frame_park": true
+}

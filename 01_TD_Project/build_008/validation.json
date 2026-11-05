@@ -1,0 +1,16 @@
+{
+  "status": "BUILT_P52_ALARM_ONLY_PWM",
+  "started_utc": "2026-11-04T04:59:22.101282+00:00",
+  "timing_pass": false,
+  "source_setup_wns_ns": -0.008,
+  "route_scope": "TWO_INDICATOR_NETS_ONLY",
+  "pid": 1436,
+  "bit_sha256": "2a09883497ca92c6e4b82c850047eeb7891a5b5f256a769b39609f4256fbb268",
+  "bit_bytes": 4052216,
+  "candidate_db_sha256": "f1ed781afbf7e9b72db628845dc3ce5ff70aea42aa73163b4e26c659c3faeab2",
+  "plan_sha256": "a1beb36761fb08923d38732c38e2def6f508184ffecf86dd87eaa65eea2c7733",
+  "physical_changes_verified": true,
+  "properties_verification": "SIX_LUT_CHANGES_SINGLE_RED_FLASH_NET_EXPLICIT_MPNR_COMMIT_NATIVE_BITGEN_CHECK_PASS",
+  "adc_sdc_unchanged": true,
+  "completed_utc": "2026-11-04T05:05:52.227382+00:00"
+}

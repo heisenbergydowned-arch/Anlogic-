@@ -1,0 +1,8 @@
+{
+  "status": "PASS_RELOADED_DB_REPRODUCES_ALL_LOGIC_AND_BITSTREAM_PAYLOAD",
+  "source_db_sha256": "f1ed781afbf7e9b72db628845dc3ce5ff70aea42aa73163b4e26c659c3faeab2",
+  "bit_sha256": "2a09883497ca92c6e4b82c850047eeb7891a5b5f256a769b39609f4256fbb268",
+  "reloaded_bit_sha256": "db05152e9e50680a3e9f4fc2cf31b3a5671a291c258e652a0d6a95028881bfda",
+  "payload_sha256": "010afaa1cd2150a41502fcbb2eec3e402bed11ec9b6aa18a6e40e07c4e354125",
+  "payload_bytes": 4051808
+}

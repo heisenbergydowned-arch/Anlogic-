@@ -1,0 +1,30 @@
+{
+  "status": "PREPARED_VIDEO_REGISTER_AREA_REDUCTION_NOT_ROUTED",
+  "changed_files": [
+    "cooling_link.al",
+    "cooling_link_test.al",
+    "design_0/ip/design_0_video_timing_generator_v01_0/RTL/video_timing_generator_v01_e2dadf6740ca.sv",
+    "migration_check/check_vm.tcl",
+    "soc_prj.al"
+  ],
+  "source_sha256": {
+    "soc_prj.al": "d3d6e10b786c9e0ea54365b5ac122f35afde0ebecb00c4bd11a170780b3017a0",
+    "cooling_link_test.al": "b2695e6654689883c8a6071d371721f6b49b9449dff69926a7c29ed5c6fb0f66",
+    "design_0/ip/design_0_video_timing_generator_v01_0/RTL/video_timing_generator_v01_e2dadf6740ca.sv": "ee606879ef504eb56b9d96072329e4825ae7192abe95072cefe03af56a30ee0b",
+    "cooling_link.al": "0c9cb6b02e627753478ef50b3580c1b3591e77f38075c671e0c79659cec04bd3",
+    "migration_check/check_vm.tcl": "178ea6701495cbeb179470e0a7e84613e99061da80dc49bab8fe34b0cfffecfe"
+  },
+  "source_guard_inputs": 339,
+  "mode": "1280x720@60",
+  "reference_hz": 75000000,
+  "pixel_hz": 74250000,
+  "serial_hz": 371250000,
+  "defined_register_fields_preserved": true,
+  "reserved_register_bits_now_read_zero": true,
+  "byte_strobe_behavior_changed": false,
+  "partial_strobes_qualified": false,
+  "acquisition_features_protection_and_sdc_changed": false,
+  "release_qualified": false,
+  "original_r7_critical_failures_preserved": true,
+  "sd_or_boot_modified": false
+}

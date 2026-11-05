@@ -1,0 +1,14 @@
+[
+  {
+    "source": "C:\\Users\\heisenberg\\FPGA_builds\\cabinet_alarm_only_pwm_p52_20261103\\build_008\\alarm_only.pr.db",
+    "destination": "\\\\Mac\\Home\\Library\\Caches\\CabinetCooling\\export-20261104\\CabinetCooling_P52_Current_20261104\\01_TD_Project\\build_008\\alarm_only.pr.db",
+    "sha256": "f1ed781afbf7e9b72db628845dc3ce5ff70aea42aa73163b4e26c659c3faeab2",
+    "bytes": 60237132
+  },
+  {
+    "source": "C:\\Users\\heisenberg\\FPGA_builds\\cabinet_temperature_no_current_trip_p50_20261103\\build_003\\no_current_threshold.pr.db",
+    "destination": "\\\\Mac\\Home\\Library\\Caches\\CabinetCooling\\export-20261104\\CabinetCooling_P52_Current_20261104\\01_TD_Project\\build_parent\\no_current_threshold.pr.db",
+    "sha256": "63001f14c94550c13e7e8226a92eee287dd66fd9392842ffbc93184e51ea7cd6",
+    "bytes": 60236988
+  }
+]

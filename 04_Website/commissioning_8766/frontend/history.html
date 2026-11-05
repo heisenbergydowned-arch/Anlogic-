@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>历史与原始波形 · 机柜风冷测控</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.55 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid; place-items: center;
+  font: 700 14px var(--mono); color: #fff;
+}
+.brand h1 { font-size: 18px; margin: 0; font-weight: 650; }
+.brand small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: 13px;
+  color: var(--muted); border: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--border); text-decoration: none; }
+.nav-links a.active {
+  color: #fff; background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45); font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff; border-color: #26b395; font-weight: 600;
+}
+.auth-bar label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.auth-bar input {
+  background: #0d1622; border: 1px solid var(--border-hi); color: var(--text);
+  padding: 6px 10px; border-radius: 6px; width: 190px; font: 12px var(--mono);
+}
+.container { max-width: 1440px; margin: 0 auto; padding: 20px 24px 56px; }
+.banner-note {
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  color: #f3d7a2;
+  font-size: 13px;
+}
+.toolbar {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.toolbar-group { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+input, select, button {
+  font: inherit;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-hi);
+  background: #0d1622;
+  color: var(--text);
+}
+button {
+  background: linear-gradient(135deg, #166a8f, #158578);
+  border-color: var(--cyan);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { opacity: .92; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+#notice {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(42, 212, 197, 0.1);
+  border: 1px solid rgba(42, 212, 197, 0.3);
+  color: #b7f5ee;
+  font: 12px var(--mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.panel-head h2 { margin: 0; font-size: 15px; font-weight: 650; }
+canvas {
+  background: #0c1520;
+  width: 100%;
+  height: 270px;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  display: block;
+}
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 16px;
+}
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
+th, td {
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+th { color: var(--muted); font-size: 12px; background: rgba(255,255,255,0.02); }
+.muted { color: var(--muted); font-size: 12px; font-family: var(--mono); }
+#identity { overflow-wrap: anywhere; margin-top: 10px; }
+input[type=range] { width: 220px; accent-color: var(--cyan); padding: 0; }
+@media (max-width: 1080px) { .split-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">WAV1</div>
+    <div>
+      <h1>历史查询与故障原始波形回放</h1>
+      <small>SQLite Encrypted Journal · Dual ICM-20602 Signed16 Raw XYZ Replay</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">实时监控</a>
+    <a href="/commissioning" class="cta">调试与标定工作台 →</a>
+    <a href="/history" class="active">历史曲线与波形</a>
+    <a href="/diagnostics">ICM 通信诊断</a>
+    <a href="/parameters">受控参数配置</a>
+    <a href="/pressure-calibration">压差健康标定</a>
+    <a href="/recording">故障样本录制</a>
+  </nav>
+  <div class="auth-bar">
+    <label>授权令牌 <input id="token" type="password" autocomplete="off" placeholder="仅本页内存，不保存"></label>
+  </div>
+</header>
+
+<main class="container">
+  <div class="banner-note">
+    归档数据不代表设备当前状态。未标定、无效、测试和断连数据不补值；原始振动波形保持 A / B 测点独立硬件时间戳。
+  </div>
+
+  <section class="toolbar">
+    <div class="toolbar-group">
+      <label>开始时间 <input id="start" type="datetime-local"></label>
+      <label>结束时间 <input id="end" type="datetime-local"></label>
+      <button id="load">查询归档</button>
+    </div>
+    <p id="notice" role="status">请选择时间范围</p>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>历史状态趋势曲线</h2>
+      <div class="toolbar-group">
+        <label>历史变量
+          <select id="metric">
+            <option value="rpm">实际转速 RPM</option>
+            <option value="target_rpm">目标转速 RPM</option>
+            <option value="temperature">温度 ℃</option>
+            <option value="current">电流 A</option>
+            <option value="pressure">差压 kPa</option>
+          </select>
+        </label>
+        <span id="range" class="muted">尚未加载样本</span>
+      </div>
+    </div>
+    <canvas id="trend" width="1000" height="270"></canvas>
+  </section>
+
+  <section class="split-grid">
+    <div class="panel">
+      <div class="panel-head">
+        <h2>故障波形归档列表 (WAV1)</h2>
+        <span class="muted">点击右侧按钮载入三轴波形</span>
+      </div>
+      <div style="max-height:340px;overflow-y:auto">
+        <table>
+          <thead><tr><th style="width:32%">保存时间</th><th style="width:46%">启动会话 / 事件</th><th style="width:22%">操作</th></tr></thead>
+          <tbody id="records"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>原始 XYZ 三轴振动波形回放</h2>
+        <div class="toolbar-group">
+          <label>测点
+            <select id="sensor">
+              <option value="0">A 路 (ICM-A)</option>
+              <option value="1">B 路 (ICM-B)</option>
+            </select>
+          </label>
+          <button id="play">播放 / 暂停</button>
+          <input id="position" type="range" min="0" max="0" value="0">
+          <button id="download">导出 CSV</button>
+        </div>
+      </div>
+      <canvas id="wave" width="1000" height="270"></canvas>
+      <p id="identity" class="muted">尚未选择波形；单位为 signed16 原始码，不冒充标定 g。图例：青色 X 轴 · 金色 Y 轴 · 珊瑚红 Z 轴。</p>
+    </div>
+  </section>
+</main>
+
+<script>
+const byId=id=>document.getElementById(id);
+let samples=[],waveform=null,position=0,playing=false,loading=false,selection=0;
+
+async function request(url,format='json'){
+  const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),5000);
+  try{
+    const token=byId('token').value;
+    const response=await fetch(url,{cache:'no-store',signal:abort.signal,headers:token?{Authorization:'Bearer '+token}:{}});
+    if(!response.ok)throw Error('HTTP '+response.status);
+    return format==='json'?await response.json():await response.text();
+  }finally{clearTimeout(timer)}
+}
+
+function draw(id,series){
+  const canvas=byId(id),width=Math.max(300,canvas.clientWidth),height=270,ratio=window.devicePixelRatio||1;
+  canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
+  const context=canvas.getContext('2d');
+  context.scale(ratio,ratio);
+  context.clearRect(0,0,width,height);
+
+  const padL=54,padR=20,padT=28,padB=26;
+  const pw=width-padL-padR,ph=height-padT-padB;
+  context.strokeStyle='#1d2f44';context.lineWidth=1;
+  for(let i=0;i<=4;i++){
+    const y=padT+(ph*i)/4;
+    context.beginPath();context.moveTo(padL,y);context.lineTo(padL+pw,y);context.stroke();
+  }
+
+  context.font='12px ui-monospace,monospace';
+  const finite=series.flat().filter(point=>point&&Number.isFinite(point[0])&&Number.isFinite(point[1]));
+  if(!finite.length){
+    context.fillStyle='#8ea4be';
+    context.fillText('暂无有效数据（请选择时间段查询或点击左侧归档波形）',padL+16,padT+ph/2);
+    return;
+  }
+  let xs=finite.map(point=>point[0]),ys=finite.map(point=>point[1]),xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+  context.fillStyle='#8ea4be';
+  context.fillText('Y 范围: '+ymin.toFixed(3)+' … '+ymax.toFixed(3)+'   |   X 范围: '+xmin.toFixed(2)+' … '+xmax.toFixed(2),padL,18);
+  context.fillText(ymax.toFixed(1),6,padT+10);
+  context.fillText(((ymin+ymax)/2).toFixed(1),6,padT+ph/2+4);
+  context.fillText(ymin.toFixed(1),6,padT+ph);
+
+  series.forEach((points,index)=>{
+    context.strokeStyle=['#2ad4c5','#f5a623','#f25555'][index%3];
+    context.lineWidth=1.75;
+    context.beginPath();
+    let connected=false;
+    for(const point of points){
+      if(!point||!Number.isFinite(point[1])){connected=false;continue}
+      const horizontal=padL+(point[0]-xmin)/Math.max(xmax-xmin,1e-12)*pw;
+      const vertical=padT+ph-(point[1]-ymin)/Math.max(ymax-ymin,1e-12)*ph;
+      if(connected)context.lineTo(horizontal,vertical);
+      else context.moveTo(horizontal,vertical);
+      connected=true;
+    }
+    context.stroke();
+  });
+}
+
+function trend(){
+  const metric=byId('metric').value;
+  let previous=null;
+  const points=[];
+  for(const sample of samples){
+    if(previous&&(sample.boot_id!==previous.boot_id||sample.recorded-previous.recorded>5||sample.recorded<previous.recorded))points.push(null);
+    points.push(sample.valid&&sample.values[metric]!=null?[sample.recorded,sample.values[metric]]:null);
+    previous=sample;
+  }
+  draw('trend',[points]);
+}
+
+function showWave(){
+  if(!waveform)return;
+  const points=waveform.streams[Number(byId('sensor').value)],end=Math.min(Number(byId('position').value),points.length);
+  draw('wave',[0,1,2].map(axis=>points.slice(0,end).flatMap(point=>point.quality?[null]:point.gap?[null,[point.time_ms,point.xyz[axis]]]:[[point.time_ms,point.xyz[axis]]])));
+  byId('identity').textContent='SHA256 '+waveform.sha256+'；'+(waveform.test?'TEST 测试归档':'REAL 原始采集归档')+'；未授予诊断资格；独立时间戳 ms / 原始码；'+end+'/'+points.length+' 点';
+}
+
+async function pages(kind,parameters){
+  let rows=[],after=0;
+  do{
+    const page=await request('/api/history/'+kind+'?'+parameters+'&limit=500&after='+after);
+    rows.push(...page.items);
+    after=page.next_after;
+    if(rows.length>=5000&&after){
+      byId('notice').textContent='范围超过 5000 条，请缩小时间范围；当前为截断结果';
+      break;
+    }
+  }while(after!==null);
+  return rows;
+}
+
+byId('load').onclick=async()=>{
+  if(loading)return;
+  loading=true;byId('load').disabled=true;
+  try{
+    const start=new Date(byId('start').value).getTime()/1000,end=new Date(byId('end').value).getTime()/1000;
+    if(!Number.isFinite(start)||!Number.isFinite(end)||start>end)throw Error('请选择有效起止时间');
+    byId('notice').textContent='正在读取归档…';
+    samples=[];byId('records').replaceChildren();
+    const params=new URLSearchParams({start,end});
+    const results=await Promise.all([pages('samples',params),pages('waveforms',params)]);
+    samples=results[0];trend();
+    byId('range').textContent='历史样本 '+samples.length+'；无效/测试/未标定样本 '+samples.filter(sample=>!sample.valid).length;
+    for(const item of results[1]){
+      const row=document.createElement('tr');
+      for(const value of [new Date(item.recorded*1000).toLocaleString(),item.boot_id+' / '+item.event_id]){
+        const cell=document.createElement('td');cell.textContent=value;row.append(cell);
+      }
+      const cell=document.createElement('td'),button=document.createElement('button');
+      button.textContent='查看原始波形';
+      button.onclick=async()=>{
+        const identity=++selection;playing=false;waveform=null;draw('wave',[]);
+        try{
+          const document=await request('/api/history/waveform?id='+encodeURIComponent(item.record_id));
+          if(identity!==selection)return;
+          waveform=document;byId('sensor').onchange();
+          byId('notice').textContent='归档校验完成';
+        }catch(error){byId('notice').textContent='回放不可用：'+error.message}
+      };
+      cell.append(button);row.append(cell);byId('records').append(row);
+    }
+    if(byId('notice').textContent==='正在读取归档…')byId('notice').textContent='查询完成；这是历史记录，不是设备当前状态';
+  }catch(error){
+    samples=[];trend();byId('records').replaceChildren();
+    byId('notice').textContent='查询失败：'+error.message;
+  }finally{loading=false;byId('load').disabled=false}
+};
+
+byId('metric').onchange=trend;
+byId('position').oninput=showWave;
+byId('sensor').onchange=()=>{
+  if(!waveform)return;
+  byId('position').max=waveform.streams[Number(byId('sensor').value)].length;
+  byId('position').value=byId('position').max;
+  showWave();
+};
+byId('play').onclick=()=>{
+  if(!waveform)return;
+  playing=!playing;
+  if(playing&&Number(byId('position').value)>=Number(byId('position').max))byId('position').value=0;
+};
+setInterval(()=>{
+  if(playing&&waveform){
+    byId('position').value=Math.min(Number(byId('position').value)+4,Number(byId('position').max));
+    showWave();
+    if(Number(byId('position').value)>=Number(byId('position').max))playing=false;
+  }
+},40);
+
+byId('download').onclick=async()=>{
+  if(!waveform)return;
+  try{
+    const content=await request('/api/history/waveform?id='+waveform.sha256+'&format=csv','text'),
+          url=URL.createObjectURL(new Blob([content],{type:'text/csv'})),
+          link=document.createElement('a');
+    link.href=url;link.download='waveform-'+waveform.sha256+'.csv';link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }catch(error){byId('notice').textContent='导出失败：'+error.message}
+};
+
+window.addEventListener('resize',()=>{trend();showWave()});
+const localInput=date=>new Date(date.getTime()-date.getTimezoneOffset()*60000).toISOString().slice(0,16);
+byId('end').value=localInput(new Date());
+byId('start').value=localInput(new Date(Date.now()-3600000));
+draw('trend',[]);draw('wave',[]);
+</script>
+</body>
+</html>

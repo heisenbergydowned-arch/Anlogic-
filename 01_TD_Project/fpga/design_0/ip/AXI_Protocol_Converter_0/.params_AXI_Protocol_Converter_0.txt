@@ -1,0 +1,26 @@
+AL_US_AXI_PROTOCOL : 0 : G : En :  :  : 
+AL_DS_AXI_PROTOCOL : 2 : G : En :  :  : 
+protocol_us_num : AXI4 : U : En : AXI4;;AXI3;;AXI4LITE :  : 
+protocol_ds_num : AXI4LITE : U : En : AXI4LITE;;AXI4;;AXI3 :  : 
+us_axi_awlen_de : 7 : G : En :  :  : 
+us_axi_awlock_de : 0 : G : En :  :  : 
+ds_axi_awlen_de : 7 : G : En :  :  : 
+ds_axi_awlock_de : 0 : G : En :  :  : 
+AL_AXI_ID_WIDTH : 12 : U : En :  : 1 : 32
+AL_AXI_ADDR_WIDTH : 33 : U : En :  : 12 : 64
+AL_AXI_DATA_WIDTH : 32 : U : En : 32;;64;;128;;256;;512;;1024 :  : 
+AL_AXI_SUPPORTS_USER_SIGNALS : 0 : U : En :  :  : 
+AL_AXI_AWUSER_WIDTH : 1 : U : Dis :  : 1 : 1024
+AL_AXI_ARUSER_WIDTH : 1 : U : Dis :  : 1 : 1024
+AL_AXI_WUSER_WIDTH : 1 : U : Dis :  : 1 : 1024
+AL_AXI_RUSER_WIDTH : 1 : U : Dis :  : 1 : 1024
+AL_AXI_BUSER_WIDTH : 1 : U : Dis :  : 1 : 1024
+axi3_de_us : 0 : G : En :  :  : 
+axi3_de_ds : 0 : G : En :  :  : 
+aximm_us : 1 : G : En :  :  : 
+aximm_ds : 0 : G : En :  :  : 
+axilite_de : 0 : G : En :  :  : 
+rw_mode_num : 0 : G : En :  :  : 
+READ_WRITE_Mode : READ_WRITE : U : En : READ_WRITE;;READ_ONLY;;WRITE_ONLY :  : 
+AL_AXI_SUPPORTS_WRITE : 1 : G : En :  :  : 
+AL_AXI_SUPPORTS_READ : 1 : G : En :  :  : 

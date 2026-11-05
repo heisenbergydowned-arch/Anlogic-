@@ -1,0 +1,7 @@
+{
+  "schema": "cabinet-npu-deployment-policy-v1",
+  "mode": "STAGE_ONLY",
+  "automatic_activation": false,
+  "reason": "USER_REQUEST_WAIT_FOR_ALL_TRAINING",
+  "created_at": 1793782877.3637118
+}

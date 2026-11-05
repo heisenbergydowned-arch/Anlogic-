@@ -1,0 +1,29 @@
+[Unit]
+Description=Cabinet real normal reference NPU advisory
+After=cabinet-edge.service r46-npu-drivers.service
+# Input interruptions are handled by WAITING_INPUT in the live worker. Keep
+# inference alive across collector updates; hardware drivers remain required.
+Wants=cabinet-edge.service
+Requires=r46-npu-drivers.service
+Conflicts=cabinet-npu-v4-shadow.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cabinet/linux
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=LD_LIBRARY_PATH=/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib
+EnvironmentFile=/etc/cabinet/normal-npu.env
+RuntimeDirectory=cabinet-normal-npu
+RuntimeDirectoryMode=0700
+RuntimeDirectoryPreserve=yes
+UMask=0077
+ExecStartPre=/usr/bin/python3 -B -m normal_npu.selftest --bundle ${BUNDLE} --manifest-sha256 ${BUNDLE_SHA256} --library ${LIBRARY} --library-sha256 ${LIBRARY_SHA256} --admission ${ADMISSION} --admission-sha256 ${ADMISSION_SHA256}
+ExecStart=/usr/bin/python3 -B -m normal_npu.live --bundle ${BUNDLE} --manifest-sha256 ${BUNDLE_SHA256} --library ${LIBRARY} --library-sha256 ${LIBRARY_SHA256}
+Restart=no
+KillMode=process
+SendSIGKILL=no
+TimeoutStartSec=90
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

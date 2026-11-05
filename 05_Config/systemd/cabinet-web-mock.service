@@ -1,0 +1,20 @@
+[Unit]
+Description=Cabinet web MOCK device (local prototype only)
+Documentation=file:/home/uisrc/web/README.md
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/uisrc/web
+Environment=CABINET_WEB_CONFIG=/home/uisrc/web/config.json
+Environment=PYTHONIOENCODING=utf-8
+ExecStart=/usr/bin/python3 -u /home/uisrc/web/mock_device.py
+Restart=on-failure
+RestartSec=3
+User=root
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cabinet-web-mock
+
+[Install]
+WantedBy=multi-user.target

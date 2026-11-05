@@ -1,0 +1,65 @@
+{
+  "status": "INSTALLED_NPU_STARTUP_FIX_DATA_PRESERVED",
+  "boot_id": "717127fa-d769-4220-8c04-0ea180d56118",
+  "before_manifest": "4c43143b96eb7e501769240566a6fbd1c31e0b34ef589898ebe92b1b5b651ada",
+  "after_manifest": "0928aab5bca16167bdc00d387ad1f9a9f558885216a98c74db4bc069a7ff66dd",
+  "changes": {
+    "cabinet/local_display.py": {
+      "before": "9ebc5c8fb176855975a468a2c63aff4e71463bb083f157097e3481ffebee4406",
+      "after": "9b42065dc7b7a6af1e06468ed88bd52485d7b433b4b7b42a3002d67307514378"
+    },
+    "hmi_daily/cabinet_dashboard": {
+      "before": "f652a03c68528413e02fb1083127d330c537d24c1a9d98bb8033787d70902b41",
+      "after": "3b938275dec4ef6f500d2552a9593bfeb0b95d37c75bbdf2af3d3df7b9cd2118"
+    },
+    "hmi_daily/dashboard.c": {
+      "before": "e2afd3dcd724f04548f7f264b84df0411d3746b31cf6f6a35a872db070773f03",
+      "after": "177a8afe214d8699a8f1bf4854fb6b5f572f6becb706792cdde7edd76e1026de"
+    },
+    "normal_npu/advisory.py": {
+      "before": "25f77c81e6a8147fa7406759ee73481fd93f03b1b729313a68395ff5d39070e9",
+      "after": "15b91258729e7473589d6a140ddb60d660cbbbcf8bf64f9868fe6f0ab8d04dc9"
+    },
+    "normal_npu/core.py": {
+      "before": "f769408fe4cd4cec3eb7c33528ff3cc098735ba9b2c03f181ec24a4042003be5",
+      "after": "03fb2aae9ebac1e5285ebf049639db5177006b5c916a5d752ca8c6b00083d343"
+    },
+    "normal_npu/live.py": {
+      "before": "aa112130ba7098ab2bb968b382b5d6670c211ddb52083f58572b7fe64f6f91fb",
+      "after": "0ef26bedb62352444f2cc9d3a6fc3ac28fa1d97d79b0f16f3e4142bbb8dc6cb5"
+    },
+    "normal_npu/presentation.py": {
+      "before": "30b29b02ee18b50281b35447352b1b4eab28c811f79d551bcd4a04a11966f5bc",
+      "after": "9b944957823d84004f4c12d046f53c2cefc23959781d1080bc216cc989e0a28f"
+    },
+    "normal_npu/probe.py": {
+      "before": "42f5aab3af214b270939dd04ce39eb4b4e6a608585b7ea6eca57f0e96003316b",
+      "after": "1043c7d2442541614ff22f7c8873ce0a9cdcb45492e9d44f009970c57b91d687"
+    },
+    "normal_npu/selftest.py": {
+      "before": "8548c95b153249765340580ec1b91c08754ca325056fefcd7fc221043fd4a5dc",
+      "after": "9ad33926f9b12a84364fa304aeb5964fa8acd35537c914890b19bdd26bb315b9"
+    },
+    "static/commissioning.html": {
+      "before": "70d359cfcace535dd3b0926a8d4e132a57105c8f78fdace3696204f0d3a89dc4",
+      "after": "722af835224f7cc5ab16986c9962fd638f15b6a2e6ddbe0ecb73a1d71200f8cf"
+    },
+    "static/index.html": {
+      "before": "eaa516663883d77a5dbdc6bcc8ab1c4c67e07adf6ebf65fc952767b778f03fe8",
+      "after": "44e38e8358faa113a293da2071a73de2b6ae399e6616d996f9fa3c63ae8d2859"
+    },
+    "tests/test_normal_npu_freshness.py": {
+      "before": "3713e80457dad1f86247fe44865edbef3e380d6e0c26ef6f25a0c675dfc41100",
+      "after": "6db27f766898df1d4f2cba09d8ca7b1cfd19b2e8b2860b6fe7b80e7ff16df47f"
+    },
+    "tests/test_npu_input_worker_p38.py": {
+      "before": "8d401f61c9f8d42bc4c1f93321daea370753b237f19d0d418eb077025be6d579",
+      "after": "e719708ce9a958fd653e070d3fc58fb4771fe0a318ca73eb73f5a4158845c50e"
+    },
+    "tests/test_normal_startup_pwm_p53.py": {
+      "before": null,
+      "after": "5312649db0a23445e306a9f693b3f6063ad482ee2718f34e8c25022f0a93ff49"
+    }
+  },
+  "preserved_file_count": 132
+}

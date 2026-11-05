@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机柜风冷边缘智能测控系统 · 数据库管理</title>
+<style>
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --bd:#e2e8f0; --bd2:#cbd5e1;
+  --tx:#0f172a; --mut:#64748b; --dim:#94a3b8;
+  --ok:#059669; --okbg:#ecfdf5; --warn:#d97706; --warnbg:#fffbeb;
+  --bad:#dc2626; --badbg:#fef2f2; --acc:#0284c7; --accbg:#e0f2fe;
+  --purple:#7c3aed; --purplebg:#ede9fe;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--tx); font:13px/1.6 -apple-system,BlinkMacSystemFont,
+  "Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  padding:0 0 50px;
+}
+.wrap{max-width:1260px;margin:0 auto;padding:0 20px}
+header{
+  background:rgba(255,255,255,0.96); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bd); position:sticky; top:0; z-index:30;
+  box-shadow:0 1px 3px rgba(15,23,42,0.03);
+}
+header::before{
+  content:""; display:block; height:3px;
+  background:linear-gradient(90deg, #7c3aed 0%, #0284c7 40%, #10b981 100%);
+}
+.hrow{display:flex;align-items:center;gap:12px;padding:12px 0}
+.htitle{font-size:15px;font-weight:700;color:var(--tx);letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+.hsub{color:var(--mut);font-size:11.5px;font-weight:500;border:1px solid var(--bd2);border-radius:99px;padding:2px 10px;background:#f8fafc}
+.spacer{flex:1}
+.clock{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; font-weight:600;
+  color:var(--mut); background:#f1f5f9; padding:4px 9px; border-radius:6px; border:1px solid var(--bd);
+}
+
+/* Top Metrics Cards */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.scard{
+  border:1px solid var(--bd); border-radius:12px; padding:16px 18px; background:#fff; position:relative;
+  cursor:pointer; transition:transform .2s cubic-bezier(0.4,0,0.2,1),box-shadow .2s cubic-bezier(0.4,0,0.2,1),border-color .2s ease;
+  user-select:none; box-shadow:0 1px 3px rgba(15,23,42,0.04);
+}
+.scard:hover{transform:translateY(-2px);box-shadow:0 10px 20px -5px rgba(15,23,42,0.08);border-color:var(--bd2)}
+.scard.accent{border-top:3px solid #0284c7}
+.scard.warn{border-top:3px solid #d97706}
+.scard.purple{border-top:3px solid #7c3aed}
+.scard.ok{border-top:3px solid #059669}
+.scard .sk{font-size:12.5px;font-weight:600;color:var(--mut);display:flex;justify-content:space-between;align-items:center}
+.scard .sv{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--tx);letter-spacing:-.5px;margin:6px 0 2px}
+.scard .sm{font-size:11.5px;color:var(--dim);margin-top:6px;display:flex;justify-content:space-between;align-items:center}
+.scard .hint{font-size:11.5px;color:var(--acc);font-weight:600;padding:2px 7px;background:var(--accbg);border-radius:4px}
+
+/* Main Tabs Navigation */
+.main-tabs{
+  display:flex; gap:6px; border-bottom:2px solid var(--bd); margin-top:20px;
+  background:#fff; border-radius:12px 12px 0 0; padding:8px 16px 0;
+  box-shadow:0 1px 3px rgba(15,23,42,0.03);
+}
+.mtab{
+  border:none; background:none; color:var(--mut); padding:10px 18px; font-size:13.5px; font-weight:600;
+  cursor:pointer; border-bottom:3px solid transparent; font-family:inherit; display:inline-flex;
+  align-items:center; gap:8px; transition:all .15s ease; border-radius:6px 6px 0 0;
+}
+.mtab:hover{color:var(--tx);background:#f8fafc}
+.mtab.active{color:var(--acc);border-bottom-color:var(--acc);background:#f0f9ff}
+
+/* Content Sections */
+.tab-content{display:none}
+.tab-content.active{display:block}
+section{
+  background:var(--card); border:1px solid var(--bd); border-top:none;
+  border-radius:0 0 12px 12px; padding:20px 22px;
+  box-shadow:0 4px 6px -1px rgba(15,23,42,0.03);
+}
+section.flat{border-radius:12px;border-top:1px solid var(--bd);margin-top:16px}
+h2{font-size:14px;font-weight:700;color:var(--tx);margin:0 0 14px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
+h2 .tag{font-weight:400;color:var(--dim);font-size:12px}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--bd);vertical-align:middle}
+th{color:#475569;font-weight:600;font-size:12px;background:#f8fafc;position:sticky;top:0;z-index:2;border-bottom:2px solid var(--bd)}
+tbody tr:hover{background:#f8fafc}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+.scroll{max-height:480px;overflow:auto;border:1px solid var(--bd);border-radius:10px;box-shadow:inset 0 1px 2px rgba(0,0,0,0.02)}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;border-radius:6px;padding:2px 8px;font-size:11.5px;font-weight:600;border:1px solid}
+.b-ok{color:#047857;background:#ecfdf5;border-color:#a7f3d0}
+.b-warn{color:#b45309;background:#fffbeb;border-color:#fde68a}
+.b-bad{color:#b91c1c;background:#fef2f2;border-color:#fecaca}
+.b-acc{color:#0369a1;background:#f0f9ff;border-color:#bae6fd}
+.b-mut{color:#475569;background:#f1f5f9;border-color:var(--bd)}
+.b-purple{color:#6d28d9;background:#f5f3ff;border-color:#ddd6fe}
+
+/* Buttons and Controls */
+.btn{
+  border:1px solid var(--bd2); background:#fff; color:#1e293b; border-radius:7px;
+  padding:6px 14px; font-size:12.5px; font-weight:500; cursor:pointer; font-family:inherit;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.04); transition:all .15s ease;
+}
+.btn:hover:not(:disabled){background:#f8fafc;border-color:var(--dim);transform:translateY(-1px);box-shadow:0 3px 6px rgba(0,0,0,0.06)}
+.btn:active:not(:disabled){transform:translateY(0)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.p{
+  background:linear-gradient(135deg, #0284c7, #0369a1); border-color:#0284c7; color:#fff; font-weight:600;
+  box-shadow:0 2px 4px rgba(2,132,199,0.25);
+}
+.btn.p:hover:not(:disabled){background:linear-gradient(135deg, #0369a1, #075985);box-shadow:0 4px 10px rgba(2,132,199,0.35)}
+.btn.d{
+  background:linear-gradient(135deg, #ef4444, #dc2626); border-color:#dc2626; color:#fff; font-weight:600;
+  box-shadow:0 2px 4px rgba(239,68,68,0.25);
+}
+.btn.d:hover:not(:disabled){background:linear-gradient(135deg, #dc2626, #b91c1c);box-shadow:0 4px 10px rgba(239,68,68,0.35)}
+.btn.ok{
+  background:linear-gradient(135deg, #059669, #047857); border-color:#047857; color:#fff; font-weight:600;
+  box-shadow:0 2px 4px rgba(5,150,105,0.25);
+}
+.btn.ok:hover:not(:disabled){background:linear-gradient(135deg, #047857, #065f46);box-shadow:0 4px 10px rgba(5,150,105,0.35)}
+.btn.s{padding:3px 10px;font-size:12px}
+select,input[type=text],input[type=number]{
+  font-family:inherit; font-size:12.5px; padding:6px 10px; border:1px solid var(--bd2);
+  border-radius:7px; background:#fff; color:#1e293b;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+select:focus,input[type=text]:focus,input[type=number]:focus{
+  outline:none; border-color:var(--acc); box-shadow:0 0 0 3px rgba(2,132,199,0.15);
+}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.row+.row{margin-top:14px}
+
+/* Grid layout for Overview & Maintenance */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.grid-2{grid-template-columns:1fr}}
+.box{border:1px solid var(--bd);border-radius:10px;padding:16px 18px;background:#f8fafc;transition:all .15s ease}
+.box:hover{background:#fff;box-shadow:0 2px 8px rgba(15,23,42,0.04)}
+.box-title{font-weight:700;font-size:13.5px;margin-bottom:12px;color:var(--tx);display:flex;align-items:center;gap:8px}
+.kv-list{display:grid;grid-template-columns:130px 1fr;gap:8px 14px;font-size:12.5px}
+.kv-k{color:var(--mut);font-weight:500}
+.kv-v{font-weight:600;font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all;color:#1e293b}
+
+/* Modal Popup */
+.modal-overlay{
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(15,23,42,0.48); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  z-index:99; display:none; align-items:center; justify-content:center; padding:16px;
+  animation:fadein .15s ease;
+}
+.modal-overlay.active{display:flex}
+.modal-card{
+  background:#fff; border-radius:14px; border:1px solid var(--bd); width:100%; max-width:780px; max-height:85vh;
+  overflow:hidden; display:flex; flex-direction:column;
+  box-shadow:0 20px 25px -5px rgba(15,23,42,0.15), 0 10px 10px -5px rgba(15,23,42,0.08);
+}
+.modal-head{padding:14px 18px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;background:#f8fafc}
+.modal-title{font-size:14.5px;font-weight:700;color:var(--tx)}
+.modal-body{padding:18px;overflow-y:auto;flex:1}
+.modal-foot{padding:12px 18px;border-top:1px solid var(--bd);display:flex;justify-content:flex-end;gap:10px;background:#f8fafc}
+
+/* Toast */
+.toast-box{position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:8px}
+.toast{
+  background:#0f172a; color:#fff; padding:10px 16px; border-radius:8px; font-size:13px; font-weight:500;
+  box-shadow:0 8px 24px rgba(15,23,42,0.15); display:flex; align-items:center; gap:8px; animation:fadein .2s ease;
+  border-left:4px solid #38bdf8;
+}
+.toast.ok{background:#065f46;border-left-color:#34d399}
+.toast.err{background:#991b1b;border-left-color:#f87171}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hrow">
+    <a href="/" class="btn s" style="text-decoration:none;font-weight:600;padding:5px 12px;border-radius:8px">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor">
+        <path fill-rule="evenodd" d="M15 8a.75.75 0 0 1-.75.75H4.06l4.72 4.72a.75.75 0 0 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 1 1 1.06 1.06L4.06 7.25H14.25A.75.75 0 0 1 15 8z"/>
+      </svg>
+      返回实时监控主页
+    </a>
+    <span class="htitle">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#ede9fe;color:#7c3aed;border-radius:6px;font-size:13px;box-shadow:0 1px 2px rgba(124,58,237,0.15)">🗄️</span>
+      <span>数据库全功能管理后台</span>
+    </span>
+    <span class="hsub" id="enginePill">SQLite 3.22 · WAL</span>
+    <div class="spacer"></div>
+    <label style="font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px;cursor:pointer">
+      <input type="checkbox" id="autoRefresh" checked> 自动刷新 (10s)
+    </label>
+    <button class="btn s" id="btnRefresh" style="border-radius:8px">🔄 立即刷新</button>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Top Metrics Cards (Clickable Modules) -->
+  <div class="stats-grid">
+    <div class="scard accent" data-target="tab-snapshots" title="点击进入遥测快照模块">
+      <div class="sk"><span>降采样快照 (Snapshots)</span><span class="badge b-acc">主数据表</span></div>
+      <div class="sv" id="cntSnapshots">--</div>
+      <div class="sm"><span id="timeSnapshots">区间：--</span><span class="hint">点击进入 ➔</span></div>
+    </div>
+    <div class="scard warn" data-target="tab-events" title="点击进入故障告警事件模块">
+      <div class="sk"><span>故障告警事件 (Events)</span><span class="badge b-warn" id="badgeEvents">-- 待确认</span></div>
+      <div class="sv" id="cntEvents">--</div>
+      <div class="sm"><span id="metaEvents">当前活动：-- · 待确认：--</span><span class="hint">点击进入 ➔</span></div>
+    </div>
+    <div class="scard purple" data-target="tab-audit" title="点击进入操作审计日志模块">
+      <div class="sk"><span>操作审计日志 (Audit)</span><span class="badge b-purple">安全合规</span></div>
+      <div class="sv" id="cntAudit">--</div>
+      <div class="sm"><span id="metaAudit">记录数：-- 项写动作</span><span class="hint">点击进入 ➔</span></div>
+    </div>
+    <div class="scard ok" data-target="tab-maint" title="点击进入运维与存储维护模块">
+      <div class="sk"><span>数据库磁盘占用 (Storage)</span><span class="badge b-ok" id="badgeStorage">WAL 正常</span></div>
+      <div class="sv" id="cntStorage">--</div>
+      <div class="sm"><span id="metaStorage">主库：-- · WAL：--</span><span class="hint">点击维护 ➔</span></div>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="main-tabs">
+    <button class="mtab active" data-tab="tab-overview">📊 概览与诊断</button>
+    <button class="mtab" data-tab="tab-snapshots">📸 遥测快照 (Snapshots)</button>
+    <button class="mtab" data-tab="tab-events">⚠️ 故障告警事件 (Events)</button>
+    <button class="mtab" data-tab="tab-audit">📜 操作审计日志 (Audit)</button>
+    <button class="mtab" data-tab="tab-maint">🛠️ 运维与维护 (Maintenance)</button>
+  </div>
+
+  <!-- Tab 1: 概览与诊断 -->
+  <div class="tab-content active" id="tab-overview">
+    <section>
+      <h2>数据库系统概览与引擎诊断</h2>
+      <div class="grid-2">
+        <div class="box">
+          <div class="box-title">🗄️ 数据库基本信息</div>
+          <div class="kv-list">
+            <span class="kv-k">数据库文件：</span><span class="kv-v" id="dbPath">/home/uisrc/web/data/cabinet.sqlite3</span>
+            <span class="kv-k">Schema 版本：</span><span class="kv-v" id="dbSchema">--</span>
+            <span class="kv-k">启动 ID：</span><span class="kv-v" id="dbBootId">--</span>
+            <span class="kv-k">首次创建：</span><span class="kv-v" id="dbCreatedAt">--</span>
+            <span class="kv-k">采集器启动：</span><span class="kv-v" id="dbCollectorStart">--</span>
+            <span class="kv-k">最近快照时间：</span><span class="kv-v" id="dbLastSnap">--</span>
+            <span class="kv-k">最近清理时间：</span><span class="kv-v" id="dbLastPurge">--</span>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-title">⚙️ 嵌入式 SQLite 运行策略</div>
+          <div class="kv-list">
+            <span class="kv-k">日志模式：</span><span class="kv-v"><span class="badge b-ok">WAL</span> 并发读写不互斥</span>
+            <span class="kv-k">同步级别：</span><span class="kv-v"><span class="badge b-ok">NORMAL</span> 防断电损坏 + 高性能</span>
+            <span class="kv-k">临时存储：</span><span class="kv-v"><span class="badge b-acc">MEMORY</span> 零额外磁盘读写</span>
+            <span class="kv-k">繁忙超时：</span><span class="kv-v">5,000 ms</span>
+            <span class="kv-k">WAL 自动检查点：</span><span class="kv-v">256 页 (~1 MB)</span>
+            <span class="kv-k">内存映射 (mmap)：</span><span class="kv-v">16 MB</span>
+            <span class="kv-k">死区保留周期：</span><span class="kv-v" id="cfgRetainDays">90 天</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:14px;color:var(--mut);font-size:12px;background:#f0f6fc;padding:10px 14px;border-radius:6px;border:1px solid #c8e1ff">
+        ℹ️ <b>存储机制说明：</b>按配置的变化阈值和心跳间隔记录。风机电流 (A)、风道压差 (Pa) 与屏幕同源，均为 5 秒平均值；“参考值”表示电流增益尚未标定。无效或过期值存为空值，显示为 --；升级前未采集这两个数值的旧记录也显示为 --。
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab 2: 遥测快照 (Snapshots) -->
+  <div class="tab-content" id="tab-snapshots">
+    <section>
+      <h2>
+        <span>遥测降采样快照表 (`snapshots`)</span>
+        <span class="tag" id="snapTableTag">加载中…</span>
+        <div class="spacer"></div>
+        <div class="row">
+          <label style="font-size:12px;color:var(--mut)">每页：
+            <select id="snapPageSize">
+              <option value="25">25 条</option>
+              <option value="50" selected>50 条</option>
+              <option value="100">100 条</option>
+            </select>
+          </label>
+          <button class="btn s" id="snapPrev" disabled>上一页</button>
+          <span style="font-size:12px;color:var(--mut)" id="snapPageIndicator">第 1 页</span>
+          <button class="btn s" id="snapNext">下一页</button>
+        </div>
+      </h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:60px">ID</th>
+              <th style="width:145px">时间 (UTC/ISO)</th>
+              <th style="width:75px">序列号</th>
+              <th style="width:85px">运行模式</th>
+              <th style="width:80px">转速 (RPM)</th>
+              <th style="width:75px">温度 (℃)</th>
+              <th style="width:110px">风机电流 (A)</th>
+              <th style="width:110px">风道压差 (Pa)</th>
+              <th style="width:60px">报警</th>
+              <th style="width:60px">特征</th>
+              <th>状态消息</th>
+              <th style="width:70px">详情</th>
+            </tr>
+          </thead>
+          <tbody id="snapTbody">
+            <tr><td colspan="12" style="text-align:center;color:var(--dim);padding:30px">正在加载快照数据…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab 3: 故障告警事件 (Events) -->
+  <div class="tab-content" id="tab-events">
+    <section>
+      <h2>
+        <span>故障与告警事件记录 (`events`)</span>
+        <span class="tag" id="evTableTag">加载中…</span>
+        <div class="spacer"></div>
+        <div class="row">
+          <label style="font-size:12px;color:var(--mut)">状态筛选：
+            <select id="evFilterState">
+              <option value="all">全部事件</option>
+              <option value="ACTIVE">仅当前活动 (ACTIVE)</option>
+              <option value="RECOVERED">已恢复 (RECOVERED)</option>
+            </select>
+          </label>
+          <label style="font-size:12px;color:var(--mut);display:flex;align-items:center;gap:4px">
+            <input type="checkbox" id="evFilterUnack"> 仅未确认 (Unack)
+          </label>
+          <button class="btn s" id="btnRefreshEvents">刷新列表</button>
+        </div>
+      </h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:140px">故障代码 (Code)</th>
+              <th style="width:70px">报警级别</th>
+              <th style="width:90px">当前状态</th>
+              <th style="width:140px">首次触发时间</th>
+              <th style="width:140px">最近活跃时间</th>
+              <th style="width:90px">确认状态</th>
+              <th>确认详情 / 备注</th>
+              <th style="width:90px">操作</th>
+            </tr>
+          </thead>
+          <tbody id="evTbody">
+            <tr><td colspan="8" style="text-align:center;color:var(--dim);padding:30px">正在加载事件数据…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px;color:var(--dim);font-size:12px">
+        ⚠️ <b>安全红线约束：</b>事件确认（ACK）仅在本机 SQLite 数据库记录审计痕迹，绝不修改硬件保护参数、不消音、不复位保护逻辑。
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab 4: 操作审计日志 (Audit) -->
+  <div class="tab-content" id="tab-audit">
+    <section>
+      <h2>
+        <span>系统操作审计记录 (`audit`)</span>
+        <span class="tag" id="auTableTag">加载中…</span>
+        <div class="spacer"></div>
+        <button class="btn s" id="btnRefreshAudit">刷新审计</button>
+      </h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:60px">序号</th>
+              <th style="width:150px">发生时间</th>
+              <th style="width:130px">操作来源 (Actor)</th>
+              <th style="width:100px">动作 (Action)</th>
+              <th style="width:130px">操作目标 (Target)</th>
+              <th>详情说明 (Detail)</th>
+              <th style="width:70px">执行结果</th>
+            </tr>
+          </thead>
+          <tbody id="auTbody">
+            <tr><td colspan="7" style="text-align:center;color:var(--dim);padding:30px">正在加载审计日志…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab 5: 运维与维护 (Maintenance) -->
+  <div class="tab-content" id="tab-maint">
+    <section>
+      <h2>数据运维、导出与存储维护</h2>
+      
+      <!-- 导出工具箱 -->
+      <div class="box" style="margin-top:4px">
+        <div class="box-title">📥 数据导出工具箱 (Export)</div>
+        <div class="row">
+          <span style="color:var(--mut)">导出数据表：</span>
+          <select id="maintExWhat">
+            <option value="snapshots">遥测快照表 (snapshots)</option>
+            <option value="events">故障事件表 (events)</option>
+            <option value="audit">审计日志表 (audit)</option>
+          </select>
+          <span style="color:var(--mut)">时间范围：</span>
+          <select id="maintExDays">
+            <option value="1">近 1 天</option>
+            <option value="7" selected>近 7 天</option>
+            <option value="30">近 30 天</option>
+            <option value="0">全部历史数据</option>
+          </select>
+          <button class="btn p" id="btnExportCsv">导出 CSV (含 Excel BOM)</button>
+          <button class="btn" id="btnExportJson">导出 JSON</button>
+        </div>
+        <div style="font-size:12px;color:var(--dim);margin-top:6px">
+          导出的 CSV 文件包含标准 UTF-8 BOM（EF BB BF），直接使用 Microsoft Excel 或 WPS 双击打开不会产生中文乱码。
+        </div>
+      </div>
+
+      <!-- WAL 截断与优化 -->
+      <div class="box" style="margin-top:14px">
+        <div class="box-title">🧹 WAL 日志整理与截断 (Checkpoint)</div>
+        <div class="row">
+          <span style="color:var(--mut);font-size:12.5px">
+            执行 <code>PRAGMA wal_checkpoint(TRUNCATE)</code>，将 <code>.sqlite3-wal</code> 缓存页强制同步写入主库，并将 WAL 文件大小清零。
+          </span>
+          <div class="spacer"></div>
+          <button class="btn ok" id="btnCheckpoint">立即截断整理 WAL</button>
+        </div>
+      </div>
+
+      <!-- 数据清理与瘦身 -->
+      <div class="box" style="margin-top:14px;border-color:#ffc9c9;background:#fff8f8">
+        <div class="box-title" style="color:var(--bad)">🗑️ 数据库清理与减负 (Purge)</div>
+        <div class="row">
+          <span style="color:var(--mut)">清理对象：</span>
+          <select id="maintPgWhat">
+            <option value="all">全部（快照 + 审计 + 全部故障事件）</option>
+            <option value="snapshots" selected>历史快照表 (snapshots)</option>
+            <option value="snapshots,audit">历史快照 + 审计日志</option>
+            <option value="events_all">全部故障告警事件（含活动与已恢复）</option>
+            <option value="events">仅已恢复的故障事件 (events)</option>
+          </select>
+          <span style="color:var(--mut)">时间阈值：早于</span>
+          <select id="maintPgDays">
+            <option value="0">现在（清理截至当前全部数据）</option>
+            <option value="1">1 天前</option>
+            <option value="7">7 天前</option>
+            <option value="30" selected>30 天前</option>
+            <option value="90">90 天前</option>
+            <option value="365">365 天前</option>
+          </select>
+          <input type="text" id="maintPgConfirm" placeholder="输入 PURGE 解锁" style="width:140px">
+          <button class="btn d" id="btnPurge" disabled>执行彻底清理</button>
+        </div>
+        <div style="font-size:12px;color:var(--bad);margin-top:8px">
+          ⚠️ <b>不可逆操作：</b>清理只作用于本地数据库历史记录，不影响任何正在运行的板载硬件与控制进程。清理完成后会自动执行 WAL 截断并释放磁盘扇区。
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+</div>
+
+<!-- Snapshot Detail Modal -->
+<div class="modal-overlay" id="snapModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div class="modal-title" id="snapModalTitle">快照详细遥测信息</div>
+      <button class="btn s" id="snapModalClose">✕</button>
+    </div>
+    <div class="modal-body" id="snapModalBody">
+      <div style="text-align:center;color:var(--dim)">加载中…</div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn s" id="snapModalCopy">复制 JSON</button>
+      <button class="btn s p" id="snapModalCloseBtn">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- ACK Confirm Modal -->
+<div class="modal-overlay" id="ackModal">
+  <div class="modal-card" style="max-width:480px">
+    <div class="modal-head">
+      <div class="modal-title">确认故障事件 (ACK)</div>
+      <button class="btn s" id="ackModalClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <span style="color:var(--mut);width:80px">故障代码：</span>
+        <b id="ackCode" class="mono">--</b>
+      </div>
+      <div class="row">
+        <span style="color:var(--mut);width:80px">事件特征：</span>
+        <span id="ackKey" class="mono" style="font-size:11px;color:var(--dim)">--</span>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <span style="color:var(--mut);width:80px">确认备注：</span>
+        <input type="text" id="ackNote" placeholder="请输入确认备注（如：值班员已核对）" style="flex:1" value="值班确认">
+      </div>
+      <div style="font-size:12px;color:var(--dim);margin-top:12px">
+        确认操作将记录当前操作者的 IP、时间与备注到审计表，不会更改硬件保护动作。
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn s" id="ackModalCancel">取消</button>
+      <button class="btn s p" id="ackModalSubmit">确认并记入审计</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-box" id="toastBox"></div>
+
+<script>
+// --- Global helpers ---
+// Keep measurement formatting identical to the live HDMI/Web cards.
+function formatScreenFixed(value, digits){
+  var magnitude = Math.abs(value);
+  var binaryUnits = magnitude * Math.pow(2, digits + 1);
+  var scale = Math.pow(10, digits);
+  var lower = Math.floor(magnitude * scale);
+  if (Number.isInteger(binaryUnits) && binaryUnits % 2 === 1 && lower % 2 === 0){
+    magnitude = lower / scale;
+  }
+  return (value < 0 || Object.is(value, -0) ? "-" : "") + magnitude.toFixed(digits);
+}
+
+/* 与板上 HDMI 的 format_pressure() 使用相同精度和近零处理。 */
+function formatPressurePa(value){
+  var magnitude = Math.abs(value);
+  var digits = magnitude >= 99.995 ? 1 : magnitude >= 9.9995 ? 2 : 3;
+  if (magnitude < 0.0005) value = 0;
+  return (value < 0 ? "" : "+") + formatScreenFixed(value, digits);
+}
+
+function screenNumber(value){
+  if (typeof value !== "number" && (typeof value !== "string" || value.trim() === "")){
+    return null;
+  }
+  var number = Number(value);
+  return Number.isFinite(number) && Math.abs(number) <= 1000000000 ? number : null;
+}
+
+function fmtCurrent(value){
+  var number = screenNumber(value);
+  return number === null ? "--" : formatScreenFixed(number, 3);
+}
+function fmtPressure(value){
+  // kPa has already been normalized to Pa by the collector.
+  return typeof value !== "number" || !Number.isFinite(value) ? "--" : formatPressurePa(value);
+}
+function currentNote(item){
+  return item.current_a != null && item.current_kind === "nominal" ? "（参考值）" : "";
+}
+
+function showToast(msg, type){
+  var box = document.getElementById("toastBox");
+  var t = document.createElement("div");
+  t.className = "toast " + (type || "");
+  t.innerHTML = msg;
+  box.appendChild(t);
+  setTimeout(function(){
+    t.style.opacity = "0";
+    setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); }, 300);
+  }, 3500);
+}
+
+function updateClock(){
+  var now = new Date();
+  document.getElementById("clock").textContent = now.toTimeString().split(" ")[0];
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+function fmtBytes(b){
+  if (b == null || isNaN(b)) return "--";
+  if (b < 1024) return b + " B";
+  if (b < 1048576) return (b / 1024).toFixed(1) + " KB";
+  return (b / 1048576).toFixed(2) + " MB";
+}
+
+function fmtNum(n){
+  if (n == null || isNaN(n)) return "--";
+  return Number(n).toLocaleString();
+}
+
+// --- Tabs Navigation with URL Hash Sync & Card Jump ---
+var currentTab = "tab-overview";
+
+function switchTab(tabId){
+  var tabs = document.querySelectorAll(".mtab");
+  var contents = document.querySelectorAll(".tab-content");
+  
+  tabs.forEach(function(x){ x.classList.remove("active"); });
+  contents.forEach(function(x){ x.classList.remove("active"); });
+
+  var targetBtn = document.querySelector('.mtab[data-tab="' + tabId + '"]');
+  if (targetBtn) targetBtn.classList.add("active");
+  var targetSection = document.getElementById(tabId);
+  if (targetSection) targetSection.classList.add("active");
+
+  currentTab = tabId;
+  window.location.hash = tabId.replace("tab-", "");
+
+  if (currentTab === "tab-snapshots") loadSnapshots();
+  if (currentTab === "tab-events") loadEvents();
+  if (currentTab === "tab-audit") loadAudit();
+}
+
+// Bind tab buttons
+document.querySelectorAll(".mtab").forEach(function(b){
+  b.addEventListener("click", function(){
+    switchTab(b.getAttribute("data-tab"));
+  });
+});
+
+// Bind top metric cards click -> jump to corresponding module
+document.querySelectorAll(".scard[data-target]").forEach(function(card){
+  card.addEventListener("click", function(){
+    var target = card.getAttribute("data-target");
+    if (target) switchTab(target);
+  });
+});
+
+// Check URL Hash on page load
+window.addEventListener("DOMContentLoaded", function(){
+  var hash = window.location.hash.replace("#", "");
+  if (hash) {
+    var mapped = "tab-" + hash;
+    if (document.getElementById(mapped)) {
+      switchTab(mapped);
+    }
+  }
+});
+
+// --- Global Stats ---
+function loadGlobalStats(){
+  fetch("/api/stats")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d.ok && d.snapshots == null) return;
+      document.getElementById("cntSnapshots").textContent = fmtNum(d.snapshots) + " 条";
+      if (d.bounds && d.bounds.first_iso) {
+        document.getElementById("timeSnapshots").textContent = "自 " + d.bounds.first_iso.replace("T"," ").replace("Z","") + " 起";
+      }
+      document.getElementById("cntEvents").textContent = fmtNum(d.events) + " 条";
+      document.getElementById("badgeEvents").textContent = d.events_unack + " 待确认";
+      document.getElementById("metaEvents").textContent = "活动告警: " + d.events_active + " · 待确认: " + d.events_unack;
+
+      document.getElementById("cntAudit").textContent = fmtNum(d.audit) + " 条";
+      document.getElementById("metaAudit").textContent = "审计日志包含全部运维轨迹";
+
+      var totalStorage = (d.db_bytes || 0) + (d.wal_bytes || 0) + (d.shm_bytes || 0);
+      document.getElementById("cntStorage").textContent = fmtBytes(totalStorage);
+      document.getElementById("metaStorage").textContent = "主库: " + fmtBytes(d.db_bytes) + " · WAL: " + fmtBytes(d.wal_bytes);
+
+      document.getElementById("dbPath").textContent = d.db_path || "--";
+      document.getElementById("dbSchema").textContent = "v" + (d.schema_version || "1");
+      document.getElementById("dbBootId").textContent = d.boot_id || "--";
+      document.getElementById("dbCreatedAt").textContent = d.created_at || "--";
+      document.getElementById("dbCollectorStart").textContent = d.collector_started_at || "--";
+      document.getElementById("dbLastSnap").textContent = d.last_snapshot_at || "--";
+      document.getElementById("dbLastPurge").textContent = d.last_purge_at || "暂无清理记录";
+      if (d.config && d.config.retain_days) {
+        document.getElementById("cfgRetainDays").textContent = d.config.retain_days + " 天";
+      }
+    })
+    .catch(function(e){ console.error("Stats load failed", e); });
+}
+
+// --- Snapshots Tab ---
+var snapPage = 0;
+var snapLimit = 50;
+var snapTotal = 0;
+
+function loadSnapshots(){
+  snapLimit = parseInt(document.getElementById("snapPageSize").value) || 50;
+  var offset = snapPage * snapLimit;
+  var tbody = document.getElementById("snapTbody");
+  document.getElementById("snapTableTag").textContent = "正在加载…";
+
+  fetch("/api/snapshots?limit=" + snapLimit + "&offset=" + offset)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d.ok) {
+        tbody.innerHTML = '<tr><td colspan="12" style="color:var(--bad);text-align:center">加载失败: ' + (d.detail || d.error) + '</td></tr>';
+        return;
+      }
+      snapTotal = d.total || 0;
+      document.getElementById("snapTableTag").textContent = "共 " + fmtNum(snapTotal) + " 条快照";
+      document.getElementById("snapPageIndicator").textContent = "第 " + (snapPage + 1) + " / " + (Math.ceil(snapTotal / snapLimit) || 1) + " 页";
+      document.getElementById("snapPrev").disabled = (snapPage === 0);
+      document.getElementById("snapNext").disabled = ((snapPage + 1) * snapLimit >= snapTotal);
+
+      if (!d.items || d.items.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="12" style="text-align:center;color:var(--dim);padding:30px">暂无快照数据</td></tr>';
+        return;
+      }
+
+      var rowsHtml = "";
+      d.items.forEach(function(row){
+        var alarmCls = "b-ok";
+        if (row.alarm >= 3) alarmCls = "b-bad";
+        else if (row.alarm === 2) alarmCls = "b-warn";
+        else if (row.alarm === 1) alarmCls = "b-acc";
+
+        var modeCls = (row.mode === "RUNNING") ? "b-ok" : ((row.mode === "STARTING") ? "b-acc" : "b-mut");
+
+        rowsHtml += '<tr>' +
+          '<td class="mono">' + row.id + '</td>' +
+          '<td class="mono" style="font-size:11.5px">' + (row.ts_iso ? row.ts_iso.replace("T"," ").replace("Z","") : "--") + '</td>' +
+          '<td class="mono">' + (row.sequence != null ? row.sequence : "--") + '</td>' +
+          '<td><span class="badge ' + modeCls + '">' + (row.mode || "--") + '</span></td>' +
+          '<td class="mono" style="font-weight:600">' + (row.rpm != null ? Math.round(row.rpm) : "--") + '</td>' +
+          '<td class="mono">' + (row.temp_c != null ? Number(row.temp_c).toFixed(1) : "--") + '</td>' +
+          '<td class="mono">' + fmtCurrent(row.current_a) + '<span style="display:block;white-space:nowrap;color:var(--mut);font-size:11px">' + currentNote(row) + '</span></td>' +
+          '<td class="mono">' + fmtPressure(row.pressure_pa) + '</td>' +
+          '<td><span class="badge ' + alarmCls + '">L' + (row.alarm != null ? row.alarm : 0) + '</span></td>' +
+          '<td class="mono">' + (row.feature_count || 0) + ' 维</td>' +
+          '<td style="font-size:12px;color:var(--mut)">' + (row.message || "--") + '</td>' +
+          '<td><button class="btn s btn-snap-detail" data-id="' + row.id + '">查看</button></td>' +
+          '</tr>';
+      });
+      tbody.innerHTML = rowsHtml;
+    })
+    .catch(function(e){
+      tbody.innerHTML = '<tr><td colspan="12" style="color:var(--bad);text-align:center">网络请求异常: ' + e + '</td></tr>';
+    });
+}
+
+document.getElementById("snapPageSize").addEventListener("change", function(){ snapPage = 0; loadSnapshots(); });
+document.getElementById("snapPrev").addEventListener("click", function(){ if(snapPage > 0){ snapPage--; loadSnapshots(); } });
+document.getElementById("snapNext").addEventListener("click", function(){ if((snapPage + 1) * snapLimit < snapTotal){ snapPage++; loadSnapshots(); } });
+
+// Event Delegation for Snapshot Details
+document.getElementById("snapTbody").addEventListener("click", function(e){
+  var btn = e.target.closest(".btn-snap-detail");
+  if (!btn) return;
+  var id = btn.getAttribute("data-id");
+  if (id) openSnapshotModal(id);
+});
+
+var curSnapshotJson = "";
+function openSnapshotModal(id){
+  var overlay = document.getElementById("snapModal");
+  var body = document.getElementById("snapModalBody");
+  document.getElementById("snapModalTitle").textContent = "快照详情 · ID #" + id;
+  body.innerHTML = '<div style="text-align:center;color:var(--dim);padding:30px">正在获取快照详细特征…</div>';
+  overlay.classList.add("active");
+
+  fetch("/api/snapshots?id=" + id)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d.ok || !d.item) {
+        body.innerHTML = '<div style="color:var(--bad)">获取详情失败: ' + (d.detail || d.error) + '</div>';
+        return;
+      }
+      var item = d.item;
+      curSnapshotJson = JSON.stringify(item, null, 2);
+      var feats = null;
+      try { if(item.features_json) feats = JSON.parse(item.features_json); } catch(err){}
+
+      var html = '<div class="grid-2">' +
+        '<div class="box"><div class="box-title">基本运行字段</div><div class="kv-list">' +
+        '<span class="kv-k">ID / 时间：</span><span class="kv-v">#' + item.id + ' (' + item.ts_iso + ')</span>' +
+        '<span class="kv-k">运行模式：</span><span class="kv-v">' + item.mode + ' (' + item.message + ')</span>' +
+        '<span class="kv-k">转速 / 温度：</span><span class="kv-v">' + item.rpm + ' RPM · ' + item.temp_c + ' ℃</span>' +
+        '<span class="kv-k">风机电流：</span><span class="kv-v">' + fmtCurrent(item.current_a) + ' A' + currentNote(item) + '</span>' +
+        '<span class="kv-k">风道压差：</span><span class="kv-v">' + fmtPressure(item.pressure_pa) + ' Pa</span>' +
+        '<span class="kv-k">动作 / 抑制：</span><span class="kv-v">' + item.action + ' · ' + (item.inhibit ? "YES" : "NO") + '</span>' +
+        '<span class="kv-k">故障位掩码：</span><span class="kv-v">' + (item.faults || "NONE") + '</span>' +
+        '<span class="kv-k">锁存故障：</span><span class="kv-v">' + (item.latched || "NONE") + '</span>' +
+        '</div></div>' +
+        '<div class="box"><div class="box-title">帧状态与品质</div><div class="kv-list">' +
+        '<span class="kv-k">帧序号/状态：</span><span class="kv-v">ID ' + item.frame_id + ' · ' + item.frame_state + '</span>' +
+        '<span class="kv-k">数据品质：</span><span class="kv-v">' + item.quality + ' (' + item.quality_reasons + ')</span>' +
+        '<span class="kv-k">队列 / 丢帧：</span><span class="kv-v">Q: ' + item.queue + ' · Drops: ' + item.drops + '</span>' +
+        '<span class="kv-k">特征数量：</span><span class="kv-v">' + item.feature_count + ' 维输入</span>' +
+        '</div></div>' +
+        '</div>';
+
+      if (feats && Array.isArray(feats) && feats.length > 0) {
+        html += '<div style="margin-top:14px"><b>39 维模型输入特征向量：</b><div class="scroll" style="max-height:180px;margin-top:6px;padding:8px 10px;background:#fafbfc"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:4px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px">';
+        feats.forEach(function(v, idx){
+          html += '<div style="border-bottom:1px dashed var(--bd);display:flex;justify-content:space-between"><span style="color:var(--dim)">f' + idx + ':</span><span>' + (typeof v === "number" ? v.toFixed(3) : v) + '</span></div>';
+        });
+        html += '</div></div></div>';
+      }
+
+      body.innerHTML = html;
+    })
+    .catch(function(e){
+      body.innerHTML = '<div style="color:var(--bad)">网络异常: ' + e + '</div>';
+    });
+}
+
+document.getElementById("snapModalClose").onclick = function(){ document.getElementById("snapModal").classList.remove("active"); };
+document.getElementById("snapModalCloseBtn").onclick = function(){ document.getElementById("snapModal").classList.remove("active"); };
+document.getElementById("snapModalCopy").onclick = function(){
+  if (curSnapshotJson) {
+    navigator.clipboard.writeText(curSnapshotJson).then(function(){ showToast("快照 JSON 已复制到剪贴板", "ok"); });
+  }
+};
+
+// --- Events Tab ---
+function loadEvents(){
+  var state = document.getElementById("evFilterState").value;
+  var unack = document.getElementById("evFilterUnack").checked;
+  var tbody = document.getElementById("evTbody");
+  document.getElementById("evTableTag").textContent = "正在加载…";
+
+  fetch("/api/events?limit=100&state=" + state + "&unack_only=" + (unack ? "1" : "0"))
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d.ok) {
+        tbody.innerHTML = '<tr><td colspan="8" style="color:var(--bad);text-align:center">加载失败: ' + (d.detail || d.error) + '</td></tr>';
+        return;
+      }
+      document.getElementById("evTableTag").textContent = "共 " + fmtNum(d.total) + " 个事件 · " + d.unacknowledged + " 待确认";
+
+      if (!d.items || d.items.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--dim);padding:30px">暂无符合条件的告警事件</td></tr>';
+        return;
+      }
+
+      var html = "";
+      d.items.forEach(function(item){
+        var sevCls = (item.severity >= 3) ? "b-bad" : ((item.severity === 2) ? "b-warn" : "b-acc");
+        var stCls = (item.state === "ACTIVE") ? "b-bad" : "b-ok";
+        var ackBadge = item.acknowledged ? '<span class="badge b-ok">已确认</span>' : '<span class="badge b-warn">未确认</span>';
+
+        var ackDetail = "--";
+        if (item.acknowledged) {
+          ackDetail = '<span style="font-size:11px;color:var(--mut)">' + (item.acknowledged_by || "actor") + ' · ' + (item.acknowledged_at_iso ? item.acknowledged_at_iso.replace("T"," ").replace("Z","") : "") + (item.ack_note ? '<br>' + item.ack_note : "") + '</span>';
+        }
+
+        var ackBtn = item.acknowledged ? '<span style="color:var(--dim);font-size:11.5px">无需操作</span>' :
+          '<button class="btn s p btn-ack" data-key="' + item.event_key + '" data-code="' + item.code + '">确认 ACK</button>';
+
+        html += '<tr>' +
+          '<td class="mono" style="font-weight:600">' + item.code + '</td>' +
+          '<td><span class="badge ' + sevCls + '">L' + item.severity + '</span></td>' +
+          '<td><span class="badge ' + stCls + '">' + item.state + '</span></td>' +
+          '<td class="mono" style="font-size:11.5px">' + (item.first_seen_iso ? item.first_seen_iso.replace("T"," ").replace("Z","") : "--") + '</td>' +
+          '<td class="mono" style="font-size:11.5px">' + (item.last_seen_iso ? item.last_seen_iso.replace("T"," ").replace("Z","") : "--") + '</td>' +
+          '<td>' + ackBadge + '</td>' +
+          '<td>' + ackDetail + '</td>' +
+          '<td>' + ackBtn + '</td>' +
+          '</tr>';
+      });
+      tbody.innerHTML = html;
+    })
+    .catch(function(e){
+      tbody.innerHTML = '<tr><td colspan="8" style="color:var(--bad);text-align:center">网络请求异常: ' + e + '</td></tr>';
+    });
+}
+
+document.getElementById("evFilterState").addEventListener("change", loadEvents);
+document.getElementById("evFilterUnack").addEventListener("change", loadEvents);
+document.getElementById("btnRefreshEvents").addEventListener("click", loadEvents);
+
+// Event Delegation for ACK button
+document.getElementById("evTbody").addEventListener("click", function(e){
+  var btn = e.target.closest(".btn-ack");
+  if (!btn) return;
+  var key = btn.getAttribute("data-key");
+  var code = btn.getAttribute("data-code");
+  if (key && code) openAckModal(key, code);
+});
+
+var curAckKey = null;
+function openAckModal(key, code){
+  curAckKey = key;
+  document.getElementById("ackCode").textContent = code;
+  document.getElementById("ackKey").textContent = key;
+  document.getElementById("ackNote").value = "值班确认";
+  document.getElementById("ackModal").classList.add("active");
+}
+
+document.getElementById("ackModalClose").onclick = function(){ document.getElementById("ackModal").classList.remove("active"); };
+document.getElementById("ackModalCancel").onclick = function(){ document.getElementById("ackModal").classList.remove("active"); };
+document.getElementById("ackModalSubmit").onclick = function(){
+  if (!curAckKey) return;
+  var note = document.getElementById("ackNote").value;
+  fetch("/api/ack", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({event_key: curAckKey, note: note})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    document.getElementById("ackModal").classList.remove("active");
+    if (d.ok) {
+      showToast("事件确认成功！审计 ID #" + d.audit_id, "ok");
+      loadEvents();
+      loadGlobalStats();
+    } else {
+      showToast("确认失败: " + (d.detail || d.error), "err");
+    }
+  })
+  .catch(function(e){
+    document.getElementById("ackModal").classList.remove("active");
+    showToast("请求失败: " + e, "err");
+  });
+};
+
+// --- Audit Tab ---
+function loadAudit(){
+  var tbody = document.getElementById("auTbody");
+  document.getElementById("auTableTag").textContent = "正在加载…";
+
+  fetch("/api/audit?limit=100")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (!d.ok) {
+        tbody.innerHTML = '<tr><td colspan="7" style="color:var(--bad);text-align:center">加载失败</td></tr>';
+        return;
+      }
+      document.getElementById("auTableTag").textContent = "共 " + fmtNum(d.total) + " 条审计日志";
+
+      if (!d.items || d.items.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--dim);padding:30px">暂无审计日志</td></tr>';
+        return;
+      }
+
+      var html = "";
+      d.items.forEach(function(item){
+        var okBadge = item.ok ? '<span class="badge b-ok">成功</span>' : '<span class="badge b-bad">失败</span>';
+        var actBadge = '<span class="badge b-purple">' + item.action + '</span>';
+        html += '<tr>' +
+          '<td class="mono">#' + item.id + '</td>' +
+          '<td class="mono" style="font-size:11.5px">' + (item.ts_iso ? item.ts_iso.replace("T"," ").replace("Z","") : "--") + '</td>' +
+          '<td class="mono">' + (item.actor || "127.0.0.1") + '</td>' +
+          '<td>' + actBadge + '</td>' +
+          '<td class="mono" style="font-weight:600">' + (item.target || "--") + '</td>' +
+          '<td style="font-size:12px;color:var(--mut)">' + (item.detail || "--") + '</td>' +
+          '<td>' + okBadge + '</td>' +
+          '</tr>';
+      });
+      tbody.innerHTML = html;
+    })
+    .catch(function(e){
+      tbody.innerHTML = '<tr><td colspan="7" style="color:var(--bad);text-align:center">网络请求异常: ' + e + '</td></tr>';
+    });
+}
+
+document.getElementById("btnRefreshAudit").addEventListener("click", loadAudit);
+
+// --- Maintenance Tab ---
+function doExport(format){
+  var what = document.getElementById("maintExWhat").value;
+  var days = parseInt(document.getElementById("maintExDays").value) || 0;
+  var url = "/api/export?what=" + what + "&format=" + format;
+  if (days > 0) {
+    url += "&days=" + days;
+  }
+  window.open(url, "_blank");
+  showToast("正在导出 " + what + " (" + format.toUpperCase() + ")…", "ok");
+}
+
+document.getElementById("btnExportCsv").addEventListener("click", function(){ doExport("csv"); });
+document.getElementById("btnExportJson").addEventListener("click", function(){ doExport("json"); });
+
+// Checkpoint
+document.getElementById("btnCheckpoint").addEventListener("click", function(){
+  var btn = this;
+  btn.disabled = true;
+  btn.textContent = "正在截断 WAL…";
+  fetch("/api/purge", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({what: ["checkpoint"], note: "web_admin checkpoint"})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    btn.disabled = false;
+    btn.textContent = "立即截断整理 WAL";
+    if (d.ok) {
+      showToast("WAL 截断成功！磁盘已释放整理", "ok");
+      loadGlobalStats();
+    } else {
+      showToast("截断失败: " + (d.detail || d.error), "err");
+    }
+  })
+  .catch(function(e){
+    btn.disabled = false;
+    btn.textContent = "立即截断整理 WAL";
+    showToast("网络异常: " + e, "err");
+  });
+});
+
+// Purge
+var pgConfirm = document.getElementById("maintPgConfirm");
+var btnPurge = document.getElementById("btnPurge");
+pgConfirm.addEventListener("input", function(){
+  btnPurge.disabled = (pgConfirm.value.trim() !== "PURGE");
+});
+
+btnPurge.addEventListener("click", function(){
+  if (pgConfirm.value.trim() !== "PURGE") return;
+  var what = document.getElementById("maintPgWhat").value;
+  var daysVal = document.getElementById("maintPgDays").value;
+  var days = parseFloat(daysVal);
+  if (isNaN(days)) days = 30;
+
+  var selObj = document.getElementById("maintPgDays");
+  var selText = selObj.options[selObj.selectedIndex] ? selObj.options[selObj.selectedIndex].text : (days + " 天前");
+  var whatText = document.getElementById("maintPgWhat").options[document.getElementById("maintPgWhat").selectedIndex].text;
+
+  var confirmMsg = (days === 0)
+    ? "⚠️ 确定要清理「" + whatText + "」截至【现在】的所有数据吗？该操作不可撤销！"
+    : "⚠️ 确定要清理「" + whatText + "」早于【" + selText + "】的数据吗？该操作不可撤销！";
+
+  if (!confirm(confirmMsg)) {
+    return;
+  }
+
+  btnPurge.disabled = true;
+  btnPurge.textContent = "清理中…";
+
+  fetch("/api/purge", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      confirm: "PURGE",
+      what: what.split(","),
+      before_days: days,
+      note: "web_admin purge"
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    btnPurge.textContent = "执行彻底清理";
+    pgConfirm.value = "";
+    if (d.ok) {
+      var parts = [];
+      if (d.deleted && d.deleted.snapshots != null) parts.push("快照 " + d.deleted.snapshots + " 条");
+      if (d.deleted && d.deleted.events != null) parts.push("事件 " + d.deleted.events + " 条");
+      if (d.deleted && d.deleted.audit != null) parts.push("审计 " + d.deleted.audit + " 条");
+      showToast("清理完成！删除 " + (parts.join("，") || "0 条数据"), "ok");
+      loadGlobalStats();
+      if (currentTab === "tab-snapshots") loadSnapshots();
+      if (currentTab === "tab-events") loadEvents();
+      if (currentTab === "tab-audit") loadAudit();
+    } else {
+      showToast("清理失败: " + (d.detail || d.error), "err");
+    }
+  })
+  .catch(function(e){
+    btnPurge.textContent = "执行彻底清理";
+    showToast("网络异常: " + e, "err");
+  });
+});
+
+// --- Auto Refresh & Init ---
+document.getElementById("btnRefresh").addEventListener("click", function(){
+  loadGlobalStats();
+  if (currentTab === "tab-snapshots") loadSnapshots();
+  if (currentTab === "tab-events") loadEvents();
+  if (currentTab === "tab-audit") loadAudit();
+  showToast("数据已刷新", "ok");
+});
+
+setInterval(function(){
+  if (document.getElementById("autoRefresh").checked) {
+    loadGlobalStats();
+    if (currentTab === "tab-snapshots") loadSnapshots();
+    if (currentTab === "tab-events") loadEvents();
+    if (currentTab === "tab-audit") loadAudit();
+  }
+}, 10000);
+
+// Initial load
+loadGlobalStats();
+</script>
+</body>
+</html>

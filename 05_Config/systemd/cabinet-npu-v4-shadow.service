@@ -1,0 +1,18 @@
+[Unit]
+Description=Cabinet Alnpu shadow worker; requires an admitted real model
+After=local-fs.target cabinet-edge.service r46-npu-drivers.service
+Requires=r46-npu-drivers.service
+
+[Service]
+WorkingDirectory=/opt/cabinet/linux
+RuntimeDirectory=cabinet-npu-v4
+RuntimeDirectoryMode=0700
+EnvironmentFile=/etc/cabinet/npu-v4.env
+ExecStart=/usr/bin/python3 -B -m v4_runtime.server --backend alnpu --socket /run/cabinet-npu-v4/npu.sock --bundle ${BUNDLE} --manifest-sha256 ${BUNDLE_SHA256} --library ${LIBRARY} --library-sha256 ${LIBRARY_SHA256}
+Restart=no
+KillMode=process
+SendSIGKILL=no
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>缩放状态下切分辨率</title>
+<style>
+body{font:13px/1.7 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;margin:12px;color:#1f2328}
+pre{background:#f6f8fa;border:1px solid #e2e5e9;border-radius:8px;padding:12px;font-size:13px}
+iframe{width:1240px;height:500px;border:1px solid #e2e5e9;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<h3 style="margin:0 0 6px">自检：缩放状态下切分辨率，可见范围内还剩几个点</h3>
+<pre id="out">running...</pre>
+<iframe id="f"></iframe>
+<script>
+var log = [];
+function add(s){ log.push(s); document.getElementById("out").textContent = log.join("\n"); }
+function span(x){ return Math.round(x.max - x.min); }
+function visible(u){
+  var d = u.data[0], lo = u.scales.x.min, hi = u.scales.x.max, n = 0;
+  for (var i = 0; i < d.length; i++) if (d[i] >= lo && d[i] <= hi) n++;
+  return n;
+}
+
+var f = document.getElementById("f");
+f.onload = function(){
+  setTimeout(function(){
+    try {
+      var w = f.contentWindow, doc = f.contentDocument;
+      var u = w.__uplot;
+      if (!u){ add("❌ 拿不到 uPlot 实例"); return; }
+
+      function snap(l){
+        add(l + ": 总点数=" + u.data[0].length + "  可见点数=" + visible(u)
+            + "  跨度=" + span(u.scales.x) + "s");
+      }
+
+      snap("初始");
+
+      // 缩放到 120 秒窗口
+      var d0 = u.data[0];
+      var mid = d0[0] + (d0[d0.length - 1] - d0[0]) * 0.3;
+      u.setScale("x", {min: mid, max: mid + 120});
+
+      setTimeout(function(){
+        add("");
+        snap("缩放 120s 后");
+
+        var sel = doc.getElementById("trendBucket");
+        sel.value = "60";
+        sel.dispatchEvent(new Event("change", {bubbles: true}));
+
+        setTimeout(function(){
+          add("");
+          add("---- 切到 60s 桶之后 ----");
+          snap("结果");
+          var v = visible(u);
+          add("");
+          if (v >= 3){
+            add("✅ 可见点足够（" + v + " 个），应该看得出变化");
+          } else {
+            add("❌ 可见点只有 " + v + " 个 —— 曲线上基本是空的，看起来就像「没效果」");
+            add("   这正是用户看到的现象：缩放窗口比桶宽还窄");
+          }
+        }, 2600);
+      }, 200);
+    } catch (e) {
+      add("❌ 测试异常: " + e.message);
+    }
+  }, 3000);
+};
+f.src = "/?min=5";
+</script>
+</body>
+</html>

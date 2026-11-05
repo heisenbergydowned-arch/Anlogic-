@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>受控参数配置 · 机柜风冷测控</title>
+<style>
+:root {
+  --bg: #0b121b;
+  --card: #152232;
+  --card-alt: #19293c;
+  --border: #26384d;
+  --border-hi: #34506e;
+  --text: #e6eef8;
+  --muted: #8ea4be;
+  --cyan: #2ad4c5;
+  --blue: #3b9eff;
+  --green: #26d07c;
+  --amber: #f5a623;
+  --red: #f25555;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 14px/1.6 var(--sans);
+  background: radial-gradient(circle at 15% 0%, #15253a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.topbar {
+  background: rgba(17, 27, 39, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 9px;
+  background: linear-gradient(135deg, #1b6ca8, #14967f);
+  display: grid; place-items: center;
+  font: 700 14px var(--mono); color: #fff;
+}
+.brand h1 { font-size: 18px; margin: 0; font-weight: 650; }
+.brand small { display: block; font-size: 11px; color: var(--muted); letter-spacing: .08em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.nav-links a {
+  padding: 6px 12px; border-radius: 6px; font-size: 13px;
+  color: var(--muted); border: 1px solid transparent;
+}
+.nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); border-color: var(--border); text-decoration: none; }
+.nav-links a.active {
+  color: #fff; background: rgba(42, 212, 197, 0.14);
+  border-color: rgba(42, 212, 197, 0.45); font-weight: 600;
+}
+.nav-links a.cta {
+  background: linear-gradient(135deg, #156756, #1b8a72);
+  color: #fff; border-color: #26b395; font-weight: 600;
+}
+main { max-width: 1120px; margin: 0 auto; padding: 24px 24px 56px; }
+.notice {
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.35);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f3d7a2;
+  margin-bottom: 16px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.panel h2 { font-size: 16px; margin: 0 0 12px; color: #fff; }
+label { display: block; margin: 12px 0; font-size: 13px; color: var(--muted); }
+input {
+  display: block;
+  margin-top: 6px;
+  padding: 9px 12px;
+  width: 100%;
+  background: #0d1622;
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  color: var(--text);
+  font: 14px var(--mono);
+}
+input:disabled { opacity: .45; cursor: not-allowed; }
+button {
+  font: 600 13px var(--sans);
+  padding: 9px 18px;
+  margin: 10px 8px 0 0;
+  border-radius: 6px;
+  border: 1px solid var(--cyan);
+  background: linear-gradient(135deg, #166a8f, #158578);
+  color: #fff;
+  cursor: pointer;
+}
+button:disabled { opacity: .4; cursor: not-allowed; }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #0c1520;
+  border: 1px solid #1e3044;
+  border-radius: 8px;
+  padding: 14px;
+  font: 12px/1.55 var(--mono);
+  color: #b7f5ee;
+}
+#overview {
+  padding: 10px 14px;
+  background: rgba(59, 158, 255, 0.1);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+  font-weight: 600;
+}
+small { color: var(--muted); font-size: 12px; display: block; margin-top: 8px; }
+details summary { cursor: pointer; color: var(--cyan); font-size: 13px; margin-top: 10px; }
+@media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">PID</div>
+    <div>
+      <h1>受控参数配置 · 温度外环设定值</h1>
+      <small>Loopback Authenticated Parameter RPC · 2-Step Preview & Commit</small>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="/">实时监控</a>
+    <a href="/commissioning" class="cta">调试与标定工作台 →</a>
+    <a href="/history">历史曲线与波形</a>
+    <a href="/diagnostics">ICM 通信诊断</a>
+    <a href="/parameters" class="active">受控参数配置</a>
+    <a href="/pressure-calibration">压差健康标定</a>
+    <a href="/recording">故障样本录制</a>
+  </nav>
+</header>
+
+<main>
+  <p class="notice">
+    仅修改已投运温度外环的运行时设定值（`setpoint_C`）。不启用控制、不清除锁存、不修改硬保护、PI 增益、转速上下限或传感器标定。重启恢复原投运配置。
+  </p>
+
+  <div class="grid-2">
+    <section class="panel">
+      <h2>01 / 身份鉴权与状态读取</h2>
+      <label>只读访问令牌 <input id="read-token" type="password" autocomplete="off" placeholder="Bearer 只读令牌"></label>
+      <label>独立控制令牌 <input id="control-token" type="password" autocomplete="off" placeholder="X-Cabinet-Control-Token (>=32位)"></label>
+      <small>令牌仅保存在当前页面内存。写操作只允许本机回环连接；远端请使用受控 SSH 隧道，不经明文局域网直接调参。</small>
+      <button id="refresh">读取当前参数</button>
+      <p id="overview" role="status">尚未连接</p>
+    </section>
+
+    <section class="panel">
+      <h2>02 / 温度外环目标设定与两步确认</h2>
+      <label>温度设定值（°C）<input id="setpoint" type="number" step="0.1" disabled placeholder="读取已投运范围后解锁"></label>
+      <div>
+        <button id="preview" disabled>预览变更 (30s 有效)</button>
+        <button id="commit" disabled>确认提交</button>
+      </div>
+      <pre id="result" role="status">未提交变更</pre>
+      <small>`QUEUED` 只表示排队；`APPLIED_PS_SETPOINT` 只表示采集器已修改 PS 外环参数，请继续核对实时 PL 目标转速、实测转速和告警。</small>
+    </section>
+  </div>
+
+  <section class="panel">
+    <details open>
+      <summary>技术详情与执行回执 JSON</summary>
+      <pre id="state">尚未连接</pre>
+    </details>
+    <small>正常基线与故障学习只用于识别工况，不能替代电流（A）、压差（Pa）和振动（g）的实测标定，也不能替代风机辨识、保护阈值配置或实际 PWM/转速验证。</small>
+  </section>
+</main>
+
+<script>
+'use strict';
+let current=null,preview=null,expiryTimer=null;
+const field=id=>document.getElementById(id);
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',cache:'no-store',headers:{Authorization:'Bearer '+field('read-token').value,'X-Cabinet-Control-Token':field('control-token').value,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const result=await response.json();if(!response.ok)throw Error(result.error||'请求失败');return result;}
+function resetPreview(){preview=null;clearTimeout(expiryTimer);field('commit').disabled=true;}
+function parameterReadinessMessage(state){return ({FIXED_SPEED_MODE:'当前为固定转速模式，温度不会改变目标转速。请在闭环控制页选择温度自动模式。',CONTROL_DISABLED:'控制尚未启动，当前不能下发温度目标。',LIVE_OWNER_NOT_READY:'当前控制读回、传感器或运行状态未满足调温条件；等待有效反馈。',PARAMETERS_NOT_COMMISSIONED:'温度控制参数尚未完成投运。故障学习不能代替风机参数辨识与配置。'})[state.readiness_reason]||'当前不能调温，请核对控制模式及实时反馈。';}
+function renderState(state){current=state;const enabled=state.enabled===true;field('state').textContent=JSON.stringify(state,null,2);field('overview').textContent=enabled?'当前设定 '+state.setpoint_C+' °C · 投运范围 '+state.bounds[0]+'–'+state.bounds[1]+' °C · 版本 '+state.revision+(state.pending?' · 有变更排队中':''):parameterReadinessMessage(state);field('setpoint').disabled=!enabled;field('preview').disabled=!enabled;if(enabled){field('setpoint').min=state.bounds[0];field('setpoint').max=state.bounds[1];field('setpoint').value=state.setpoint_C;}else{resetPreview();field('setpoint').value='';}const recent=state.recent||[],latest=recent[recent.length-1];if(latest?.state==='APPLIED_PS_SETPOINT_NOT_PL_OUTPUT_CONFIRMATION')field('result').textContent='PS 温度外环设定已更新为 '+latest.setpoint_C+' °C（版本 '+latest.revision+'）。尚未确认实际转速或 PWM 输出。';else if(latest?.state==='REJECTED_NOT_APPLIED')field('result').textContent='变更被拒绝，未应用：'+latest.error;}
+field('setpoint').addEventListener('input',resetPreview);
+field('refresh').onclick=async()=>{try{resetPreview();renderState(await api('/api/parameters'));}catch(error){current=null;field('preview').disabled=true;field('setpoint').disabled=true;field('result').textContent=error.message;}};
+field('preview').onclick=async()=>{try{resetPreview();if(!current)throw Error('先读取当前参数');if(current.enabled!==true)throw Error(parameterReadinessMessage(current));if(!field('setpoint').value.trim()||!field('setpoint').checkValidity())throw Error('请输入投运范围内的有效数值');const bytes=crypto.getRandomValues(new Uint8Array(16));const request_id=Array.from(bytes,value=>value.toString(16).padStart(2,'0')).join('');preview=await api('/api/parameters/preview',{request_id,expected_revision:current.revision,context:current.context,setpoint_C:Number(field('setpoint').value)});field('result').textContent=preview.previous_setpoint_C+' °C → '+preview.setpoint_C+' °C。尚未应用，请在30秒内确认。';field('commit').disabled=false;expiryTimer=setTimeout(()=>{resetPreview();field('result').textContent='预览已过期，未提交。请重新读取并预览。';},preview.expires_in_s*1000);}catch(error){field('result').textContent=error.message;}};
+field('commit').onclick=async()=>{field('commit').disabled=true;clearTimeout(expiryTimer);try{if(!preview)throw Error('先预览并在30秒内确认');const result=await api('/api/parameters/commit',{request_id:preview.request_id,nonce:preview.nonce});field('result').textContent=result.state==='QUEUED_NOT_APPLIED'?'变更已排队，尚不能认定已执行。点击“读取当前参数”核对新版本及执行回执。':JSON.stringify(result,null,2);preview=null;}catch(error){field('result').textContent=error.message+'；若网络中断，先读取当前参数核对状态，勿假定执行成功。';}};
+</script>
+</body>
+</html>

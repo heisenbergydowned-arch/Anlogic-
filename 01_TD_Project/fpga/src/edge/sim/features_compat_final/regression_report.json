@@ -1,0 +1,86 @@
+{
+  "run_utc": "2026-10-08T04:57:15.313616+00:00",
+  "scope": "Standalone feature RTL simulation, not TD implementation or physical acceptance",
+  "status": "PASS",
+  "math": {
+    "vectors": 40,
+    "divider_width": 160,
+    "sqrt_width": 64,
+    "float_rounding": "nearest-even",
+    "status": "PASS"
+  },
+  "fft": {
+    "transforms": 6,
+    "complex_bins_compared": 6144,
+    "errors": [
+      {
+        "case": 0,
+        "max_component_error_input_units": 0.0327539595267643,
+        "limit": 8.77982
+      },
+      {
+        "case": 1,
+        "max_component_error_input_units": 0.0,
+        "limit": 8.7407
+      },
+      {
+        "case": 2,
+        "max_component_error_input_units": 0.0009765625,
+        "limit": 9.96602
+      },
+      {
+        "case": 3,
+        "max_component_error_input_units": 1.778236723136871,
+        "limit": 9.79994
+      },
+      {
+        "case": 4,
+        "max_component_error_input_units": 214.00000000019895,
+        "limit": 3940.1600000000003
+      },
+      {
+        "case": 5,
+        "max_component_error_input_units": 0.0,
+        "limit": 8061.06368
+      }
+    ],
+    "status": "PASS"
+  },
+  "process": {
+    "snapshots": 6,
+    "zero_FG_invalid_negative_fractional_saturation": "PASS",
+    "max_nominal_current_error_A": 9.48519320109753e-06,
+    "status": "PASS"
+  },
+  "features": {
+    "frames": 12,
+    "features_compared": 468,
+    "cases": [
+      "multitone_100_200_700Hz_DC",
+      "constant_DC",
+      "impulse",
+      "fullscale_Nyquist",
+      "seeded_broadband",
+      "ratio_lower_clamp",
+      "ratio_upper_clamp",
+      "B_zero",
+      "band_boundaries",
+      "configured_edges",
+      "invalid_edges_keep_previous",
+      "one_code_AC_large_DC"
+    ],
+    "reset_abort": "PASS",
+    "input_gaps_output_backpressure": "PASS",
+    "configured_invalid_edges": "PASS",
+    "max_abs_error": {
+      "rms_g": 1.5243880620907646e-05,
+      "pp_g": 0.0,
+      "kurtosis": 1.4626675580720061e-05,
+      "band_fraction": 2.296200607658505e-05,
+      "ratio": 1.4267363826148127e-05,
+      "process": 0.0
+    },
+    "last_sim_cycle": 2474817,
+    "status": "PASS"
+  }
+}

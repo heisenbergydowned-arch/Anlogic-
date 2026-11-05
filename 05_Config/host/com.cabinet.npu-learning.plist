@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.cabinet.npu-learning</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/heisenberg/Library/Application Support/CabinetCooling/runtime/p52_20261104T061735Z/.venv/bin/python</string>
+		<string>-B</string>
+		<string>/Users/heisenberg/Library/Application Support/CabinetCooling/runtime/p52_20261104T061735Z/launch.py</string>
+		<string>--host</string>
+		<string>192.168.0.107</string>
+		<string>--host-key-alias</string>
+		<string>192.168.0.127</string>
+		<string>--machine-id</string>
+		<string>843ad8d6299240c898a32874a96fe333</string>
+		<string>--jobs</string>
+		<string>/Users/heisenberg/Library/Application Support/CabinetCooling/npu-learning</string>
+		<string>--gateway-port</string>
+		<string>18768</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/heisenberg/Library/Logs/CabinetCooling/npu-learning-error.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/heisenberg/Library/Logs/CabinetCooling/npu-learning.log</string>
+	<key>ThrottleInterval</key>
+	<integer>30</integer>
+	<key>Umask</key>
+	<integer>63</integer>
+	<key>WorkingDirectory</key>
+	<string>/Users/heisenberg/Library/Application Support/CabinetCooling/runtime/p52_20261104T061735Z</string>
+</dict>
+</plist>

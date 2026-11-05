@@ -1,0 +1,64 @@
+{
+  "contract": {
+    "calibration_id": 0,
+    "feature_config_id": 539423744,
+    "max_frame_age_ms": 1000,
+    "max_result_age_ms": 500,
+    "max_temp_age_ms": 2000,
+    "sample_mode_id": 2
+  },
+  "control": {
+    "enabled": false,
+    "evidence": null,
+    "heartbeat_ms": 250,
+    "qualified": false,
+    "target_refresh_ms": 250
+  },
+  "database": "/var/lib/cabinet/events.sqlite3",
+  "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+  "icm_diagnostics": {
+    "enabled": true,
+    "reviewed_abi": 131072
+  },
+  "link_stale_ms": 2000,
+  "model": {
+    "backend": "disabled",
+    "bundle": "/opt/cabinet/models/bundle_002",
+    "bundle_manifest_sha256": "042d9b95be18ed2c17acd526d5154934be698b0f2ce153121909dc5eec710679",
+    "model_id": "v4-imported-ad4c6f0c886d345a-20261018-8c0254afeaf5",
+    "qualified": false,
+    "evidence": null,
+    "allow_synthetic_replay": false,
+    "socket": "/run/cabinet-npu-v4/npu.sock",
+    "timeout_ms": 500
+  },
+  "policy": {
+    "confidence_min": 0.8,
+    "confirm_ms": 2000
+  },
+  "poll_ms": 64,
+  "schema": "cabinet-edge-v1",
+  "temperature_loop": {
+    "enabled": false,
+    "evidence": null,
+    "ki_rpm_per_C_s": null,
+    "kp_rpm_per_C": null,
+    "qualified": false,
+    "rpm_max": null,
+    "rpm_min": null,
+    "setpoint_C": null,
+    "slew_rpm_per_s": null,
+    "temp_age_ms": null
+  },
+  "transport": {
+    "device": "/dev/uio0",
+    "kind": "mmio",
+    "library": "/opt/cabinet/linux/native/libedge_mmio.so"
+  },
+  "uplink": {
+    "loopback_test": false,
+    "timeout_s": 2,
+    "token_env": "[REDACTED]",
+    "url": null
+  }
+}

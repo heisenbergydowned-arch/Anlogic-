@@ -1,0 +1,20 @@
+[Unit]
+Description=Cabinet cooling monitor, frame/model/event pipeline
+After=local-fs.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cabinet/linux
+ExecStart=/usr/bin/python3 /opt/cabinet/linux/run_edge.py --live --no-http --local-display --config /etc/cabinet/edge.json --learning-config /etc/cabinet/learning.json --learning-db /var/lib/cabinet/baselines.sqlite3
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=10
+EnvironmentFile=-/etc/cabinet/environment
+NoNewPrivileges=true
+UMask=0077
+RuntimeDirectory=cabinet-live
+RuntimeDirectory=cabinet-operator
+RuntimeDirectoryMode=0700
+
+[Install]
+WantedBy=multi-user.target

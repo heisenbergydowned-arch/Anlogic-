@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ipxact:component xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:anlogic="http">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_0_Utility_Vector_Logic_1</ipxact:name>
+    <ipxact:displayName/>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:model>
+        <ipxact:views>
+            <ipxact:view>
+                <ipxact:name>design_0_Utility_Vector_Logic_1_RTL</ipxact:name>
+                <ipxact:componentInstantiationRef>design_0_Utility_Vector_Logic_1</ipxact:componentInstantiationRef>
+                <ipxact:designInstantiationRef>design_design_0_Utility_Vector_Logic_1_Inst</ipxact:designInstantiationRef>
+                <ipxact:designConfigurationInstantiationRef>designConfig_design_0_Utility_Vector_Logic_1_Inst</ipxact:designConfigurationInstantiationRef>
+            </ipxact:view>
+        </ipxact:views>
+        <ipxact:instantiations>
+            <ipxact:componentInstantiation>
+                <ipxact:name>design_0_Utility_Vector_Logic_1</ipxact:name>
+                <ipxact:language>verilog</ipxact:language>
+                <ipxact:moduleName>design_0_Utility_Vector_Logic_1</ipxact:moduleName>
+                <ipxact:fileSetRef>
+                    <ipxact:localName>fs-design_0_Utility_Vector_Logic_1</ipxact:localName>
+                </ipxact:fileSetRef>
+            </ipxact:componentInstantiation>
+            <ipxact:designInstantiation>
+                <ipxact:name>design_design_0_Utility_Vector_Logic_1_Inst</ipxact:name>
+                <ipxact:designRef version="1.0" vendor="anlogic.com" library="customized" name="design_design_0_Utility_Vector_Logic_1"/>
+            </ipxact:designInstantiation>
+            <ipxact:designConfigurationInstantiation>
+                <ipxact:name>designConfig_design_0_Utility_Vector_Logic_1_Inst</ipxact:name>
+                <ipxact:designConfigurationRef version="1.0" vendor="anlogic.com" library="customized" name="designConfig_design_0_Utility_Vector_Logic_1"/>
+            </ipxact:designConfigurationInstantiation>
+        </ipxact:instantiations>
+        <ipxact:ports>
+            <ipxact:port>
+                <ipxact:name>vector_a</ipxact:name>
+                <ipxact:displayName>vector_a</ipxact:displayName>
+                <ipxact:wire>
+                    <ipxact:direction>in</ipxact:direction>
+                    <ipxact:vectors>
+                        <ipxact:vector>
+                            <ipxact:left>0</ipxact:left>
+                            <ipxact:right>0</ipxact:right>
+                        </ipxact:vector>
+                    </ipxact:vectors>
+                </ipxact:wire>
+            </ipxact:port>
+            <ipxact:port>
+                <ipxact:name>result_vector</ipxact:name>
+                <ipxact:displayName>result_vector</ipxact:displayName>
+                <ipxact:wire>
+                    <ipxact:direction>out</ipxact:direction>
+                    <ipxact:vectors>
+                        <ipxact:vector>
+                            <ipxact:left>0</ipxact:left>
+                            <ipxact:right>0</ipxact:right>
+                        </ipxact:vector>
+                    </ipxact:vectors>
+                </ipxact:wire>
+            </ipxact:port>
+        </ipxact:ports>
+    </ipxact:model>
+    <ipxact:busInterfaces/>
+    <ipxact:fileSets>
+        <ipxact:fileSet>
+            <ipxact:name>fs-design_0_Utility_Vector_Logic_1</ipxact:name>
+            <ipxact:file>
+                <ipxact:name>design_0_Utility_Vector_Logic_1.v</ipxact:name>
+                <ipxact:fileType>verilogSource</ipxact:fileType>
+            </ipxact:file>
+            <ipxact:file>
+                <ipxact:name>RTL/Utility_Vector_Logic_8db620011faa.v</ipxact:name>
+                <ipxact:fileType>verilogSource</ipxact:fileType>
+                <ipxact:vendorExtensions>
+                    <anlogic:coreRTL>yes</anlogic:coreRTL>
+                </ipxact:vendorExtensions>
+            </ipxact:file>
+        </ipxact:fileSet>
+    </ipxact:fileSets>
+    <ipxact:vendorExtensions>
+        <anlogic:displayname>Utility Vector Logic</anlogic:displayname>
+        <anlogic:ipGenVersion value="179131 2025/11/05">1.0</anlogic:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:component>

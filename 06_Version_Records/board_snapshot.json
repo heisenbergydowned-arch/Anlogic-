@@ -1,0 +1,3261 @@
+{
+  "captured_unix": 1793786007.9694474,
+  "board": "192.168.0.107",
+  "runtime": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux",
+  "boot_id": "8fd0b0f0-b5d0-4c77-98bc-ed25ee7ccd69",
+  "kernel": "6.1.111-rt42-r46npu-candidate4+",
+  "normal_npu_env": "ADMISSION=/opt/cabinet/npu/learned/baseline_20261104_5c119_001/admission.json\nADMISSION_SHA256=38ceeb4291da649a01f6d1a0428d1b1d0f2224ffcd20f17082c648ee73ddda85\nBUNDLE=/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle\nBUNDLE_SHA256=4edf2cc5d189cd50aa8710167313bb39c2c67725f3fbea9b5562e3b6b474f0a8\nLIBRARY=/opt/cabinet/npu/real_normal_p9_20261101/libnormal_npu.so\nLIBRARY_SHA256=70256ce5a102eff026be96876b2a9ae8f1df75699cdff0d3bdcadc0078aa9069\n",
+  "changed_during_snapshot": [],
+  "files": {
+    "02_Board_Runtime/linux/README_closure_20261014.md": {
+      "sha256": "befa933e0a50ebdc44ca62c32877288b5f465b086977393a0b65c351040dd875",
+      "bytes": 2887,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/README_closure_20261014.md"
+    },
+    "02_Board_Runtime/linux/archive_events.py": {
+      "sha256": "8985ed66b0d9f05dbafe7baafc00e5fcf6ddd0ba51fc94badd85abe3d8ac0288",
+      "bytes": 1371,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/archive_events.py"
+    },
+    "02_Board_Runtime/linux/capture_cli.py": {
+      "sha256": "714d554c2c9e8c3b90c80b57a0daf6a238dee352464ec7a844e548d849f49862",
+      "bytes": 2407,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/capture_cli.py"
+    },
+    "02_Board_Runtime/linux/capture_contract.v4.example.json": {
+      "sha256": "3751be8191dd1099474870679eef28b03d58282e3e5273357d5718d9d22878f7",
+      "bytes": 834,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/capture_contract.v4.example.json"
+    },
+    "02_Board_Runtime/linux/cloud_receiver.py": {
+      "sha256": "1d63ceff2c6af3989c3429beb15c541b06278f42ada9516f60013d592ab4c357",
+      "bytes": 6387,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cloud_receiver.py"
+    },
+    "02_Board_Runtime/linux/commission.py": {
+      "sha256": "29ddf53f671b44c49f34422660cdac667c0ab55aebe49ae4c8e41b9e97d0c385",
+      "bytes": 2650,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commission.py"
+    },
+    "02_Board_Runtime/linux/commissioning_manager.py": {
+      "sha256": "bf0ee065fbcab7ccbfeb162f6a03e056e27c67de8302f254db735ea10b69ecc1",
+      "bytes": 625,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning_manager.py"
+    },
+    "02_Board_Runtime/linux/condition_bank.py": {
+      "sha256": "cd99eda771b7be8d54672950262926bf482725ecffba9000d83993abb55c490e",
+      "bytes": 1853,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/condition_bank.py"
+    },
+    "02_Board_Runtime/linux/config.advanced.example.json": {
+      "sha256": "d9705d3d87489a40e0aa6adf85a53837ebfe8e0dd71e7c94182d4be5afb89f1a",
+      "bytes": 1339,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/config.advanced.example.json"
+    },
+    "02_Board_Runtime/linux/config.example.json": {
+      "sha256": "c732d2e7a011f90cdcdc353a4a089ea192e37ec4fcde223b452d8f96396c48d6",
+      "bytes": 1284,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/config.example.json"
+    },
+    "02_Board_Runtime/linux/config.v4.example.json": {
+      "sha256": "31eecf79609dc74a2c4b469433baf2e5d2286bd9b926d2acee39a5df865aadf6",
+      "bytes": 1249,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/config.v4.example.json"
+    },
+    "02_Board_Runtime/linux/deploy_model.py": {
+      "sha256": "0555811522df5e5c18305b91d49857662228a1a3867b6deaf6577d7901ee25be",
+      "bytes": 8168,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/deploy_model.py"
+    },
+    "02_Board_Runtime/linux/evaluate_model.py": {
+      "sha256": "ce252b131ae48d5e6d1dde6a97ccc72490a30feedda0bf7eba83fa1d963366c6",
+      "bytes": 8698,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/evaluate_model.py"
+    },
+    "02_Board_Runtime/linux/export_capture.py": {
+      "sha256": "2d98a8d6476b981f273f49ff1a02b1c69d535a87aa0529e4e2e6848df0b610c6",
+      "bytes": 8645,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/export_capture.py"
+    },
+    "02_Board_Runtime/linux/fcb1_client.py": {
+      "sha256": "6b91ca13bfb9b8fa989c30051124de8cdba8b8741e2fcf64b9b853550ed61b9b",
+      "bytes": 15663,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/fcb1_client.py"
+    },
+    "02_Board_Runtime/linux/feature_config.example.json": {
+      "sha256": "f12ed727ab35e30892a5493649b3f90e5a2f0d4a13522a22a1b8c526e0a68fef",
+      "bytes": 444,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/feature_config.example.json"
+    },
+    "02_Board_Runtime/linux/feature_config.sdp810.example.json": {
+      "sha256": "f56da8cfb16a5aa4a7db2f427ab5e30ad95530785474953c0115ae422bc78cc5",
+      "bytes": 625,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/feature_config.sdp810.example.json"
+    },
+    "02_Board_Runtime/linux/feature_config.v4.example.json": {
+      "sha256": "20d81f3bd822f890aec20acc2d4dfb67663695a8651c08ed4d08d87b1fbe76d1",
+      "bytes": 853,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/feature_config.v4.example.json"
+    },
+    "02_Board_Runtime/linux/formal_start.py": {
+      "sha256": "bdd00fea9b3937ac42977add201568685b0f7b5c7e03ef28258f46da2f8905fe",
+      "bytes": 3736,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/formal_start.py"
+    },
+    "02_Board_Runtime/linux/history_server.py": {
+      "sha256": "c9ea6e944119c203aeaac35187378fe2c3214371f42c2dd2802ba8d6d3dc50b5",
+      "bytes": 2822,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/history_server.py"
+    },
+    "02_Board_Runtime/linux/icm_diagnostics.example.json": {
+      "sha256": "286c41ada59205eac4e0f5f071593cfecbab22c7bef7f431d06b6ce69b1d4230",
+      "bytes": 79,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/icm_diagnostics.example.json"
+    },
+    "02_Board_Runtime/linux/inject_fault.py": {
+      "sha256": "fde648be80c98798d6f6fe06fdd43306dc280d427489f4493e70eb9b24937027",
+      "bytes": 1336,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/inject_fault.py"
+    },
+    "02_Board_Runtime/linux/journal_admin.py": {
+      "sha256": "d5ebd84fa875dbcdb4a3b0bb275b11414f833e96037ec156fdfbb3d414cc13d7",
+      "bytes": 3814,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/journal_admin.py"
+    },
+    "02_Board_Runtime/linux/labeled_learning_cli.py": {
+      "sha256": "f65a24ac0a40eba2e4d6d7c65ac343d43c2e57188c65cb00c4b1453ea680b480",
+      "bytes": 2669,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_learning_cli.py"
+    },
+    "02_Board_Runtime/linux/link_cli.py": {
+      "sha256": "1f6f887a5297606ff742d552a28cc901b77985a2f27f32f91ea5d4faf8486140",
+      "bytes": 4868,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/link_cli.py"
+    },
+    "02_Board_Runtime/linux/model_release.py": {
+      "sha256": "387bb1d566e622cf32ac8f699cf88afec11cf461c2d09fb1133b06ae5acac35c",
+      "bytes": 3645,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/model_release.py"
+    },
+    "02_Board_Runtime/linux/npu_learning_cli.py": {
+      "sha256": "94eb4990bf7dbe8a6c08ba914a2700db42150a7c8b43e3265e0f45dfe80aed0b",
+      "bytes": 5490,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu_learning_cli.py"
+    },
+    "02_Board_Runtime/linux/npu_server.py": {
+      "sha256": "df0db01b8a4e37719115a56fe9f4c97696fdacbde42713ca5f85fd6e91339f97",
+      "bytes": 7477,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu_server.py"
+    },
+    "02_Board_Runtime/linux/pressure-profile.uncommissioned.example.json": {
+      "sha256": "b4e2ea5bfbb469e23ec37f9f1b94f48826d88d70359ef2516a5f5aeffda80da8",
+      "bytes": 379,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/pressure-profile.uncommissioned.example.json"
+    },
+    "02_Board_Runtime/linux/reliability.example.json": {
+      "sha256": "3d4e325947ed79a9e05703160c2bedb5a35a1a2a7ffa3db5bfd2484bb10a3b56",
+      "bytes": 273,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/reliability.example.json"
+    },
+    "02_Board_Runtime/linux/requirements-advanced.txt": {
+      "sha256": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+      "bytes": 21,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/requirements-advanced.txt"
+    },
+    "02_Board_Runtime/linux/run_edge.py": {
+      "sha256": "73e603dff809a44af970ed11f18bfc5d341c5f03c0efdc3ac9e9affdf5775173",
+      "bytes": 8161,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/run_edge.py"
+    },
+    "02_Board_Runtime/linux/start_mock.cmd": {
+      "sha256": "8639cd66592728ae5fe7da7580b4c448b06c1c74e7138b5335dd201719506c24",
+      "bytes": 187,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/start_mock.cmd"
+    },
+    "02_Board_Runtime/linux/test_backend.example.json": {
+      "sha256": "9c66c66a7d3e685770b5cc80970ebc5588262904ff66c60fde40f6aaaa1afa26",
+      "bytes": 322,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/test_backend.example.json"
+    },
+    "02_Board_Runtime/linux/train_fault_grade.py": {
+      "sha256": "7ae7197076daeb71a42ef59df489fb8b65f0ba92eaf60ec3c3d79d4820612f49",
+      "bytes": 2588,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/train_fault_grade.py"
+    },
+    "02_Board_Runtime/linux/workbench_server.py": {
+      "sha256": "33a7aad430ea617d64f975583b2ffd59cb8adc55d65c48670f187769c5dde8e6",
+      "bytes": 1217,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/workbench_server.py"
+    },
+    "02_Board_Runtime/linux/cabinet/__init__.py": {
+      "sha256": "9a5605ebbc753a4edbf689212b317092f325f521dd21c040f5fa7ccaaa1c9a1f",
+      "bytes": 83,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/__init__.py"
+    },
+    "02_Board_Runtime/linux/cabinet/alarm_only.py": {
+      "sha256": "1cd276124f17cd3a00bc921d5e610d23cb5463e92fbbadcf433a104a3446f1c6",
+      "bytes": 5893,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/alarm_only.py"
+    },
+    "02_Board_Runtime/linux/cabinet/backhaul.py": {
+      "sha256": "f503d2745990cbecdb52852be1e518c6e0bf23e2fbbb1f937ff92c1b617667e3",
+      "bytes": 4284,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/backhaul.py"
+    },
+    "02_Board_Runtime/linux/cabinet/capabilities.py": {
+      "sha256": "f2852edcf4ac4f1b5253c0bbce555568addeaf6c2326df84caec7a45db5b80e0",
+      "bytes": 1332,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/capabilities.py"
+    },
+    "02_Board_Runtime/linux/cabinet/capture.py": {
+      "sha256": "1ff56eb01e8f39dd2892c432b010c2dc23d2bfc3117374459c581737749a1c77",
+      "bytes": 25202,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/capture.py"
+    },
+    "02_Board_Runtime/linux/cabinet/capture_web.py": {
+      "sha256": "a094fdc0036940efa165f789b2eae11c4ea40a430cfc72575d4f2a0f486fffe5",
+      "bytes": 5291,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/capture_web.py"
+    },
+    "02_Board_Runtime/linux/cabinet/control_display.py": {
+      "sha256": "84f704dfea4dec996d211c6a2dfe780f064bc726304549ee9ba2662dd82e3daa",
+      "bytes": 7456,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/control_display.py"
+    },
+    "02_Board_Runtime/linux/cabinet/environment.py": {
+      "sha256": "8b23b08383d7ec7337facd2ddba27e9c0a019f10905e21d9d036aca4fccbdd2f",
+      "bytes": 335,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/environment.py"
+    },
+    "02_Board_Runtime/linux/cabinet/fan_life.py": {
+      "sha256": "bb2a301b4c6ed8f6b43c89002b787c3bbd94da92674bbf7b8e4848e82f6e6e9d",
+      "bytes": 19526,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/fan_life.py"
+    },
+    "02_Board_Runtime/linux/cabinet/fault_grade.py": {
+      "sha256": "51afb14c6b23d3a98f9872c1e08ad1768f7347bdeca29b0792ffe2bf17a22c6e",
+      "bytes": 5300,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/fault_grade.py"
+    },
+    "02_Board_Runtime/linux/cabinet/feature_display.py": {
+      "sha256": "b07b8010b2737948eded05fd4a76447d4264143d660f251942aa9366d7b27a21",
+      "bytes": 4845,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/feature_display.py"
+    },
+    "02_Board_Runtime/linux/cabinet/freshness.py": {
+      "sha256": "8268c51db06de97be7820db21a5b52a1ed4857ed04cb2be23598092c8c858a6a",
+      "bytes": 638,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/freshness.py"
+    },
+    "02_Board_Runtime/linux/cabinet/history.py": {
+      "sha256": "4a17ace0d023d9a769edf9a90125b6e327d10feb2ecb8f4bd03a25e5ea06a2e7",
+      "bytes": 10289,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/history.py"
+    },
+    "02_Board_Runtime/linux/cabinet/icm_diagnostics.py": {
+      "sha256": "7c2404549412ed87121bf8f2d2429f14850845fe69bf2eb03c8561f292e2adca",
+      "bytes": 6191,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/icm_diagnostics.py"
+    },
+    "02_Board_Runtime/linux/cabinet/icm_display.py": {
+      "sha256": "1d16079ab9d9ce61d81b2f980e344bd8214d3114820c45188411ca2e84b7de84",
+      "bytes": 2585,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/icm_display.py"
+    },
+    "02_Board_Runtime/linux/cabinet/input_policy.py": {
+      "sha256": "f1985fca5f116a181cdfdba8f29ef670f672a437b47db178df9f6807c7e1a847",
+      "bytes": 1410,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/input_policy.py"
+    },
+    "02_Board_Runtime/linux/cabinet/io.py": {
+      "sha256": "c7872118246f2aa92f11cbf1713c648ecd3d06b62db74403cef22d039b9d2405",
+      "bytes": 5977,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/io.py"
+    },
+    "02_Board_Runtime/linux/cabinet/journal_crypto.py": {
+      "sha256": "5cfc34d57641b24ff50ec495e18c67ec969049a56ae45e6dbc7666b1c77e986e",
+      "bytes": 7357,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/journal_crypto.py"
+    },
+    "02_Board_Runtime/linux/cabinet/local_display.py": {
+      "sha256": "2adb6ce40f7942d24ff39dd35cdf2fb60b38efbf20ba24ffcfa797cea1e70ff2",
+      "bytes": 22166,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/local_display.py"
+    },
+    "02_Board_Runtime/linux/cabinet/maintenance.py": {
+      "sha256": "601f5e3c11039572093812c1fe98b9b7ea49f03e623af05d876ee12b0d380739",
+      "bytes": 6491,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/maintenance.py"
+    },
+    "02_Board_Runtime/linux/cabinet/mock.py": {
+      "sha256": "5c35017c2c57763786b4213072c572cb83ac11be7a671fb4e268c420f6cce9ef",
+      "bytes": 2122,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/mock.py"
+    },
+    "02_Board_Runtime/linux/cabinet/model.py": {
+      "sha256": "8ee0ec56e59ee353133b98e3e0b8352adc6dca6def2cb489f77d25cb404bc5b7",
+      "bytes": 6210,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/model.py"
+    },
+    "02_Board_Runtime/linux/cabinet/monitor_view.py": {
+      "sha256": "1c2fc22d480c96f7948adbec73becd2cebf8f1610dff1a63eaa8e862513068f8",
+      "bytes": 1309,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/monitor_view.py"
+    },
+    "02_Board_Runtime/linux/cabinet/normal_reference_guard.py": {
+      "sha256": "dd6d1a60268dbc1e866ba1725ab6512b309bbc5a1b1d74cdef9765d525bf4c01",
+      "bytes": 7444,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/normal_reference_guard.py"
+    },
+    "02_Board_Runtime/linux/cabinet/openssl_aead.py": {
+      "sha256": "fe76a458bf782a6abd6d83445386f97b960427dc86e3447cbd4140508d526ae7",
+      "bytes": 4868,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/openssl_aead.py"
+    },
+    "02_Board_Runtime/linux/cabinet/parameter_rpc.py": {
+      "sha256": "fa4019089996abd6c43e0568e98ac4f62a4551b5df133a9b309a2677a745ddf8",
+      "bytes": 8176,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/parameter_rpc.py"
+    },
+    "02_Board_Runtime/linux/cabinet/parameters.py": {
+      "sha256": "e52cc023104a5bcc86a422a08c856b67b3140976f1edfdb06d3008087aa1684a",
+      "bytes": 10659,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/parameters.py"
+    },
+    "02_Board_Runtime/linux/cabinet/policy.py": {
+      "sha256": "dc0d9af235de809fe17bfd4360efe8f2c325a3ca2f71aba60e4781333cae3e7b",
+      "bytes": 12104,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/policy.py"
+    },
+    "02_Board_Runtime/linux/cabinet/predictive.py": {
+      "sha256": "38527ccaa30bf4a4a3f9ac83cf746c8d2bc973a4ab719bdcc400fc2833957d7a",
+      "bytes": 13551,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/predictive.py"
+    },
+    "02_Board_Runtime/linux/cabinet/pressure_calibration.py": {
+      "sha256": "972a2b4594225a7463a9935014e4a3c1e5f26b5d3f04aabd9f2c7c6c8ee3e2d3",
+      "bytes": 34590,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/pressure_calibration.py"
+    },
+    "02_Board_Runtime/linux/cabinet/pressure_storage.py": {
+      "sha256": "14acd095bdd7c7a0999d938316758db1a616cf71a659ec9bd6445f41470918f3",
+      "bytes": 4634,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/pressure_storage.py"
+    },
+    "02_Board_Runtime/linux/cabinet/protocol.py": {
+      "sha256": "81f68612d3b89ee18ceb87d88a2185e09cb69280ca1deaa73e4fa14e2038b97c",
+      "bytes": 6425,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/protocol.py"
+    },
+    "02_Board_Runtime/linux/cabinet/reports.py": {
+      "sha256": "d81b7175dc85c9837dd4beadd8028eb52158f953725aaca47d7f115b2fb2b4b6",
+      "bytes": 3037,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/reports.py"
+    },
+    "02_Board_Runtime/linux/cabinet/service.py": {
+      "sha256": "9d3b65b986f0432ce76ff6b1fbbf55946aca660ae1071e3dfc74198b44a74cc9",
+      "bytes": 38808,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/service.py"
+    },
+    "02_Board_Runtime/linux/cabinet/speed_alarm.py": {
+      "sha256": "f78910cef16e67d2c265fc41dd79b8096cc0308a48e9039f3b2e6b00c7fd72fd",
+      "bytes": 4595,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/speed_alarm.py"
+    },
+    "02_Board_Runtime/linux/cabinet/store.py": {
+      "sha256": "bc7b71076a8c76c835cdb2e8b1c455616168aade4518a22120a6c2812e670245",
+      "bytes": 16350,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/store.py"
+    },
+    "02_Board_Runtime/linux/cabinet/temperature_pwm.py": {
+      "sha256": "aee0c7e7772c3eb1e033f7f233fa9f6d571b0ea0854a933223cb706b4fb974f8",
+      "bytes": 16188,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/temperature_pwm.py"
+    },
+    "02_Board_Runtime/linux/cabinet/tracking_contract.py": {
+      "sha256": "2e1c6f57fcebcda183a861294f584243354c19b86675d518e42e39a2672004be",
+      "bytes": 293,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/tracking_contract.py"
+    },
+    "02_Board_Runtime/linux/cabinet/uplink.py": {
+      "sha256": "960f1a1990befa1c86880082440c83d925eeea4f754b42c8da546b00ca07054f",
+      "bytes": 3078,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/uplink.py"
+    },
+    "02_Board_Runtime/linux/cabinet/vibration_monitor.py": {
+      "sha256": "dd11e5980a3e0b78c5f7ac29600af376d862e6327bdaf5e9d3a083e1fb9c5df8",
+      "bytes": 5783,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/vibration_monitor.py"
+    },
+    "02_Board_Runtime/linux/cabinet/waveform.py": {
+      "sha256": "98903cbff8bbdf8e81dce3b12f7f9537122bffd43cbf74cb68d3b5954bc14a63",
+      "bytes": 9472,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/waveform.py"
+    },
+    "02_Board_Runtime/linux/cabinet/web.py": {
+      "sha256": "ccdd32da0dde8e4d4c27c0d195874b6ae12c88d23574f485e84bd5fc802c8f8f",
+      "bytes": 17576,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/cabinet/web.py"
+    },
+    "02_Board_Runtime/linux/commissioning/__init__.py": {
+      "sha256": "4eb87ade9aa398a4b9535da38e18cbdde2bdbe0a7f9eb208f3ebf88c655b9536",
+      "bytes": 96,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/__init__.py"
+    },
+    "02_Board_Runtime/linux/commissioning/bench.py": {
+      "sha256": "d8c9c3f78857a404e47dd7a301d84d728e69232adf95620ddf27a6e7c01bdded",
+      "bytes": 24138,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/bench.py"
+    },
+    "02_Board_Runtime/linux/commissioning/bench_admission.py": {
+      "sha256": "fba0d090f6800665c3e5d291dc06bb5a188c0851ee1c09a558044dc06b66db0d",
+      "bytes": 3728,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/bench_admission.py"
+    },
+    "02_Board_Runtime/linux/commissioning/configuration_permission.py": {
+      "sha256": "0b0535491d632bd46e17b5051474ac01bf44eb04e67da0f4606acaaaa2d11ff3",
+      "bytes": 5602,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/configuration_permission.py"
+    },
+    "02_Board_Runtime/linux/commissioning/control_jobs.py": {
+      "sha256": "50bbfe7521411208d40146aaf9cf7a37f7e65981aa838368c32e248c2a64a333",
+      "bytes": 17279,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/control_jobs.py"
+    },
+    "02_Board_Runtime/linux/commissioning/control_template.json": {
+      "sha256": "4c9da3287bc68bd96222e05c26e7f9bc34dbfaf70a9730ff05ec06b851f07100",
+      "bytes": 1412,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/control_template.json"
+    },
+    "02_Board_Runtime/linux/commissioning/deploy.py": {
+      "sha256": "935118f55db0c16468036bf2f022eb2068c89e9a06e7b48cf4b659db6e271712",
+      "bytes": 12922,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/deploy.py"
+    },
+    "02_Board_Runtime/linux/commissioning/fit.py": {
+      "sha256": "c83b2bd9a8834ced386e90c1fc2b824cfaca4e379f7613c1486a655667bd14c3",
+      "bytes": 17232,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/fit.py"
+    },
+    "02_Board_Runtime/linux/commissioning/measure.py": {
+      "sha256": "dfa15d83bc38793e1e9ce2fadb19ed7841d7def87f61e98d98d7f975f93e56f0",
+      "bytes": 10750,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/measure.py"
+    },
+    "02_Board_Runtime/linux/commissioning/runtime.py": {
+      "sha256": "673049007fbd468ac0c09fb9d51024f932f23b33a04721605d22f48661739ebf",
+      "bytes": 874,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/runtime.py"
+    },
+    "02_Board_Runtime/linux/commissioning/workbench.py": {
+      "sha256": "e5255436f4135350e8d4a13978e02fa42d0cf05295edbe7028aff6641cf8e3a5",
+      "bytes": 20563,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/commissioning/workbench.py"
+    },
+    "02_Board_Runtime/linux/dts/cabinet-uio.dtsi": {
+      "sha256": "809be677627f1dc17a84089bcd3aee761c945d20f767db5744ac68c4fcd1d32a",
+      "bytes": 489,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/dts/cabinet-uio.dtsi"
+    },
+    "02_Board_Runtime/linux/hmi_daily/HMI_STATE_V2.md": {
+      "sha256": "1ec92aa0ba69b835e4770ef0fb630a426f7b1a0c63354b888b01d303d6c6af8c",
+      "bytes": 3335,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/HMI_STATE_V2.md"
+    },
+    "02_Board_Runtime/linux/hmi_daily/LVGL_LICENCE.txt": {
+      "sha256": "27a80bd36832ab42d35ad60c08b2b230a807a9bc0d58e94ec1531543dc49cbe8",
+      "bytes": 1072,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/LVGL_LICENCE.txt"
+    },
+    "02_Board_Runtime/linux/hmi_daily/Makefile": {
+      "sha256": "1bb88b6904857072e529f0727ba9a565675d17318b014113913f84cb13d47de2",
+      "bytes": 1451,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/Makefile"
+    },
+    "02_Board_Runtime/linux/hmi_daily/README.md": {
+      "sha256": "1c6da8312a29af3c20946f298f48d5f48f1a627fc3bcc23d7e16fbf253c95eb3",
+      "bytes": 10631,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/README.md"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet_dashboard": {
+      "sha256": "abcb6600578e50741637935bbd2fa7e6171fa4c5987eb3c690531821dc75d054",
+      "bytes": 1079936,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet_dashboard"
+    },
+    "02_Board_Runtime/linux/hmi_daily/capture_view.h": {
+      "sha256": "2eb5c781a09f6408791eeb7a96d75183e383d9769f8f0ed0f99c31f468d3ef12",
+      "bytes": 7876,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/capture_view.h"
+    },
+    "02_Board_Runtime/linux/hmi_daily/current_units.py": {
+      "sha256": "8887dd41687a612f24c202a0a8869edc97db9c13be43ac1db0694d38da67f729",
+      "bytes": 4057,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/current_units.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/daily.py": {
+      "sha256": "d298a2315c8e48172854760f04e60aebbb392dc358ec25b96aa44c72d6378ce8",
+      "bytes": 11228,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/daily.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/dashboard.c": {
+      "sha256": "bdc16545745b85a268df8ce47f3ddfb878179830178207a8cbcffcf94ab33a8b",
+      "bytes": 82534,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/dashboard.c"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fcb1_client.py": {
+      "sha256": "6b91ca13bfb9b8fa989c30051124de8cdba8b8741e2fcf64b9b853550ed61b9b",
+      "bytes": 15663,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fcb1_client.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/generate_fonts.py": {
+      "sha256": "8d1e8ec8e3a99a28031a4f508791e65ae4d8f87de935a0f3be9602b75e04d0d3",
+      "bytes": 2301,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/generate_fonts.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/hmi_view.py": {
+      "sha256": "92ab6a125f4f5edb0dc8a147e6e88f3385fabaac9e22c0c617ed66d3976dcee2",
+      "bytes": 573,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/hmi_view.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/instrument.py": {
+      "sha256": "acc1c73b7c6347a576439692e2a749c228935e1b7eeb1e59792feab27a4ca5bc",
+      "bytes": 14063,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/instrument.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/learning_agent.py": {
+      "sha256": "292c0ab3e1605f4dadb953d1b30887ff8c02081b63a07e8027a431edefb411d7",
+      "bytes": 2742,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/learning_agent.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/learning_cli.py": {
+      "sha256": "b5db534a96cb77ffa8f7bfe73201c6ecab94d3a226d47d39e163b5a113dab931",
+      "bytes": 2262,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/learning_cli.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/learning_config.json": {
+      "sha256": "372bfb96a53f959bb2a6dfa8bc9d71b5a8d47de3971c5d977eb68b30ceb486e4",
+      "bytes": 310,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/learning_config.json"
+    },
+    "02_Board_Runtime/linux/hmi_daily/learning_config.v4.example.json": {
+      "sha256": "a2954c8cfa9acfbf08533365e983c775a30d93762602b762490342e6b8f12364",
+      "bytes": 297,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/learning_config.v4.example.json"
+    },
+    "02_Board_Runtime/linux/hmi_daily/lv_conf.h": {
+      "sha256": "0fa91b230bbef4573fa0b910afd3f09f1566467d68d77179c97c007b65736677",
+      "bytes": 894,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/lv_conf.h"
+    },
+    "02_Board_Runtime/linux/hmi_daily/parameter_view.h": {
+      "sha256": "1405f6b9d0d0c7ed6c6767eaee4a8b6795095432299bfdf240b8c17c11cd1c33",
+      "bytes": 10092,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/parameter_view.h"
+    },
+    "02_Board_Runtime/linux/hmi_daily/parameter_wire.h": {
+      "sha256": "4949cc9dc099f50a84d3b9fcc99276fe242eabf90e09e12b89ebc0bfdf508af4",
+      "bytes": 7079,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/parameter_wire.h"
+    },
+    "02_Board_Runtime/linux/hmi_daily/presentation.py": {
+      "sha256": "c154491ac2740f4cf4bcb4d61a04138ef5336f47680bf3d40607b755c4cd360d",
+      "bytes": 8423,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/presentation.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/pressure_units.py": {
+      "sha256": "91b550a72c2c0b40fe93b24a5a61f757cf5fe65b8b4e238bd1a4eceaaeaefee6",
+      "bytes": 3871,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/pressure_units.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/read_real.py": {
+      "sha256": "c854cea3bc7a2e35cc48e56db284eb3d72919001a8e4c613e5cc79ae4b07db90",
+      "bytes": 6637,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/read_real.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/reader.py": {
+      "sha256": "8e8e6f73d1398b8bdfcf9c31778c3e1e14e2bf8197e972336317de9f737253af",
+      "bytes": 11914,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/reader.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/rollback_board.py": {
+      "sha256": "fcf3dbb338829627d10c4ff84e015be955ce3cdba0d91ef3362c4cda92a59fb0",
+      "bytes": 1154,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/rollback_board.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/rolling_mean.py": {
+      "sha256": "56a7041649adf105ad7de5651d04c66a4cd2380d40a78832b656cab4fc4e6f1c",
+      "bytes": 1607,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/rolling_mean.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/run_live.py": {
+      "sha256": "2889b98a2b48bf9c442989caaac539f050b71877a4d9f726060430e321554cec",
+      "bytes": 3901,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/run_live.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_baseline.py": {
+      "sha256": "8cf4655e73ca4751c62b4d46ecfada9ec9a192a24843dd6198c608b90fe3970d",
+      "bytes": 20197,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_baseline.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_instrument.py": {
+      "sha256": "a558593713ac7f8b0f5bca812b4ab462bd7d2f83ba56066de3c7e45158d7ad0b",
+      "bytes": 11531,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_instrument.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_learning_agent.py": {
+      "sha256": "c8ce494541e7c4d192266904ac83a512eafc1633f7f7ee49ec904e8a0644a126",
+      "bytes": 9274,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_learning_agent.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_learning_web.py": {
+      "sha256": "472b9f30e21ebb573bff1005d5472240bf7b2126e00abd051b5f64b977cf0c6d",
+      "bytes": 20930,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_learning_web.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_reader.py": {
+      "sha256": "2dd457de39d6dfb05356cba140042afcc69cef4513aaaabab65a353de466b6ec",
+      "bytes": 7127,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_reader.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_readiness_p26.py": {
+      "sha256": "7764e5e7053c155300b550c929fe44d843e22778e65b3fc3b82c429490cda5c0",
+      "bytes": 7475,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_readiness_p26.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/test_truthful_display.py": {
+      "sha256": "3fb6f76bcef5c306e5d4d4b3c1af111e4953fe755a98bf0a7e414a4ca1a50042",
+      "bytes": 6387,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/test_truthful_display.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/__init__.py": {
+      "sha256": "9a5605ebbc753a4edbf689212b317092f325f521dd21c040f5fa7ccaaa1c9a1f",
+      "bytes": 83,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/__init__.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/baseline.py": {
+      "sha256": "181fddb06b702e609fd7bad8f3c9d3e900b21ce6baa21cf093ec544f56ec8d94",
+      "bytes": 37132,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/baseline.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/environment.py": {
+      "sha256": "da4ba746e0d37370d4847653f33d2e049fec68130460aba30d05cbe9c4094688",
+      "bytes": 6914,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/environment.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/io.py": {
+      "sha256": "8834147d01d3f3f2ef05dd317bca97e31e64912e34f378e1d388ebf8af9abe59",
+      "bytes": 5462,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/io.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/learning_agent.py": {
+      "sha256": "b1036a9c8c1f6a8e6b03b22b6ecc4dbbbdeca554f324ffc61b4f2eceaa059c36",
+      "bytes": 10445,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/learning_agent.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/learning_rpc.py": {
+      "sha256": "9a5597a7c6437f0750c61d94829b59fa2497f8020bc633fe044e605fd129719f",
+      "bytes": 5824,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/learning_rpc.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/learning_web.py": {
+      "sha256": "3474dc258a90648032a220f219457a466c54596d07e502e4d14957b04b262f88",
+      "bytes": 22126,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/learning_web.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/cabinet/protocol.py": {
+      "sha256": "819c2ba127c6eb992b1ec06bf14f68044416e0a0755fbe3e5bd2d8690e802c33",
+      "bytes": 6259,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/cabinet/protocol.py"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/OFL.txt": {
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+      "bytes": 4301,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/OFL.txt"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/manifest.json": {
+      "sha256": "e5a6c410927be5de45ae43ebecc2c9d7dcd3da62ae4965d21c52188bf563f88e",
+      "bytes": 1546,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/manifest.json"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/symbols.txt": {
+      "sha256": "cffda9d97a91f47ff39054519172d0ff46afcc62f77a1006730afca74d585402",
+      "bytes": 1149,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/symbols.txt"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/ui_fonts.h": {
+      "sha256": "0b4daf8bb8baa56b863cd07ac1dc0f632fea2e36c5ab86c1b15ab715214e6f23",
+      "bytes": 187,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/ui_fonts.h"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/ui_zh_16.c": {
+      "sha256": "134c8bb6bee57949428141423ec8a4347126c73535dd1847410fd61e9f69d4d5",
+      "bytes": 398903,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/ui_zh_16.c"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/ui_zh_18.c": {
+      "sha256": "1c8582d0200419347d6ad699cc95c9ed561d8657990013cdd1c5574ab4770ccc",
+      "bytes": 485601,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/ui_zh_18.c"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/ui_zh_20.c": {
+      "sha256": "42a85f29e36be33ffd7e3370a545749359b76bb3b36330b217c6959084e65abc",
+      "bytes": 575655,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/ui_zh_20.c"
+    },
+    "02_Board_Runtime/linux/hmi_daily/fonts/ui_zh_28.c": {
+      "sha256": "169fc95a168e467c98c61df5646737835c3d966bea79fef0061382307c9a18fc",
+      "bytes": 1015515,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/fonts/ui_zh_28.c"
+    },
+    "02_Board_Runtime/linux/hmi_daily/native/libedge_mmio.so": {
+      "sha256": "ad2474f23f79506480b0f16851fdde545f016211f7448b5ec4adbf9fe8539683",
+      "bytes": 10192,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/native/libedge_mmio.so"
+    },
+    "02_Board_Runtime/linux/hmi_daily/native/mmio.c": {
+      "sha256": "5908c2031ae09f46bc6f960eaf2ce16f9ba2851b37a1286870b4d5b8965fa364",
+      "bytes": 1404,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/hmi_daily/native/mmio.c"
+    },
+    "02_Board_Runtime/linux/labeled_npu/__init__.py": {
+      "sha256": "5ffca1be10223c344ca0d965a33670a820ab936b4a905493736e587422adaf85",
+      "bytes": 77,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/__init__.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/agreement.py": {
+      "sha256": "917a45ba7efed4bb815d3066479c4f6cee947cfd47a06dbda78cf4520a703d83",
+      "bytes": 5191,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/agreement.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/boot_selection.py": {
+      "sha256": "22a57d559632dd7cde6168efb2031e9ec0d501272de8b39c1309ff30b3b78b26",
+      "bytes": 15341,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/boot_selection.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/bundle.py": {
+      "sha256": "6048ffe35e344b0c636f9728f87410eac2fbb07be4f8e89ebaa69e3242159252",
+      "bytes": 10439,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/bundle.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/core.py": {
+      "sha256": "b576bdada60b02cbb095bf65d37ea8403e336a44731bfcbbc95ddc5f5463414e",
+      "bytes": 9868,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/core.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/deploy.py": {
+      "sha256": "f5eeee6bf12dfe04031ff23f8c66757d92bede01e45b8941e0aa919ed0ba8243",
+      "bytes": 26182,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/deploy.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/learning.py": {
+      "sha256": "634ee3082386ca908da2268aeac2cd980a6e73e5a7bfeae78ad7692f6ba22535",
+      "bytes": 27321,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/learning.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/live.py": {
+      "sha256": "ba15a7c878b836e853ae75969a3adeba1e2619d2a51eade9366a72352aa09577",
+      "bytes": 4075,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/live.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/native.py": {
+      "sha256": "314aa49093378f0507879c468bc23fc369900320c4ef0dfdfa3d969341835b20",
+      "bytes": 5894,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/native.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/persistence.py": {
+      "sha256": "98e58818264a5ca76d5c13ad608a8aefbc3f48b14ae8995eb4a4d6f845b31623",
+      "bytes": 10956,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/persistence.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/presentation.py": {
+      "sha256": "bd30859875a05e2118c06723888de42691c593380f5d79e3799456201259e715",
+      "bytes": 6157,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/presentation.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/probe.py": {
+      "sha256": "3d8fce17aec457b968443e785aee10126a46247984c0e1cedb1196c7f14a0747",
+      "bytes": 4953,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/probe.py"
+    },
+    "02_Board_Runtime/linux/labeled_npu/selftest.py": {
+      "sha256": "4936b9c8a45f51062dc09353ed890fd123d950bf1f8eea5dc7a33ec0c51e5093",
+      "bytes": 2372,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/labeled_npu/selftest.py"
+    },
+    "02_Board_Runtime/linux/native/Makefile": {
+      "sha256": "b0374e42b5e1d94acffb4c1a0eaead82de3727a00f74b2d2240bcb00e958098f",
+      "bytes": 191,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/native/Makefile"
+    },
+    "02_Board_Runtime/linux/native/libedge_mmio.so": {
+      "sha256": "ad2474f23f79506480b0f16851fdde545f016211f7448b5ec4adbf9fe8539683",
+      "bytes": 10192,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/native/libedge_mmio.so"
+    },
+    "02_Board_Runtime/linux/native/libedge_npu_logits_ps.so": {
+      "sha256": "6a898a65ca8395f74ed384fb08bea443e63988a27f0321d53bd1943cf1c6d1d1",
+      "bytes": 60080,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/native/libedge_npu_logits_ps.so"
+    },
+    "02_Board_Runtime/linux/native/mmio.c": {
+      "sha256": "5908c2031ae09f46bc6f960eaf2ce16f9ba2851b37a1286870b4d5b8965fa364",
+      "bytes": 1404,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/native/mmio.c"
+    },
+    "02_Board_Runtime/linux/normal_npu/__init__.py": {
+      "sha256": "9ac2d9076ab8d6abb997cf383efc6dbc553962f871ea36d53cb149f59e254156",
+      "bytes": 93,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/__init__.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/advisory.py": {
+      "sha256": "15b91258729e7473589d6a140ddb60d660cbbbcf8bf64f9868fe6f0ab8d04dc9",
+      "bytes": 7410,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/advisory.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/baseline_store.py": {
+      "sha256": "6d4d449a5852e0a84289e57938de7f2f8abf6699804e9ad32bf777551aeb8826",
+      "bytes": 13515,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/baseline_store.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/boot_recovery.py": {
+      "sha256": "5e7e0e05dfbc920012e6dad1380da5319b2dd672e1d91397aa6725cae412e484",
+      "bytes": 7004,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/boot_recovery.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/boot_selection.py": {
+      "sha256": "840ee1ea2e4b01604298b5a3a138b8e02c7b618724823711e26736c2ce1f270b",
+      "bytes": 11389,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/boot_selection.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/bundle.py": {
+      "sha256": "7f55b09c19dc7154f9f8a74b544e2a290a55e895bc710f8138eccda247af036d",
+      "bytes": 5977,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/bundle.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/core.py": {
+      "sha256": "590b941af4f728f6e2c1431c845321a124129f1b242f2779c885cfd4f9d086da",
+      "bytes": 14138,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/core.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/learning.py": {
+      "sha256": "402fddc27af7904ebc123996ee2375dfb52f165b25ec4b220cc6fb90dc1824d6",
+      "bytes": 42882,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/learning.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/learning_deploy.py": {
+      "sha256": "c0821e5215275084f12d1303f04947df9cfbad1553059369e2c028cfd2f75536",
+      "bytes": 17268,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/learning_deploy.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/live.py": {
+      "sha256": "0ef26bedb62352444f2cc9d3a6fc3ac28fa1d97d79b0f16f3e4142bbb8dc6cb5",
+      "bytes": 8266,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/live.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/native.py": {
+      "sha256": "5fb0ee07ae138fdcda68446c9a9c564a5c45d8d654c7b3ae054999ae22eb3850",
+      "bytes": 6880,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/native.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/numerical.py": {
+      "sha256": "0bc932ff941fae94608dbc3a8bcf95ac328ac5663f117b576d7363daa68d9e1e",
+      "bytes": 3099,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/numerical.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/presentation.py": {
+      "sha256": "9b944957823d84004f4c12d046f53c2cefc23959781d1080bc216cc989e0a28f",
+      "bytes": 7285,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/presentation.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/probe.py": {
+      "sha256": "1043c7d2442541614ff22f7c8873ce0a9cdcb45492e9d44f009970c57b91d687",
+      "bytes": 5175,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/probe.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/recovery.py": {
+      "sha256": "ac49afda033f32962014213b9fd8219ceacc14859542b6018e1291cdca0147d5",
+      "bytes": 2376,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/recovery.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/selftest.py": {
+      "sha256": "9ad33926f9b12a84364fa304aeb5964fa8acd35537c914890b19bdd26bb315b9",
+      "bytes": 3242,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/selftest.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/staging.py": {
+      "sha256": "c7aeb70fa14f2f8f50c607d7feaffb4182346f475612c7968179d5b4547b7e2b",
+      "bytes": 3596,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/staging.py"
+    },
+    "02_Board_Runtime/linux/normal_npu/start_gate.py": {
+      "sha256": "56386df329f3333e4c5235f7c7a6cbf4ffe75175068433579b92f51dda3feeb0",
+      "bytes": 3493,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/normal_npu/start_gate.py"
+    },
+    "02_Board_Runtime/linux/npu/CMakeLists.txt": {
+      "sha256": "32dff352165b9a758749015b2e8cfb25ff9ba2524263596a19a2f391015faba8",
+      "bytes": 1827,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/CMakeLists.txt"
+    },
+    "02_Board_Runtime/linux/npu/README_R30.md": {
+      "sha256": "0e2a219ada01417a91fee0d46b251a8334ed3ea786700f2956ad1598afaaee0a",
+      "bytes": 1158,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/README_R30.md"
+    },
+    "02_Board_Runtime/linux/npu/edge_npu.cpp": {
+      "sha256": "20961d42c33cba0980bd8b650b8033f07d743e14d70abe53ebecad8eb7823a3b",
+      "bytes": 5815,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/edge_npu.cpp"
+    },
+    "02_Board_Runtime/linux/npu/edge_npu_logits_ps.cpp": {
+      "sha256": "07fa31b56df9a723820c9dad7b15971522a05e11af7ec9f300bdb8d3cca1bc14",
+      "bytes": 7663,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/edge_npu_logits_ps.cpp"
+    },
+    "02_Board_Runtime/linux/npu/edge_npu_v4.cpp": {
+      "sha256": "149ec7e4ead6551e4baaa0c062e3f017dab32a19ca3ec8b02845c0f005087b2a",
+      "bytes": 6420,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/edge_npu_v4.cpp"
+    },
+    "02_Board_Runtime/linux/npu/ps_softmax.hpp": {
+      "sha256": "c6997dd642d2c22a8d499a0620fb9967e8b253b09d76c7dad8d269fabd71ecab",
+      "bytes": 1723,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/npu/ps_softmax.hpp"
+    },
+    "02_Board_Runtime/linux/static/commissioning.html": {
+      "sha256": "b198eda4391d29e465db4841c634c173247447ce318feddf153a5bc5de381ba1",
+      "bytes": 89767,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/commissioning.html"
+    },
+    "02_Board_Runtime/linux/static/diagnostics.html": {
+      "sha256": "16ba8916aaf74a04d4de054d5a0c5d4d1710b710afdbc5b7f1d4d1640245dc1f",
+      "bytes": 10222,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/diagnostics.html"
+    },
+    "02_Board_Runtime/linux/static/history.html": {
+      "sha256": "1f072ad230c1c97793e5a0d5101652a8de277ae42006bfe772e612012f5a0813",
+      "bytes": 16250,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/history.html"
+    },
+    "02_Board_Runtime/linux/static/index.html": {
+      "sha256": "5c884880b6e190c43e7b602dbbfbff844d99b101e8930b2a140a72465d058a38",
+      "bytes": 33972,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/index.html"
+    },
+    "02_Board_Runtime/linux/static/parameters.html": {
+      "sha256": "28360a18ffaed3c09832052c9ba30b6dfa545f0f94fae0a723240f3690388440",
+      "bytes": 10884,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/parameters.html"
+    },
+    "02_Board_Runtime/linux/static/pressure-calibration.html": {
+      "sha256": "f67beb71a172c0c9316b6361b18e2116abcd364bb6bf83c889dc60a727a6c900",
+      "bytes": 24092,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/pressure-calibration.html"
+    },
+    "02_Board_Runtime/linux/static/recording.html": {
+      "sha256": "2c7f4af0891d3bc7b347d1e2b7510be613cb11621f4a11940fcab3831fd65079",
+      "bytes": 12177,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/static/recording.html"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-commissioning-manager.service": {
+      "sha256": "c6c3cdb3cf5d7d4e02af47d5e9e2afd568c10b16eb81f57b21073b3260d26b22",
+      "bytes": 559,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-commissioning-manager.service"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-edge.service": {
+      "sha256": "39e8b017af382894308d7061b25ec1602869d43ef8d46732c523fd5fe8f441ee",
+      "bytes": 621,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-edge.service"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-fan-life.service": {
+      "sha256": "28d0def587a923df56a12581a45b74094071ab0144e80a0ecef378328040ef12",
+      "bytes": 381,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-fan-life.service"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-labeled-npu.service.example": {
+      "sha256": "cd8239d7c9b5068dc09b153b9277a11e633d7650086ce877b858b2234fa2f2c6",
+      "bytes": 1100,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-labeled-npu.service.example"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-local-display.service": {
+      "sha256": "62a8d11416e5c1b5d000c997f0dcbb8f428d72c7c185d6d2bff1a58c33e81325",
+      "bytes": 530,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-local-display.service"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-normal-npu.service.example": {
+      "sha256": "16c52716d909a89142018dcfb785a158d3ec8f49469bdf8773a149f0f5bbfd6e",
+      "bytes": 1197,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-normal-npu.service.example"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-npu-selection-recover.service": {
+      "sha256": "9009b41340ba595091026315fa1aced7e98894965044548e834045b89e75f10a",
+      "bytes": 475,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-npu-selection-recover.service"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-npu-v4-shadow.service.example": {
+      "sha256": "98cb81b3935844d5ff95409a46c329d03708af13899764c0ded52b77bc6fd658",
+      "bytes": 524,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-npu-v4-shadow.service.example"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-npu.service": {
+      "sha256": "7bd0b4fe3ded4e6f4af05a0d16cdbdf89ef13c5b97362155a8203c32e808f341",
+      "bytes": 500,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-npu.service"
+    },
+    "02_Board_Runtime/linux/systemd/normal-npu.env.example": {
+      "sha256": "dcdf5b7753f3b2539bedf436199db6711cded90b8004048da3f17d7e6388f1f4",
+      "bytes": 428,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/normal-npu.env.example"
+    },
+    "02_Board_Runtime/linux/systemd/npu-v4.env.example": {
+      "sha256": "dee7c1ccad9815a16ba95d03ab86898eeeecd692c8f5e2bb6939e55d18708f47",
+      "bytes": 299,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/npu-v4.env.example"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-labeled-npu.service.d/20-selection-recovery.conf": {
+      "sha256": "5b3200adaa6cafc8572fb13d8b39e6781d56196f49f3b10f40d41410b93cac04",
+      "bytes": 98,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-labeled-npu.service.d/20-selection-recovery.conf"
+    },
+    "02_Board_Runtime/linux/systemd/cabinet-normal-npu.service.d/20-selection-recovery.conf": {
+      "sha256": "5b3200adaa6cafc8572fb13d8b39e6781d56196f49f3b10f40d41410b93cac04",
+      "bytes": 98,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/systemd/cabinet-normal-npu.service.d/20-selection-recovery.conf"
+    },
+    "02_Board_Runtime/linux/tests/test_advisory_refresh_p19.py": {
+      "sha256": "e834085ed7f2991b366db7cd08f3c4dec8703a4265c0b034c40c0c09ffd027fa",
+      "bytes": 7160,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_advisory_refresh_p19.py"
+    },
+    "02_Board_Runtime/linux/tests/test_advisory_ui_p21.py": {
+      "sha256": "6588ab6c2ea187a9c757471cd46b0195b67acbbd4050be2675afe719e052f6e2",
+      "bytes": 3497,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_advisory_ui_p21.py"
+    },
+    "02_Board_Runtime/linux/tests/test_alarm_only_p52.py": {
+      "sha256": "f62174bea88e25d60c04e59829b8d614672a3dfc7aef9bc09f63f2ad11840d74",
+      "bytes": 4145,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_alarm_only_p52.py"
+    },
+    "02_Board_Runtime/linux/tests/test_baseline_store_p25.py": {
+      "sha256": "ed582b323a66c1bfe2a2e7a4c935b5fd46d003e0be4135213b6f8207d504dcb2",
+      "bytes": 20865,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_baseline_store_p25.py"
+    },
+    "02_Board_Runtime/linux/tests/test_bench_guard_p18.py": {
+      "sha256": "8a34f35ff1cca330857816dbbfd265018a65caf848441a2d0b3527b3ee90630e",
+      "bytes": 14430,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_bench_guard_p18.py"
+    },
+    "02_Board_Runtime/linux/tests/test_bench_output_tracking_p28.py": {
+      "sha256": "f73585adecd0137a28b08d64fe28b144b3d011de48b9227dfe78801a379fc6c6",
+      "bytes": 3378,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_bench_output_tracking_p28.py"
+    },
+    "02_Board_Runtime/linux/tests/test_bench_status_http_p27.py": {
+      "sha256": "f42b4c952faac4d48e61763f8fa58991f764fc0589dfc9e26b9afd60b2fec2da",
+      "bytes": 4284,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_bench_status_http_p27.py"
+    },
+    "02_Board_Runtime/linux/tests/test_bench_trace_cost_p28.py": {
+      "sha256": "267dff92e148708ee3060ab7888a63f4e43f28e59dc16b164d19156807d0ae46",
+      "bytes": 2335,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_bench_trace_cost_p28.py"
+    },
+    "02_Board_Runtime/linux/tests/test_bench_trip_causes_p27.py": {
+      "sha256": "7ba24ec0947638fb5a9bad774179e1d54b1bacd2953150bf2a9ff7dfb8e48400",
+      "bytes": 3695,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_bench_trip_causes_p27.py"
+    },
+    "02_Board_Runtime/linux/tests/test_boot_selection_p25.py": {
+      "sha256": "2319ee2ebda43971f919ef4a0571e9f463504236d613b6365970cd7accfb360b",
+      "bytes": 13484,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_boot_selection_p25.py"
+    },
+    "02_Board_Runtime/linux/tests/test_capture.py": {
+      "sha256": "caee2dd3aaf465628aa8181947f3f9af64268378aab420c43f002e05fd166a7f",
+      "bytes": 23334,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_capture.py"
+    },
+    "02_Board_Runtime/linux/tests/test_chain.py": {
+      "sha256": "a9fe6aa856445e66e05bd6d6e69a728e5ab9ab9f30b9f9e35960cf8047483f0d",
+      "bytes": 14093,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_chain.py"
+    },
+    "02_Board_Runtime/linux/tests/test_commission.py": {
+      "sha256": "b62ac61f45c7479c90ba89e02e7b6c38f7cda3bc498fb9947be68126982379ee",
+      "bytes": 3786,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_commission.py"
+    },
+    "02_Board_Runtime/linux/tests/test_commissioning_deploy.py": {
+      "sha256": "63855ce270db31e20b52af3e1811aaa278061dd97f767aad80c97acc083f3054",
+      "bytes": 8877,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_commissioning_deploy.py"
+    },
+    "02_Board_Runtime/linux/tests/test_commissioning_ready.py": {
+      "sha256": "7bd423bed554abc21a25e62ac5cf403b607b609c426705329eb199863c4a1935",
+      "bytes": 9555,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_commissioning_ready.py"
+    },
+    "02_Board_Runtime/linux/tests/test_control_completion.py": {
+      "sha256": "8bcda854874486e76751095d77e9a3ba816b2209e8bae607082fa96ff60633cb",
+      "bytes": 13188,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_control_completion.py"
+    },
+    "02_Board_Runtime/linux/tests/test_control_review_p26.py": {
+      "sha256": "786ce72d62b7637cb9fe9916dc8f167cbf03b815053c775fe5305fa98ecc579d",
+      "bytes": 22239,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_control_review_p26.py"
+    },
+    "02_Board_Runtime/linux/tests/test_control_startup.py": {
+      "sha256": "2b73db20770f21713e282074440376443d09bfc52449835c2a213eaf338ad75a",
+      "bytes": 3303,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_control_startup.py"
+    },
+    "02_Board_Runtime/linux/tests/test_control_trend_p25.py": {
+      "sha256": "6048069ec2e25d67136ad2d372ce8a93d6860a13442eacbb35189fa5030e56bf",
+      "bytes": 4679,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_control_trend_p25.py"
+    },
+    "02_Board_Runtime/linux/tests/test_current_display_mean_p28.py": {
+      "sha256": "bfaf5ce5b4d304b78de25c19e4d1be896f0e9cf354afb1be896a2aebf493ec88",
+      "bytes": 4579,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_current_display_mean_p28.py"
+    },
+    "02_Board_Runtime/linux/tests/test_current_zero_p18.py": {
+      "sha256": "b9a53d4543682f6ad7f881f5064ce8709fd0ff1cf05c35a2752e92c712a0e140",
+      "bytes": 16709,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_current_zero_p18.py"
+    },
+    "02_Board_Runtime/linux/tests/test_delivery_guards.py": {
+      "sha256": "8342553e6cf3b2156fa6261ea398fe1e0077443f500bfec8d8cccfec51292af6",
+      "bytes": 8742,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_delivery_guards.py"
+    },
+    "02_Board_Runtime/linux/tests/test_direct_npu_display_p37.py": {
+      "sha256": "ee3076eda4b624d4913c7f6d738e086d25b20714f38b3620527c7448b02177eb",
+      "bytes": 2315,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_direct_npu_display_p37.py"
+    },
+    "02_Board_Runtime/linux/tests/test_environment.py": {
+      "sha256": "11ae42c5da86b6b396b7f34b4d78812084739ced2025b444ddcaa372ecde9136",
+      "bytes": 13524,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_environment.py"
+    },
+    "02_Board_Runtime/linux/tests/test_fan_life_p46.py": {
+      "sha256": "59d1c14d51a5b39c5e4f12a97b5d4287395d6bd82f3169396e963b260fa60b64",
+      "bytes": 9516,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_fan_life_p46.py"
+    },
+    "02_Board_Runtime/linux/tests/test_feature_display.py": {
+      "sha256": "a3005494e34d59ced0ee35bf7066592e78c46e20a694af1dfa92436240b982bc",
+      "bytes": 5050,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_feature_display.py"
+    },
+    "02_Board_Runtime/linux/tests/test_full_review.py": {
+      "sha256": "a3ee521b0a750f47bbdb95199a7477ab0558baa9f14a87c59e3463966b9c46d7",
+      "bytes": 16806,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_full_review.py"
+    },
+    "02_Board_Runtime/linux/tests/test_icm_diagnostics.py": {
+      "sha256": "a6febb5d1438c5db64c1cfb82fae9f24304fd39d63401fa6cbf33b1c9c4a1694",
+      "bytes": 9638,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_icm_diagnostics.py"
+    },
+    "02_Board_Runtime/linux/tests/test_icm_display.py": {
+      "sha256": "c419c35ab30c3c73d1eca200d549ae3aa40882f88df05b0168ca8b5215c4433e",
+      "bytes": 3478,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_icm_display.py"
+    },
+    "02_Board_Runtime/linux/tests/test_initial_configuration_p27.py": {
+      "sha256": "2f46dabab49addb51fbbb2ee135529d33f5d2546fa59127f75ee30edd9882036",
+      "bytes": 10936,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_initial_configuration_p27.py"
+    },
+    "02_Board_Runtime/linux/tests/test_initial_status_publication_p27.py": {
+      "sha256": "d01dd9d2038b395f288de2e2508a7bb8a96b2c27b8f9f07d3dc88baf9978d328",
+      "bytes": 2990,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_initial_status_publication_p27.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_agreement_p26.py": {
+      "sha256": "735581152c8fdc0a1ba28aed7e59daa053e714d0e75a243ed4334c0c9a325f62",
+      "bytes": 5973,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_agreement_p26.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_groundtruth_v2.py": {
+      "sha256": "e70c13747a365858230f83a4f337c78715df844258ba3d8950c9a77a1c50a36a",
+      "bytes": 19318,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_groundtruth_v2.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_learning.py": {
+      "sha256": "e3783651dcfbf7abe5674989d7506f87a282120ead2381acaab6345a4383662f",
+      "bytes": 22788,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_learning.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_persistence_p26.py": {
+      "sha256": "00be138553dacde84043c7752e1d059dc09f395f23f547582d5f4d45802d820f",
+      "bytes": 29877,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_persistence_p26.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_presentation.py": {
+      "sha256": "3196fd10055ec787e4867bbbda652323c36b8c540e631dffacf2654d4c33f8f8",
+      "bytes": 4255,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_presentation.py"
+    },
+    "02_Board_Runtime/linux/tests/test_labeled_service_restore_p26.py": {
+      "sha256": "b9cdbd500bd7b5f67fb630bb69419c06e67e1ea5cd201ecf597837bb8c01b20e",
+      "bytes": 11284,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_labeled_service_restore_p26.py"
+    },
+    "02_Board_Runtime/linux/tests/test_leak_points.py": {
+      "sha256": "24589d16d160f19a4cc0760ffdc72e009fb9dc40814b064f3d55e164de3fe83b",
+      "bytes": 8499,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_leak_points.py"
+    },
+    "02_Board_Runtime/linux/tests/test_learning_advisory_p52.py": {
+      "sha256": "de5d0b7acb59f8004fe8dcbe6d81ead69fae4915e8a20b7a73c1b6d7cfd310e2",
+      "bytes": 2371,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_learning_advisory_p52.py"
+    },
+    "02_Board_Runtime/linux/tests/test_learning_chain.py": {
+      "sha256": "d4e2059ca1f14e449956d7852417aab6b6797b2d90854b49eba4d05e7f14ae8c",
+      "bytes": 8997,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_learning_chain.py"
+    },
+    "02_Board_Runtime/linux/tests/test_learning_recovery_p19.py": {
+      "sha256": "5d18b44c61822712e5bc73611ee18c2cfac1ee9f4c712f60a568b4c5c75fd8b5",
+      "bytes": 23917,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_learning_recovery_p19.py"
+    },
+    "02_Board_Runtime/linux/tests/test_learning_status_snapshot_p19b.py": {
+      "sha256": "6f49e9d4671e06704461b20ffd6b2d26030d0d4ff37be387ac01afa8dc419626",
+      "bytes": 9833,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_learning_status_snapshot_p19b.py"
+    },
+    "02_Board_Runtime/linux/tests/test_learning_utf8_locale.py": {
+      "sha256": "95b8dbc942806c11cf6c418c622cf80f314f2eaa981e3e0bf277660424e78fb2",
+      "bytes": 9419,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_learning_utf8_locale.py"
+    },
+    "02_Board_Runtime/linux/tests/test_local_display.py": {
+      "sha256": "0e5e14e762c1a55d288d7ddc3ff1dfd814574a03330b7a60ac852f45866f6ad0",
+      "bytes": 18414,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_local_display.py"
+    },
+    "02_Board_Runtime/linux/tests/test_mailbox_catchup_p35.py": {
+      "sha256": "9f2e3e7178ea4d95f73726f64fa10ae2dba0ef0031aca5f4bf3b9eed4f78de71",
+      "bytes": 2719,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_mailbox_catchup_p35.py"
+    },
+    "02_Board_Runtime/linux/tests/test_model_staging.py": {
+      "sha256": "34687b6803925418ef00e6defbb56148652c6b6c73c5a1c910e5f3ccb288b03f",
+      "bytes": 3730,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_model_staging.py"
+    },
+    "02_Board_Runtime/linux/tests/test_monitor_view_p52.py": {
+      "sha256": "4b882d767040eaf01172e15f98a73dab7aa9d7cc7930d992eadaab079468b55f",
+      "bytes": 2045,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_monitor_view_p52.py"
+    },
+    "02_Board_Runtime/linux/tests/test_native.py": {
+      "sha256": "2c1ebdd71c154e7cade9361e45eff1aaafe558059e3ceeffe2f9ae2a7ac45714",
+      "bytes": 1817,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_native.py"
+    },
+    "02_Board_Runtime/linux/tests/test_no_power_cut.py": {
+      "sha256": "6ebaa4cbeb8fd62c1ea95b28f0b5419dc03f937c6661d5431f827a29fdd17092",
+      "bytes": 3281,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_no_power_cut.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_boot_recovery.py": {
+      "sha256": "baf0a75f614afac7513b94189d46d0a2c5d7a54d8e8805684d681053e58be29f",
+      "bytes": 6699,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_boot_recovery.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_npu_advisory_p21.py": {
+      "sha256": "2c522c5459d9d49c3ea74942cd590643c4cf19508fdacc8d172b779e10aeb0eb",
+      "bytes": 9504,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_npu_advisory_p21.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_npu_freshness.py": {
+      "sha256": "6db27f766898df1d4f2cba09d8ca7b1cfd19b2e8b2860b6fe7b80e7ff16df47f",
+      "bytes": 9854,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_npu_freshness.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_npu_gray_grace_p45.py": {
+      "sha256": "01869c71290ec27d76bf0942c65444b1ef189973cb1b3b8381ec2add5c9ebd58",
+      "bytes": 2346,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_npu_gray_grace_p45.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_npu_warning_time_p44.py": {
+      "sha256": "63ddd466db326bdf5b4bb2c76f60cfdc7cfc148d3c12c47c5784b67b07abf4e3",
+      "bytes": 2734,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_npu_warning_time_p44.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_reference_guard.py": {
+      "sha256": "93b45276a022ef3c2d2fe7ce7ec6347357d139218c10a978cccf09bb1d111810",
+      "bytes": 13660,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_reference_guard.py"
+    },
+    "02_Board_Runtime/linux/tests/test_normal_startup_pwm_p53.py": {
+      "sha256": "5312649db0a23445e306a9f693b3f6063ad482ee2718f34e8c25022f0a93ff49",
+      "bytes": 6691,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_normal_startup_pwm_p53.py"
+    },
+    "02_Board_Runtime/linux/tests/test_npu_input_worker_p38.py": {
+      "sha256": "e719708ce9a958fd653e070d3fc58fb4771fe0a318ca73eb73f5a4158845c50e",
+      "bytes": 4557,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_npu_input_worker_p38.py"
+    },
+    "02_Board_Runtime/linux/tests/test_npu_learning.py": {
+      "sha256": "9b4565a6afecd16d924ba5242104a6c2592e199b5d2aeaec7e9ee3143f95187e",
+      "bytes": 21440,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_npu_learning.py"
+    },
+    "02_Board_Runtime/linux/tests/test_npu_null_collector_p19a.py": {
+      "sha256": "7db2a702828f71811d1ca4185dee731bc4e394cda55e18a4f5a25207e6e85ed0",
+      "bytes": 9808,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_npu_null_collector_p19a.py"
+    },
+    "02_Board_Runtime/linux/tests/test_pressure_display_mean_p29.py": {
+      "sha256": "5d382fe65af8f97e0be647f0fd0b37021d18109b56ff734c457ff449fbbe0b38",
+      "bytes": 4898,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_pressure_display_mean_p29.py"
+    },
+    "02_Board_Runtime/linux/tests/test_pressure_profile.py": {
+      "sha256": "bda015fc85554120d92de7da9a82d4685d8d891b4906216958a693ccfad05f92",
+      "bytes": 3274,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_pressure_profile.py"
+    },
+    "02_Board_Runtime/linux/tests/test_pwm_boot_discovery_p28.py": {
+      "sha256": "e14d6fade2c583df0d5a029728348dc1d9578a5aef3b3e37d07b900b77d003ad",
+      "bytes": 4977,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_pwm_boot_discovery_p28.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r31_features.py": {
+      "sha256": "8d895102cf9ff40e4f3dffd10e58f1bee87caa927bcbfcdb78a601298b27c0d2",
+      "bytes": 30874,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r31_features.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r32_repairs.py": {
+      "sha256": "fbca175f1705e915e0d4034bb4974af115934a7f563708a7b001bd3185ff5cf4",
+      "bytes": 16535,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r32_repairs.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r35_repairs.py": {
+      "sha256": "2078abd555110ba41db197e6728e6285db8e110373e1a2cf9787e8cea5cec0cd",
+      "bytes": 10771,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r35_repairs.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r36_advanced.py": {
+      "sha256": "3fdabffcd9708fec011a1a2c58ad1cbbc1cf0540b8322a6f71bf5f49713306df",
+      "bytes": 27803,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r36_advanced.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r37_remaining.py": {
+      "sha256": "e7ba3c62479f2e89dcc4d138b334c2ad15163fa09b0cec5fa386737dd3abbb20",
+      "bytes": 22228,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r37_remaining.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r38_recovery.py": {
+      "sha256": "6ba07d7d14b6a52a0533ee7a2587a24417f5d8d5f77af330066d2571f7033aee",
+      "bytes": 8653,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r38_recovery.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r39_pressure.py": {
+      "sha256": "f3391426ada07a651ac4e27520b3635ac0bdb4f113d53fcd43ae2e3c244cf08a",
+      "bytes": 22450,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r39_pressure.py"
+    },
+    "02_Board_Runtime/linux/tests/test_r40_recording.py": {
+      "sha256": "e1a531a5261d23eeef03255ee5f146aec8439a96a63cf513ef52243594827483",
+      "bytes": 11034,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_r40_recording.py"
+    },
+    "02_Board_Runtime/linux/tests/test_remote_bench_p24.py": {
+      "sha256": "6689bee1add85838c530808ae26b38f849e58cddcd7fe1e702c13abc87bdc7d9",
+      "bytes": 7693,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_remote_bench_p24.py"
+    },
+    "02_Board_Runtime/linux/tests/test_review_p12.py": {
+      "sha256": "62aeeb4b43f62873210338cb155b6ab2d2a784290a61078caf8a7b3b850cb525",
+      "bytes": 7307,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_review_p12.py"
+    },
+    "02_Board_Runtime/linux/tests/test_sensor_identity_display.py": {
+      "sha256": "1aae7c633e3bf31ef72e4431546650c8ed4e4357e7a4dda9af690a77b967a3eb",
+      "bytes": 5501,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_sensor_identity_display.py"
+    },
+    "02_Board_Runtime/linux/tests/test_speed_alarm_p54.py": {
+      "sha256": "83434ad3f185321a001dccd8e1f0cc52c139d5330c0d03d07c0a33f8379369cf",
+      "bytes": 5419,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_speed_alarm_p54.py"
+    },
+    "02_Board_Runtime/linux/tests/test_storage_maintenance.py": {
+      "sha256": "0c486dffc97232d3e425f0e17cdb624703194f841535936b10651c19c2b2274c",
+      "bytes": 6813,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_storage_maintenance.py"
+    },
+    "02_Board_Runtime/linux/tests/test_temperature_pwm_interfaces_p39.py": {
+      "sha256": "530565ab395553cc21f8ab0f915b83b87f77ff7969d61cb9c6e36a23828d1e00",
+      "bytes": 5414,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_temperature_pwm_interfaces_p39.py"
+    },
+    "02_Board_Runtime/linux/tests/test_temperature_pwm_p39.py": {
+      "sha256": "8c929ca290927f6f682c3b4c22fbe309e2bfbcd27473adaf154a007f79324678",
+      "bytes": 10116,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_temperature_pwm_p39.py"
+    },
+    "02_Board_Runtime/linux/tests/test_temperature_topology.py": {
+      "sha256": "618fa5d0a4b6ff9d7fd5d5fd1e5d71b5c186b67780e04f8e57b36c2872fee429",
+      "bytes": 4590,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_temperature_topology.py"
+    },
+    "02_Board_Runtime/linux/tests/test_temperature_trend.py": {
+      "sha256": "6e8d6c9d1b4979449dac864d9c88f8a08adcfd264cd4336717286cbe2c4d8676",
+      "bytes": 2840,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_temperature_trend.py"
+    },
+    "02_Board_Runtime/linux/tests/test_transport_review.py": {
+      "sha256": "29d7cabf92104c9b4e543024ef2c978cd55eed14223efdc932cbe2fa621ddc9d",
+      "bytes": 3933,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_transport_review.py"
+    },
+    "02_Board_Runtime/linux/tests/test_unix_npu.py": {
+      "sha256": "809504f285adbd77e63c6a1a157a37ba7a264ec99e01bdc7090e9e1149d5d32c",
+      "bytes": 1663,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_unix_npu.py"
+    },
+    "02_Board_Runtime/linux/tests/test_waveform_archive.py": {
+      "sha256": "33fbba6fdfcd2ff978b7c89f43882207edd5d1d889aefdf21e0a10c2ea357c18",
+      "bytes": 16803,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_waveform_archive.py"
+    },
+    "02_Board_Runtime/linux/tests/test_workbench_http.py": {
+      "sha256": "12e2574ba47bd46ce07a185091df2eecc8326eae0778063925068fb7f7176c51",
+      "bytes": 3970,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/tests/test_workbench_http.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/__init__.py": {
+      "sha256": "29135237d78fc86542111ec09d1ca0a89e82aba475f6ac4f4740f73ac1e96807",
+      "bytes": 72,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/__init__.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/backend_audit.py": {
+      "sha256": "f20f45e52370a08ca11db0250b36b4f3fa4195d38398d915e3faa523b79f784d",
+      "bytes": 1488,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/backend_audit.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/bundle.py": {
+      "sha256": "158ca1e99f1ea48b74dc128e43813a4a1a36ddf27b8fe693401931f655caad1f",
+      "bytes": 15097,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/bundle.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/client.py": {
+      "sha256": "95cc5d758a032a48489b506ae5f22ef2436c0dfcca9144f32d7e53af3dc0bb7a",
+      "bytes": 8081,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/client.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/frames.py": {
+      "sha256": "0dc92a35cd7ce12488f0cccf8bdee15e9454e093e1cfa0cecbde0fe8e1015baf",
+      "bytes": 4958,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/frames.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/import_frames.py": {
+      "sha256": "62c060dfee67aac50ef6478418d934465ac22690242edfa5a9088f974cd2b045",
+      "bytes": 9137,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/import_frames.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/native_lease.py": {
+      "sha256": "80ef96b6afaf17fe74e0f82e59d4f2742e77de7f70f59a2cf75d57fc360d601d",
+      "bytes": 3000,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/native_lease.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/platform_gate.py": {
+      "sha256": "d23269cf4bc5343e40585bddc1edac21c0ba222bb5e1eba3e87f7b19e7508a97",
+      "bytes": 2364,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/platform_gate.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/postprocess.py": {
+      "sha256": "ce3a09b395b371a051d332866047238eb6ebf466e863b52ccecba6e636541846",
+      "bytes": 1116,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/postprocess.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/probe.py": {
+      "sha256": "3b8936c940047494114a4cf54b8568bb410440fb92e5fa6ce77380678897b4c5",
+      "bytes": 7298,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/probe.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/profiles.py": {
+      "sha256": "8cbd0cbcbf6c9557210b07514e3ec4b805560be8f538bf5925cbe7e56e167e19",
+      "bytes": 1755,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/profiles.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/qualification.py": {
+      "sha256": "ac3985a98cf37a2db6a8c053576561c7d245017040e7554c8b23c970e3bed83a",
+      "bytes": 8025,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/qualification.py"
+    },
+    "02_Board_Runtime/linux/v4_runtime/server.py": {
+      "sha256": "6231c8559a7d651ab668ddc633b3ac52975ed8a65664251a8a36c64081af744c",
+      "bytes": 18635,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/linux/v4_runtime/server.py"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/admission.json": {
+      "sha256": "6cf4fc6cf33b8b9b16fed0c722337b21bd61588f62c1198fe9eda22bafdf79d5",
+      "bytes": 9280,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/admission.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/conversion.json": {
+      "sha256": "143c5294ec203432e3be47ae5c0ff832c29ecbb727d5584a7c3bb784bb9de9e3",
+      "bytes": 1175,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/conversion.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/golden.json": {
+      "sha256": "9ea054a9e522844dc6ac47e7c4743060c58b9b35bddecb5bff2cfdf21688ce44",
+      "bytes": 108166,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/manifest.json": {
+      "sha256": "5a5087a8b5e2c18c253e269432c07c78d47060ebf82d5b8083e2f761786cfde9",
+      "bytes": 1370,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/model_alnpu_u8.onnx": {
+      "sha256": "7a2db16c29124a8f20fe959e89dc5450b3e25c5212b3dae26d1675be24a3884c",
+      "bytes": 5443,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/model_u8.onnx": {
+      "sha256": "5d5e274c55904940d30d72fb9e2ac3608842eb1560bd46983b91d3477161f54a",
+      "bytes": 5443,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/normalization.json": {
+      "sha256": "f7c22dc757fe302ee5673addfd9a6ff79095a5afdbf54b7aa9f44c7869dd6b39",
+      "bytes": 2726,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/provenance.json": {
+      "sha256": "9c98017720e8013b484b4d7db638feba9ef61558577a0a6f08b431c03cd2144c",
+      "bytes": 10651,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/training.json": {
+      "sha256": "b4cad58283e900290c17abaabb5fbd4dd71a0cdc2e22f5f86860be1551f93807",
+      "bytes": 26654,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/training.json"
+    },
+    "03_NPU/models_and_native/labeled/normal_clog_20261104_001/bundle/validation.json": {
+      "sha256": "2abc1d64ba7525e8b5053c27d5b24778bc697f6850a912bb8a9d5ac42317418e",
+      "bytes": 5918,
+      "source": "/opt/cabinet/npu/labeled/normal_clog_20261104_001/bundle/validation.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/admission.json": {
+      "sha256": "07e5da964e93f2eed4774f92d5e0ce2ce7908ee074474ee0a5bcc9dee41a5ab8",
+      "bytes": 101939,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/admission.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/alnpu_conversion.json": {
+      "sha256": "615e25e06821d6c84436e880783aad84c4e1d4aea1600b670eb2e485fc69dc26",
+      "bytes": 1461,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/golden.json": {
+      "sha256": "1c0d1e46efa67ece18c9f51c6ffe07f273cadd1622da8aff288b92ab22cb60f1",
+      "bytes": 393737,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/manifest.json": {
+      "sha256": "156b06ac838fa1eb4e0aebdfc47c933a2e7218d5eaa70a33bbbbee13032b4a85",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/model_alnpu_u8.onnx": {
+      "sha256": "6acbb68d3821f24a6abf0e5d9c9e03c54eb89853e73de0012d08f1233547bb85",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/model_u8.onnx": {
+      "sha256": "80c3f1cc76065264cbdf0b48c7196ae8bd5f57330ca5d7f6259af1c8e29a7e86",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/normalization.json": {
+      "sha256": "088146e7269c2b5d8fa88aca17ec4063ff05179d9492e00ce594c20c216fe921",
+      "bytes": 2773,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/provenance.json": {
+      "sha256": "95e10742d2c2c7d2de34d8eb5ac7795e51fc7c5b02d3293675b2e31570c97bc7",
+      "bytes": 5140,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/receipt.json": {
+      "sha256": "8749c7f1c3cedf95536dbf556159957d1d433bb02dec82ae657d755b700d1056",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/thresholds.json": {
+      "sha256": "e5b202955df27d490001df2cae2a4e42e5486a4e7275dd7de50e5e6674b67abe",
+      "bytes": 934,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/training_validation.json": {
+      "sha256": "6e3c88a6bf68b66346060bfebf6d68fb242eed981064a6ca32d999039c5510ff",
+      "bytes": 1234,
+      "source": "/opt/cabinet/npu/learned/434d4700533f4fb78d47e5cd86b79eb6/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/admission.json": {
+      "sha256": "f760afd243c98671de2075971ee2aeedfb0bd2be2f01b040acc032a735ab7b9a",
+      "bytes": 104248,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/admission.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/alnpu_conversion.json": {
+      "sha256": "afad201a0ab0fae6cacd40c546cd56f0f8ec2c5fdeb1f6f90e12108390fe75d5",
+      "bytes": 1461,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/golden.json": {
+      "sha256": "aa72cc490d5b16827d537eccbefa3b30afcc80b7a973adc6ead0bd7c352aac3e",
+      "bytes": 396044,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/manifest.json": {
+      "sha256": "a445e3312fd4f1a19707ab82b4a2f4e0c627404de3f2cb6f459506374be70d44",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/model_alnpu_u8.onnx": {
+      "sha256": "c61e091f2cbc3a11f5979a47aa8764480388474d747a5dac42874b020a99cd4d",
+      "bytes": 6132,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/model_u8.onnx": {
+      "sha256": "182f89cf345438ffac95dd95124c8c7055fce444db1421071a521ac708dbbbdd",
+      "bytes": 6132,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/normalization.json": {
+      "sha256": "65caff39255ea566efaa79521102086336b0c0ee48e8ae7e353d53212ca9d28b",
+      "bytes": 2764,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/provenance.json": {
+      "sha256": "8c1323a83334e770cc0965a2c91c0d3c4962953829582889325e2100cd01fee0",
+      "bytes": 5148,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/receipt.json": {
+      "sha256": "814082acb9f30881e675d21ec13b0a6d9bcb9744350f1ff0f8af31339c20e3ad",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/thresholds.json": {
+      "sha256": "8b5e516443958ddb48cef69b7f36394ff17f5d94cd13eeaebbbad9e9f0f0514d",
+      "bytes": 918,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/training_validation.json": {
+      "sha256": "4b4285cd7fbdd3b8fc7ed5cc3d5ea6510897e0913de1b71225f7ec08b57b130b",
+      "bytes": 2997,
+      "source": "/opt/cabinet/npu/learned/4c5bf18728cb4e9982658c91c2b0fb4f/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/admission.json": {
+      "sha256": "14c23bd7d3d78cef43f01e2f837a848827590470cb6f088507b07338a19d5464",
+      "bytes": 105522,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/admission.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/alnpu_conversion.json": {
+      "sha256": "f409545e2758a27491ff2d2a50913bf8489151ccf2f633236629aad8c115e271",
+      "bytes": 1461,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/golden.json": {
+      "sha256": "7f013c70853faf3a6b001be1b9786f98c3442ba2ca99df7507b587c6f0bf969f",
+      "bytes": 399157,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/manifest.json": {
+      "sha256": "5af8de0c794dfb08439e3f347909db27459232af24e645f929257e5005f30926",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/model_alnpu_u8.onnx": {
+      "sha256": "63b03b3720edc94416c06b08cf177ffc0ba5fac1e07258435cd1ad4a1bd1c78a",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/model_u8.onnx": {
+      "sha256": "d93de057832a280ce93a3bdf50b8783f9c8281e983abdee59d11fc2bba2404f9",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/normalization.json": {
+      "sha256": "b0ca3d5fd9a1f8b9f8d218aa7473fc851d26621eb587dca5f04c0ecbcc1c560a",
+      "bytes": 2785,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/provenance.json": {
+      "sha256": "44fb71204dd264000cfd0bd38acb65c75c1c665c88e112a58c78cec03a0013fe",
+      "bytes": 5140,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/receipt.json": {
+      "sha256": "150f98bd34077f8ac840473f329dcd51111e4ded526b6a6c24fc9d9d5d2d4940",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/thresholds.json": {
+      "sha256": "9f867a300eee01732e3b984cf7cedf3465fe67f9ff5de1868472af8507de47ad",
+      "bytes": 950,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/5fc8057289d34c99bf10baa31b287305/bundle/training_validation.json": {
+      "sha256": "d1810908b107c03da6aefc82816c6b238e9b57cd4e4b7921eabf5e21236ee688",
+      "bytes": 1235,
+      "source": "/opt/cabinet/npu/learned/5fc8057289d34c99bf10baa31b287305/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/admission.json": {
+      "sha256": "68ab4794a0b81c6dd0fa31302454738ee49e9b5a44479d64307fc1358026dc07",
+      "bytes": 102671,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/admission.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/alnpu_conversion.json": {
+      "sha256": "8c47b3d025120868debd78410d22c26b81eaedccb84e96d3d0da63fd1507cfff",
+      "bytes": 1459,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/golden.json": {
+      "sha256": "4612f3aca065aa0ce22e0c2e8d88aa58a14fa8f3f2e206218bf94f6c70dd56c8",
+      "bytes": 396625,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/manifest.json": {
+      "sha256": "04e3ac337894bfc9ead4de313046a344088dbc4067aa7aefb242db0cd665397a",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/model_alnpu_u8.onnx": {
+      "sha256": "59eabb4bab6435415175755aba1a5be21afeb0fd3ca8cc88630fb2a032c34d8c",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/model_u8.onnx": {
+      "sha256": "f60dc5685ebf5f1b670805348812972adbc0d1750cb13cdcf947a886d579a947",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/normalization.json": {
+      "sha256": "d3beaf6683770adb50d666cea7c67dd2229dabd56b126474a3deca45f4063e9a",
+      "bytes": 2781,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/provenance.json": {
+      "sha256": "25edef6e5557ade3baa5701adb6de014671f2b49812987e94f50028e48805663",
+      "bytes": 5140,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/receipt.json": {
+      "sha256": "418cad3acd62014a7b333729aa43f5f5f7f605d3121ae60ca035e533262b650d",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/thresholds.json": {
+      "sha256": "862b5cdb8d5d0fe8888c0700229b88717251e3bf2e8b34866fe80c6fea12ec36",
+      "bytes": 921,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/6823410e88684ff7a5a3328427fc2658/bundle/training_validation.json": {
+      "sha256": "0836726f831f66b41d1dc4d481c2e62c723d61a89a19f0f3e2050fd67bbeb124",
+      "bytes": 1233,
+      "source": "/opt/cabinet/npu/learned/6823410e88684ff7a5a3328427fc2658/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/admission.json": {
+      "sha256": "f0585142f2e1a9d578bbd4ac59dcae6b884a6ffa5f079f0eb56e9c79a591a179",
+      "bytes": 178482,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/admission.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/alnpu_conversion.json": {
+      "sha256": "5c8bfa753aae1d73c9c81324ba61c44648a6d7be8a505290bc086ce23801a980",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/golden.json": {
+      "sha256": "0ab5bf8ab3ff973e4536654eaef03b4e23a857a893d38a755f1e671c2c6fbdd7",
+      "bytes": 398784,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/manifest.json": {
+      "sha256": "d1cddce7ebf8fde943172b38e4de659630ea17d95de1b1015a339424de0f06af",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/model_alnpu_u8.onnx": {
+      "sha256": "37659f9cdcbcf090d8caadc8868dfece351a17577280f3622e0c6ff2f582b1bf",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/model_u8.onnx": {
+      "sha256": "36268ba0a2de0f874de00fdeed4b38b4791586cef7695750edab2cc3b4988e56",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/normalization.json": {
+      "sha256": "730849dfa58d3828865f99fe0c46af4da2a802cd489cd7faa71d60796285f9d1",
+      "bytes": 2766,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/provenance.json": {
+      "sha256": "ceec291e644bb852db966227bd59987573ab8adbb7153d424d9865c150ad5790",
+      "bytes": 6842,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/receipt.json": {
+      "sha256": "002fd4b09246049ae87d0b73c1b60a70b41e598b3947c0a96579a9c81aaa37ef",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/thresholds.json": {
+      "sha256": "2202e58ec1d38e4af9a09cb46e6d9df622e204d956fbabfb604fa5856afe4870",
+      "bytes": 1136,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/training_validation.json": {
+      "sha256": "d4428d784f624d2c8c4be8eda28b8cb4dcc5fc92ccfca841d908f9de8ac5ddbc",
+      "bytes": 4514,
+      "source": "/opt/cabinet/npu/learned/69e0862f7b1d4ea0bde75865e210b4c7/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/admission.json": {
+      "sha256": "eb691acac1bccc6aeaf3b9e5f89a5bbaaa47c67e8e2b7b281a337e2129c6fc29",
+      "bytes": 184855,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/admission.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/alnpu_conversion.json": {
+      "sha256": "eeb4262b796ad352ee3f1fae5a475c1b29b327578c86148c89233b498e5632bf",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/golden.json": {
+      "sha256": "920af720991c7694c87c5ddf5489590a90c5f4c6230408a04b6bc1dc2a5f587f",
+      "bytes": 398947,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/manifest.json": {
+      "sha256": "5dff036e191b4b83aa327fb82c8456eb55fc24798882bef04a5d1e46304de749",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/model_alnpu_u8.onnx": {
+      "sha256": "b5a084672431c094b0aa0294bcb740864e9df22b81bb234a60f31c7691da39d4",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/model_u8.onnx": {
+      "sha256": "feda224ecfbe257810e34da2029a435dd2f9947b92848abf4b6111e75aa523ed",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/normalization.json": {
+      "sha256": "f3a8e10cd435e1fa0a1b183ded87874a7d4792e8528abb23bfb3cc0cd614bfe8",
+      "bytes": 2784,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/provenance.json": {
+      "sha256": "8bad3e93e84551940a6f2777d89c1cdb3744c013cfd2d9fe5ccb12ca90f8067b",
+      "bytes": 6523,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/receipt.json": {
+      "sha256": "50bfcbc40df84229bd41582d3c002de729b9f217fa54fb864ae204953f07840e",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/thresholds.json": {
+      "sha256": "c6d831df500db5131e6259e12ea5c8764fc6a8f9913c573f66fe1beefb673660",
+      "bytes": 896,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/81caa5744fa0472a94971d38361a8abd/bundle/training_validation.json": {
+      "sha256": "5fa42ce682dca2b9ebc3aedbb46782008b426f8451e1a5eb9456636cdd7cd59a",
+      "bytes": 4530,
+      "source": "/opt/cabinet/npu/learned/81caa5744fa0472a94971d38361a8abd/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/admission.json": {
+      "sha256": "38ceeb4291da649a01f6d1a0428d1b1d0f2224ffcd20f17082c648ee73ddda85",
+      "bytes": 188035,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/admission.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/alnpu_conversion.json": {
+      "sha256": "6d45413932252fc87af5748e7315b27a944fca142166c163c0bc0c47eabda3d9",
+      "bytes": 1458,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/golden.json": {
+      "sha256": "1c2e975ae8991739b2e1fc135545910f585f9f01f2b25642278ced3ab156d0d4",
+      "bytes": 403017,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/manifest.json": {
+      "sha256": "4edf2cc5d189cd50aa8710167313bb39c2c67725f3fbea9b5562e3b6b474f0a8",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/model_alnpu_u8.onnx": {
+      "sha256": "be3af8519475d9cbc31a05a2b54650b9700fe8b991126112eee529845ca7fd84",
+      "bytes": 6132,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/model_u8.onnx": {
+      "sha256": "cba23676da23afd2b2bdaf4c045dd73addc971d55b5f4322f37f56e856d47ac0",
+      "bytes": 6132,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/normalization.json": {
+      "sha256": "bab91abe58ea8f7e43c8c541b567541339f533fc98a6ac80ebbda0578ce67430",
+      "bytes": 2781,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/provenance.json": {
+      "sha256": "d947678c5316263927d10cbdcae76a8eab27eb7c30653ebd915219086eb1b967",
+      "bytes": 6504,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/receipt.json": {
+      "sha256": "a0d09154dfaab44d1fecdf84e13a3624f7b2d83368967f2f75da25bf465b1c2c",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/thresholds.json": {
+      "sha256": "cf384ddf4dc8cbd013a3c05e67af1866be0c904032bf305a52ab39578a5566a6",
+      "bytes": 1148,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/training_validation.json": {
+      "sha256": "2857d9aa4fee204da38a4b38aa67857920171701ba03c18c3bf06196e0fbc88e",
+      "bytes": 4539,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/baseline_20261104_5c119_001/bundle/标注.txt": {
+      "sha256": "050b7a40fe0abe158871e5e2c9f5f5403b8637fe804781675f584b803afc255f",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/baseline_20261104_5c119_001/bundle/标注.txt"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/admission.json": {
+      "sha256": "3713bb6151ea3f677338be82143138f4c3c81b2f483f59f93e98bb309c77bd78",
+      "bytes": 105068,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/admission.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/alnpu_conversion.json": {
+      "sha256": "fb44edfa2403277300089bddcab57c33350d719e60ba94aa324fdad2db997aaa",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/golden.json": {
+      "sha256": "4ef251d804b40fa9dd71185ecb6dcab9f9cacf72ab2ec4999eb39bf28bfc7010",
+      "bytes": 398811,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/manifest.json": {
+      "sha256": "be3749a291dde00c6f5d78da0535936451fc5381c7b3a40159deaaf000788121",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/model_alnpu_u8.onnx": {
+      "sha256": "5a8dde173a7c91916adbde4ceb7425913ab88615fe72884b0f3bc41c7b03e39f",
+      "bytes": 6130,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/model_u8.onnx": {
+      "sha256": "be922abf690037be0cc4df24f57fd9eeaf8cbed394d23cfaf50039f955241e7d",
+      "bytes": 6130,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/normalization.json": {
+      "sha256": "aa6e085e23e7d8fe8a8114aa8a5e2a4fd2afe31a88be43ee0181a303f3618f7d",
+      "bytes": 2776,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/provenance.json": {
+      "sha256": "edf085527f3c43382e316f589468ceaf46d6e11dbb6c9ab7cdcbfdf87d4f6816",
+      "bytes": 5150,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/receipt.json": {
+      "sha256": "801d7a95e71904a1062ec719c1945f2e21011159d517ad2b840110be47c53e62",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/thresholds.json": {
+      "sha256": "d134ca1d71045e0a0770028699d89b72c78c5901c2231a3211aed620582e3378",
+      "bytes": 909,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/ce62f8cd3e584ccf8768955025b30868/bundle/training_validation.json": {
+      "sha256": "8bb7f1a207b3be7a8a173a4c3961d175af0dda85dbba8633f475e3e37fd86a08",
+      "bytes": 2998,
+      "source": "/opt/cabinet/npu/learned/ce62f8cd3e584ccf8768955025b30868/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/admission.json": {
+      "sha256": "e9aa5c40f33cb122e03ebba8831107835a23c93a5f8043aaf7058c2e4069535d",
+      "bytes": 105306,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/admission.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/alnpu_conversion.json": {
+      "sha256": "9455fad4f1db146c3ebdd819c8b4644495b6af6381494a1ea87702b852b31226",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/golden.json": {
+      "sha256": "4825814ed8ca15acabeff73bd108b8632e8d7b9600cbd14ce51650bd1d0509d0",
+      "bytes": 398793,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/manifest.json": {
+      "sha256": "88fd4903cbc198346b938a33ee5ac93411a0ba3daca514a667111492da7a4abb",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/model_alnpu_u8.onnx": {
+      "sha256": "00f3ecded45a812dac7ac4a52f36b12fe8c3e0e5969222d9ffb1adc451c77385",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/model_u8.onnx": {
+      "sha256": "333f428b9b4ccf78714a73c451c0d26457f076f5d76e99adbfda7d0224c808c3",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/normalization.json": {
+      "sha256": "5fcf98d02537abca2b4572a0a3e683238416f4cbddc8e7dcaae435c34b2d9351",
+      "bytes": 2785,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/provenance.json": {
+      "sha256": "0efda175ea06b625665499d705f078af3ac0f8c99fec42682465eb80cb16f542",
+      "bytes": 5134,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/receipt.json": {
+      "sha256": "aefa2d42d5f503f34988e9b04a96b43cff300139b7d660c38c25af8db2423e11",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/thresholds.json": {
+      "sha256": "8704cc20f2d31495a8fbe2e8f320b5d810ead8e6e1e86c6b4b4c23c5754c3b8e",
+      "bytes": 964,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/training_validation.json": {
+      "sha256": "b7d4c15fd7febc08e03dc329b7ba16b62aab7a0bc3243170660de96002df3653",
+      "bytes": 1236,
+      "source": "/opt/cabinet/npu/learned/df1f5af6ae5a4a76bdbd18c4b2be9743/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/admission.json": {
+      "sha256": "6410ead73e62dfe31be319c0b46ad5efa9f143d3dffa79252d04112bd7520878",
+      "bytes": 103196,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/admission.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/alnpu_conversion.json": {
+      "sha256": "5b19ae9eb013affc5e571497ea456a28da864d4b7c93fbc126246d52261e348a",
+      "bytes": 1457,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/golden.json": {
+      "sha256": "3edbe237689e482d5e3975fadd685ad865e5325d3c5e7163d3d3e97c8379f86e",
+      "bytes": 396833,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/manifest.json": {
+      "sha256": "50557b3103a8a9284c6e23b563716e5af13fdf0b6e64d83ced39c4dfcd67fb84",
+      "bytes": 1192,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/model_alnpu_u8.onnx": {
+      "sha256": "dbe1a95dcfce554cbeabed33b2596320c4db2f9719843fd1949a620d9f75a9d4",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/model_u8.onnx": {
+      "sha256": "9d1308d436ec8e9b593355b292da0515f45b2f3764bd665df93f308980a286dd",
+      "bytes": 6131,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/normalization.json": {
+      "sha256": "a7cfb30b30a71ead573b6a3e9101c7de4e7136b494a91edd8150a7c240599073",
+      "bytes": 2782,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/provenance.json": {
+      "sha256": "c020f7f2a52fb2b081416b48672343d41eb09b13043d7f72a9ad712135857a3c",
+      "bytes": 5148,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/receipt.json": {
+      "sha256": "df221d53d342bf9c2e8c67b349f9543931faf53ade7c5ef335cbc256195975cb",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/thresholds.json": {
+      "sha256": "31a797c22d538d203c6237980118b4d316e494c2dd9a3bf87481d7b06be09724",
+      "bytes": 906,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/e1472e41d88243cb827a61f62184d3ac/bundle/training_validation.json": {
+      "sha256": "b7f294f7baf9aabfc3667b66597cfccfd2e14345dc0d8efdac3f23bcea99841f",
+      "bytes": 3001,
+      "source": "/opt/cabinet/npu/learned/e1472e41d88243cb827a61f62184d3ac/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/admission.json": {
+      "sha256": "7dff5602aca9c017494e922b506ef985bff4f99de7f60d9f1ca54c905253d4e3",
+      "bytes": 188026,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/admission.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/alnpu_conversion.json": {
+      "sha256": "563b8a0bc9ab730303c225c6af9d35c30ce9c7c966e5f50123f609c7a874dec2",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/golden.json": {
+      "sha256": "045d1b4e6a00d6ad68d16b5fa1077b98538cb979f0b1cf527dbf8bc7c3ed849f",
+      "bytes": 402493,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/manifest.json": {
+      "sha256": "c53958fb53b879ff295078d2b32745a4ec891f12d58b6f009a66d42227f479de",
+      "bytes": 1193,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/model_alnpu_u8.onnx": {
+      "sha256": "9735c46319cf3d1c1e1fddf739350107edc92a2fb6ffa0a144e0e2cf2dc8e7e1",
+      "bytes": 6133,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/model_u8.onnx": {
+      "sha256": "c82c26dd334e3ed4a0af3d41386f6ed287d8bef02fdcaa0b805b83fdff60bab4",
+      "bytes": 6133,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/normalization.json": {
+      "sha256": "825667681e899e9910928820c25df21d4ad1d80c14ff4463fa53b81dcaee05ab",
+      "bytes": 2779,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/provenance.json": {
+      "sha256": "0a6ae60c41ada2f7f6787990ba79bd5bf5f03a03aa870fae1207514c60a32886",
+      "bytes": 8645,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/receipt.json": {
+      "sha256": "ee2160e04f8042a99bd450912b2bc07f7afef444bcb0316c0553ebc3859f6908",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/thresholds.json": {
+      "sha256": "88d4384b97a285b8824379e5cd9fea488eb2194dad634313f523365403929f2a",
+      "bytes": 770,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/learned/pwm_sweep_20261104_002/bundle/training_validation.json": {
+      "sha256": "86d5260a62ab309c1c7f77ad96094aeaba184e658e7c40cfd897a532a8d279eb",
+      "bytes": 4537,
+      "source": "/opt/cabinet/npu/learned/pwm_sweep_20261104_002/bundle/training_validation.json"
+    },
+    "03_NPU/models_and_native/r46_alnpu_candidate4_20261101/deployment.json": {
+      "sha256": "8396f37e7e799e618d448e42004fa455243cdd2b50df26eadb8e915685f9fef4",
+      "bytes": 1202,
+      "source": "/opt/cabinet/npu/r46_alnpu_candidate4_20261101/deployment.json"
+    },
+    "03_NPU/models_and_native/r46_alnpu_candidate4_20261101/libedge_npu_logits_ps.so": {
+      "sha256": "6a898a65ca8395f74ed384fb08bea443e63988a27f0321d53bd1943cf1c6d1d1",
+      "bytes": 60080,
+      "source": "/opt/cabinet/npu/r46_alnpu_candidate4_20261101/libedge_npu_logits_ps.so"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/admission.json": {
+      "sha256": "71d9e87630ae3372db0774ce857ba73fe974050001283c00f5e38d33558586dc",
+      "bytes": 101789,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/admission.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/libnormal_npu.so": {
+      "sha256": "70256ce5a102eff026be96876b2a9ae8f1df75699cdff0d3bdcadc0078aa9069",
+      "bytes": 59296,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/libnormal_npu.so"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/alnpu_conversion.json": {
+      "sha256": "ccb70b7d002170681667d878342f68b0ae7251352c098ff372fc52e8a1cb8cff",
+      "bytes": 1460,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/alnpu_conversion.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/golden.json": {
+      "sha256": "2a64d749b990028949ab51600d16d350a03958eec14d03462fde9a0b237ad334",
+      "bytes": 387417,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/golden.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/manifest.json": {
+      "sha256": "2e8521ecfaf2dd33ce5e3cdafaf6f01b8b5146cf2bcab4e0466c76424c273e64",
+      "bytes": 1162,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/manifest.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/model_alnpu_u8.onnx": {
+      "sha256": "0bbd728c72619e2751f478ee9fb3c0a417295f385742f39e6faeee1f23b46d65",
+      "bytes": 6130,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/model_fp32.onnx": {
+      "sha256": "9a8286d5a2d244de7dea20d7e3b4dd47e792a1affd60f5136fd7a1d549f32dac",
+      "bytes": 10384,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/model_fp32.onnx"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/model_qdq.onnx": {
+      "sha256": "e63e3e9757d4150840e3e700a5c4ed038e465df5a5e398578ff33b63e9d2ed8c",
+      "bytes": 5900,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/model_qdq.onnx"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/model_u8.onnx": {
+      "sha256": "735cf477165c9984800a6a7499d9f793f73db8f59a4c8fc91fe1882900d5e0f2",
+      "bytes": 6130,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/model_u8.onnx"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/normalization.json": {
+      "sha256": "8f0ebf312aea0ddcc33683c4d910e898d351ccbd82bd72a53a7ab0de95eed50d",
+      "bytes": 2802,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/normalization.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/provenance.json": {
+      "sha256": "718d3596dcda6f8c295c54178def243fc8fb2a385c31bc1f29e22d1170d9dd92",
+      "bytes": 11830,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/provenance.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/receipt.json": {
+      "sha256": "a936ef2d1adee9d8290ce7311c3c007b15e5ca78a423f0a98aa1d05df197ab7f",
+      "bytes": 496,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/receipt.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/selection.json": {
+      "sha256": "b59a68aa8c575c33afe29238da728a61f8b500030cd3c3c7328710c72f33fdb5",
+      "bytes": 647,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/selection.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/thresholds.json": {
+      "sha256": "d1eef57f7a66f11295d7c5c758d204b34ce7a82741f3f5fc2084a6ae371020cf",
+      "bytes": 1020,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/thresholds.json"
+    },
+    "03_NPU/models_and_native/real_normal_p9_20261101/bundle/training_validation.json": {
+      "sha256": "cc1e428063f1376cabbf5c08884851539ae02781058a0128e08695b3c44b5709",
+      "bytes": 769,
+      "source": "/opt/cabinet/npu/real_normal_p9_20261101/bundle/training_validation.json"
+    },
+    "03_NPU/board_sdk/include/armnn/ArmNN.hpp": {
+      "sha256": "76a5150cf7fc3cf87bded62a4db58d42958ef9c9adc2498ffa5c4e823e0027be",
+      "bytes": 519,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/ArmNN.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/BackendHelper.hpp": {
+      "sha256": "e3906a61228d777121eecedab2da6ec5f4c1a78f3e69ab8f36054013eccd7615",
+      "bytes": 26142,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/BackendHelper.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/BackendId.hpp": {
+      "sha256": "7187bde1567e8695418afd04a653941665f1726db2d6ab3d80ef723480845fbc",
+      "bytes": 5149,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/BackendId.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/BackendOptions.hpp": {
+      "sha256": "d4f0b21c3df38ee3b9a8add6a750430c93ffb17fe624813361f72e1db9a67526",
+      "bytes": 10160,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/BackendOptions.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/BackendRegistry.hpp": {
+      "sha256": "991b671eba330c30b8950d319e60b016a30745c25d6e40e4089c3c75eaf39edb",
+      "bytes": 2764,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/BackendRegistry.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Conversion.hpp": {
+      "sha256": "bcd2465b88c73471ab35cf2904605f89170a0644ef55aba8c8a9855f44bb62c3",
+      "bytes": 1179,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Conversion.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Deprecated.hpp": {
+      "sha256": "5c06c233c3362e51f264a8d6458cba214cbffc634a5042e62cbdd520f91e35c7",
+      "bytes": 1722,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Deprecated.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Descriptors.hpp": {
+      "sha256": "13501f158903b4f1572209edb5b451eace2b66511b385527f357b98663a95ea8",
+      "bytes": 60766,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Descriptors.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/DescriptorsFwd.hpp": {
+      "sha256": "b5dde1ac1568ab9f1d59fe6e5f95546825955d2297b8044102bbe0ae0ce2b73d",
+      "bytes": 1879,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/DescriptorsFwd.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Exceptions.hpp": {
+      "sha256": "90898caf3858b4a023b21f20197e7e4b14ef97c8ed5e9e37477b4884197575b6",
+      "bytes": 4342,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Exceptions.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/IAsyncExecutionCallback.hpp": {
+      "sha256": "7d98d957db021661bf6417c42c528f2abaa51619d7a0a87d52ba07a0530bc5ab",
+      "bytes": 585,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/IAsyncExecutionCallback.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/INetwork.hpp": {
+      "sha256": "ae781d4a1c97e196362c7f222291adc39baecd9115ffc9653d39bd8e84999cc7",
+      "bytes": 47309,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/INetwork.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/IProfiler.hpp": {
+      "sha256": "bb40ecc2872e9b1405e744542cb679ebbb4cc06bea541df1b4823f5fab067051",
+      "bytes": 2693,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/IProfiler.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/IRuntime.hpp": {
+      "sha256": "fabdb318bb82fb9f4af3d7ed956581869b8f2a2dcacf114c2a58c6f6939ff9fe",
+      "bytes": 16262,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/IRuntime.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/IStrategy.hpp": {
+      "sha256": "2c164196b29c6357ac4993c85f0f8b3b9b42a4ee2d982b5f77c3b37201b12fff",
+      "bytes": 733,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/IStrategy.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/IWorkingMemHandle.hpp": {
+      "sha256": "1cdff5f404758440cebd4d64d1b505e5a586fc1bbb1942e0d0a404d988e56e53",
+      "bytes": 1476,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/IWorkingMemHandle.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/LayerSupport.hpp": {
+      "sha256": "c1934890c2124d89b62fe79cfe1e1877da687aa8a3256de515b990bca889d885",
+      "bytes": 20856,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/LayerSupport.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Logging.hpp": {
+      "sha256": "56ed6f74dd1d06fac36c491ede69cff394d5c1beb85461ff093ccb37ffd2c138",
+      "bytes": 4451,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Logging.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/LstmOnnxParams.hpp": {
+      "sha256": "c141155bfaacf8dd8353fb273484d7dab68679d646cb320e182dcfd6a7bb882e",
+      "bytes": 2034,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/LstmOnnxParams.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/LstmParams.hpp": {
+      "sha256": "6b2d3c815aed872005710eb14aa25043d765db196d4a3eae0fad38c4caf19a0e",
+      "bytes": 6594,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/LstmParams.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/MemorySources.hpp": {
+      "sha256": "889d17331a10c61463c7dc120f1adf992c11214145e3834338d90c766b066bb6",
+      "bytes": 1034,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/MemorySources.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/NetworkFwd.hpp": {
+      "sha256": "35c47946ce2e399d34f61e30bb76e1e8281f5cec2508bed86b49ff223c5ccc68",
+      "bytes": 368,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/NetworkFwd.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Optional.hpp": {
+      "sha256": "154137637aa412cb6fa83a96046c38b7c3eacf6b67e94d914d3384afe43c6062",
+      "bytes": 7534,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Optional.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/QuantizedLstmParams.hpp": {
+      "sha256": "1ba3bb89b7aff515571a95fcc919a2b4e21c3527997d7828a1d9d41c78b79d5f",
+      "bytes": 5640,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/QuantizedLstmParams.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/StrategyBase.hpp": {
+      "sha256": "02164566ecbb4413150595a1d513f094baf00d1a57c9b5e5fc794563a22c780b",
+      "bytes": 1319,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/StrategyBase.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Tensor.hpp": {
+      "sha256": "2b5ad7611ca1ad2de8aa3ad9449874f3cb0e49e5ba6a4db95881489a95fe9416",
+      "bytes": 15280,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Tensor.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/TensorFwd.hpp": {
+      "sha256": "64d75c8105e38cbc1a0babee6f3d3c8a0c12553b8fd00923a729c5daf1d5f51f",
+      "bytes": 195,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/TensorFwd.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Threadpool.hpp": {
+      "sha256": "d91f6f2bc5be3569f7b3db66691681b25651c2695122e2cbd28f84884fd9c666",
+      "bytes": 2322,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Threadpool.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Types.hpp": {
+      "sha256": "e16de517fe0086792f2582c1cd4140a0c359089fb122e4d61bab16520a532b69",
+      "bytes": 12641,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Types.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/TypesUtils.hpp": {
+      "sha256": "a9d83fcf727b9f240dd1d6ba5e90004ab4fa7357818ecf7099a36c4a7483412b",
+      "bytes": 12126,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/TypesUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Utils.hpp": {
+      "sha256": "759d45baa2fec756e826025b94f04549ab0bf460fd2262e28a32c8df5f699671",
+      "bytes": 1144,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Utils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/Version.hpp": {
+      "sha256": "12919e5b8ba91b5f83a1165c80a4d1d14faa3c0df36b504c8b7d4039f5ab0ad6",
+      "bytes": 637,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/Version.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/CMakeLists.txt": {
+      "sha256": "423e321de959ea38838503884a79d4bce3ec05d9f4abb7f029283782ee58fb68",
+      "bytes": 551,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/CMakeLists.txt"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/DynamicBackend.hpp": {
+      "sha256": "d4fe371485249071879bd413c22adf297efca3db7428dae0014c1a18f5f8eb63",
+      "bytes": 1491,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/DynamicBackend.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/IBackendContext.hpp": {
+      "sha256": "46adfb40a5ace0f2fc9ae47322ba38787c05d94376311bd29b0ea31402e0da1e",
+      "bytes": 956,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/IBackendContext.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/IBackendInternal.hpp": {
+      "sha256": "eebe570a5143b83bd34e9643bb24a3fb85169a76508efefa5b6d57b1e6089fff",
+      "bytes": 9587,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/IBackendInternal.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/ICustomAllocator.hpp": {
+      "sha256": "b8945d7acccc530a0f4d4cb4301eab78793800a025927a07607bef5c07a28251",
+      "bytes": 1719,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/ICustomAllocator.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/ILayerSupport.hpp": {
+      "sha256": "ddb8d5eb65be03b6076831950269b79012200ff67b5d056925f4332c9b3d3588",
+      "bytes": 38979,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/ILayerSupport.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/IMemoryManager.hpp": {
+      "sha256": "10c8ddd0d48be42bb92957aba56fa5ad424a9351ce9f7cc8a084437b98be6563",
+      "bytes": 396,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/IMemoryManager.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/IMemoryOptimizerStrategy.hpp": {
+      "sha256": "3b7e13ace110270b248ec6a7b3f7a4775a596be0fc48e06a185746dd951f1c27",
+      "bytes": 1797,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/IMemoryOptimizerStrategy.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/ITensorHandle.hpp": {
+      "sha256": "92516078cf2df4b0e129bdf74a5161d11ed3db84e2efa1b880b842c3f3ac04df",
+      "bytes": 3438,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/ITensorHandle.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/ITensorHandleFactory.hpp": {
+      "sha256": "414d6a7007af36c212076bc97997ac349f17c99588596aba276d663580e23d95",
+      "bytes": 4055,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/ITensorHandleFactory.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/IWorkload.hpp": {
+      "sha256": "953036401d939335231c6ab5ca092b2cf200db961735141cf42ff7753bab10a9",
+      "bytes": 1576,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/IWorkload.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/MemCopyWorkload.hpp": {
+      "sha256": "69c4b3bfddba16b4edfed9e65152c1d8c9498611c1ff415a7160a829511c161f",
+      "bytes": 657,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/MemCopyWorkload.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/OptimizationViews.hpp": {
+      "sha256": "130afc5bbadf0df5608339192617ccd10bbad6f6aeccac2c6e1ebae1708b868e",
+      "bytes": 2796,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/OptimizationViews.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/SubgraphView.hpp": {
+      "sha256": "b7e8fd95b2f013bd88543da6292316ebaa65227edba0b3aca9d510fa983726fe",
+      "bytes": 10095,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/SubgraphView.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/TensorHandle.hpp": {
+      "sha256": "fcc673130c0658e11c5ae33968dee9ef99ee2c11e7648b0aab8f2910affbbc92",
+      "bytes": 6871,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/TensorHandle.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/TensorHandleFwd.hpp": {
+      "sha256": "45d2004813a27e79ea6c271c7d6a1ace9c2eaa2fb5e178910a14ad2284dc56b4",
+      "bytes": 300,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/TensorHandleFwd.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/Workload.hpp": {
+      "sha256": "82aae4a82f9bd6695f5e453e968e07700e42f5ed66607f3ecd48a08cd5b1c0fa",
+      "bytes": 9732,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/Workload.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/WorkloadData.hpp": {
+      "sha256": "c474b32414ebf58991fbfb570e2cc3844b49bf76cbe084f57f55430d40a6201a",
+      "bytes": 24985,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/WorkloadData.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/WorkloadFactory.hpp": {
+      "sha256": "853760a8f1090a4ef9dcf9b27dcef53e6a12eb27298500e13ef966282dc25be1",
+      "bytes": 27625,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/WorkloadFactory.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/backends/WorkloadInfo.hpp": {
+      "sha256": "79e9ddb4ef9c0450a09683b89000f50cf4e3c527b240ec3a7ef0ec1301772d43",
+      "bytes": 874,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/backends/WorkloadInfo.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/profiling/ArmNNProfiling.hpp": {
+      "sha256": "91abcc0c3ff8c6b5848e29f2b72de346a33c6cc3a478eda6c967d91a93972047",
+      "bytes": 918,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/profiling/ArmNNProfiling.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/Assert.hpp": {
+      "sha256": "1e50f2e6ddfb2ce86a9e2436eb76919254d1199b76f34b09f5bbb94f83c8dd10",
+      "bytes": 381,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/Assert.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/IgnoreUnused.hpp": {
+      "sha256": "438c9fb043fb7df1ef51302b133595742fabc0aa4227d3c250fb23df68f13679",
+      "bytes": 300,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/IgnoreUnused.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/NumericCast.hpp": {
+      "sha256": "5a7f8504b2f6c2779a7fb32c24e6e280a29daf371a0b91690348b18f527c60f0",
+      "bytes": 8228,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/NumericCast.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/PolymorphicDowncast.hpp": {
+      "sha256": "480c754d07cbf91ceec515e2ba8ff0d1cc93fc06dfb3cd466398d3dc3f404d59",
+      "bytes": 3076,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/PolymorphicDowncast.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/StringUtils.hpp": {
+      "sha256": "cb7863c9e129ea213fe0ea2319c341dd3aad22210b474e8fcad02c754cf4a347",
+      "bytes": 4749,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/StringUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/Timer.hpp": {
+      "sha256": "6fa1ad90dec85f1e2d8fb7b287d799c6a3ebbc4de28413969df549e2ffb5e307",
+      "bytes": 507,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/Timer.hpp"
+    },
+    "03_NPU/board_sdk/include/armnn/utility/TransformIterator.hpp": {
+      "sha256": "4874c1f9fc6549fd5f4408634719be56d33b5cdf94b9693f3451c3133adedc53",
+      "bytes": 3087,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnn/utility/TransformIterator.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnALUtils/DataProcess.hpp": {
+      "sha256": "aeae2902ef708d492362800be58bafb61b76c21878bc017ea8fe1bc2f45ab55b",
+      "bytes": 4097,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnALUtils/DataProcess.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnALUtils/GraphPrint2Graphviz.hpp": {
+      "sha256": "7094579be673e52a48dd4b043358253a70171c5b18226247fe4ae05df31f745f",
+      "bytes": 738,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnALUtils/GraphPrint2Graphviz.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnALUtils/cma_mem.hpp": {
+      "sha256": "afc882adaad3fc25c0f75a13f7e8be9440fea1a4ed35c0bb6619018242f53b1e",
+      "bytes": 815,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnALUtils/cma_mem.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnALUtils/cma_mem_init.hpp": {
+      "sha256": "6902609a20672bb1ff05fe3b68bd95a20211f9d8020552e254a2174c7bd60cc0",
+      "bytes": 3988,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnALUtils/cma_mem_init.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnDeserializer/IDeserializer.hpp": {
+      "sha256": "b3db601090f7fe04f1ccac9d6ab97171bf0240b5fabcbb11157d1cc592ef1d0f",
+      "bytes": 1805,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnDeserializer/IDeserializer.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnOnnxParser/IOnnxParser.hpp": {
+      "sha256": "59f161f25c545ec4ba1298eb5eca3c907db545eeac3a696c24d3abe64ede9142",
+      "bytes": 3136,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnOnnxParser/IOnnxParser.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnOnnxParser/Version.hpp": {
+      "sha256": "b4ca1f441af5cefb4e92102aaebe9fe5ec77fd8f0ec9d5e2a0155fbeea1e1dd0",
+      "bytes": 778,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnOnnxParser/Version.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnSerializer/ISerializer.hpp": {
+      "sha256": "4d1507386a1e4bf05a3134d84f9ea0a189ae647c830d71d6e289dfcc1ba26b62",
+      "bytes": 1046,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnSerializer/ISerializer.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/DataLayoutUtils.hpp": {
+      "sha256": "58141c8ba1e164a4417d09b23b6135c50d951e4292dc119de018c6ea493ce736",
+      "bytes": 1874,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/DataLayoutUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/LayerTestResult.hpp": {
+      "sha256": "f73a9e8a4f656ee9df402b042561733aacc699c99f1e4e9a39738eb271dbfaa0",
+      "bytes": 1797,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/LayerTestResult.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/MemCopyTestImpl.hpp": {
+      "sha256": "47c92c7721bd2b58dae7b697fd52d0ad30b7f41182d7b2ed899d1bd2290d63ab",
+      "bytes": 4194,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/MemCopyTestImpl.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/MockBackend.hpp": {
+      "sha256": "cf3f5809e1f93acde5981e06e446b9588fd30dc849183d6f9822fb01836ae149",
+      "bytes": 13246,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/MockBackend.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/MockMemoryManager.hpp": {
+      "sha256": "1b79cecead2a071a80d9f1f2019bcd1caa44c73a2064276ae5b0ef27f7967c84",
+      "bytes": 1175,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/MockMemoryManager.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/MockTensorHandle.hpp": {
+      "sha256": "6a4fba276505c2b6e253be3a82967924ce8af0978fbd84d0b6191ad3cbe1f521",
+      "bytes": 2154,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/MockTensorHandle.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/PredicateResult.hpp": {
+      "sha256": "96c5b32d5663a2ea33a2672cd6033e76518a11ede37ea52637ab31b2f7bb9373",
+      "bytes": 849,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/PredicateResult.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/TensorCopyUtils.hpp": {
+      "sha256": "2dd6598366b3db11a746f926206907d691ed8bf7601f03d0221b4d4584698759",
+      "bytes": 456,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/TensorCopyUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/TensorHelpers.hpp": {
+      "sha256": "382ad378f0cefc5d8eaa5ddc4aeb6724a3c7d1c43d1a76a1845ae9b90df9481c",
+      "bytes": 6812,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/TensorHelpers.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/Version.hpp": {
+      "sha256": "577434e5c8e71a254b057667e2ec5c97c536115cc802d4feb407ec36c2ee8518",
+      "bytes": 772,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/Version.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTestUtils/WorkloadTestUtils.hpp": {
+      "sha256": "a4d36fdb801b562d3b6a1451425ce6faba328a510a1c914c90802d90cda4527b",
+      "bytes": 3074,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTestUtils/WorkloadTestUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTfLiteParser/ITfLiteParser.hpp": {
+      "sha256": "71bcbe674e2dafd9d15814c5ef19187d39c0bcee9a2adfa7a61da2def3b4d7cb",
+      "bytes": 2598,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTfLiteParser/ITfLiteParser.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnTfLiteParser/Version.hpp": {
+      "sha256": "efccde0254fbdb152ff2981f42e0f6471f2e59c36beacb5c1027800bfcce6c7a",
+      "bytes": 805,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnTfLiteParser/Version.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/CompatibleTypes.hpp": {
+      "sha256": "ec09bfc3c9f0b9f0b4ccf510ebdc1f5e736b96e73f83afc07d03504edde79631",
+      "bytes": 259,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/CompatibleTypes.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/DataLayoutIndexed.hpp": {
+      "sha256": "f8a0f6531cb4786bb2056eeb2eb1a88cb15e85797318c10ea4be894c527f08aa",
+      "bytes": 2881,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/DataLayoutIndexed.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/Filesystem.hpp": {
+      "sha256": "3f7c1e29667e3ea606035dec1e7325185347acea340ef3f63e9acc56de75d9ea",
+      "bytes": 1043,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/Filesystem.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/FloatingPointComparison.hpp": {
+      "sha256": "ab6b814f8ed5772d0cff5affb319d39478bc97d18e7069213e391a6b3877b7ed",
+      "bytes": 688,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/FloatingPointComparison.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/FloatingPointConverter.hpp": {
+      "sha256": "d747b94bf3a733964cd22a8ec060f4a6024a17d8adceac85af6877a50ce8b2f2",
+      "bytes": 1021,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/FloatingPointConverter.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/Permute.hpp": {
+      "sha256": "878141363048f96b167e628ac07170a6f507226e2ffc6fcb98f87ebe578e7bb1",
+      "bytes": 676,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/Permute.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/QuantizeHelper.hpp": {
+      "sha256": "3a3427581779e74f325a002752d04783f54dfad67d0e6adca63b5b39613d04f7",
+      "bytes": 3375,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/QuantizeHelper.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/TContainer.hpp": {
+      "sha256": "8db90a88b4bd38b494328f47d54e109ac0331f11fc63e7f3227c091cac0479f3",
+      "bytes": 497,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/TContainer.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/TensorUtils.hpp": {
+      "sha256": "2f7eed19ad11c97386218c26db0efc29e900a960ca667f470299e5735c69e3ee",
+      "bytes": 2736,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/TensorUtils.hpp"
+    },
+    "03_NPU/board_sdk/include/armnnUtils/Transpose.hpp": {
+      "sha256": "f88cec924265cdbf8a8aa9ab6fd92f4a277fc3ffea1e6101e1ad180dc6fed6a9",
+      "bytes": 648,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/armnnUtils/Transpose.hpp"
+    },
+    "03_NPU/board_sdk/include/fmt/core.h": {
+      "sha256": "fe8e995c5031945f4e7644d7a5c631a96ed35dd40c8b284d3370ef45c505a7e2",
+      "bytes": 68452,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/fmt/core.h"
+    },
+    "03_NPU/board_sdk/include/fmt/format-inl.h": {
+      "sha256": "07b10ce4054da56ea188380e39c57b18e2aad18e7f0fee4b087506e091de8b51",
+      "bytes": 53546,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/fmt/format-inl.h"
+    },
+    "03_NPU/board_sdk/include/fmt/format.h": {
+      "sha256": "16e3265c9a938a26796a365c9925c2221dd8168eb7e52237fe1a56c16eb5bacf",
+      "bytes": 122815,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/include/fmt/format.h"
+    },
+    "03_NPU/board_sdk/lib/libarmnn.so": {
+      "sha256": "5def7ba75e4b59644be6f58deaf8b2bb3791c62ed38b52b6aea08b11a8f728ce",
+      "bytes": 13824312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnn.so"
+    },
+    "03_NPU/board_sdk/lib/libarmnn.so.32": {
+      "sha256": "5def7ba75e4b59644be6f58deaf8b2bb3791c62ed38b52b6aea08b11a8f728ce",
+      "bytes": 13824312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnn.so.32"
+    },
+    "03_NPU/board_sdk/lib/libarmnn.so.32.1": {
+      "sha256": "5def7ba75e4b59644be6f58deaf8b2bb3791c62ed38b52b6aea08b11a8f728ce",
+      "bytes": 13824312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnn.so.32.1"
+    },
+    "03_NPU/board_sdk/lib/libarmnnBasePipeServer.so": {
+      "sha256": "ace198dd8cde495eb863a6899b0bdccc45348876361e7107fc49252850bbee00",
+      "bytes": 27184,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnBasePipeServer.so"
+    },
+    "03_NPU/board_sdk/lib/libarmnnBasePipeServer.so.32": {
+      "sha256": "ace198dd8cde495eb863a6899b0bdccc45348876361e7107fc49252850bbee00",
+      "bytes": 27184,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnBasePipeServer.so.32"
+    },
+    "03_NPU/board_sdk/lib/libarmnnBasePipeServer.so.32.1": {
+      "sha256": "ace198dd8cde495eb863a6899b0bdccc45348876361e7107fc49252850bbee00",
+      "bytes": 27184,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnBasePipeServer.so.32.1"
+    },
+    "03_NPU/board_sdk/lib/libarmnnOnnxParser.so": {
+      "sha256": "dcb43bc092ec283364806e563fa6aa8d2404eb7c005db44081821da405c5ce99",
+      "bytes": 569216,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnOnnxParser.so"
+    },
+    "03_NPU/board_sdk/lib/libarmnnOnnxParser.so.24": {
+      "sha256": "dcb43bc092ec283364806e563fa6aa8d2404eb7c005db44081821da405c5ce99",
+      "bytes": 569216,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnOnnxParser.so.24"
+    },
+    "03_NPU/board_sdk/lib/libarmnnOnnxParser.so.24.6": {
+      "sha256": "dcb43bc092ec283364806e563fa6aa8d2404eb7c005db44081821da405c5ce99",
+      "bytes": 569216,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libarmnnOnnxParser.so.24.6"
+    },
+    "03_NPU/board_sdk/lib/libgcc_s.so.1": {
+      "sha256": "5166dc58ac12a601734b10c8b29df0510d1cd72d424356f185bd7f30829b6a1d",
+      "bytes": 704008,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libgcc_s.so.1"
+    },
+    "03_NPU/board_sdk/lib/libprotobuf.so": {
+      "sha256": "5d69d988c4b8309bb5dc9318c010bac6a16904549ffd38ce11f65a918376e265",
+      "bytes": 2700312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libprotobuf.so"
+    },
+    "03_NPU/board_sdk/lib/libprotobuf.so.23": {
+      "sha256": "5d69d988c4b8309bb5dc9318c010bac6a16904549ffd38ce11f65a918376e265",
+      "bytes": 2700312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libprotobuf.so.23"
+    },
+    "03_NPU/board_sdk/lib/libprotobuf.so.23.0.0": {
+      "sha256": "5d69d988c4b8309bb5dc9318c010bac6a16904549ffd38ce11f65a918376e265",
+      "bytes": 2700312,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libprotobuf.so.23.0.0"
+    },
+    "03_NPU/board_sdk/lib/libstdc++.so.6": {
+      "sha256": "407a9d16b5ac4cbfc6dc65d027bf0d9c9085f88fc8b6cfb49c1cd85ea321699e",
+      "bytes": 12041928,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libstdc++.so.6"
+    },
+    "03_NPU/board_sdk/lib/libstdc++.so.6.0.24": {
+      "sha256": "407a9d16b5ac4cbfc6dc65d027bf0d9c9085f88fc8b6cfb49c1cd85ea321699e",
+      "bytes": 12041928,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libstdc++.so.6.0.24"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoder.so": {
+      "sha256": "84139638f15a6c49429ff3457472e6d279a9a7b93569cbfa2c0bc3214fadcab9",
+      "bytes": 263792,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoder.so"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoder.so.32": {
+      "sha256": "84139638f15a6c49429ff3457472e6d279a9a7b93569cbfa2c0bc3214fadcab9",
+      "bytes": 263792,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoder.so.32"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoder.so.32.1": {
+      "sha256": "84139638f15a6c49429ff3457472e6d279a9a7b93569cbfa2c0bc3214fadcab9",
+      "bytes": 263792,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoder.so.32.1"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoderJson.so": {
+      "sha256": "9e6f7d4bf03750d53684f6bf49413eea4b07a77ae753ecb50ea22f02335eb891",
+      "bytes": 55888,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoderJson.so"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoderJson.so.32": {
+      "sha256": "9e6f7d4bf03750d53684f6bf49413eea4b07a77ae753ecb50ea22f02335eb891",
+      "bytes": 55888,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoderJson.so.32"
+    },
+    "03_NPU/board_sdk/lib/libtimelineDecoderJson.so.32.1": {
+      "sha256": "9e6f7d4bf03750d53684f6bf49413eea4b07a77ae753ecb50ea22f02335eb891",
+      "bytes": 55888,
+      "source": "/opt/cabinet/releases/r45_icm_4khz_20261031/sdk/lib/libtimelineDecoderJson.so.32.1"
+    },
+    "04_Website/monitor_8080/README.md": {
+      "sha256": "f5d448f431a50d30ddd66def854c5295e1ab5a7904f27c86072d2f3ef0a1196d",
+      "bytes": 28117,
+      "source": "/home/uisrc/web/README.md"
+    },
+    "04_Website/monitor_8080/apiserver.py": {
+      "sha256": "8cb377157c1a6402596ca9c9b233ea126db9bb3d478679bd513d22b8ba7d4dee",
+      "bytes": 6534,
+      "source": "/home/uisrc/web/apiserver.py"
+    },
+    "04_Website/monitor_8080/collector.py": {
+      "sha256": "353e7f5b2447189e5e34849a48c82dc917822ad02f581de7073105d69d1faf67",
+      "bytes": 13995,
+      "source": "/home/uisrc/web/collector.py"
+    },
+    "04_Website/monitor_8080/config.json": {
+      "sha256": "1995a0a569ce99c5f80ad8133398af784ee6a298fe5cd4062a17acfbfd9f3e47",
+      "bytes": 4578,
+      "source": "/home/uisrc/web/config.json"
+    },
+    "04_Website/monitor_8080/install.sh": {
+      "sha256": "d3d3c23b7d15510bb97733bb4ac13202ecd94c3f7874e31eedd6aeec2988f5dd",
+      "bytes": 8483,
+      "source": "/home/uisrc/web/install.sh"
+    },
+    "04_Website/monitor_8080/lighttpd.conf": {
+      "sha256": "74fdc7577c98add1248e2712e49e95efd6b39c84580fa18b1b07f0d003831d33",
+      "bytes": 2583,
+      "source": "/home/uisrc/web/lighttpd.conf"
+    },
+    "04_Website/monitor_8080/load-test.py": {
+      "sha256": "b064ac96bcfdd219aeaa928b497eaf3b3fa103b930cab4acdb1439b8bebfe274",
+      "bytes": 4132,
+      "source": "/home/uisrc/web/load-test.py"
+    },
+    "04_Website/monitor_8080/mock_device.py": {
+      "sha256": "bade5c717b9eaa0dcb540f40e230bc7e16ee671f851d962d2818925aff56feb4",
+      "bytes": 21469,
+      "source": "/home/uisrc/web/mock_device.py"
+    },
+    "04_Website/monitor_8080/test-bucket.py": {
+      "sha256": "ef33646ebde0b946a1e9a9ccd88aabb22f965b2d3948a8ea7c1c70c1a4230db6",
+      "bytes": 1465,
+      "source": "/home/uisrc/web/test-bucket.py"
+    },
+    "04_Website/monitor_8080/test-e2e.sh": {
+      "sha256": "41ea9bfbe5baf14c954bf1bc118c20c9d328b9996a11427b86565157a7416b29",
+      "bytes": 4357,
+      "source": "/home/uisrc/web/test-e2e.sh"
+    },
+    "04_Website/monitor_8080/verify-breaks.py": {
+      "sha256": "4f381d2184e661d063f24916c36f640cc853d1fc29294c5099b2d7f46d1739e4",
+      "bytes": 3875,
+      "source": "/home/uisrc/web/verify-breaks.py"
+    },
+    "04_Website/monitor_8080/verify-trend.py": {
+      "sha256": "e07746518197e3c8e1e30da9f1d0adeb1c1f3b554a2a069da7cfa4a2edf0006c",
+      "bytes": 1605,
+      "source": "/home/uisrc/web/verify-trend.py"
+    },
+    "04_Website/monitor_8080/api/__init__.py": {
+      "sha256": "55c53ac6f224d9520827060d37c8ede04a10a7c2fa8b82d0ba17639115fdb235",
+      "bytes": 652,
+      "source": "/home/uisrc/web/api/__init__.py"
+    },
+    "04_Website/monitor_8080/api/ack.py": {
+      "sha256": "b326de4b785fac78356105708432bef0039212b3d09f3dd4bbcdc9ac9acec2a9",
+      "bytes": 1287,
+      "source": "/home/uisrc/web/api/ack.py"
+    },
+    "04_Website/monitor_8080/api/audit.py": {
+      "sha256": "27510545e53baf8dea3b73838b36c0789aa1d6dd22ca02516966e9af8a864f32",
+      "bytes": 656,
+      "source": "/home/uisrc/web/api/audit.py"
+    },
+    "04_Website/monitor_8080/api/compact.py": {
+      "sha256": "14a6a7fd9fd96f4514aab91ebf1bd8cab80429250799d971234019deda990285",
+      "bytes": 2898,
+      "source": "/home/uisrc/web/api/compact.py"
+    },
+    "04_Website/monitor_8080/api/events.py": {
+      "sha256": "9d27ffc37c54070d159620278ca47e73ac33400584d64f89b4a80bc83aa87645",
+      "bytes": 1175,
+      "source": "/home/uisrc/web/api/events.py"
+    },
+    "04_Website/monitor_8080/api/export.py": {
+      "sha256": "4eabd3ee62037c49966b6e4828eeee8cc89b49fc561fc9f058afe2d3de48a878",
+      "bytes": 2110,
+      "source": "/home/uisrc/web/api/export.py"
+    },
+    "04_Website/monitor_8080/api/health.py": {
+      "sha256": "95d86897679ef2cecca21fd2408938b501c7dde874a02fcea5754b1a6ad32423",
+      "bytes": 1714,
+      "source": "/home/uisrc/web/api/health.py"
+    },
+    "04_Website/monitor_8080/api/history.py": {
+      "sha256": "5287995256c8945a01fbb7e77acf03282ac318eea26c6196c836c2e818a6ec19",
+      "bytes": 3017,
+      "source": "/home/uisrc/web/api/history.py"
+    },
+    "04_Website/monitor_8080/api/mock.py": {
+      "sha256": "b433de897cb1fd10163ec90e2f81aa26418e59829faa238074cb2e467607f2e5",
+      "bytes": 2491,
+      "source": "/home/uisrc/web/api/mock.py"
+    },
+    "04_Website/monitor_8080/api/purge.py": {
+      "sha256": "65239516070a70bf68768fd38d4688934839e5410f9178d984460d3fbfa79a39",
+      "bytes": 3556,
+      "source": "/home/uisrc/web/api/purge.py"
+    },
+    "04_Website/monitor_8080/api/snapshots.py": {
+      "sha256": "87c252847de9f55ae0a7d98377463d2b7963ac153c3e9471ab91c1ec4f415dc8",
+      "bytes": 1699,
+      "source": "/home/uisrc/web/api/snapshots.py"
+    },
+    "04_Website/monitor_8080/api/stats.py": {
+      "sha256": "51dc36d01ea6e65080108064e8373c5ac900f9a21d02d20a65571ada82e78795",
+      "bytes": 1229,
+      "source": "/home/uisrc/web/api/stats.py"
+    },
+    "04_Website/monitor_8080/api/status.py": {
+      "sha256": "09bfe573668d7de4d342dcb40069b635c29c21816c354110d8840ba30611f6eb",
+      "bytes": 2685,
+      "source": "/home/uisrc/web/api/status.py"
+    },
+    "04_Website/monitor_8080/lib/apicommon.py": {
+      "sha256": "fdb828e5caa8710a1cf2ef9c171f42ccff6708bbb6709b067d370c0f4cc47e9a",
+      "bytes": 6507,
+      "source": "/home/uisrc/web/lib/apicommon.py"
+    },
+    "04_Website/monitor_8080/lib/state_reader.py": {
+      "sha256": "492ca22099ca3696486c10019086b1ee29d5de6ac858580243490eed57ae5d84",
+      "bytes": 15368,
+      "source": "/home/uisrc/web/lib/state_reader.py"
+    },
+    "04_Website/monitor_8080/lib/store.py": {
+      "sha256": "b296760759472caee9cbfe0eb62fa8d7ace886ff19909daec7ab5333960ede8e",
+      "bytes": 25547,
+      "source": "/home/uisrc/web/lib/store.py"
+    },
+    "04_Website/monitor_8080/public/chart-compare.html": {
+      "sha256": "d398692e08958c325ff500abe38dae8a565d9bd2f771300d323ab5d11b35deb9",
+      "bytes": 11775,
+      "source": "/home/uisrc/web/public/chart-compare.html"
+    },
+    "04_Website/monitor_8080/public/db.html": {
+      "sha256": "de65f5e1a55ccb9e6985f4249e3f71eec4fcf2b1ce452ec720f3af48569e2693",
+      "bytes": 51463,
+      "source": "/home/uisrc/web/public/db.html"
+    },
+    "04_Website/monitor_8080/public/index.html": {
+      "sha256": "f69f119c770b09684d3ec85b721417eaf56fc4dcbbd33c33e567f10342cc6bcd",
+      "bytes": 66040,
+      "source": "/home/uisrc/web/public/index.html"
+    },
+    "04_Website/monitor_8080/public/res-test.html": {
+      "sha256": "003c858c27b7a493e2682cfd425ebfb68fd1d781ebabd183fc4795448b72e1d2",
+      "bytes": 2162,
+      "source": "/home/uisrc/web/public/res-test.html"
+    },
+    "04_Website/monitor_8080/public/self-test.html": {
+      "sha256": "1fb66fabeb3cdc8beb605673a9cc4f8672386ee5afc366e3d7d489b24bcf397f",
+      "bytes": 2817,
+      "source": "/home/uisrc/web/public/self-test.html"
+    },
+    "04_Website/monitor_8080/public/zoom-res-test.html": {
+      "sha256": "368620798d6102aefc7864ac95f608689a5cd28115a615b88f309e3d78ef112c",
+      "bytes": 2439,
+      "source": "/home/uisrc/web/public/zoom-res-test.html"
+    },
+    "04_Website/monitor_8080/public/zoom-reset-test.html": {
+      "sha256": "32aa7c5948f6dbec55aa3dd73587ff62de31275a35a237a5421bb194d510bc6d",
+      "bytes": 3427,
+      "source": "/home/uisrc/web/public/zoom-reset-test.html"
+    },
+    "04_Website/monitor_8080/public/zoom-test.html": {
+      "sha256": "51f487198ad042fbc7ed7c172dc292a273fb79fda83ceafc80e3dddd4f5c9572",
+      "bytes": 3660,
+      "source": "/home/uisrc/web/public/zoom-test.html"
+    },
+    "04_Website/monitor_8080/public/vendor/chart.umd.js": {
+      "sha256": "ecc3cd1eeb8c34d2178e3f59fd63ec5a3d84358c11730af0b9958dc886d7652a",
+      "bytes": 208518,
+      "source": "/home/uisrc/web/public/vendor/chart.umd.js"
+    },
+    "04_Website/monitor_8080/public/vendor/chartjs-adapter-date-fns.bundle.min.js": {
+      "sha256": "ea7ab30d26c38dcf1f2d26bb43e73a94537b58f1906f55e1a546dd09321b5615",
+      "bytes": 50650,
+      "source": "/home/uisrc/web/public/vendor/chartjs-adapter-date-fns.bundle.min.js"
+    },
+    "04_Website/monitor_8080/public/vendor/echarts.min.js": {
+      "sha256": "bf4a223524e40b77c304bec67e1222cf551f14880cf42c69dc046558e11c07b1",
+      "bytes": 1034102,
+      "source": "/home/uisrc/web/public/vendor/echarts.min.js"
+    },
+    "04_Website/monitor_8080/public/vendor/uPlot.iife.min.js": {
+      "sha256": "19c8d4c6ad88929a79f4ae49d6f7161566dfd0ba3d15cc495e974f787eb78f1f",
+      "bytes": 51081,
+      "source": "/home/uisrc/web/public/vendor/uPlot.iife.min.js"
+    },
+    "04_Website/monitor_8080/public/vendor/uPlot.min.css": {
+      "sha256": "df630c6a8d6f8eeaff264b50f73ce5b114f646ffd9a0bb74f049b0a00135fa04",
+      "bytes": 1857,
+      "source": "/home/uisrc/web/public/vendor/uPlot.min.css"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/alnpu_conversion.json": {
+      "sha256": "6d45413932252fc87af5748e7315b27a944fca142166c163c0bc0c47eabda3d9",
+      "bytes": 1458,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/alnpu_conversion.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/golden.json": {
+      "sha256": "1c2e975ae8991739b2e1fc135545910f585f9f01f2b25642278ced3ab156d0d4",
+      "bytes": 403017,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/golden.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/manifest.json": {
+      "sha256": "4edf2cc5d189cd50aa8710167313bb39c2c67725f3fbea9b5562e3b6b474f0a8",
+      "bytes": 1192,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/manifest.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/model_alnpu_u8.onnx": {
+      "sha256": "be3af8519475d9cbc31a05a2b54650b9700fe8b991126112eee529845ca7fd84",
+      "bytes": 6132,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/model_alnpu_u8.onnx"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/model_u8.onnx": {
+      "sha256": "cba23676da23afd2b2bdaf4c045dd73addc971d55b5f4322f37f56e856d47ac0",
+      "bytes": 6132,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/model_u8.onnx"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/normalization.json": {
+      "sha256": "bab91abe58ea8f7e43c8c541b567541339f533fc98a6ac80ebbda0578ce67430",
+      "bytes": 2781,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/normalization.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/provenance.json": {
+      "sha256": "d947678c5316263927d10cbdcae76a8eab27eb7c30653ebd915219086eb1b967",
+      "bytes": 6504,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/provenance.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/receipt.json": {
+      "sha256": "a0d09154dfaab44d1fecdf84e13a3624f7b2d83368967f2f75da25bf465b1c2c",
+      "bytes": 496,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/receipt.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/thresholds.json": {
+      "sha256": "cf384ddf4dc8cbd013a3c05e67af1866be0c904032bf305a52ab39578a5566a6",
+      "bytes": 1148,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/thresholds.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/training_validation.json": {
+      "sha256": "2857d9aa4fee204da38a4b38aa67857920171701ba03c18c3bf06196e0fbc88e",
+      "bytes": 4539,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/training_validation.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-bundle/标注.txt": {
+      "sha256": "050b7a40fe0abe158871e5e2c9f5f5403b8637fe804781675f584b803afc255f",
+      "bytes": 496,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-bundle/标注.txt"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/staged-candidate.json": {
+      "sha256": "df7be0c8f973ea68a9bc3f67a8ae49ead96dde227dda10303e31aca4480c0c73",
+      "bytes": 5667,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/staged-candidate.json"
+    },
+    "03_NPU/saved_training/5c119b68ea784df9879f09438c52148a/stage-preservation-audit.json": {
+      "sha256": "0bd86eeec0b0b7d7932f1301d2da2cb0e6d4eed14fbee639f4d5bc7e913e9acf",
+      "bytes": 6512,
+      "source": "/var/lib/cabinet/npu-learning/jobs/5c119b68ea784df9879f09438c52148a/stage-preservation-audit.json"
+    },
+    "05_Config/etc_cabinet/capture-contract.json": {
+      "sha256": "30d27ae1047121797b5ff6be3894438d3d098e30090dad8b23f732106e2ab3bc",
+      "bytes": 1002,
+      "source": "/etc/cabinet/capture-contract.json"
+    },
+    "05_Config/etc_cabinet/display-calibration.json": {
+      "sha256": "7ba0c17b9df01bfa8fccf16d03463096321378977ffd5d6bdc30c8b45b55a065",
+      "bytes": 610,
+      "source": "/etc/cabinet/display-calibration.json"
+    },
+    "05_Config/etc_cabinet/edge.json": {
+      "sha256": "f17e61e8ddbef0c931dc38d20d91bac6e192104476281787ccc97c9eff25230b",
+      "bytes": 1599,
+      "source": "/etc/cabinet/edge.json"
+    },
+    "05_Config/etc_cabinet/fan-life.json": {
+      "sha256": "1dff86f8be3b4bad9306e73e7a1d58e281661c0f8e86fcee433c43932342dd3d",
+      "bytes": 289,
+      "source": "/etc/cabinet/fan-life.json"
+    },
+    "05_Config/etc_cabinet/learning.json": {
+      "sha256": "34388d9d64b3ea6f33c80e155c5e1413da7bc9445874b139c03458a1cb550bed",
+      "bytes": 318,
+      "source": "/etc/cabinet/learning.json"
+    },
+    "05_Config/etc_cabinet/npu-deployment-policy.json": {
+      "sha256": "0b623f2c24fdb851c88d592cc8d8c557577754caf8159ded457f483718b732d1",
+      "bytes": 194,
+      "source": "/etc/cabinet/npu-deployment-policy.json"
+    },
+    "05_Config/etc_cabinet/npu-learning-platform.json": {
+      "sha256": "7fa8365cb2317d6428c0e3b3a46005ad60b29b67e7ec93244f628e6506586b48",
+      "bytes": 410,
+      "source": "/etc/cabinet/npu-learning-platform.json"
+    },
+    "05_Config/etc_cabinet/temperature-pwm.json": {
+      "sha256": "e3fe6576a93af207a164123540c84f7b43e7d3f04836a211a4f2f8483c5e2545",
+      "bytes": 1029,
+      "source": "/etc/cabinet/temperature-pwm.json"
+    },
+    "05_Config/etc_cabinet/vibration-monitor.json": {
+      "sha256": "ee3811eb52e46a8e8d722923be74018e579bee1bdaec675134c68778875951c6",
+      "bytes": 772,
+      "source": "/etc/cabinet/vibration-monitor.json"
+    },
+    "05_Config/etc_cabinet/normal-npu.env": {
+      "sha256": "c6ad51dfbdb81a4922a1d9c6a282673b227fd182b06ae74f471c6dca5f53e088",
+      "bytes": 452,
+      "source": "/etc/cabinet/normal-npu.env"
+    },
+    "05_Config/etc_cabinet/npu-v4.env": {
+      "sha256": "2df45fcb603077d7c80d94107e17a4779fe49de74e8cb176592945d96fbb279f",
+      "bytes": 449,
+      "source": "/etc/cabinet/npu-v4.env"
+    },
+    "05_Config/systemd/cabinet-commissioning-manager.service": {
+      "sha256": "c6c3cdb3cf5d7d4e02af47d5e9e2afd568c10b16eb81f57b21073b3260d26b22",
+      "bytes": 559,
+      "source": "/etc/systemd/system/cabinet-commissioning-manager.service"
+    },
+    "05_Config/systemd/cabinet-edge.service": {
+      "sha256": "39e8b017af382894308d7061b25ec1602869d43ef8d46732c523fd5fe8f441ee",
+      "bytes": 621,
+      "source": "/etc/systemd/system/cabinet-edge.service"
+    },
+    "05_Config/systemd/cabinet-fan-life.service": {
+      "sha256": "28d0def587a923df56a12581a45b74094071ab0144e80a0ecef378328040ef12",
+      "bytes": 381,
+      "source": "/etc/systemd/system/cabinet-fan-life.service"
+    },
+    "05_Config/systemd/cabinet-local-display.service": {
+      "sha256": "f634bf67d3a6385bcd88f8ffc22149a1041091821e1cd1a88c37d12b64ef51fc",
+      "bytes": 480,
+      "source": "/etc/systemd/system/cabinet-local-display.service"
+    },
+    "05_Config/systemd/cabinet-normal-npu.service": {
+      "sha256": "29920ad8c4ba2ba46512ea1eab6f6e1cd242c4a20d55540951fa27a0cdac9842",
+      "bytes": 1043,
+      "source": "/etc/systemd/system/cabinet-normal-npu.service"
+    },
+    "05_Config/systemd/cabinet-npu-selection-recover.service": {
+      "sha256": "9009b41340ba595091026315fa1aced7e98894965044548e834045b89e75f10a",
+      "bytes": 475,
+      "source": "/etc/systemd/system/cabinet-npu-selection-recover.service"
+    },
+    "05_Config/systemd/cabinet-npu-v4-shadow.service": {
+      "sha256": "74ca356a7ddbeeccb53e03ff4f1231ce28798b48b45ecab4b7a2f0b447c8ec97",
+      "bytes": 639,
+      "source": "/etc/systemd/system/cabinet-npu-v4-shadow.service"
+    },
+    "05_Config/systemd/cabinet-web-api.service": {
+      "sha256": "d3ab0f0e2cde1d55395d56d97bbc035748cf85f8cf4a428f5c0b16a2557cda94",
+      "bytes": 694,
+      "source": "/etc/systemd/system/cabinet-web-api.service"
+    },
+    "05_Config/systemd/cabinet-web-collector.service": {
+      "sha256": "455dcec396175c8db9dc751efb0da81d14cce4c6c576ddcbc82a61515abb467b",
+      "bytes": 514,
+      "source": "/etc/systemd/system/cabinet-web-collector.service"
+    },
+    "05_Config/systemd/cabinet-web-lighttpd.service": {
+      "sha256": "b1e3880d0184c5c658ddd94597fbdc3a59397773c6a6c4c662770ad68e947949",
+      "bytes": 517,
+      "source": "/etc/systemd/system/cabinet-web-lighttpd.service"
+    },
+    "05_Config/systemd/cabinet-web-mock.service": {
+      "sha256": "ef504debc10ccf9de8fa099ea622c028ed6727545e9cfcc8e8219310ff5dc4bc",
+      "bytes": 502,
+      "source": "/etc/systemd/system/cabinet-web-mock.service"
+    },
+    "05_Config/systemd/r46-npu-drivers.service": {
+      "sha256": "a7542a6c8f09770247e4ab65365c65a8ebd528b4f6d59ca8a94526d1f756ab9f",
+      "bytes": 359,
+      "source": "/etc/systemd/system/r46-npu-drivers.service"
+    },
+    "05_Config/systemd/r46-npu-kernel-network.service": {
+      "sha256": "3a9012adbca9a6d09562bcc41a11f8723adcea5819dbc670c0e313d0055cf3b7",
+      "bytes": 352,
+      "source": "/etc/systemd/system/r46-npu-kernel-network.service"
+    },
+    "05_Config/systemd/r46-npu-trial-recovery.service": {
+      "sha256": "78bc33c5ecdd347ff7ad59cb5a97dd3415b1cb146941607391af01202d21d9fa",
+      "bytes": 261,
+      "source": "/etc/systemd/system/r46-npu-trial-recovery.service"
+    },
+    "05_Config/systemd/cabinet-edge.service.d/40-recording.conf": {
+      "sha256": "f9b36140759d8c7032f0a4cd389b0698abde32c4b02c00e49f364f730afe9017",
+      "bytes": 447,
+      "source": "/etc/systemd/system/cabinet-edge.service.d/40-recording.conf"
+    },
+    "05_Config/systemd/cabinet-labeled-npu.service.d/20-selection-recovery.conf": {
+      "sha256": "5b3200adaa6cafc8572fb13d8b39e6781d56196f49f3b10f40d41410b93cac04",
+      "bytes": 98,
+      "source": "/etc/systemd/system/cabinet-labeled-npu.service.d/20-selection-recovery.conf"
+    },
+    "05_Config/systemd/cabinet-local-display.service.d/50-config-p13.conf": {
+      "sha256": "312e8303f5fad93e150beb11f53ccb982c9f5cdb44f3f6e5710e94e8a9cfa151",
+      "bytes": 60,
+      "source": "/etc/systemd/system/cabinet-local-display.service.d/50-config-p13.conf"
+    },
+    "05_Config/systemd/cabinet-normal-npu.service.d/20-selection-recovery.conf": {
+      "sha256": "5b3200adaa6cafc8572fb13d8b39e6781d56196f49f3b10f40d41410b93cac04",
+      "bytes": 98,
+      "source": "/etc/systemd/system/cabinet-normal-npu.service.d/20-selection-recovery.conf"
+    },
+    "06_Version_Records/board/software_manifest.json": {
+      "sha256": "1c99ea00b52466b1cc70ce9c6c7d591979bbd848594944645f58988f4c08253b",
+      "bytes": 31191,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/software_manifest.json"
+    },
+    "06_Version_Records/board/boot_installation.json": {
+      "sha256": "08fb930f64c808988b86c2becf0474e8e6a0a7c2ef4b14309683cafba147c1b2",
+      "bytes": 1914,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/boot_installation.json"
+    },
+    "06_Version_Records/board/life_notification_patch.json": {
+      "sha256": "e82606a89745a0bb52e9eeb83ac916a33ff08316bc1a69f227088ac77bcc52c9",
+      "bytes": 985,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/life_notification_patch.json"
+    },
+    "06_Version_Records/board/npu_startup_patch.json": {
+      "sha256": "c904b5c89d70a84d52a12cac4e03ac0fb926dd8795c2fec86caf3aff6e8549e7",
+      "bytes": 3182,
+      "source": "/opt/cabinet/releases/r46_alarm_only_pwm_p52_20261103/npu_startup_patch.json"
+    }
+  }
+}

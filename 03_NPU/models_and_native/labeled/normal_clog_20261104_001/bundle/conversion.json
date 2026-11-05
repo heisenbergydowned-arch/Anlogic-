@@ -1,0 +1,64 @@
+{
+  "offsets": {
+    "bias0_quantized": 22,
+    "bias1_quantized": 124,
+    "bias2_quantized": 85
+  },
+  "audit_before": {
+    "schema": "cabinet-candidate-graph-v1",
+    "model_sha256": "5d5e274c55904940d30d72fb9e2ac3608842eb1560bd46983b91d3477161f54a",
+    "hardware_profile": "DR1M90_GEMM39_POOL_UP_OFF_V1",
+    "dimensions": [
+      [
+        39,
+        32
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        16,
+        5
+      ]
+    ],
+    "transB": [
+      1,
+      1,
+      1
+    ],
+    "forbidden_ops": [],
+    "qualified": false,
+    "hardware_executed": false
+  },
+  "audit_after": {
+    "schema": "cabinet-candidate-graph-v1",
+    "model_sha256": "7a2db16c29124a8f20fe959e89dc5450b3e25c5212b3dae26d1675be24a3884c",
+    "hardware_profile": "DR1M90_GEMM39_POOL_UP_OFF_V1",
+    "dimensions": [
+      [
+        39,
+        32
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        16,
+        5
+      ]
+    ],
+    "transB": [
+      1,
+      1,
+      1
+    ],
+    "forbidden_ops": [],
+    "qualified": false,
+    "hardware_executed": false
+  },
+  "reference_unchanged": true,
+  "trained_weights_unchanged": true,
+  "hardware_executed": false
+}

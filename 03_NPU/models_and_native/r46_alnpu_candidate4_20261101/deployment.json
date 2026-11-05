@@ -1,0 +1,23 @@
+{
+  "status": "PASS_PERMANENT4_REBOOT_DISPLAY_NPU_AUTOLOAD_AND_GOLDEN",
+  "boot_id": "af27d92f-7319-4f88-b6c2-f2978d540dcf",
+  "manifest_sha256": "0d16e47503db17b5f6b52a1055545ebec670021608abaef475e88cd9d28bd63a",
+  "created_utc": "2026-11-02T05:02:27.652839+00:00",
+  "previous_files": {
+    "/etc/systemd/system/cabinet-npu-v4-shadow.service": "290d7104ee59ffaad5b44f4340291a644067c930a87dbd5a842caa537572b494",
+    "/etc/cabinet/npu-v4.env": "19748e13a1a6153e571266629d5c583b69a0b9daf84029fd6e06498fccf0c8c8"
+  },
+  "original_BOOT_kernel_DTB_retained": true,
+  "model_qualified": false,
+  "production_inference_enabled": false,
+  "adapter_path": "/opt/cabinet/npu/r46_alnpu_candidate4_20261101/libedge_npu_logits_ps.so",
+  "boot_script_sha256": "eb1c7be7dde7652dd6e289deffaef7b12c4030e92b3bc963a7a8fcc95186b328",
+  "driver_service_enabled": true,
+  "shadow_service_enabled": false,
+  "requested_utc": "2026-11-02T05:02:40.872388+00:00",
+  "verified_boot_id": "2424a441-13dd-4f01-93af-13d55890178f",
+  "verified_utc": "2026-11-02T05:08:52.825315+00:00",
+  "final_readback_sha256": "d909f2917c5ac82b1366d58c3cc8da7a37cf0a9a79cb8d06ac53c4b2140f495a",
+  "npu_executed": true,
+  "synthetic_only": true
+}

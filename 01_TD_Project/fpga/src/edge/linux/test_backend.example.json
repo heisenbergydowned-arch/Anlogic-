@@ -1,0 +1,9 @@
+{
+  "backend": "unix",
+  "socket": "/run/cabinet/npu.sock",
+  "model_id": "REPLACE_AFTER_EXPORT",
+  "qualified": false,
+  "evidence": null,
+  "timeout_ms": 250,
+  "note": "Replace only the model object in edge.json. Native Alnpu worker must use matching feature/calibration IDs. A MOCK worker result remains test=true."
+}

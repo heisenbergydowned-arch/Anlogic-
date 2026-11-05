@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:user="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>user</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_design_0_video_timing_generator_v01_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>video_timing_generator_v01_e2dadf6740ca_Inst</ipxact:instanceName>
+            <ipxact:componentRef vendor="user" library="module" name="video_timing_generator_v01" version="1.0"/>
+            <ipxact:configurableElementValues>
+                <ipxact:configurableElementValue referenceId="REF_CLK_FREQ">75</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="FPS">60</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_FRONT_Display">&quot;16'd110&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_ACTIVE_Display">&quot;16'd1280&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_SYNC_Display">&quot;16'd40&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_BACK_Display">&quot;16'd220&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_FRONT_Display">&quot;16'd5&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_ACTIVE_Display">&quot;16'd720&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_SYNC_Display">&quot;16'd5&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_BACK_Display">&quot;16'd20&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_FRONT">16'd110</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_ACTIVE">16'd1280</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_SYNC">16'd40</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="H_BACK">16'd220</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_FRONT">16'd5</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_ACTIVE">16'd720</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_SYNC">16'd5</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="V_BACK">16'd20</ipxact:configurableElementValue>
+            </ipxact:configurableElementValues>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="aclk"/>
+                <ipxact:externalPortReference portRef="aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>arst_n</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="arst_n"/>
+                <ipxact:externalPortReference portRef="arst_n"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awaddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_awaddr"/>
+                <ipxact:externalPortReference portRef="s_axi_awaddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_awvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_awvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_awready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_awready"/>
+                <ipxact:externalPortReference portRef="s_axi_awready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_wdata"/>
+                <ipxact:externalPortReference portRef="s_axi_wdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wstrb</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_wstrb"/>
+                <ipxact:externalPortReference portRef="s_axi_wstrb"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_wvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_wvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_wready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_wready"/>
+                <ipxact:externalPortReference portRef="s_axi_wready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_bresp"/>
+                <ipxact:externalPortReference portRef="s_axi_bresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_bvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_bvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_bready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_bready"/>
+                <ipxact:externalPortReference portRef="s_axi_bready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_araddr</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_araddr"/>
+                <ipxact:externalPortReference portRef="s_axi_araddr"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_arvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_arvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_arvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_arready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_arready"/>
+                <ipxact:externalPortReference portRef="s_axi_arready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_rdata"/>
+                <ipxact:externalPortReference portRef="s_axi_rdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rresp</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_rresp"/>
+                <ipxact:externalPortReference portRef="s_axi_rresp"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_rvalid"/>
+                <ipxact:externalPortReference portRef="s_axi_rvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axi_rready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="s_axi_rready"/>
+                <ipxact:externalPortReference portRef="s_axi_rready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>ref_clk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="ref_clk"/>
+                <ipxact:externalPortReference portRef="ref_clk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_ce</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_ce"/>
+                <ipxact:externalPortReference portRef="vtg_ce"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_pclk_locked</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_pclk_locked"/>
+                <ipxact:externalPortReference portRef="vtg_pclk_locked"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_pclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_pclk"/>
+                <ipxact:externalPortReference portRef="vtg_pclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_hsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_hsync"/>
+                <ipxact:externalPortReference portRef="vtg_hsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_vsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_vsync"/>
+                <ipxact:externalPortReference portRef="vtg_vsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_hblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_hblank"/>
+                <ipxact:externalPortReference portRef="vtg_hblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_vblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_vblank"/>
+                <ipxact:externalPortReference portRef="vtg_vblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_active_video</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="video_timing_generator_v01_e2dadf6740ca_Inst" portRef="vtg_active_video"/>
+                <ipxact:externalPortReference portRef="vtg_active_video"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+    <ipxact:vendorExtensions>
+        <user:device>DR1M90MEG484</user:device>
+        <user:displayname>video_timing_generator_v01</user:displayname>
+        <user:ipGenVersion value="174230 2025/09/09">1.0</user:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:design>

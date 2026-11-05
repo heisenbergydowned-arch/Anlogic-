@@ -1,0 +1,10 @@
+/* Include under the board's actual PL MMIO bus, with its correct #address-cells
+ * and #size-cells. This two-cell example matches a 64-bit root bus. No guessed
+ * IRQ: the service polls the stable two-frame mailbox. Enable generic-uio via
+ * the kernel/boot option uio_pdrv_genirq.of_id=generic-uio if required by BSP. */
+cabinet_control@80400000 {
+    compatible = "generic-uio";
+    reg = <0x0 0x80400000 0x0 0x00010000>;
+    linux,uio-name = "cabinet-control";
+    status = "okay";
+};

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:anlogic="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>design_design_0_AXI4_Stream_to_Video_Out_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>alc_axi4s_vid_out_7d63f5fadd80_Inst</ipxact:instanceName>
+            <ipxact:componentRef vendor="anlogic.com" library="ip" name="AXI4_Stream_to_Video_Out" version="1.0"/>
+            <ipxact:configurableElementValues>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_PIXELS_PER_CLOCK">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_S_AXIS_COMPONENT_WIDTH">8</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_NATIVE_COMPONENT_WIDTH">8</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_HYSTERESIS_LEVEL">12</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="video_format">&quot;RGB&quot;</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="fifo_depth">32</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="clock_mode_sync">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="clock_mode_async">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="timing_mode_slave">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="timing_mode_master">0</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_COMPONENTS_PER_PIXEL">3</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_NATIVE_DATA_WIDTH">24</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_S_AXIS_TDATA_WIDTH">24</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_HAS_ASYNC_CLK">1</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_ADDR_WIDTH">5</ipxact:configurableElementValue>
+                <ipxact:configurableElementValue referenceId="AXIS2Vid_VTG_MASTER_SLAVE">0</ipxact:configurableElementValue>
+            </ipxact:configurableElementValues>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>aclk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="aclk"/>
+                <ipxact:externalPortReference portRef="aclk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>aclken</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="aclken"/>
+                <ipxact:externalPortReference portRef="aclken"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>aresetn</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="aresetn"/>
+                <ipxact:externalPortReference portRef="aresetn"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_video_tdata</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="s_axis_video_tdata"/>
+                <ipxact:externalPortReference portRef="s_axis_video_tdata"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_video_tvalid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="s_axis_video_tvalid"/>
+                <ipxact:externalPortReference portRef="s_axis_video_tvalid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_video_tready</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="s_axis_video_tready"/>
+                <ipxact:externalPortReference portRef="s_axis_video_tready"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_video_tuser</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="s_axis_video_tuser"/>
+                <ipxact:externalPortReference portRef="s_axis_video_tuser"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>s_axis_video_tlast</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="s_axis_video_tlast"/>
+                <ipxact:externalPortReference portRef="s_axis_video_tlast"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>fid</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="fid"/>
+                <ipxact:externalPortReference portRef="fid"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_io_out_clk</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_io_out_clk"/>
+                <ipxact:externalPortReference portRef="vid_io_out_clk"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_io_out_reset</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_io_out_reset"/>
+                <ipxact:externalPortReference portRef="vid_io_out_reset"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_io_out_ce</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_io_out_ce"/>
+                <ipxact:externalPortReference portRef="vid_io_out_ce"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_active_video</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_active_video"/>
+                <ipxact:externalPortReference portRef="vid_active_video"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_vsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_vsync"/>
+                <ipxact:externalPortReference portRef="vid_vsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_hsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_hsync"/>
+                <ipxact:externalPortReference portRef="vid_hsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_vblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_vblank"/>
+                <ipxact:externalPortReference portRef="vid_vblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_hblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_hblank"/>
+                <ipxact:externalPortReference portRef="vid_hblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_field_id</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_field_id"/>
+                <ipxact:externalPortReference portRef="vid_field_id"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vid_data</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vid_data"/>
+                <ipxact:externalPortReference portRef="vid_data"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_vsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_vsync"/>
+                <ipxact:externalPortReference portRef="vtg_vsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_hsync</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_hsync"/>
+                <ipxact:externalPortReference portRef="vtg_hsync"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_vblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_vblank"/>
+                <ipxact:externalPortReference portRef="vtg_vblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_hblank</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_hblank"/>
+                <ipxact:externalPortReference portRef="vtg_hblank"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_active_video</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_active_video"/>
+                <ipxact:externalPortReference portRef="vtg_active_video"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_field_id</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_field_id"/>
+                <ipxact:externalPortReference portRef="vtg_field_id"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>vtg_ce</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="vtg_ce"/>
+                <ipxact:externalPortReference portRef="vtg_ce"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>locked</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="locked"/>
+                <ipxact:externalPortReference portRef="locked"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>overflow</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="overflow"/>
+                <ipxact:externalPortReference portRef="overflow"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>underflow</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="underflow"/>
+                <ipxact:externalPortReference portRef="underflow"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>fifo_read_level</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="fifo_read_level"/>
+                <ipxact:externalPortReference portRef="fifo_read_level"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>status</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="status"/>
+                <ipxact:externalPortReference portRef="status"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>sof_state_out</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="alc_axi4s_vid_out_7d63f5fadd80_Inst" portRef="sof_state_out"/>
+                <ipxact:externalPortReference portRef="sof_state_out"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+    <ipxact:vendorExtensions>
+        <anlogic:device>DR1M90MEG484</anlogic:device>
+        <anlogic:displayname>AXI4 Stream to Video Out</anlogic:displayname>
+        <anlogic:ipGenVersion value="174230 2025/09/09">1.0</anlogic:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:design>

@@ -1,0 +1,164 @@
+{
+  "source": "REAL_USER_DECLARED_NORMAL_DIAGNOSTIC",
+  "raw_capture_qualification_changed": false,
+  "input_contract": {
+    "device_id": "machine:843ad8d6299240c898a32874a96fe333",
+    "configuration_words": [
+      1,
+      0,
+      0,
+      1073741824,
+      0,
+      885622,
+      17896,
+      2,
+      1,
+      13,
+      39,
+      65,
+      103,
+      154,
+      205,
+      257,
+      513
+    ],
+    "frame_identity": [
+      1,
+      0,
+      2
+    ],
+    "controller_mode": "STOPPING",
+    "controller_diagnostic_mode": true
+  },
+  "sessions": {
+    "train": {
+      "rows": 1398,
+      "session_ids": [
+        "8848a716-335f-40ab-8f45-af8c6bf6872f"
+      ],
+      "captures": [
+        {
+          "session_id": "8848a716-335f-40ab-8f45-af8c6bf6872f",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 1398,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/6a7064ff/5ad1e97c-b8c6-4d37-8261-11a45699e878/1",
+          "raw_rows": 1398,
+          "excluded_windows": [],
+          "missing_windows": 17,
+          "gap_events": 17,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "fb98dbdea126c6e3070413606972da4048c5d70ec952327387358c04b23ae412",
+          "session_sha256": "25f62961128e3d1db50d1a3fe86b93c930ef18a8d507133d9d5237daf5cfbae7",
+          "first_frame": 161994,
+          "last_frame": 163408,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    },
+    "calibration": {
+      "rows": 696,
+      "session_ids": [
+        "595346ae-69d1-4613-99cb-2af30d9cc3e4"
+      ],
+      "captures": [
+        {
+          "session_id": "595346ae-69d1-4613-99cb-2af30d9cc3e4",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 696,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/6a7064ff/5ad1e97c-b8c6-4d37-8261-11a45699e878/1",
+          "raw_rows": 696,
+          "excluded_windows": [],
+          "missing_windows": 13,
+          "gap_events": 13,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "78c27f55a6eb44e3dedb6f58cc89c91c993ba00f178f6b7c0a49d848f791cbbc",
+          "session_sha256": "3a3df36678556894f125594c1790d5f8a2e5d95f82099369e86354f7b5977a60",
+          "first_frame": 164070,
+          "last_frame": 164778,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    },
+    "test": {
+      "rows": 707,
+      "session_ids": [
+        "e83c94b7-a91c-45ac-a020-9164b592288f"
+      ],
+      "captures": [
+        {
+          "session_id": "e83c94b7-a91c-45ac-a020-9164b592288f",
+          "source": "REAL_FRM1_DECLARED",
+          "rows": 707,
+          "boot_id": "machine:843ad8d6299240c898a32874a96fe333/6a7064ff/5ad1e97c-b8c6-4d37-8261-11a45699e878/1",
+          "raw_rows": 707,
+          "excluded_windows": [],
+          "missing_windows": 1,
+          "gap_events": 1,
+          "window_policy": "INDEPENDENT_NORMAL_NPU_WINDOWS",
+          "excluded_reason_counts": {},
+          "frames_sha256": "734685e9a89f6c9793b059c6ca6bed4306216f78986de6d6e95f80dc24a96f51",
+          "session_sha256": "78227da76da72d0173c64e60dc3fa1d4f41e842bb9c7ba1d7b032a6b77618a25",
+          "first_frame": 164918,
+          "last_frame": 165625,
+          "capture_formal_accepted": 0,
+          "capture_label_declared": "unlabelled",
+          "advisory_label_source": "USER_DECLARES_CURRENT_CONDITION_NORMAL",
+          "quality_values": [
+            12288
+          ],
+          "formal_rejection_reasons": [
+            "CALIBRATION",
+            "CONFIG_READBACK",
+            "DIAGNOSTIC_NOT_TRAINING",
+            "V4_IDENTITY",
+            "calibration",
+            "feature_config",
+            "not_stable_run",
+            "quality"
+          ]
+        }
+      ]
+    }
+  },
+  "calibration_used_for_model_selection_and_threshold": true,
+  "test_used_for_training": false,
+  "user_scope": "Use current user-declared normal data for live advisory NPU inference",
+  "limitations": [
+    "no fault-class data",
+    "normal operating domain not independently certified",
+    "physical units not calibrated",
+    "controller diagnostic/inhibited profile"
+  ]
+}

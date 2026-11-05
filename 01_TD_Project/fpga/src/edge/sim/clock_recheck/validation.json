@@ -1,0 +1,15 @@
+{
+  "status": "NOT_ACCEPTED",
+  "started_utc": "2026-10-08T05:02:58.833127+00:00",
+  "scope": "Corrected constraints on existing gate netlist; no resynthesis or routed Hold",
+  "netlist_sha256": "0d29917b816ff6a9ef9f60932913b18f935e802331181a34be5acbb384ec278d",
+  "sdc_sha256": "a36c973308a99a8e6fe67b11b2872f00d1b11856d624dc8c8c228397e74aa082",
+  "setup_wns_ns": -2.903,
+  "empty_group_fixed": true,
+  "warnings": [
+    "USR-6113 CRITICAL-WARNING: Timing analysis risk for (DR1_PHY_PROCESSOR_SYSTEM) system/design_0_inst/design_0_ARM_Processor_System_0_Inst/ARM_Processor_System_9c4afc9a72e9_Inst/DR1_PHY_PROCESSOR_SYSTEM_Inst: clock pin(s) GEN_PL_GP0S,GEN_PL_GP1S,GEN_PL_HP0,GEN_PL_HP1 is(are) not driven by any clock. ",
+    "USR-6144 CRITICAL-WARNING: PLL clock frequency mismatch detected on clock clk_vtg. Requested frequency: 148.485 MHz, Actual frequency: 148.500 MHz."
+  ],
+  "ps_native_clock_unresolved": true,
+  "completed_utc": "2026-10-08T05:03:59.461087+00:00"
+}

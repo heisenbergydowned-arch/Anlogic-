@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipxact:designConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:anlogic="http" xsi:schemaLocation="http://www.accellera.org/XMLSchema/IPXACT/1685-2014 http://www.accellera.org/XMLSchema/IPXACT/1685-2014/index.xsd">
+    <ipxact:vendor>anlogic.com</ipxact:vendor>
+    <ipxact:library>customized</ipxact:library>
+    <ipxact:name>designConfig_design_0_AXI4_Stream_to_Video_Out_0</ipxact:name>
+    <ipxact:version>1.0</ipxact:version>
+    <ipxact:viewConfiguration>
+        <ipxact:instanceName>alc_axi4s_vid_out_7d63f5fadd80_Inst</ipxact:instanceName>
+        <ipxact:view viewRef="view"/>
+    </ipxact:viewConfiguration>
+    <ipxact:vendorExtensions>
+        <anlogic:displayname>AXI4 Stream to Video Out</anlogic:displayname>
+        <anlogic:ipGenVersion value="174230 2025/09/09">1.0</anlogic:ipGenVersion>
+    </ipxact:vendorExtensions>
+</ipxact:designConfiguration>

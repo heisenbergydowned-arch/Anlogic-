@@ -1,0 +1,14 @@
+[Unit]
+Description=R46 candidate kernel matching Wi-Fi modules
+After=local-fs.target systemd-udevd.service
+Before=network-online.target rc-local.service
+ConditionKernelCommandLine=r46_npu=candidate4
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/r46-npu-kernel-network.sh
+TimeoutStartSec=90
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
